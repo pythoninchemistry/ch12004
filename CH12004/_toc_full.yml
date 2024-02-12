@@ -1,0 +1,44 @@
+# Reference TOC - all contents active
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: introduction/welcome
+parts:
+  - caption: Preface - Jupyter Notebooks
+    chapters:
+      - file: preface/what_is_a_jupyter_notebook.md
+      - file: preface/using_noteable.md
+      - file: preface/the_notebook_interface.md
+  - caption: Lab 1 - Fundamentals
+    chapters:
+      - file: lab_1/using_python_as_a_calculator
+      - file: lab_1/variables.ipynb
+      - file: lab_1/strings.ipynb
+      - file: lab_1/types.ipynb
+      - file: lab_1/synoptic_exercises.ipynb
+  - caption: Lab 2 - Data structures
+    chapters:
+      - file: lab_2/lists.ipynb
+      - file: lab_2/tuples.ipynb
+      - file: lab_2/dictionaries.ipynb
+      - file: lab_2/writing_readable_code.ipynb
+      - file: lab_2/synoptic_exercises.ipynb
+  - caption: Lab 3 - Loops and logic
+    chapters:
+      - file: lab_3/loops.ipynb
+      - file: lab_3/logic.ipynb
+      - file: lab_3/synoptic_exercises.ipynb
+  - caption: Lab 4 - Functions and errors
+    chapters:
+      - file: lab_4/functions.ipynb
+      - file: lab_4/errors.ipynb
+      - file: lab_4/synoptic_exercises.ipynb
+  - caption: Lab 5 - External libraries
+    chapters:
+      - file: lab_5/numpy.ipynb
+      - file: lab_5/matplotlib.ipynb
+      - file: lab_5/synoptic_exercises.ipynb
+
+  - caption: Miscellaneous
+    chapters:
+      - file: glossary.ipynb

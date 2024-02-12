@@ -2,8 +2,9 @@
 # Learn more at https://jupyterbook.org/customize/toc.html
 
 format: jb-book
-root: intro
-chapters:
-- file: markdown
-- file: notebooks
-- file: markdown-notebooks
+root: introduction/welcome
+parts:
+  - caption: Lab 0 - Jupyter Notebooks
+    chapters:
+      - file: lab_0/what_is_a_jupyter_notebook.md
+      - file: lab_0/using_noteable.md
