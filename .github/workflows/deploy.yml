@@ -12,6 +12,11 @@ on:
 jobs:
   deploy-book:
     runs-on: ubuntu-latest
+    # Set permissions to ensure deployment to GitHub pages is allowed
+    permissions:
+      contents: write
+      pages: write
+      id-token: write
     steps:
     - uses: actions/checkout@v4
 
@@ -23,7 +28,7 @@ jobs:
 
     - name: Install dependencies
       run: |
-        pip install -r CH12004/requirements.txt
+        pip install -r requirements.txt
 
     # Build the book
     - name: Build the book
