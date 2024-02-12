@@ -1,0 +1,1132 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Lists &#8212; CH12004: Skills for chemists</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'lab_2/lists';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../introduction/welcome.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="CH12004: Skills for chemists - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="CH12004: Skills for chemists - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../introduction/welcome.html">
+                    Welcome
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Lab 0 - Jupyter Notebooks</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../lab_0/what_is_a_jupyter_notebook.html">What is a Jupyter Notebook?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lab_0/using_noteable.html">Getting started with Noteable</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/lab_2/lists.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Lists</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#list-indexing">List indexing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modifying-lists">Modifying lists</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-elements-to-a-list">Adding elements to a list</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#removing-elements-from-a-list">Removing elements from a list</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#list-slicing">List slicing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lists-of-lists-of-lists-of-lists-of-lists">Lists of lists of lists of lists of lists…</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mathematical-interlude-the-sum-function">Mathematical interlude: the <code class="docutils literal notranslate"><span class="pre">sum</span></code> function</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multiple-assignment">Multiple assignment</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">Exercise</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="lists">
+<h1>Lists<a class="headerlink" href="#lists" title="Link to this heading">#</a></h1>
+<p>In our first lab, we encountered several distinct data <strong>types</strong>: <code class="docutils literal notranslate"><span class="pre">int</span></code> (integers), <code class="docutils literal notranslate"><span class="pre">float</span></code> (decimal point numbers), <code class="docutils literal notranslate"><span class="pre">complex</span></code> (complex numbers), <code class="docutils literal notranslate"><span class="pre">str</span></code> (strings) and <code class="docutils literal notranslate"><span class="pre">bool</span></code> (booleans). All of these types represent various categories of <strong>individual data</strong>: a single number, a single string of letters etc. Often, we are interested in <strong>collections</strong> of data, for example a set of temperatures at which a given experiment has been performed. Python accommodates this requirement by providing us with various <strong>data structures</strong> that allow us to collate related data into a single object. <strong>Lists</strong> are one of these data structures.</p>
+<p>A <strong>list</strong> is an <strong>ordered</strong> collection of values. The values that comprise a list are usually referred to as the <strong>elements</strong> or <strong>items</strong> in that list. To create a list, we enclose the elements (separated by commas) we wish to include in a set of <strong>square brackets</strong>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 2, 3, 4, 5]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Just like the other data types we have encountered so far, we can store lists in <strong>variables</strong> with the <strong>assignment</strong> operator <code class="docutils literal notranslate"><span class="pre">=</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">some_numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">some_numbers</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 2, 3, 4, 5]
+</pre></div>
+</div>
+</div>
+</div>
+<p>The example above is a list of <code class="docutils literal notranslate"><span class="pre">int</span></code> objects, but lists can contain <strong>any</strong> type of data:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">some_strings</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Praise&#39;</span><span class="p">,</span> <span class="s1">&#39;The&#39;</span><span class="p">,</span> <span class="s1">&#39;Sun!&#39;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">some_strings</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Praise&#39;, &#39;The&#39;, &#39;Sun!&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can even mix <strong>different types</strong> together:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a_variety</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;five&#39;</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">,</span> <span class="mf">5.0</span> <span class="o">+</span> <span class="mi">0</span><span class="n">j</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a_variety</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[5, &#39;five&#39;, 5.0, (5+0j)]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Or make a <strong>list of lists</strong>!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">some_numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="n">some_strings</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Praise&#39;</span><span class="p">,</span> <span class="s1">&#39;The&#39;</span><span class="p">,</span> <span class="s1">&#39;Sun!&#39;</span><span class="p">]</span>
+
+<span class="n">list_of_lists</span> <span class="o">=</span> <span class="p">[</span><span class="n">some_numbers</span><span class="p">,</span> <span class="n">some_strings</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">list_of_lists</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[1, 2, 3, 4, 5], [&#39;Praise&#39;, &#39;The&#39;, &#39;Sun!&#39;]]
+</pre></div>
+</div>
+</div>
+</div>
+<p>This latter example is also referred to as a <strong>nested</strong> list. Unsurprisingly, if we call the <code class="docutils literal notranslate"><span class="pre">type</span></code> function, we discover that there is a <code class="docutils literal notranslate"><span class="pre">list</span></code> type:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">list_of_lists</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>list
+</pre></div>
+</div>
+</div>
+</div>
+<section id="list-indexing">
+<h2>List indexing<a class="headerlink" href="#list-indexing" title="Link to this heading">#</a></h2>
+<p>Let’s say we have a list of strings, perhaps some of the first row transition metals:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">transition_metals</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Vanadium&#39;</span><span class="p">,</span> <span class="s1">&#39;chromium&#39;</span><span class="p">,</span> <span class="s1">&#39;Manganese&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Okay, now consider that, for whatever reason, I only want the name of the <strong>first</strong> transition metal in the list - how can I access <strong>just</strong> the first element? This can be accomplished with list <strong>indexing</strong>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">transition_metals</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Vanadium&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Or perhaps we only want the <strong>second</strong> element:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">transition_metals</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;chromium&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Or else the <strong>third</strong> element:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">transition_metals</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Manganese&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>As you have probably observed in the code above, the general syntax for list indexing is:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">name_of_variable</span><span class="p">[</span><span class="n">index</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Where the <strong>index</strong> is an <code class="docutils literal notranslate"><span class="pre">int</span></code> that refers to which element we would like to access. Notice that we obtain the <strong>first</strong> element with index <code class="docutils literal notranslate"><span class="pre">[0]</span></code>, <strong>not</strong> <code class="docutils literal notranslate"><span class="pre">[1]</span></code>.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Python, and for that matter the vast majority of programming langauges, start counting from <strong>zero</strong>. Don’t worry if this takes you a while to get used to, it is admittedly somewhat counterintuitive.</p>
+</div>
+<p>Okay so our example list has <span class="math notranslate nohighlight">\(3\)</span> elements which can therefore be accessed with indicies <span class="math notranslate nohighlight">\(0\)</span> through <span class="math notranslate nohighlight">\(2\)</span>. What if we try to index the list with an index greater than <span class="math notranslate nohighlight">\(2\)</span>?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">transition_metals</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">IndexError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">11</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">transition_metals</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+
+<span class="ne">IndexError</span>: list index out of range
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition error">
+<p class="admonition-title">Error</p>
+<p>Here we have another new type of error: an <strong>IndexError</strong>. This one is relatively straightforward, the index we have given is “out of range” meaning that the index refers to an element that does not exist. In this case, the index <span class="math notranslate nohighlight">\(3\)</span> refers to the <strong>fourth</strong> element of the list, but <code class="docutils literal notranslate"><span class="pre">transition_metals</span></code> only has <span class="math notranslate nohighlight">\(3\)</span> items, so this doesn’t make any sense.</p>
+</div>
+<p>You might think that using a <strong>negative index</strong> might yield a similar error, and yet:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">transition_metals</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Manganese&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>What’s happening here is that the negative index counts elements from <strong>back to front</strong>. Index <code class="docutils literal notranslate"><span class="pre">[0]</span></code> referred to the <strong>first</strong> element of the list, index <code class="docutils literal notranslate"><span class="pre">[-1]</span></code> refers to the <strong>last</strong> element of the list.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">transition_metals</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;chromium&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>As you can see above, we can continue to use increasingly negative indices to access more elements of <code class="docutils literal notranslate"><span class="pre">transition_metals</span></code> going from the end to the beginning, index <code class="docutils literal notranslate"><span class="pre">[-2]</span></code> giving us the <strong>second to last</strong> item.</p>
+</section>
+<section id="modifying-lists">
+<h2>Modifying lists<a class="headerlink" href="#modifying-lists" title="Link to this heading">#</a></h2>
+<p>Something that we have neglected to mention thus far is that lists are <strong>mutable</strong>: they can be modified in various ways. You may have noticed previously that there is a typo in the third element of the list. We can fix that by <strong>assigning</strong> a new value to that element using the <code class="docutils literal notranslate"><span class="pre">=</span></code> operator:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">transition_metals</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">transition_metals</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Chromium&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">transition_metals</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>chromium
+Chromium
+</pre></div>
+</div>
+</div>
+</div>
+<section id="adding-elements-to-a-list">
+<h3>Adding elements to a list<a class="headerlink" href="#adding-elements-to-a-list" title="Link to this heading">#</a></h3>
+<p>Aside from modifying pre-existing elements of a list, we might conceivably want to add <strong>new</strong> items to a list and make it longer. For example, what if we want to add another element to <code class="docutils literal notranslate"><span class="pre">transition_metals</span></code>? There are actually many ways you could do this, several of which rely on the <strong>methods</strong> associated with lists. A <strong>method</strong> is just a <strong>function</strong> that is associated with a particular object. When we used functions, we type the name of the function, followed by brackets enclosing our inputs to that function:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">transition_metals</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here we call the built-in <code class="docutils literal notranslate"><span class="pre">len</span></code> function, which gives us the <strong>length</strong> of the list i.e. how many elements there are. Calling a <strong>method</strong> is much the same as the above, except that it is associated <strong>with the list itself</strong>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">transition_metals</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;Iron&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">transition_metals</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Vanadium&#39;, &#39;Chromium&#39;, &#39;Manganese&#39;, &#39;Iron&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>This example uses the <code class="docutils literal notranslate"><span class="pre">append</span></code> method, which adds the input to <strong>the end</strong> of the list. Notice that the syntax for calling the append method is largely the same as if it was a standalone function, except that it follows a <strong>dot</strong> after the object it is associated with. This can be generically rendered as:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">name_of_object</span><span class="o">.</span><span class="n">method_associated_with_that_object</span><span class="p">(</span><span class="n">input_to_method</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>As well as appending elements to the end of a list, we can also <strong>insert</strong> elements at <strong>any</strong> given index in the list:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">transition_metals</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;Titanium&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">transition_metals</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Titanium&#39;, &#39;Vanadium&#39;, &#39;Chromium&#39;, &#39;Manganese&#39;, &#39;Iron&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>This is the first time we’ve encountered a function or method that takes <strong>two</strong> arguments (two inputs). The <code class="docutils literal notranslate"><span class="pre">insert</span></code> method requires you to specify firstly the index for where you want the new element to go (here we use <span class="math notranslate nohighlight">\(0\)</span> to insert a new element at the <strong>start</strong> of the list) and secondly the new element itself.</p>
+<p>Both the <code class="docutils literal notranslate"><span class="pre">append</span></code> and <code class="docutils literal notranslate"><span class="pre">insert</span></code> methods allow us to add <strong>one</strong> new element to the list. We can use the <code class="docutils literal notranslate"><span class="pre">extend</span></code> method to add <strong>multiple</strong> elements to the <strong>end</strong> of a list:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">more_transition_metals</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Cobalt&#39;</span><span class="p">,</span> <span class="s1">&#39;Nickel&#39;</span><span class="p">]</span>
+<span class="n">transition_metals</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">more_transition_metals</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">transition_metals</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Titanium&#39;, &#39;Vanadium&#39;, &#39;Chromium&#39;, &#39;Manganese&#39;, &#39;Iron&#39;, &#39;Cobalt&#39;, &#39;Nickel&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can also accomplish this same task by use of the addition operator <code class="docutils literal notranslate"><span class="pre">+</span></code>, in a similar manner to how we can “add” strings together:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">even_more_transition_metals</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Copper&#39;</span><span class="p">,</span> <span class="s1">&#39;Zinc&#39;</span><span class="p">]</span>
+<span class="n">transition_metals</span> <span class="o">=</span> <span class="n">transition_metals</span> <span class="o">+</span> <span class="n">even_more_transition_metals</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">transition_metals</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Titanium&#39;, &#39;Vanadium&#39;, &#39;Chromium&#39;, &#39;Manganese&#39;, &#39;Iron&#39;, &#39;Cobalt&#39;, &#39;Nickel&#39;, &#39;Copper&#39;, &#39;Zinc&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="removing-elements-from-a-list">
+<h3>Removing elements from a list<a class="headerlink" href="#removing-elements-from-a-list" title="Link to this heading">#</a></h3>
+<p>We now have a range of tools at our disposal for <strong>adding</strong> elements to a list, but how can we <strong>remove</strong> them instead? Well, for a start, there is a <code class="docutils literal notranslate"><span class="pre">remove</span></code> method:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">transition_metals</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s1">&#39;Copper&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">transition_metals</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Titanium&#39;, &#39;Vanadium&#39;, &#39;Chromium&#39;, &#39;Manganese&#39;, &#39;Iron&#39;, &#39;Cobalt&#39;, &#39;Nickel&#39;, &#39;Zinc&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>This removes the first element which matches the input argument from the list. There is also a <code class="docutils literal notranslate"><span class="pre">pop</span></code> method:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pop_example</span> <span class="o">=</span> <span class="n">transition_metals</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">pop_example</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">transition_metals</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Iron
+[&#39;Titanium&#39;, &#39;Vanadium&#39;, &#39;Chromium&#39;, &#39;Manganese&#39;, &#39;Cobalt&#39;, &#39;Nickel&#39;, &#39;Zinc&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>This method removes the element at the <strong>index</strong> provided as an input (in this case <span class="math notranslate nohighlight">\(4\)</span>: the <strong>fifth</strong> element). Notice that the <code class="docutils literal notranslate"><span class="pre">pop</span></code> method also <strong>returns</strong> the value of the removed element. In the example above, we have <strong>assigned</strong> the output of the <code class="docutils literal notranslate"><span class="pre">pop</span></code> method to a variable <code class="docutils literal notranslate"><span class="pre">pop_example</span></code>, which when printed, shows us the removed element.</p>
+</section>
+</section>
+<section id="list-slicing">
+<h2>List slicing<a class="headerlink" href="#list-slicing" title="Link to this heading">#</a></h2>
+<p>We are now familiar with accessing individual elements of a list:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">transition_metals</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">transition_metals</span><span class="p">[</span><span class="mi">4</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Titanium&#39;, &#39;Vanadium&#39;, &#39;Chromium&#39;, &#39;Manganese&#39;, &#39;Cobalt&#39;, &#39;Nickel&#39;, &#39;Zinc&#39;]
+Cobalt
+</pre></div>
+</div>
+</div>
+</div>
+<p>But what if we want to obtain <strong>multiple</strong> elements at once? Python facilitates this task with <strong>list slicing</strong>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">transition_metals</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">5</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Vanadium&#39;, &#39;Chromium&#39;, &#39;Manganese&#39;, &#39;Cobalt&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here we have acquired <span class="math notranslate nohighlight">\(4\)</span> elements of <code class="docutils literal notranslate"><span class="pre">transition_metals</span></code>: the second, third, fourth and fifth items (a <strong>slice</strong> out of the full list). The first number in the square brackets above is <span class="math notranslate nohighlight">\(1\)</span>: this is the index from which we want to <strong>start</strong> the slice. The second number (after a colon <code class="docutils literal notranslate"><span class="pre">:</span></code>) is <span class="math notranslate nohighlight">\(5\)</span>, which indicates the index where we would like to <strong>stop</strong> the slice. Notice that the element at index <span class="math notranslate nohighlight">\(5\)</span> is <strong>not</strong> included in the slice:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">transition_metals</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Nickel&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>In general, we can therefore take a <strong>slice</strong> out of a list with the following syntax:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">name_of_list</span><span class="p">[</span><span class="n">start_index</span> <span class="p">:</span> <span class="n">end_index</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Where the element at the <code class="docutils literal notranslate"><span class="pre">end_index</span></code> is <strong>not</strong> included in the slice. You actually don’t have to provide both the start and end indices:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">transition_metals</span><span class="p">[</span><span class="mi">2</span><span class="p">:]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Chromium&#39;, &#39;Manganese&#39;, &#39;Cobalt&#39;, &#39;Nickel&#39;, &#39;Zinc&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">transition_metals</span><span class="p">[:</span><span class="mi">4</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Titanium&#39;, &#39;Vanadium&#39;, &#39;Chromium&#39;, &#39;Manganese&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>What’s happening here is that by default, if you do not provide an end index, Python will assume you want the highest value possible. In other words, your slice will start from the provided start index and go all the way to the <strong>end</strong> of the list. Similarly, if you provide the end index but no start index, Python will assume that you want your slice to start from the <strong>beginning</strong> of the list, up to (but not including) the end index you have given. To summarise, you can read:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">name_of_list</span><span class="p">[</span><span class="n">start_index</span><span class="p">:]</span>
+</pre></div>
+</div>
+<p>As ‘give me every element of <code class="docutils literal notranslate"><span class="pre">name_of_list</span></code> from <code class="docutils literal notranslate"><span class="pre">start_index</span></code> and onwards’ and you can read:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">name_of_list</span><span class="p">[:</span><span class="n">end_index</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>As ‘give me every element of <code class="docutils literal notranslate"><span class="pre">name_of_list</span></code> from the beginning up to (but not including) the element at <code class="docutils literal notranslate"><span class="pre">end_index</span></code>.</p>
+<p>We have not used this feature so far, but we can also provide a <strong>third</strong> index when we slice a list:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">transition_metals</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">5</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Vanadium&#39;, &#39;Manganese&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>This latter index is a <strong>step size</strong>. By default, the step size is <span class="math notranslate nohighlight">\(1\)</span>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">transition_metals</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">5</span><span class="p">:</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Vanadium&#39;, &#39;Chromium&#39;, &#39;Manganese&#39;, &#39;Cobalt&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>By increasing this value to <span class="math notranslate nohighlight">\(2\)</span>, we retrieve <strong>every other</strong> element from index <span class="math notranslate nohighlight">\(1\)</span> up to but not including index <span class="math notranslate nohighlight">\(5\)</span>. If we set the step size to <span class="math notranslate nohighlight">\(3\)</span>, we would obtain every <strong>third</strong> element etc:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">transition_metals</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">7</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Vanadium&#39;, &#39;Cobalt&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>What do you think will happen if you set the step size to a <strong>negative</strong> number? Make a new list in a Jupyter notebook and try it out!</p>
+</div>
+<p>It should be noted that list slicing can be used as another method to remove elements from a list:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">transition_metals</span><span class="p">)</span>
+
+<span class="n">transition_metals</span> <span class="o">=</span> <span class="n">transition_metals</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">4</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">transition_metals</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Titanium&#39;, &#39;Vanadium&#39;, &#39;Chromium&#39;, &#39;Manganese&#39;, &#39;Cobalt&#39;, &#39;Nickel&#39;, &#39;Zinc&#39;]
+[&#39;Chromium&#39;, &#39;Manganese&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>By assigning the slice to <code class="docutils literal notranslate"><span class="pre">transition_metals</span></code>, we have effectively replaced the full list with the slice, removing everything not captured by our specified start and end indices.</p>
+</section>
+<section id="lists-of-lists-of-lists-of-lists-of-lists">
+<h2>Lists of lists of lists of lists of lists…<a class="headerlink" href="#lists-of-lists-of-lists-of-lists-of-lists" title="Link to this heading">#</a></h2>
+<p>We saw earlier that we can create <strong>nested</strong> lists (lists containing more lists) in Python:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">transition_metals</span> <span class="o">=</span> <span class="p">[[</span><span class="s1">&#39;Iron&#39;</span><span class="p">,</span> <span class="s1">&#39;Cobalt&#39;</span><span class="p">,</span> <span class="s1">&#39;Nickel&#39;</span><span class="p">],</span> 
+                     <span class="p">[</span><span class="s1">&#39;Ruthenium&#39;</span><span class="p">,</span> <span class="s1">&#39;Rhodium&#39;</span><span class="p">,</span> <span class="s1">&#39;Palladium&#39;</span><span class="p">]]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Notice in the example above, the list has been split over multiple lines. Python allows some statements to be written like this to improve readability.</p>
+</div>
+<p>This list has <span class="math notranslate nohighlight">\(2\)</span> elements:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">transition_metals</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
+</pre></div>
+</div>
+</div>
+</div>
+<p>Each of which is, in itself, another list. We know that we can access individual elements of a list via indexing:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">transition_metals</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Iron&#39;, &#39;Cobalt&#39;, &#39;Nickel&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>But what if we want an individual element of a list <strong>within a list</strong>? Say that I want to obtain just the <code class="docutils literal notranslate"><span class="pre">'Cobalt'</span></code> string, we could do this by assigning a new variable:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">first_row_transition_metals</span> <span class="o">=</span> <span class="n">transition_metals</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">first_row_transition_metals</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Cobalt&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here we have stored just the first list in <code class="docutils literal notranslate"><span class="pre">transition_metals</span></code> in a new variable called <code class="docutils literal notranslate"><span class="pre">first_row_transition_metals</span></code>. We can then index this new variable as normal to retrieve our desired element. More succinctly, Python allows this process to be condensed into one line:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">transition_metals</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Cobalt&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Reading this from left to right, we type the name of the list (<code class="docutils literal notranslate"><span class="pre">transition_metals</span></code>), and index this to retrieve only the first sublist (<code class="docutils literal notranslate"><span class="pre">['Iron',</span> <span class="pre">'Cobalt',</span> <span class="pre">'Nickel']</span></code>). We then provide another index in a <strong>second set of square brackets</strong> to index this sublist and obtain only the second element: <code class="docutils literal notranslate"><span class="pre">'Cobalt'</span></code>.</p>
+</section>
+<section id="mathematical-interlude-the-sum-function">
+<h2>Mathematical interlude: the <code class="docutils literal notranslate"><span class="pre">sum</span></code> function<a class="headerlink" href="#mathematical-interlude-the-sum-function" title="Link to this heading">#</a></h2>
+<p>We have already become acquainted with several new functions and methods related to lists, but it’s worth noting one more: the <code class="docutils literal notranslate"><span class="pre">sum</span></code> function.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">some_numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">33</span><span class="p">,</span> <span class="mi">102</span><span class="p">,</span> <span class="o">-</span><span class="mi">36</span><span class="p">]</span>
+<span class="nb">sum</span><span class="p">(</span><span class="n">some_numbers</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>118
+</pre></div>
+</div>
+</div>
+</div>
+<p>As illustrated by the example above, the <code class="docutils literal notranslate"><span class="pre">sum</span></code> function literally <strong>sums up</strong> the elements of a list. In this case we used a list of <code class="docutils literal notranslate"><span class="pre">int</span></code> objects, but of course this works with <code class="docutils literal notranslate"><span class="pre">float</span></code> objects too:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">some_floats</span> <span class="o">=</span> <span class="p">[</span><span class="mf">5.13</span><span class="p">,</span> <span class="mf">6.93</span><span class="p">,</span> <span class="mf">10.11</span><span class="p">,</span> <span class="o">-</span><span class="mf">20.67</span><span class="p">]</span>
+<span class="nb">sum</span><span class="p">(</span><span class="n">some_floats</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.4999999999999973
+</pre></div>
+</div>
+</div>
+</div>
+<p>On the other hand, it doesn’t make sense to try and sum up:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">some_numbers_and_strings</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mf">5.5</span><span class="p">,</span> <span class="s1">&#39;purple&#39;</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
+<span class="nb">sum</span><span class="p">(</span><span class="n">some_numbers_and_strings</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">48</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">some_numbers_and_strings</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mf">5.5</span><span class="p">,</span> <span class="s1">&#39;purple&#39;</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="nb">sum</span><span class="p">(</span><span class="n">some_numbers_and_strings</span><span class="p">)</span>
+
+<span class="ne">TypeError</span>: unsupported operand type(s) for +: &#39;float&#39; and &#39;str&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here we have the same problem we encountered previously when trying to add a <code class="docutils literal notranslate"><span class="pre">str</span></code> and an <code class="docutils literal notranslate"><span class="pre">int</span></code> or a <code class="docutils literal notranslate"><span class="pre">float</span></code>, Python gives us a <code class="docutils literal notranslate"><span class="pre">TypeError</span></code> and essentially tells us: “This operation you are asking me to do doesn’t make any sense!”</p>
+<p>In combination with the <code class="docutils literal notranslate"><span class="pre">len</span></code> function, we can use the <code class="docutils literal notranslate"><span class="pre">sum</span></code> function to calculate the <strong>mean</strong> of a list of numbers:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">some_numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">33</span><span class="p">,</span> <span class="mi">102</span><span class="p">,</span> <span class="o">-</span><span class="mi">36</span><span class="p">]</span>
+
+<span class="nb">sum</span><span class="p">(</span><span class="n">some_numbers</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">some_numbers</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>16.857142857142858
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="multiple-assignment">
+<h2>Multiple assignment<a class="headerlink" href="#multiple-assignment" title="Link to this heading">#</a></h2>
+<p>We have already seen that, just like other types of data, a <code class="docutils literal notranslate"><span class="pre">list</span></code> can be assigned to a variable:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">some_numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Sometimes, we want to assign the various elements of a list to separate variables. With respect to our example above, we might want to store <code class="docutils literal notranslate"><span class="pre">1</span></code> in one variable and <code class="docutils literal notranslate"><span class="pre">2</span></code> in a different variable, rather than storing the whole list in <code class="docutils literal notranslate"><span class="pre">some_numbers</span></code>. This can be accomplished with <strong>multiple assignment</strong>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">number_1</span><span class="p">,</span> <span class="n">number_2</span> <span class="o">=</span> <span class="n">some_numbers</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">number_1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">number_2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+2
+</pre></div>
+</div>
+</div>
+</div>
+<p>This syntax for this process is relatively straightforward, we just provide as many variable names as there are elements in the list, separated by commas:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">variable_1</span><span class="p">,</span> <span class="n">variable_2</span><span class="p">,</span> <span class="n">variable_3</span> <span class="o">=</span> <span class="p">[</span><span class="n">element_1</span><span class="p">,</span> <span class="n">element_2</span><span class="p">,</span> <span class="n">element_3</span><span class="p">]</span>
+
+<span class="c1"># This sets variable_1 = element_1, variable_2 = element_2 etc.</span>
+</pre></div>
+</div>
+</section>
+<section id="exercise">
+<h2>Exercise<a class="headerlink" href="#exercise" title="Link to this heading">#</a></h2>
+<p><strong>1.</strong> Copy the following block of code into a Jupyter notebook:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">colours</span> <span class="o">=</span> <span class="p">[[</span><span class="s1">&#39;Red&#39;</span><span class="p">,</span> <span class="s1">&#39;Magenta&#39;</span><span class="p">],</span> 
+           <span class="p">[</span><span class="s1">&#39;Cyan&#39;</span><span class="p">,</span> <span class="s1">&#39;Green&#39;</span><span class="p">],</span> 
+           <span class="p">[[</span><span class="s1">&#39;Yellow&#39;</span><span class="p">,</span> <span class="s1">&#39;Blue&#39;</span><span class="p">],</span> <span class="s1">&#39;White&#39;</span><span class="p">]]</span>
+
+<span class="c1"># Insert your own code here.</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">colour_1</span><span class="si">}</span><span class="s1"> + </span><span class="si">{</span><span class="n">colour_2</span><span class="si">}</span><span class="s1"> -&gt; </span><span class="si">{</span><span class="n">colour_3</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Using list indexing, assign <code class="docutils literal notranslate"><span class="pre">'Red'</span></code> to <code class="docutils literal notranslate"><span class="pre">colour_1</span></code>, <code class="docutils literal notranslate"><span class="pre">'Green'</span></code> to <code class="docutils literal notranslate"><span class="pre">colour_2</span></code> and <code class="docutils literal notranslate"><span class="pre">'Yellow'</span></code> to <code class="docutils literal notranslate"><span class="pre">colour_3</span></code> so that the <code class="docutils literal notranslate"><span class="pre">print</span></code> statement runs without error and displays a true statement.</p>
+<p><strong>2.</strong> Create a list of strings corresponding to the second row of the periodic table and assign this to a variable.</p>
+<p>a) By slicing this list, assign just the non-metals and metalloids to a new variable.</p>
+<p>b) Slice your list of non-metals to obtain only the elements with even atomic numbers - assign this to a new variable.</p>
+<p>c) Using any of the methods described previously, add the non-metals and metalloids from the third row of the periodic table (with even atomic numbers) to the list you created in b).</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./lab_2"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#list-indexing">List indexing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modifying-lists">Modifying lists</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-elements-to-a-list">Adding elements to a list</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#removing-elements-from-a-list">Removing elements from a list</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#list-slicing">List slicing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lists-of-lists-of-lists-of-lists-of-lists">Lists of lists of lists of lists of lists…</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mathematical-interlude-the-sum-function">Mathematical interlude: the <code class="docutils literal notranslate"><span class="pre">sum</span></code> function</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multiple-assignment">Multiple assignment</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">Exercise</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Patrick J. Taylor & Benjamin J. Morgan
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

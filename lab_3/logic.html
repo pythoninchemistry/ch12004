@@ -1,0 +1,1114 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Logic &#8212; CH12004: Skills for chemists</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'lab_3/logic';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../introduction/welcome.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="CH12004: Skills for chemists - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="CH12004: Skills for chemists - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../introduction/welcome.html">
+                    Welcome
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Lab 0 - Jupyter Notebooks</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../lab_0/what_is_a_jupyter_notebook.html">What is a Jupyter Notebook?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lab_0/using_noteable.html">Getting started with Noteable</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/lab_3/logic.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Logic</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#logical-operators">Logical operators</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#and-and-or"><code class="docutils literal notranslate"><span class="pre">and</span></code> and <code class="docutils literal notranslate"><span class="pre">or</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-if">What <code class="docutils literal notranslate"><span class="pre">if</span></code>?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#combining-loops-and-logic">Combining loops and logic</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">Exercise</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="logic">
+<h1>Logic<a class="headerlink" href="#logic" title="Link to this heading">#</a></h1>
+<p>You may remember that in our <a class="reference internal" href="../lab_1/types.html"><span class="std std-doc">first lab</span></a> we came across <strong>boolean</strong> data:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>bool
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>bool
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">True</span></code> and <code class="docutils literal notranslate"><span class="pre">False</span></code> are <strong>reserved keywords</strong> that represent <strong>logical</strong> values.</p>
+<section id="logical-operators">
+<h2>Logical operators<a class="headerlink" href="#logical-operators" title="Link to this heading">#</a></h2>
+<p>Back in <a class="reference internal" href="../lab_1/using_python_as_a_calculator.html"><span class="std std-doc">lab 1</span></a>, we became familiar with the basic mathematical operators: <code class="docutils literal notranslate"><span class="pre">+</span></code>, <code class="docutils literal notranslate"><span class="pre">-</span></code>, <code class="docutils literal notranslate"><span class="pre">*</span></code>, <code class="docutils literal notranslate"><span class="pre">/</span></code>, <code class="docutils literal notranslate"><span class="pre">**</span></code> etc. Python also provides us with a suite of <strong>logical</strong> operators that evaluate whether a given expression is <code class="docutils literal notranslate"><span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
+<p>The simplest example is the <code class="docutils literal notranslate"><span class="pre">==</span></code> operator:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">5</span> <span class="o">==</span> <span class="mi">5</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">5</span> <span class="o">==</span> <span class="mi">6</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<p>This operator tests whether or not the values on either side are <strong>equal</strong> to one another. The examples above are somewhat trivial, but we could use the same syntax with variables:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">6</span>
+
+<span class="n">c</span> <span class="o">=</span> <span class="n">a</span> <span class="o">*</span> <span class="n">b</span>
+
+<span class="n">c</span> <span class="o">==</span> <span class="mi">30</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>It is <strong>very easy</strong> to confuse the “equals to” operator <code class="docutils literal notranslate"><span class="pre">==</span></code> with the <strong>assignment</strong> operator <code class="docutils literal notranslate"><span class="pre">=</span></code>, but they serve very different purposes. The <code class="docutils literal notranslate"><span class="pre">=</span></code> operator <strong>assigns</strong> the value or the right hand side to the variable name on the left, whilst the <code class="docutils literal notranslate"><span class="pre">==</span></code> operator is <strong>comparing</strong> the values on either side to see whether or not they are <strong>equal</strong> to one another.</p>
+<p>In short, <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">2</span></code> means “I am telling you that <code class="docutils literal notranslate"><span class="pre">a</span></code> <strong>is</strong> equal to <code class="docutils literal notranslate"><span class="pre">2</span></code>”, whereas <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">==</span> <span class="pre">2</span></code> means “Is <code class="docutils literal notranslate"><span class="pre">a</span></code> equal to <code class="docutils literal notranslate"><span class="pre">2</span></code>?”</p>
+</div>
+<p>Rather than testing whether or not two values are <strong>equal</strong> to one another, we can also test the exact opposite: whether or not two values are <strong>not equal</strong> to one another:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">5</span> <span class="o">!=</span> <span class="mi">6</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">5</span> <span class="o">!=</span> <span class="mi">5</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<p>A set of these comparitive operators can be found in the table below.</p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Condition</p></th>
+<th class="head"><p>Mathematical Notation</p></th>
+<th class="head"><p>Operator</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Equals</p></td>
+<td><p><span class="math notranslate nohighlight">\(=\)</span></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">==</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>Not equal to</p></td>
+<td><p><span class="math notranslate nohighlight">\(\neq\)</span></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">!=</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>Less than</p></td>
+<td><p><span class="math notranslate nohighlight">\(&lt;\)</span></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">&lt;</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>Less than or equal to</p></td>
+<td><p><span class="math notranslate nohighlight">\(\le\)</span></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">&lt;=</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>Greater than</p></td>
+<td><p><span class="math notranslate nohighlight">\(&gt;\)</span></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">&gt;</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>Greater than or equal to</p></td>
+<td><p><span class="math notranslate nohighlight">\(\ge\)</span></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">&gt;=</span></code></p></td>
+</tr>
+</tbody>
+</table>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">5</span> <span class="o">&lt;</span> <span class="mi">6</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">5</span> <span class="o">&gt;</span> <span class="mi">6</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<p>Just like the basic mathematical operations, these <strong>logical</strong> operators can cause errors if the <strong>types</strong> of the input data don’t make any sense:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">5</span> <span class="o">&lt;=</span> <span class="s1">&#39;ten&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">10</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="mi">5</span> <span class="o">&lt;=</span> <span class="s1">&#39;ten&#39;</span>
+
+<span class="ne">TypeError</span>: &#39;&lt;=&#39; not supported between instances of &#39;int&#39; and &#39;str&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition error">
+<p class="admonition-title">Error</p>
+<p>Here we get a <strong>TypeError</strong> because we are comparing an <code class="docutils literal notranslate"><span class="pre">int</span></code> and a <code class="docutils literal notranslate"><span class="pre">str</span></code> - we cannot compare the numerical value of an integer and a string!</p>
+</div>
+<p>In addition to the comparitive operators we have discussed so far, Python also allows us to test whether or not a given <strong>element</strong> can be found <strong>in</strong> a sequence:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;Fe&#39;</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;Cr&#39;</span><span class="p">,</span> <span class="s1">&#39;Mn&#39;</span><span class="p">,</span> <span class="s1">&#39;Fe&#39;</span><span class="p">,</span> <span class="s1">&#39;Co&#39;</span><span class="p">,</span> <span class="s1">&#39;Ni&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<p>The example above uses a <code class="docutils literal notranslate"><span class="pre">list</span></code>, but we can also search for <strong>letters</strong> in a <strong>string</strong>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;r&#39;</span> <span class="ow">in</span> <span class="s1">&#39;Iron&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;f&#39;</span> <span class="ow">in</span> <span class="s1">&#39;Iron&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<p>To perform the opposite test, we can use <code class="docutils literal notranslate"><span class="pre">not</span> <span class="pre">in</span></code> to see if a given element is <strong>not</strong> in a sequence:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;r&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="s1">&#39;Iron&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;f&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="s1">&#39;Iron&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<section id="and-and-or">
+<h3><code class="docutils literal notranslate"><span class="pre">and</span></code> and <code class="docutils literal notranslate"><span class="pre">or</span></code><a class="headerlink" href="#and-and-or" title="Link to this heading">#</a></h3>
+<p>We now have the toolkit to evaluate basic <strong>logical</strong> statements:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">favourite_colour</span> <span class="o">=</span> <span class="s1">&#39;purple&#39;</span> <span class="c1"># Assign &#39;purple&#39; to favourite_colour</span>
+
+<span class="n">favourite_colour</span> <span class="o">==</span> <span class="s1">&#39;red&#39;</span> <span class="c1"># Evaluate whether or not favourite_colour equals &#39;red&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<p>Notice the comments, this example highlights nicely the difference between the <code class="docutils literal notranslate"><span class="pre">=</span></code> and <code class="docutils literal notranslate"><span class="pre">==</span></code> operators.</p>
+<p>What if we want to <strong>combine</strong> logical operators? For example, what if we want to know whether a number is greater than 4, but less than 10? We already know how to test these two conditions separately:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">number</span> <span class="o">=</span> <span class="mi">11</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">number</span> <span class="o">&gt;</span> <span class="mi">4</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">number</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+False
+</pre></div>
+</div>
+</div>
+</div>
+<p>In this example, <span class="math notranslate nohighlight">\(11\)</span> is greater than <span class="math notranslate nohighlight">\(4\)</span>, so the first expression evaluates to <code class="docutils literal notranslate"><span class="pre">True</span></code>. <span class="math notranslate nohighlight">\(11\)</span> is also greater than <span class="math notranslate nohighlight">\(10\)</span> though, so the second expression evaluates to <code class="docutils literal notranslate"><span class="pre">False</span></code>. To combine these two logical operators, we can use the <code class="docutils literal notranslate"><span class="pre">and</span></code> keyword:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">number</span> <span class="o">&gt;</span> <span class="mi">4</span> <span class="ow">and</span> <span class="n">number</span> <span class="o">&lt;</span> <span class="mi">10</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now we get a single <code class="docutils literal notranslate"><span class="pre">bool</span></code>: <code class="docutils literal notranslate"><span class="pre">False</span></code>. The <code class="docutils literal notranslate"><span class="pre">and</span></code> keyword will only return <code class="docutils literal notranslate"><span class="pre">True</span></code> if both of the expressions on either side also evaluate to <code class="docutils literal notranslate"><span class="pre">True</span></code>. We have already seen that <code class="docutils literal notranslate"><span class="pre">number</span> <span class="pre">&lt;</span> <span class="pre">10</span></code> is <code class="docutils literal notranslate"><span class="pre">False</span></code>, hence the whole statement evaluates to <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
+<p>Rather than <code class="docutils literal notranslate"><span class="pre">and</span></code> we can also combine logical expressions with the <code class="docutils literal notranslate"><span class="pre">or</span></code> keyword:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">number</span> <span class="o">&gt;</span> <span class="mi">4</span> <span class="ow">or</span> <span class="n">number</span> <span class="o">&lt;</span> <span class="mi">10</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<p>Using the same expressions as before, we now find that by replacing <code class="docutils literal notranslate"><span class="pre">and</span></code> with <code class="docutils literal notranslate"><span class="pre">or</span></code>, the whole statement evaluates to <code class="docutils literal notranslate"><span class="pre">True</span></code>. The <code class="docutils literal notranslate"><span class="pre">or</span></code> keyword evalutes to <code class="docutils literal notranslate"><span class="pre">True</span></code> if <strong>either</strong> expression on either side is <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p>
+<p>We can summarise these new keywords with some very simple examples:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kc">True</span> <span class="ow">and</span> <span class="kc">True</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kc">True</span> <span class="ow">and</span> <span class="kc">False</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">and</span></code> keyword only evalutes to <code class="docutils literal notranslate"><span class="pre">True</span></code> if <strong>both</strong> expressions either side of it are also <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kc">True</span> <span class="ow">or</span> <span class="kc">True</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kc">True</span> <span class="ow">or</span> <span class="kc">False</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kc">False</span> <span class="ow">or</span> <span class="kc">False</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">or</span></code> keyword evalutes to <code class="docutils literal notranslate"><span class="pre">True</span></code> if <strong>either</strong> expression on either side of it are <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p>
+</section>
+</section>
+<section id="what-if">
+<h2>What <code class="docutils literal notranslate"><span class="pre">if</span></code>?<a class="headerlink" href="#what-if" title="Link to this heading">#</a></h2>
+<p>We now have the capability to test whether or not various expressions are <code class="docutils literal notranslate"><span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">False</span></code> in Python - why should you care?</p>
+<p>Imagine you’re playing a simple game with a friend. You think of a number between <span class="math notranslate nohighlight">\(1\)</span> and <span class="math notranslate nohighlight">\(10000\)</span>, and then you ask your friend to try and guess that number. If your friend guesses correctly, you congratulate them on their frankly astonishing luck and joke that they might think about buying a lottery ticket. If your friend guesses incorrectly, you give them a pat on the back and wish them better luck the next time they play one of your silly games. Let’s code this up in Python.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_number</span> <span class="o">=</span> <span class="mi">1298</span>
+<span class="n">success</span> <span class="o">=</span> <span class="s1">&#39;Congratulations!&#39;</span>
+<span class="n">failure</span> <span class="o">=</span> <span class="s1">&#39;Better luck next time!&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here we’ve declared most of the variables that we will need, the <code class="docutils literal notranslate"><span class="pre">number</span></code> that you thought up in your head, and two responses: one for if your friend guesses correctly (<code class="docutils literal notranslate"><span class="pre">success</span></code>) and one for if they fall short (<code class="docutils literal notranslate"><span class="pre">failure</span></code>). Now let’s say our imaginary friend guesses <code class="docutils literal notranslate"><span class="pre">1298</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">friend_guess</span> <span class="o">=</span> <span class="mi">1298</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We know how to verify if this guess is correct using <strong>logical operators</strong>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">friend_guess</span> <span class="o">==</span> <span class="n">my_number</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<p>Sure enough, my hypothetical friend’s luck is just <strong>wild</strong>. In this case, I want to <code class="docutils literal notranslate"><span class="pre">print</span></code> the <code class="docutils literal notranslate"><span class="pre">success</span></code> variable:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">success</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Congratulations!
+</pre></div>
+</div>
+</div>
+</div>
+<p>The decision making process we just went through manually can be written programmatically with an <code class="docutils literal notranslate"><span class="pre">if</span></code> statement:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">friend_guess</span> <span class="o">==</span> <span class="n">my_number</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">success</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Congratulations!
+</pre></div>
+</div>
+</div>
+</div>
+<p>An <code class="docutils literal notranslate"><span class="pre">if</span></code> statement can be used to make code <strong>conditional</strong>. In the example above, the <code class="docutils literal notranslate"><span class="pre">success</span></code> variable is only printed <strong>if</strong> <code class="docutils literal notranslate"><span class="pre">friend_guess</span></code> is equal to <code class="docutils literal notranslate"><span class="pre">my_number</span></code>. This can be written generically as:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">this_expression_evaluates_to_true</span><span class="p">:</span>
+    <span class="n">do_something</span>
+</pre></div>
+</div>
+<p>If the expression following the <code class="docutils literal notranslate"><span class="pre">if</span></code> keyword evaluates to <code class="docutils literal notranslate"><span class="pre">False</span></code>, then the code indented beneath <strong>will not run</strong>. If we want to specify what should happen in this case, we can use the <code class="docutils literal notranslate"><span class="pre">else</span></code> keyword:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">friend_guess</span> <span class="o">=</span> <span class="mi">2525</span>
+
+<span class="k">if</span> <span class="n">friend_guess</span> <span class="o">==</span> <span class="n">my_number</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">success</span><span class="p">)</span>
+
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">failure</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Better luck next time!
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here we have changed <code class="docutils literal notranslate"><span class="pre">friend_guess</span></code> to a different number, so <code class="docutils literal notranslate"><span class="pre">friend_guess</span> <span class="pre">==</span> <span class="pre">my_number</span></code> is now <code class="docutils literal notranslate"><span class="pre">False</span></code> and <code class="docutils literal notranslate"><span class="pre">print(success)</span></code> does not run. If the expression associated with an <code class="docutils literal notranslate"><span class="pre">if</span></code> statement is <code class="docutils literal notranslate"><span class="pre">False</span></code>, then the following <code class="docutils literal notranslate"><span class="pre">else</span></code> block will run instead, here printing the <code class="docutils literal notranslate"><span class="pre">failure</span></code> message.</p>
+<p>Switching to a much less contrived example, sometimes we want to test more than one condition in an <code class="docutils literal notranslate"><span class="pre">if</span></code> statement:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">25</span>
+
+<span class="k">if</span> <span class="n">a</span> <span class="o">&lt;</span> <span class="mi">30</span> <span class="ow">and</span> <span class="n">a</span> <span class="o">%</span> <span class="mi">5</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">a</span><span class="si">}</span><span class="s1"> is less than 30 and divisible by 5.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>25 is less than 30 and divisible by 5.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition-reminder admonition">
+<p class="admonition-title">Reminder</p>
+<p>The <strong>modulo</strong> operator <code class="docutils literal notranslate"><span class="pre">%</span></code> computes the remainder after dividing one number by another.</p>
+</div>
+<p>We can do this, as shown above, by using the <code class="docutils literal notranslate"><span class="pre">and</span></code> and <code class="docutils literal notranslate"><span class="pre">or</span></code> keywords described previously. But what if we want to <code class="docutils literal notranslate"><span class="pre">print</span></code> a different message if <code class="docutils literal notranslate"><span class="pre">a</span></code> is less than <span class="math notranslate nohighlight">\(30\)</span> but <strong>not</strong> divisible by <span class="math notranslate nohighlight">\(5\)</span>?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">26</span>
+
+<span class="k">if</span> <span class="n">a</span> <span class="o">&lt;</span> <span class="mi">30</span> <span class="ow">and</span> <span class="n">a</span> <span class="o">%</span> <span class="mi">5</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;25 is less than 30 and divisible by 5.&#39;</span><span class="p">)</span>
+
+<span class="k">elif</span> <span class="n">a</span> <span class="o">&lt;</span> <span class="mi">30</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">a</span><span class="si">}</span><span class="s1"> is less than 30 but not divisible by 5.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>26 is less than 30 but not divisible by 5.
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here we have introduced an <code class="docutils literal notranslate"><span class="pre">elif</span></code> (“else-if”) statement. Our code firstly checks if <code class="docutils literal notranslate"><span class="pre">a</span></code> is less than <span class="math notranslate nohighlight">\(30\)</span> <code class="docutils literal notranslate"><span class="pre">and</span></code> divisible by <span class="math notranslate nohighlight">\(5\)</span>. Failing that, we then perform a <strong>second check</strong> to see whether <code class="docutils literal notranslate"><span class="pre">a</span></code> is less than <span class="math notranslate nohighlight">\(30\)</span>. In this example, the statement after the <code class="docutils literal notranslate"><span class="pre">elif</span></code> keyword evalutes to <code class="docutils literal notranslate"><span class="pre">True</span></code>, so that block of code runs.</p>
+<p>We can add an additional <code class="docutils literal notranslate"><span class="pre">elif</span></code> block to account for another possibility:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">35</span>
+
+<span class="k">if</span> <span class="n">a</span> <span class="o">&lt;</span> <span class="mi">30</span> <span class="ow">and</span> <span class="n">a</span> <span class="o">%</span> <span class="mi">5</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;25 is less than 30 and divisible by 5.&#39;</span><span class="p">)</span>
+
+<span class="k">elif</span> <span class="n">a</span> <span class="o">&lt;</span> <span class="mi">30</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">a</span><span class="si">}</span><span class="s1"> is less than 30 but not divisible by 5.&#39;</span><span class="p">)</span>
+
+<span class="k">elif</span> <span class="n">a</span> <span class="o">%</span> <span class="mi">5</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">a</span><span class="si">}</span><span class="s1"> is greater than 30 but divisible by 5.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>35 is greater than 30 but divisible by 5.
+</pre></div>
+</div>
+</div>
+</div>
+<p>And finally, we can add an <code class="docutils literal notranslate"><span class="pre">else</span></code> block to cover the only other reasonable possibility:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">37</span>
+
+<span class="k">if</span> <span class="n">a</span> <span class="o">&lt;</span> <span class="mi">30</span> <span class="ow">and</span> <span class="n">a</span> <span class="o">%</span> <span class="mi">5</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;25 is less than 30 and divisible by 5.&#39;</span><span class="p">)</span>
+
+<span class="k">elif</span> <span class="n">a</span> <span class="o">&lt;</span> <span class="mi">30</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">a</span><span class="si">}</span><span class="s1"> is less than 30 but not divisible by 5.&#39;</span><span class="p">)</span>
+
+<span class="k">elif</span> <span class="n">a</span> <span class="o">%</span> <span class="mi">5</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">a</span><span class="si">}</span><span class="s1"> is greater than 30 but divisible by 5.&#39;</span><span class="p">)</span>
+
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">a</span><span class="si">}</span><span class="s1"> is greater than 30 and is not divisible by 5.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>37 is greater than 30 and is not divisible by 5.
+</pre></div>
+</div>
+</div>
+</div>
+<p>We are thus able to make our code run differently depending on the value of <code class="docutils literal notranslate"><span class="pre">a</span></code>.</p>
+</section>
+<section id="combining-loops-and-logic">
+<h2>Combining loops and logic<a class="headerlink" href="#combining-loops-and-logic" title="Link to this heading">#</a></h2>
+<p>All of our examples so far have been relatively simple individual logical statements, but there is no reason that we cannot apply logical operations in <strong>loops</strong>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">number</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">22</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">number</span> <span class="o">%</span> <span class="mi">3</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">number</span><span class="si">}</span><span class="s1"> is divisible by 3.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3 is divisible by 3.
+6 is divisible by 3.
+9 is divisible by 3.
+12 is divisible by 3.
+15 is divisible by 3.
+18 is divisible by 3.
+21 is divisible by 3.
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here we have combined a simple <code class="docutils literal notranslate"><span class="pre">if</span></code> statement with a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop to find all of the multiples of <span class="math notranslate nohighlight">\(3\)</span> between <span class="math notranslate nohighlight">\(1\)</span> and <span class="math notranslate nohighlight">\(21\)</span>.</p>
+<p>In addition to all the <strong>logic</strong> we have learnt about thus far, there are two useful <strong>keywords</strong> that are relevant specifically to using logic in <strong>loops</strong>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">number</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">101</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">number</span> <span class="o">&gt;</span> <span class="mi">10</span><span class="p">:</span>
+        <span class="k">break</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;We have broken out of the loop!&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+We have broken out of the loop!
+</pre></div>
+</div>
+</div>
+</div>
+<p>In the example above, we are looping over numbers between <span class="math notranslate nohighlight">\(1\)</span> and <span class="math notranslate nohighlight">\(100\)</span>. The <code class="docutils literal notranslate"><span class="pre">if</span></code> statement checks if <code class="docutils literal notranslate"><span class="pre">number</span></code> is greater than <span class="math notranslate nohighlight">\(10\)</span>, and if it is, the <code class="docutils literal notranslate"><span class="pre">break</span></code> keyword is run. As the name implies, the <code class="docutils literal notranslate"><span class="pre">break</span></code> keyword breaks us out of the loop: it stop the rest of the iterations that would otherwise have run from occurring. You can see this happening above because as soon as <code class="docutils literal notranslate"><span class="pre">10</span></code> is printed, no more numbers are displayed and instead the <code class="docutils literal notranslate"><span class="pre">'We</span> <span class="pre">have</span> <span class="pre">broken</span> <span class="pre">out</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">loop!'</span></code> message is seen, which should only be printed <strong>after</strong> the loop has finished.</p>
+<p>The other keyword that pairs nicely with the logic we have learnt is <code class="docutils literal notranslate"><span class="pre">continue</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">number</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">101</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">number</span> <span class="o">%</span> <span class="mi">5</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">continue</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5
+10
+15
+20
+25
+30
+35
+40
+45
+50
+55
+60
+65
+70
+75
+80
+85
+90
+95
+100
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here we are testing whether or not <code class="docutils literal notranslate"><span class="pre">number</span></code> is <strong>not</strong> divisible by <code class="docutils literal notranslate"><span class="pre">5</span></code>. If <code class="docutils literal notranslate"><span class="pre">number</span></code> <strong>is</strong> divisible by <code class="docutils literal notranslate"><span class="pre">5</span></code>, then the <code class="docutils literal notranslate"><span class="pre">continue</span></code> keyword does not run and we <code class="docutils literal notranslate"><span class="pre">print</span></code> the <code class="docutils literal notranslate"><span class="pre">number</span></code>. If the <code class="docutils literal notranslate"><span class="pre">number</span></code> is <strong>not</strong> divisible by <code class="docutils literal notranslate"><span class="pre">5</span></code>, then the <code class="docutils literal notranslate"><span class="pre">continue</span></code> keyword is run and this <strong>immediately skips us to the next iteration of the loop</strong>. The end result is that <code class="docutils literal notranslate"><span class="pre">print(number)</span></code> only runs if <code class="docutils literal notranslate"><span class="pre">number</span></code> is a multiple of <code class="docutils literal notranslate"><span class="pre">5</span></code>.</p>
+<p>So, to summarise:</p>
+<p><code class="docutils literal notranslate"><span class="pre">break</span></code> - When this runs, we exit the loop immediately.</p>
+<p><code class="docutils literal notranslate"><span class="pre">continue</span></code> - When this runs, we skip the rest of the code in the loop and immediately skip to its next iteration.</p>
+</section>
+<section id="exercise">
+<h2>Exercise<a class="headerlink" href="#exercise" title="Link to this heading">#</a></h2>
+<p><strong>1.</strong></p>
+<p>a) Write a program that can tell whether or not a word has any <strong>vowels</strong> in it.</p>
+<p>b) Extend your program by checking if the word contains no vowels <strong>and</strong> does not contain the letter <code class="docutils literal notranslate"><span class="pre">t</span></code>.</p>
+<p><strong>2.</strong> Imagine that you are playing “<a class="reference external" href="https://en.wikipedia.org/wiki/Rock_paper_scissors">Rock, Paper, Scissors</a>” with a friend - they have (unbeknownst to you) picked <strong>rock</strong>.</p>
+<p>Write some Python to decide who wins depending upon <strong>your</strong> weapon of choice.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./lab_3"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#logical-operators">Logical operators</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#and-and-or"><code class="docutils literal notranslate"><span class="pre">and</span></code> and <code class="docutils literal notranslate"><span class="pre">or</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-if">What <code class="docutils literal notranslate"><span class="pre">if</span></code>?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#combining-loops-and-logic">Combining loops and logic</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">Exercise</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Patrick J. Taylor & Benjamin J. Morgan
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

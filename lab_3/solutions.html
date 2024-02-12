@@ -1,0 +1,731 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Synoptic Exercises &#8212; CH12004: Skills for chemists</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'lab_3/solutions';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../introduction/welcome.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="CH12004: Skills for chemists - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="CH12004: Skills for chemists - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../introduction/welcome.html">
+                    Welcome
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Lab 0 - Jupyter Notebooks</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../lab_0/what_is_a_jupyter_notebook.html">What is a Jupyter Notebook?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lab_0/using_noteable.html">Getting started with Noteable</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/lab_3/solutions.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Synoptic Exercises</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="synoptic-exercises">
+<h1>Synoptic Exercises<a class="headerlink" href="#synoptic-exercises" title="Link to this heading">#</a></h1>
+<p>Okay folks, time to get <em>loopy</em>.</p>
+<p><strong>1.</strong> Write a program to play “<a class="reference external" href="https://en.wikipedia.org/wiki/Fizz_buzz">Fizz Buzz</a>”. Your code should loop over numbers between <span class="math notranslate nohighlight">\(1\)</span> and <span class="math notranslate nohighlight">\(100\)</span>, printing <code class="docutils literal notranslate"><span class="pre">'Fizz'</span></code> for those that are divisible by <span class="math notranslate nohighlight">\(3\)</span>, <code class="docutils literal notranslate"><span class="pre">'Buzz'</span></code> for those divisible by <span class="math notranslate nohighlight">\(5\)</span> and <code class="docutils literal notranslate"><span class="pre">'Fizz</span> <span class="pre">Buzz'</span></code> for those divisible by both <span class="math notranslate nohighlight">\(3\)</span> and <span class="math notranslate nohighlight">\(5\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">number</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">101</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">number</span> <span class="o">%</span> <span class="mi">3</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">number</span> <span class="o">%</span> <span class="mi">5</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Fizz Buzz&#39;</span><span class="p">)</span>
+
+    <span class="k">elif</span> <span class="n">number</span> <span class="o">%</span> <span class="mi">3</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Fizz&#39;</span><span class="p">)</span>
+
+    <span class="k">elif</span> <span class="n">number</span> <span class="o">%</span> <span class="mi">5</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Buzz&#39;</span><span class="p">)</span>
+
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+2
+Fizz
+4
+Buzz
+Fizz
+7
+8
+Fizz
+Buzz
+11
+Fizz
+13
+14
+Fizz Buzz
+16
+17
+Fizz
+19
+Buzz
+Fizz
+22
+23
+Fizz
+Buzz
+26
+Fizz
+28
+29
+Fizz Buzz
+31
+32
+Fizz
+34
+Buzz
+Fizz
+37
+38
+Fizz
+Buzz
+41
+Fizz
+43
+44
+Fizz Buzz
+46
+47
+Fizz
+49
+Buzz
+Fizz
+52
+53
+Fizz
+Buzz
+56
+Fizz
+58
+59
+Fizz Buzz
+61
+62
+Fizz
+64
+Buzz
+Fizz
+67
+68
+Fizz
+Buzz
+71
+Fizz
+73
+74
+Fizz Buzz
+76
+77
+Fizz
+79
+Buzz
+Fizz
+82
+83
+Fizz
+Buzz
+86
+Fizz
+88
+89
+Fizz Buzz
+91
+92
+Fizz
+94
+Buzz
+Fizz
+97
+98
+Fizz
+Buzz
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>2.</strong> You have been provided with the melting and boiling points of various metals:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">metals</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Fe&#39;</span><span class="p">,</span> <span class="s1">&#39;Al&#39;</span><span class="p">,</span> <span class="s1">&#39;Hg&#39;</span><span class="p">,</span> <span class="s1">&#39;Ti&#39;</span><span class="p">,</span> <span class="s1">&#39;Pb&#39;</span><span class="p">]</span>
+<span class="n">melting_points</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1811</span><span class="p">,</span> <span class="mi">933</span><span class="p">,</span> <span class="mi">234</span><span class="p">,</span> <span class="mi">1941</span><span class="p">,</span> <span class="mi">601</span><span class="p">]</span>
+<span class="n">boiling_points</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3134</span><span class="p">,</span> <span class="mi">2743</span><span class="p">,</span> <span class="mi">630</span><span class="p">,</span> <span class="mi">3560</span><span class="p">,</span> <span class="mi">2022</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Using a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop, determine whether each metal is a solid, liquid or gas at <span class="math notranslate nohighlight">\(500\,\)</span>K.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">metals</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Fe&#39;</span><span class="p">,</span> <span class="s1">&#39;Al&#39;</span><span class="p">,</span> <span class="s1">&#39;Hg&#39;</span><span class="p">,</span> <span class="s1">&#39;Ti&#39;</span><span class="p">,</span> <span class="s1">&#39;Pb&#39;</span><span class="p">]</span>
+<span class="n">melting_points</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1811</span><span class="p">,</span> <span class="mi">933</span><span class="p">,</span> <span class="mi">234</span><span class="p">,</span> <span class="mi">1941</span><span class="p">,</span> <span class="mi">601</span><span class="p">]</span>
+<span class="n">boiling_points</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3134</span><span class="p">,</span> <span class="mi">2743</span><span class="p">,</span> <span class="mi">630</span><span class="p">,</span> <span class="mi">3560</span><span class="p">,</span> <span class="mi">2022</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">metal</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">metals</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">boiling_points</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">500</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">metal</span><span class="si">}</span><span class="s1"> is a gas at 500 K.&#39;</span><span class="p">)</span>
+
+    <span class="k">elif</span> <span class="n">melting_points</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">500</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">metal</span><span class="si">}</span><span class="s1"> is a liquid at 500 K.&#39;</span><span class="p">)</span>
+
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">metal</span><span class="si">}</span><span class="s1"> is a solid at 500 K.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Fe is a solid at 500 K.
+Al is a solid at 500 K.
+Hg is a liquid at 500 K.
+Ti is a solid at 500 K.
+Pb is a solid at 500 K.
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>3.</strong> Consider <span class="math notranslate nohighlight">\(5.00 \times 10^{-2}\,\)</span>moles of an ideal gas in a <span class="math notranslate nohighlight">\(1.00 \times 10^{-3}\,\)</span>m<span class="math notranslate nohighlight">\(^{3}\)</span> container.</p>
+<p>Calculate the pressure at each temperature between <span class="math notranslate nohighlight">\(100\)</span> and <span class="math notranslate nohighlight">\(1000\,\)</span>K in steps of <span class="math notranslate nohighlight">\(50\,\)</span>K and append these values to a <code class="docutils literal notranslate"><span class="pre">list</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">scipy</span>
+
+<span class="n">pressures</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="n">n</span> <span class="o">=</span> <span class="mf">5.00e-02</span>
+<span class="n">V</span> <span class="o">=</span> <span class="mf">1.00e-03</span>
+
+<span class="k">for</span> <span class="n">temperature</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">1150</span><span class="p">,</span> <span class="mi">50</span><span class="p">):</span>
+    <span class="n">pressure</span> <span class="o">=</span> <span class="p">(</span><span class="n">n</span> <span class="o">*</span> <span class="n">scipy</span><span class="o">.</span><span class="n">constants</span><span class="o">.</span><span class="n">R</span> <span class="o">*</span> <span class="n">temperature</span><span class="p">)</span> <span class="o">/</span> <span class="n">V</span>
+
+    <span class="n">pressures</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">pressure</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;The pressure (in Pa) at each temperature: </span><span class="si">{</span><span class="n">pressures</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The pressure (in Pa) at each temperature: [41572.31309, 62358.469635, 83144.62618, 103930.782725, 124716.93927, 145503.09581499998, 166289.25236, 187075.40890500002, 207861.56545, 228647.721995, 249433.87854, 270220.035085, 291006.19162999996, 311792.34817500005, 332578.50472, 353364.661265, 374150.81781000004, 394936.974355, 415723.1309, 436509.287445, 457295.44399]
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>4.</strong> Recall the previous exercise in <a class="reference internal" href="../lab_1/synoptic_exercises.html"><span class="std std-doc">lab 1</span></a> in which we calculated various lines in the Hydrogen emission spectrum using the following equation:</p>
+<div class="math notranslate nohighlight">
+\[\frac{1}{\lambda} = R_{\mathrm{H}}\left[\frac{1}{n_{1}^{2}} - \frac{1}{n_{2}^{2}}\right],\]</div>
+<p>where <span class="math notranslate nohighlight">\(\lambda\)</span> is the wavelength, <span class="math notranslate nohighlight">\(R_{\mathrm{H}}\)</span> is the Rydberg constant, <span class="math notranslate nohighlight">\(n_{1}\)</span> is the principal quantum number of the emission state and <span class="math notranslate nohighlight">\(n_{2}\)</span> is the principal quantum number of the excited state.</p>
+<p>a) Write a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop to <code class="docutils literal notranslate"><span class="pre">print</span></code> the wavelengths (<strong>in nanometres</strong>) of the first <span class="math notranslate nohighlight">\(10\)</span> lines of the Balmer series (<span class="math notranslate nohighlight">\(n_{1} = 2\)</span>).</p>
+<p>b) Add one additional loop to your code so that it can <code class="docutils literal notranslate"><span class="pre">print</span></code> the wavelengths of the first <span class="math notranslate nohighlight">\(10\)</span> lines in the Lyman, Balmer and Paschen series.</p>
+<p>c) Create three <strong>empty lists</strong> called <code class="docutils literal notranslate"><span class="pre">lyman</span></code>, <code class="docutils literal notranslate"><span class="pre">balmer</span></code> and <code class="docutils literal notranslate"><span class="pre">paschen</span></code>.</p>
+<p>Add some <a class="reference internal" href="logic.html"><span class="std std-doc">logic</span></a> to your code from b) so that, rather than printing each wavelength to the screen, each value is stored in the appropriate <code class="docutils literal notranslate"><span class="pre">list</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n_1</span> <span class="o">=</span> <span class="mi">2</span>
+
+<span class="k">for</span> <span class="n">n_2</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">13</span><span class="p">):</span>
+    <span class="n">wavelength</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="n">scipy</span><span class="o">.</span><span class="n">constants</span><span class="o">.</span><span class="n">Rydberg</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="n">n_1</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">/</span> <span class="n">n_2</span> <span class="o">**</span> <span class="mi">2</span><span class="p">))</span>
+    <span class="n">wavelength</span> <span class="o">*=</span> <span class="mi">10</span> <span class="o">**</span> <span class="mi">9</span> <span class="c1"># Convert to nanometres</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">wavelength</span><span class="si">}</span><span class="s1"> nm&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>656.112276419319 nm
+486.0090936439399 nm
+433.93669075351784 nm
+410.0701727620744 nm
+396.9074264758843 nm
+388.807274915152 nm
+383.44223946583577 nm
+379.6946044093281 nm
+376.9685918648509 nm
+374.92130081103943 nm
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">n_1</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;n_1 = </span><span class="si">{</span><span class="n">n_1</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">n_2</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_1</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">n_1</span> <span class="o">+</span> <span class="mi">11</span><span class="p">):</span>
+        <span class="n">wavelength</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="n">scipy</span><span class="o">.</span><span class="n">constants</span><span class="o">.</span><span class="n">Rydberg</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="n">n_1</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">/</span> <span class="n">n_2</span> <span class="o">**</span> <span class="mi">2</span><span class="p">))</span>
+        <span class="n">wavelength</span> <span class="o">*=</span> <span class="mi">10</span> <span class="o">**</span> <span class="mi">9</span> <span class="c1"># Convert to nanometres</span>
+
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">wavelength</span><span class="si">}</span><span class="s1"> nm&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>n_1 = 1
+121.50227341098497 nm
+102.5175431905186 nm
+97.201818728788 nm
+94.92365110233203 nm
+93.73032520275986 nm
+93.0251780802854 nm
+92.57316069408381 nm
+92.26578887146674 nm
+92.04717682650379 nm
+91.88609426705739 nm
+n_1 = 2
+656.112276419319 nm
+486.0090936439399 nm
+433.93669075351784 nm
+410.0701727620744 nm
+396.9074264758843 nm
+388.807274915152 nm
+383.44223946583577 nm
+379.6946044093281 nm
+376.9685918648509 nm
+374.92130081103943 nm
+n_1 = 3
+1874.6065040551973 nm
+1281.4692898814824 nm
+1093.520460698865 nm
+1004.6719232670822 nm
+954.3451293371911 nm
+922.6578887146674 nm
+901.2531269496139 nm
+886.0444804323394 nm
+874.816368559092 nm
+866.2732399598821 nm
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lyman</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">balmer</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">paschen</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">n_1</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">n_2</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_1</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">n_1</span> <span class="o">+</span> <span class="mi">11</span><span class="p">):</span>
+        <span class="n">wavelength</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="n">scipy</span><span class="o">.</span><span class="n">constants</span><span class="o">.</span><span class="n">Rydberg</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="n">n_1</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">/</span> <span class="n">n_2</span> <span class="o">**</span> <span class="mi">2</span><span class="p">))</span>
+        <span class="n">wavelength</span> <span class="o">*=</span> <span class="mi">10</span> <span class="o">**</span> <span class="mi">9</span> <span class="c1"># Convert to nanometres</span>
+
+        <span class="k">if</span> <span class="n">n_1</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">lyman</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">wavelength</span><span class="p">)</span>
+
+        <span class="k">elif</span> <span class="n">n_1</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+            <span class="n">balmer</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">wavelength</span><span class="p">)</span>
+
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">paschen</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">wavelength</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">lyman</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">balmer</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">paschen</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[121.50227341098497, 102.5175431905186, 97.201818728788, 94.92365110233203, 93.73032520275986, 93.0251780802854, 92.57316069408381, 92.26578887146674, 92.04717682650379, 91.88609426705739]
+[656.112276419319, 486.0090936439399, 433.93669075351784, 410.0701727620744, 396.9074264758843, 388.807274915152, 383.44223946583577, 379.6946044093281, 376.9685918648509, 374.92130081103943]
+[1874.6065040551973, 1281.4692898814824, 1093.520460698865, 1004.6719232670822, 954.3451293371911, 922.6578887146674, 901.2531269496139, 886.0444804323394, 874.816368559092, 866.2732399598821]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./lab_3"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Patrick J. Taylor & Benjamin J. Morgan
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
