@@ -8,7 +8,6 @@ parts:
     chapters:
       - file: lab_0/what_is_a_jupyter_notebook.md
       - file: lab_0/using_noteable.md
-      - file: lab_0/the_notebook_interface.md
   - caption: Lab 1 - Fundamentals
     chapters:
       - file: lab_1/getting_started.ipynb
@@ -40,6 +39,7 @@ parts:
       - file: lab_5/matplotlib.ipynb
       - file: lab_5/synoptic_exercises.ipynb
 
-  - caption: Miscellaneous
+  - caption: Resources
     chapters:
-      - file: glossary.ipynb
+      - file: resources/the_notebook_interface.md
+      - file: resources/glossary.ipynb
