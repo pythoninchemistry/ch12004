@@ -4,14 +4,15 @@
 format: jb-book
 root: introduction/welcome
 parts:
-  - caption: Preface - Jupyter Notebooks
+  - caption: Lab 0 - Jupyter Notebooks
     chapters:
-      - file: preface/what_is_a_jupyter_notebook.md
-      - file: preface/using_noteable.md
-      - file: preface/the_notebook_interface.md
+      - file: lab_0/what_is_a_jupyter_notebook.md
+      - file: lab_0/using_noteable.md
+      - file: lab_0/the_notebook_interface.md
   - caption: Lab 1 - Fundamentals
     chapters:
-      - file: lab_1/using_python_as_a_calculator
+      - file: lab_1/getting_started.ipynb
+      - file: lab_1/using_python_as_a_calculator.ipynb
       - file: lab_1/variables.ipynb
       - file: lab_1/strings.ipynb
       - file: lab_1/types.ipynb
