@@ -3,4 +3,4 @@ matplotlib
 numpy
 ghp-import
 scipy
-sqlalchemy<=2.0.26
+sphinx-book-theme<=1.1.0
