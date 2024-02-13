@@ -49,10 +49,10 @@ A **markdown cell** contains text formatted using [Markdown](https://www.markdow
 When a **markdown cell** is run, the markdown is converted into HTML, with the formatted text then shown _in place_ of the cell.
 **Markdown cells** can be used to include formatted text, mathetmatical equations, images, tables, and more types of rich media.
 
-![](https://github.com/pythoninchemistry/ch40208/raw/main/CH40208/notebooks_introduction/images/md_cell.png)
+![](images/md_cell.png)
 This figure shows a markdown cell being edited, with raw markdown entered.
 
-![](https://github.com/pythoninchemistry/ch40208/raw/main/CH40208/notebooks_introduction/images/formatted_md.png)
+![](images/formatted_md.png)
 This figure shows the same cell after it has been run, with the markdown converted to formatted text.
 
 ### Raw cells
@@ -61,7 +61,7 @@ Input entered into **Raw cells** is not converted when the cell is run. These ce
 ### Switching cell type.
 Cells can be switched between **code** and **markdown** using the **Cell** &rarr; **Cell Type**  menu options:
 
-![](https://github.com/pythoninchemistry/ch40208/raw/main/CH40208/notebooks_introduction/images/cell_switch.png)
+![](images/cell_switch.png)
 
 You can also switch between cell types in **commmand mode** (see below) using the keyboard shortcuts `Y` for **code**, `M` for **markdown**, and `R` for **raw**.
 
@@ -73,17 +73,17 @@ A cell is marked as **active** if it is highlighted. The colour of the highlight
 
 **Command mode** is indicated by a blue highlight. When you are in command mode you can use **keyboard shortcuts** to cut, paste, and move cells, etc. You can see all the **keyboard shortcuts** under `Help` &#8594; `Keyboard Shortcuts`.
 
-![](https://github.com/pythoninchemistry/ch40208/raw/main/CH40208/notebooks_introduction/images/command_mode.png)
+![](images/command_mode.png)
 
 #### Edit mode
 
 If you are in **command mode** then pressing `Enter` or clicking in the input text area of a cell will switch you to **edit mode**. **Edit mode** is indicated by a green highlight, and a pencil icon in the top right of the Notebook window.
 
-![](https://github.com/pythoninchemistry/ch40208/raw/main/CH40208/notebooks_introduction/images/edit_mode.png)
+![](images/edit_mode.png)
 
 Typing now inserts text into the currently active cell:
 
-![](https://github.com/pythoninchemistry/ch40208/raw/main/CH40208/notebooks_introduction/images/edit_mode_filled.png)
+![](images/edit_mode_filled.png)
 
 To get out of **Edit Mode**, and back into **Command Mode**, press `Esc` or click outside the text entry area.
 
