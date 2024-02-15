@@ -1,0 +1,5 @@
+EXAMPLE TEXT FILE
+
+Here is some text.
+Here is some more text.
+This new text was added in Python!
