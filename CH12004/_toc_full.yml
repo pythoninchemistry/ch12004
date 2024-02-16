@@ -25,6 +25,7 @@ parts:
   - caption: Lab 3 - Loops and logic
     chapters:
       - file: lab_3/loops.ipynb
+      - file: lab_3/nested_loops.ipynb
       - file: lab_3/logic.ipynb
       - file: lab_3/synoptic_exercises.ipynb
   - caption: Lab 4 - Functions and errors
