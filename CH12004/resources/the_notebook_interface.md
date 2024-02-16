@@ -45,7 +45,7 @@ This cell has then been [run](heading:running-cells), which executes (runs) the 
 
 ### Markdown cells
 
-A **markdown cell** contains text formatted using [Markdown](https://www.markdownguide.org/basic-syntax/), which is a lightweight markup language that can be used for writing formatte text. 
+A **markdown cell** contains text formatted using [Markdown](https://www.markdownguide.org/basic-syntax/), which is a lightweight markup language that can be used for writing formatted text. 
 When a **markdown cell** is run, the markdown is converted into HTML, with the formatted text then shown _in place_ of the cell.
 **Markdown cells** can be used to include formatted text, mathetmatical equations, images, tables, and more types of rich media.
 
