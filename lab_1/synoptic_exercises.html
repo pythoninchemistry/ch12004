@@ -422,7 +422,7 @@ This code uses the following expression for the root mean square speed of a mole
 <span class="c1"># You do not have to include the imports above if you have already imported math and scipy in your notebook.</span>
 
 <span class="n">temperature</span> <span class="o">=</span> <span class="mi">500</span>
-<span class="n">molar_mass</span> <span class="o">=</span> <span class="mf">31.998</span> <span class="c1"># molar mass of an oxygen molecule</span>
+<span class="n">molar_mass</span> <span class="o">=</span> <span class="mf">31.998</span> <span class="o">/</span> <span class="mi">1000</span> <span class="c1"># molar mass of an oxygen molecule in kgmol-1</span>
 
 <span class="c1"># Calculate the root mean square speed of an oxygen molecule at 500 K</span>
 <span class="n">rms_speed</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">{</span><span class="mi">3</span> <span class="o">*</span> <span class="n">scipy</span><span class="o">.</span><span class="n">constants</span><span class="o">.</span><span class="n">R</span> <span class="o">*</span> <span class="n">temperature</span> <span class="o">/</span> <span class="n">molar_mass</span><span class="p">}</span>
