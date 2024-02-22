@@ -62,6 +62,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'lab_1/solutions';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="The Jupyter Notebook interface" href="../resources/the_notebook_interface.html" />
+    <link rel="prev" title="Synoptic exercises" href="synoptic_exercises.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -123,8 +125,6 @@
       
       
       
-        
-      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -184,13 +184,14 @@
 <li class="toctree-l1"><a class="reference internal" href="../lab_0/using_noteable.html">Getting started with Noteable</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Lab 1 - Fundamentals</span></p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="using_python_as_a_calculator.html">Using Python as a calculator</a></li>
 <li class="toctree-l1"><a class="reference internal" href="variables.html">Variables</a></li>
 <li class="toctree-l1"><a class="reference internal" href="strings.html">Strings</a></li>
 <li class="toctree-l1"><a class="reference internal" href="types.html">Types</a></li>
 <li class="toctree-l1"><a class="reference internal" href="synoptic_exercises.html">Synoptic exercises</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Solutions</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Resources</span></p>
 <ul class="nav bd-sidenav">
@@ -377,21 +378,36 @@ document.write(`
 <p>where <span class="math notranslate nohighlight">\(\lambda\)</span> is the wavelength, <span class="math notranslate nohighlight">\(R_{\mathrm{H}}\)</span> is the Rydberg constant and <span class="math notranslate nohighlight">\(n_{2}\)</span> is the principal quantum number of the excited state. <span class="math notranslate nohighlight">\(n_{1} = 1\)</span> for the Lyman series, <span class="math notranslate nohighlight">\(2\)</span> for the Balmer series and <span class="math notranslate nohighlight">\(3\)</span> for the Paschen series.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lyman</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="n">scipy</span><span class="o">.</span><span class="n">constants</span><span class="o">.</span><span class="n">Rydberg</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="mi">1</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">**</span> <span class="mi">2</span><span class="p">))</span>
-<span class="n">balmer</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="n">scipy</span><span class="o">.</span><span class="n">constants</span><span class="o">.</span><span class="n">Rydberg</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">/</span> <span class="mi">3</span> <span class="o">**</span> <span class="mi">2</span><span class="p">))</span>
-<span class="n">paschen</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="n">scipy</span><span class="o">.</span><span class="n">constants</span><span class="o">.</span><span class="n">Rydberg</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="mi">3</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">/</span> <span class="mi">4</span> <span class="o">**</span> <span class="mi">2</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n_1</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">n_2</span> <span class="o">=</span> <span class="mi">2</span>
 
-<span class="c1"># Convert to nm</span>
-<span class="n">lyman</span> <span class="o">*=</span> <span class="mi">10</span> <span class="o">**</span> <span class="mi">9</span>
-<span class="n">balmer</span> <span class="o">*=</span> <span class="mi">10</span> <span class="o">**</span> <span class="mi">9</span>
-<span class="n">paschen</span> <span class="o">*=</span> <span class="mi">10</span> <span class="o">**</span> <span class="mi">9</span>
+<span class="n">wavelength</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="n">scipy</span><span class="o">.</span><span class="n">constants</span><span class="o">.</span><span class="n">Rydberg</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="n">n_1</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">/</span> <span class="n">n_2</span> <span class="o">**</span> <span class="mi">2</span><span class="p">))</span>
+<span class="n">wavelength</span> <span class="o">*=</span> <span class="mi">10</span> <span class="o">**</span> <span class="mi">9</span> <span class="c1"># Convert to nm</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;The first lines of the Lyman, Balmer and Paschen series occur at </span><span class="si">{</span><span class="n">lyman</span><span class="si">}</span><span class="s1"> nm, </span><span class="si">{</span><span class="n">balmer</span><span class="si">}</span><span class="s1"> nm and </span><span class="si">{</span><span class="n">paschen</span><span class="si">}</span><span class="s1"> nm respectively.&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;The first line of the Lyman series occurs at </span><span class="si">{</span><span class="n">wavelength</span><span class="si">}</span><span class="s1"> nm.&#39;</span><span class="p">)</span>
+
+<span class="n">n_1</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">n_2</span> <span class="o">=</span> <span class="mi">3</span>
+
+<span class="n">wavelength</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="n">scipy</span><span class="o">.</span><span class="n">constants</span><span class="o">.</span><span class="n">Rydberg</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="n">n_1</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">/</span> <span class="n">n_2</span> <span class="o">**</span> <span class="mi">2</span><span class="p">))</span>
+<span class="n">wavelength</span> <span class="o">*=</span> <span class="mi">10</span> <span class="o">**</span> <span class="mi">9</span> <span class="c1"># Convert to nm</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;The first line of the Balmer series occurs at </span><span class="si">{</span><span class="n">wavelength</span><span class="si">}</span><span class="s1"> nm.&#39;</span><span class="p">)</span>
+
+<span class="n">n_1</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">n_2</span> <span class="o">=</span> <span class="mi">4</span>
+
+<span class="n">wavelength</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="n">scipy</span><span class="o">.</span><span class="n">constants</span><span class="o">.</span><span class="n">Rydberg</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="n">n_1</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">/</span> <span class="n">n_2</span> <span class="o">**</span> <span class="mi">2</span><span class="p">))</span>
+<span class="n">wavelength</span> <span class="o">*=</span> <span class="mi">10</span> <span class="o">**</span> <span class="mi">9</span> <span class="c1"># Convert to nm</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;The first line of the Paschen series occurs at </span><span class="si">{</span><span class="n">wavelength</span><span class="si">}</span><span class="s1"> nm.&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The first lines of the Lyman, Balmer and Paschen series occur at 121.50227341098497 nm, 656.112276419319 nm and 1874.6065040551973 nm respectively.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The first line of the Lyman series occurs at 121.50227341098497 nm.
+The first line of the Balmer series occurs at 656.112276419319 nm.
+The first line of the Paschen series occurs at 1874.6065040551973 nm.
 </pre></div>
 </div>
 </div>
@@ -472,10 +488,14 @@ This code uses the following expression for the root mean square speed of a mole
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+<span class="kn">import</span> <span class="nn">scipy</span>
+
+<span class="c1"># You do not have to include the imports above if you have already imported math and scipy in your notebook.</span>
 
 <span class="n">temperature</span> <span class="o">=</span> <span class="mi">500</span>
 <span class="n">molar_mass</span> <span class="o">=</span> <span class="mf">31.998</span> <span class="o">/</span> <span class="mi">1000</span>
 
+<span class="c1"># Calculate the root mean square speed of an oxygen molecule at 500 K</span>
 <span class="n">rms_speed</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="mi">3</span> <span class="o">*</span> <span class="n">scipy</span><span class="o">.</span><span class="n">constants</span><span class="o">.</span><span class="n">R</span> <span class="o">*</span> <span class="n">temperature</span><span class="p">)</span> <span class="o">/</span> <span class="n">molar_mass</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;The root mean square speed of an O2 molecule at 500 K is </span><span class="si">{</span><span class="n">rms_speed</span><span class="si">}</span><span class="s1"> ms-1.&#39;</span><span class="p">)</span>
@@ -561,6 +581,24 @@ The solutions are -1.0 and -1.4
                 <footer class="prev-next-footer">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="synoptic_exercises.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Synoptic exercises</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../resources/the_notebook_interface.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">The Jupyter Notebook interface</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               

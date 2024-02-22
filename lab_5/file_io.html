@@ -189,6 +189,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../lab_1/strings.html">Strings</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../lab_1/types.html">Types</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../lab_1/synoptic_exercises.html">Synoptic exercises</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lab_1/solutions.html">Solutions</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Resources</span></p>
 <ul class="nav bd-sidenav">
@@ -362,7 +363,7 @@ document.write(`
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">concentration_data</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.001</span><span class="p">,</span> <span class="mf">0.002</span><span class="p">,</span> <span class="mf">0.004</span><span class="p">,</span> <span class="mf">0.006</span><span class="p">,</span> <span class="mf">0.008</span><span class="p">,</span> <span class="mf">0.010</span><span class="p">,</span> <span class="mf">0.020</span><span class="p">]</span>
 </pre></div>
 </div>
-<p>This is not really representative of a typical data anlysis workflow. Most of the time, if you want to analyse some experimental data, you will already have collected that data and stored it in some kind of <strong>file</strong>, perhaps a <code class="docutils literal notranslate"><span class="pre">csv</span></code> for example. It seems prudent therefore to learn how we can <strong>read</strong> files into Python and <strong>write</strong> files back out of Python: <strong>file I/O</strong> (input/output).</p>
+<p>This is not really representative of a typical data anlysis workflow. Most of the time, if you want to analyse some data, you will already have collected that data and stored it in some kind of <strong>file</strong>, perhaps a <code class="docutils literal notranslate"><span class="pre">csv</span></code> for example. It seems prudent therefore to learn how we can <strong>read</strong> files into Python and <strong>write</strong> files back out of Python: <strong>file I/O</strong> (input/output).</p>
 <section id="the-general-case-reading-in-files">
 <h2>The general case: reading in files<a class="headerlink" href="#the-general-case-reading-in-files" title="Link to this heading">#</a></h2>
 <p>The most general way to read data from a file in Python is to use the built-in <code class="docutils literal notranslate"><span class="pre">open</span></code> function. Let’s look at a simple example: reading in a file that contains some simple text. We’re going to look at <a class="reference internal" href="#"><span class="xref myst">example.txt</span></a>, which looks like this:</p>
@@ -439,7 +440,7 @@ Here is even more text.
 </div>
 </div>
 </div>
-<p>Note that each <code class="docutils literal notranslate"><span class="pre">/n</span></code> is a <strong>newline character</strong> which will actually <strong>become</strong> a newline when passed to the <code class="docutils literal notranslate"><span class="pre">print</span></code> function:</p>
+<p>Note that each <code class="docutils literal notranslate"><span class="pre">\n</span></code> is a <strong>newline character</strong> which will actually <strong>become</strong> a newline when passed to the <code class="docutils literal notranslate"><span class="pre">print</span></code> function:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Line 1</span><span class="se">\n</span><span class="s1">Line 2&#39;</span><span class="p">)</span>
@@ -501,6 +502,7 @@ Line 2
 </div>
 </div>
 <p>If you followed along with this entire example, you should see that a new file <code class="docutils literal notranslate"><span class="pre">modified_example.txt</span></code> has now been created in the same directory as your Jupyter notebook - take a look.</p>
+<p>As you can see in the code above, writing a file in Python looks much like reading a file: we use the <code class="docutils literal notranslate"><span class="pre">open</span></code> function for both use cases. The difference is that here we specify that we want to <strong>write</strong> a file by passing <code class="docutils literal notranslate"><span class="pre">'w'</span></code> as the second argument, and we use the <code class="docutils literal notranslate"><span class="pre">write</span></code> method rather than the <code class="docutils literal notranslate"><span class="pre">readlines</span></code> method. The <code class="docutils literal notranslate"><span class="pre">write</span></code> method takes a single string as an argument, this is why we have used a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop to write each individual line to a file. We could also have combined all of the lines into a single string beforehand and then passed this to the <code class="docutils literal notranslate"><span class="pre">write</span></code> method, either way will work just fine.</p>
 </section>
 <section id="reading-in-scientific-data-with-numpy">
 <h2>Reading in scientific data with <code class="docutils literal notranslate"><span class="pre">numpy</span></code><a class="headerlink" href="#reading-in-scientific-data-with-numpy" title="Link to this heading">#</a></h2>
@@ -585,7 +587,7 @@ Line 2
 </div>
 </div>
 </div>
-<p>As you can see from the code above, the first row of <code class="docutils literal notranslate"><span class="pre">data</span></code> is <code class="docutils literal notranslate"><span class="pre">[0.001,</span> <span class="pre">0.005]</span></code> which is indeed the first row of data in the original file. This makes sense, but in all liklihood what we actually want is all of the concentration values in one array, and all of the rate data in another array. We can achieve this by <strong>tranposing</strong> the array:</p>
+<p>As you can see from the code above, the first row of <code class="docutils literal notranslate"><span class="pre">data</span></code> is <code class="docutils literal notranslate"><span class="pre">[0.001,</span> <span class="pre">0.005]</span></code> which is indeed the first row of data in the original file. This makes sense, but in all liklihood what we actually want is all of the concentration values in one array, and all of the rate data in another array. We can achieve this by <strong>transposing</strong> the array:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">transposed_data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">T</span>
@@ -643,7 +645,102 @@ Line 2
 </div>
 </div>
 </div>
-<p>Here we have added the <code class="docutils literal notranslate"><span class="pre">unpack</span></code> keyword argument, which automatically transposes the output array for us, which we are then using <strong>multiple assignment</strong> to immediately split the data into separate variables.</p>
+<p>Here we have added the <code class="docutils literal notranslate"><span class="pre">unpack</span></code> keyword argument, which automatically transposes the output array for us, we are then using <strong>multiple assignment</strong> to immediately split the data into separate variables.</p>
+<hr class="docutils" />
+<p>For one final example, let’s look at reading in a <code class="docutils literal notranslate"><span class="pre">csv</span></code> file:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span># Concentration / M | Rate
+0.001, 0.005
+0.050, 0.270
+0.100, 0.530
+0.150, 0.790
+0.200, 1.060
+0.250, 1.320
+0.300, 1.580
+0.350, 1.850
+0.400, 2.110
+0.450, 2.370
+0.500, 2.630
+0.550, 2.900
+0.600, 3.160
+0.650, 3.420
+0.700, 3.690
+0.750, 3.950
+0.800, 4.210
+0.850, 4.470
+0.900, 4.740
+0.950, 4.740
+1.000, 5.000
+</pre></div>
+</div>
+<p>This example is actually the same data as the previous case, but now with <strong>commas</strong> separating the values rather than solely <strong>whitespace</strong>. This seemingly minor difference is actually quite important, as we can see if we try to read in this file in the same way as the previous example:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">concentration</span><span class="p">,</span> <span class="n">rate</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="s1">&#39;kinetic_data.csv&#39;</span><span class="p">,</span> <span class="n">unpack</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">concentration</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">rate</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">12</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">concentration</span><span class="p">,</span> <span class="n">rate</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="s1">&#39;kinetic_data.csv&#39;</span><span class="p">,</span> <span class="n">unpack</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="nb">print</span><span class="p">(</span><span class="n">concentration</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="nb">print</span><span class="p">(</span><span class="n">rate</span><span class="p">)</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.12.2/x64/lib/python3.12/site-packages/numpy/lib/npyio.py:1373,</span> in <span class="ni">loadtxt</span><span class="nt">(fname, dtype, comments, delimiter, converters, skiprows, usecols, unpack, ndmin, encoding, max_rows, quotechar, like)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1370</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">delimiter</span><span class="p">,</span> <span class="nb">bytes</span><span class="p">):</span>
+<span class="g g-Whitespace">   </span><span class="mi">1371</span>     <span class="n">delimiter</span> <span class="o">=</span> <span class="n">delimiter</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;latin1&#39;</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">1373</span> <span class="n">arr</span> <span class="o">=</span> <span class="n">_read</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">dtype</span><span class="p">,</span> <span class="n">comment</span><span class="o">=</span><span class="n">comment</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="n">delimiter</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1374</span>             <span class="n">converters</span><span class="o">=</span><span class="n">converters</span><span class="p">,</span> <span class="n">skiplines</span><span class="o">=</span><span class="n">skiprows</span><span class="p">,</span> <span class="n">usecols</span><span class="o">=</span><span class="n">usecols</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1375</span>             <span class="n">unpack</span><span class="o">=</span><span class="n">unpack</span><span class="p">,</span> <span class="n">ndmin</span><span class="o">=</span><span class="n">ndmin</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="n">encoding</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1376</span>             <span class="n">max_rows</span><span class="o">=</span><span class="n">max_rows</span><span class="p">,</span> <span class="n">quote</span><span class="o">=</span><span class="n">quotechar</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1378</span> <span class="k">return</span> <span class="n">arr</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.12.2/x64/lib/python3.12/site-packages/numpy/lib/npyio.py:1016,</span> in <span class="ni">_read</span><span class="nt">(fname, delimiter, comment, quote, imaginary_unit, usecols, skiplines, max_rows, converters, ndmin, unpack, dtype, encoding)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1013</span>     <span class="n">data</span> <span class="o">=</span> <span class="n">_preprocess_comments</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">comments</span><span class="p">,</span> <span class="n">encoding</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1015</span> <span class="k">if</span> <span class="n">read_dtype_via_object_chunks</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1016</span>     <span class="n">arr</span> <span class="o">=</span> <span class="n">_load_from_filelike</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1017</span>         <span class="n">data</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="n">delimiter</span><span class="p">,</span> <span class="n">comment</span><span class="o">=</span><span class="n">comment</span><span class="p">,</span> <span class="n">quote</span><span class="o">=</span><span class="n">quote</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1018</span>         <span class="n">imaginary_unit</span><span class="o">=</span><span class="n">imaginary_unit</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1019</span>         <span class="n">usecols</span><span class="o">=</span><span class="n">usecols</span><span class="p">,</span> <span class="n">skiplines</span><span class="o">=</span><span class="n">skiplines</span><span class="p">,</span> <span class="n">max_rows</span><span class="o">=</span><span class="n">max_rows</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1020</span>         <span class="n">converters</span><span class="o">=</span><span class="n">converters</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">dtype</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1021</span>         <span class="n">encoding</span><span class="o">=</span><span class="n">encoding</span><span class="p">,</span> <span class="n">filelike</span><span class="o">=</span><span class="n">filelike</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1022</span>         <span class="n">byte_converters</span><span class="o">=</span><span class="n">byte_converters</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1024</span> <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1025</span>     <span class="c1"># This branch reads the file into chunks of object arrays and then</span>
+<span class="g g-Whitespace">   </span><span class="mi">1026</span>     <span class="c1"># casts them to the desired actual dtype.  This ensures correct</span>
+<span class="g g-Whitespace">   </span><span class="mi">1027</span>     <span class="c1"># string-length and datetime-unit discovery (like `arr.astype()`).</span>
+<span class="g g-Whitespace">   </span><span class="mi">1028</span>     <span class="c1"># Due to chunking, certain error reports are less clear, currently.</span>
+<span class="g g-Whitespace">   </span><span class="mi">1029</span>     <span class="k">if</span> <span class="n">filelike</span><span class="p">:</span>
+
+<span class="ne">ValueError</span>: could not convert string &#39;0.001,&#39; to float64 at row 0, column 1.
+</pre></div>
+</div>
+</div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">ValueError</span></code> here gives us a good clue as to what’s going wrong: <code class="docutils literal notranslate"><span class="pre">could</span> <span class="pre">not</span> <span class="pre">convert</span> <span class="pre">string</span> <span class="pre">'0.001,'</span> <span class="pre">to</span> <span class="pre">float64</span> <span class="pre">at</span> <span class="pre">row</span> <span class="pre">0,</span> <span class="pre">column</span> <span class="pre">1.</span></code> This tells us that <code class="docutils literal notranslate"><span class="pre">numpy</span></code> is including the comma with each value, which we obviously do not want. This happens because the <code class="docutils literal notranslate"><span class="pre">loadtxt</span></code> function expects values to be separated by <strong>whitespace</strong> by default, not <strong>commas</strong>. We can change this with another <strong>keyword argument</strong>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">concentration</span><span class="p">,</span> <span class="n">rate</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="s1">&#39;kinetic_data.csv&#39;</span><span class="p">,</span> <span class="n">unpack</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">concentration</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">rate</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.001 0.05  0.1   0.15  0.2   0.25  0.3   0.35  0.4   0.45  0.5   0.55
+ 0.6   0.65  0.7   0.75  0.8   0.85  0.9   0.95  1.   ]
+[0.005 0.27  0.53  0.79  1.06  1.32  1.58  1.85  2.11  2.37  2.63  2.9
+ 3.16  3.42  3.69  3.95  4.21  4.47  4.74  4.74  5.   ]
+</pre></div>
+</div>
+</div>
+</div>
+<p>By setting the <code class="docutils literal notranslate"><span class="pre">delimiter</span></code> to a comma <code class="docutils literal notranslate"><span class="pre">,</span></code>, the <code class="docutils literal notranslate"><span class="pre">loadtxt</span></code> function is able to successfully parse the data and we end up with the same result as our previous example.</p>
 </section>
 </section>
 
