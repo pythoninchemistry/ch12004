@@ -1,4 +1,4 @@
-# Table of contents
+# Reference TOC - all contents active.
 
 format: jb-book
 root: introduction/welcome
@@ -15,6 +15,7 @@ parts:
       - file: lab_1/strings.ipynb
       - file: lab_1/types.ipynb
       - file: lab_1/synoptic_exercises.ipynb
+      - file: lab_1/solutions.ipynb
 
   - caption: Resources
     chapters:
