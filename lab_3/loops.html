@@ -403,7 +403,7 @@ document.write(`
 </div>
 </div>
 </div>
-<p>This code will run and does indeed calculate the reciprocal temperatures from our original <code class="docutils literal notranslate"><span class="pre">temperatures</span></code> list, but it is hardly the cleanest approach. For one thing, this method is not <strong>scalable</strong>, here we have <span class="math notranslate nohighlight">\(11\)</span> temperatures - what if we had 1000? Moreover, this code is very <strong>error-prone</strong>, it would be very easy for a small typo in one line to cause a problem further down the line e.g. what if we accidentally used the wrong <strong>index</strong> for one of the temperatures?</p>
+<p>This code will run and does indeed calculate the squared temperatures from our original <code class="docutils literal notranslate"><span class="pre">temperatures</span></code> list, but it is hardly the cleanest approach. For one thing, this method is not <strong>scalable</strong>, here we have <span class="math notranslate nohighlight">\(11\)</span> temperatures - what if we had 1000? Moreover, this code is very <strong>error-prone</strong>, it would be very easy for a small typo in one line to cause a problem further down the line e.g. what if we accidentally used the wrong <strong>index</strong> for one of the temperatures?</p>
 <section id="for-loops">
 <h2><code class="docutils literal notranslate"><span class="pre">for</span></code> loops<a class="headerlink" href="#for-loops" title="Link to this heading">#</a></h2>
 <p>A better approach to the problem outlined above is to use <strong>loops</strong>.</p>
@@ -489,7 +489,7 @@ The loop has now finished!
 </div>
 </div>
 </div>
-<p>All of our code so far uses the <code class="docutils literal notranslate"><span class="pre">print</span></code> function to display the reciprocal temperature for each element of <code class="docutils literal notranslate"><span class="pre">temperatures</span></code>. This is not quite the same as the problem we originally posed, which was to create a new <strong>list</strong> of squared temperatures. We can replicate this functionality by taking advantage of an <strong>empty list</strong>:</p>
+<p>All of our code so far uses the <code class="docutils literal notranslate"><span class="pre">print</span></code> function to display the squared temperature for each element of <code class="docutils literal notranslate"><span class="pre">temperatures</span></code>. This is not quite the same as the problem we originally posed, which was to create a new <strong>list</strong> of squared temperatures. We can replicate this functionality by taking advantage of an <strong>empty list</strong>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">squared_temperatures</span> <span class="o">=</span> <span class="p">[]</span>

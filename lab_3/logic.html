@@ -358,7 +358,6 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-if">What <code class="docutils literal notranslate"><span class="pre">if</span></code>?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#combining-loops-and-logic">Combining loops and logic</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">Exercise</a></li>
 </ul>
             </nav>
@@ -922,101 +921,6 @@ False
 </div>
 <p>We are thus able to make our code run differently depending on the value of <code class="docutils literal notranslate"><span class="pre">a</span></code>.</p>
 </section>
-<section id="combining-loops-and-logic">
-<h2>Combining loops and logic<a class="headerlink" href="#combining-loops-and-logic" title="Link to this heading">#</a></h2>
-<p>All of our examples so far have been relatively simple individual logical statements, but there is no reason that we cannot apply logical operations in <strong>loops</strong>:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">number</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">22</span><span class="p">):</span>
-    <span class="k">if</span> <span class="n">number</span> <span class="o">%</span> <span class="mi">3</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">number</span><span class="si">}</span><span class="s1"> is divisible by 3.&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3 is divisible by 3.
-6 is divisible by 3.
-9 is divisible by 3.
-12 is divisible by 3.
-15 is divisible by 3.
-18 is divisible by 3.
-21 is divisible by 3.
-</pre></div>
-</div>
-</div>
-</div>
-<p>Here we have combined a simple <code class="docutils literal notranslate"><span class="pre">if</span></code> statement with a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop to find all of the multiples of <span class="math notranslate nohighlight">\(3\)</span> between <span class="math notranslate nohighlight">\(1\)</span> and <span class="math notranslate nohighlight">\(21\)</span>.</p>
-<p>In addition to all the <strong>logic</strong> we have learnt about thus far, there are two useful <strong>keywords</strong> that are relevant specifically to using logic in <strong>loops</strong>.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">number</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">101</span><span class="p">):</span>
-    <span class="k">if</span> <span class="n">number</span> <span class="o">&gt;</span> <span class="mi">10</span><span class="p">:</span>
-        <span class="k">break</span>
-
-    <span class="nb">print</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;We have broken out of the loop!&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-We have broken out of the loop!
-</pre></div>
-</div>
-</div>
-</div>
-<p>In the example above, we are looping over numbers between <span class="math notranslate nohighlight">\(1\)</span> and <span class="math notranslate nohighlight">\(100\)</span>. The <code class="docutils literal notranslate"><span class="pre">if</span></code> statement checks if <code class="docutils literal notranslate"><span class="pre">number</span></code> is greater than <span class="math notranslate nohighlight">\(10\)</span>, and if it is, the <code class="docutils literal notranslate"><span class="pre">break</span></code> keyword is run. As the name implies, the <code class="docutils literal notranslate"><span class="pre">break</span></code> keyword breaks us out of the loop: it stop the rest of the iterations that would otherwise have run from occurring. You can see this happening above because as soon as <code class="docutils literal notranslate"><span class="pre">10</span></code> is printed, no more numbers are displayed and instead the <code class="docutils literal notranslate"><span class="pre">'We</span> <span class="pre">have</span> <span class="pre">broken</span> <span class="pre">out</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">loop!'</span></code> message is seen, which should only be printed <strong>after</strong> the loop has finished.</p>
-<p>The other keyword that pairs nicely with the logic we have learnt is <code class="docutils literal notranslate"><span class="pre">continue</span></code>:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">number</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">101</span><span class="p">):</span>
-    <span class="k">if</span> <span class="n">number</span> <span class="o">%</span> <span class="mi">5</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="k">continue</span>
-
-    <span class="nb">print</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5
-10
-15
-20
-25
-30
-35
-40
-45
-50
-55
-60
-65
-70
-75
-80
-85
-90
-95
-100
-</pre></div>
-</div>
-</div>
-</div>
-<p>Here we are testing whether or not <code class="docutils literal notranslate"><span class="pre">number</span></code> is <strong>not</strong> divisible by <code class="docutils literal notranslate"><span class="pre">5</span></code>. If <code class="docutils literal notranslate"><span class="pre">number</span></code> <strong>is</strong> divisible by <code class="docutils literal notranslate"><span class="pre">5</span></code>, then the <code class="docutils literal notranslate"><span class="pre">continue</span></code> keyword does not run and we <code class="docutils literal notranslate"><span class="pre">print</span></code> the <code class="docutils literal notranslate"><span class="pre">number</span></code>. If the <code class="docutils literal notranslate"><span class="pre">number</span></code> is <strong>not</strong> divisible by <code class="docutils literal notranslate"><span class="pre">5</span></code>, then the <code class="docutils literal notranslate"><span class="pre">continue</span></code> keyword is run and this <strong>immediately skips us to the next iteration of the loop</strong>. The end result is that <code class="docutils literal notranslate"><span class="pre">print(number)</span></code> only runs if <code class="docutils literal notranslate"><span class="pre">number</span></code> is a multiple of <code class="docutils literal notranslate"><span class="pre">5</span></code>.</p>
-<p>So, to summarise:</p>
-<p><code class="docutils literal notranslate"><span class="pre">break</span></code> - When this runs, we exit the loop immediately.</p>
-<p><code class="docutils literal notranslate"><span class="pre">continue</span></code> - When this runs, we skip the rest of the code in the loop and immediately skip to its next iteration.</p>
-</section>
 <section id="exercise">
 <h2>Exercise<a class="headerlink" href="#exercise" title="Link to this heading">#</a></h2>
 <p><strong>1.</strong></p>
@@ -1078,7 +982,6 @@ We have broken out of the loop!
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-if">What <code class="docutils literal notranslate"><span class="pre">if</span></code>?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#combining-loops-and-logic">Combining loops and logic</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">Exercise</a></li>
 </ul>
   </nav></div>
