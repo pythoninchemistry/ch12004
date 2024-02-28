@@ -15,6 +15,7 @@ parts:
       - file: lab_1/strings.ipynb
       - file: lab_1/types.ipynb
       - file: lab_1/synoptic_exercises.ipynb
+      - file: lab_1/solutions.ipynb
   - caption: Lab 2 - Data structures
     chapters:
       - file: lab_2/lists.ipynb
@@ -22,23 +23,29 @@ parts:
       - file: lab_2/dictionaries.ipynb
       - file: lab_2/writing_readable_code.ipynb
       - file: lab_2/synoptic_exercises.ipynb
+      - file: lab_2/solutions.ipynb
   - caption: Lab 3 - Loops and logic
     chapters:
       - file: lab_3/loops.ipynb
       - file: lab_3/nested_loops.ipynb
       - file: lab_3/logic.ipynb
+      - file: lab_3/combining_loops_and_logic.ipynb
       - file: lab_3/synoptic_exercises.ipynb
+      - file: lab_3/solutions.ipynb
   - caption: Lab 4 - Functions and errors
     chapters:
       - file: lab_4/functions.ipynb
+      - file: lab_4/docstrings.ipynb
       - file: lab_4/errors.ipynb
       - file: lab_4/synoptic_exercises.ipynb
+      - file: lab_4/solutions.ipynb
   - caption: Lab 5 - External libraries
     chapters:
       - file: lab_5/numpy.ipynb
       - file: lab_5/matplotlib.ipynb
       - file: lab_5/file_io.ipynb
       - file: lab_5/synoptic_exercises.ipynb
+      - file: lab_5/solutions.ipynb
 
   - caption: Resources
     chapters:
