@@ -4,7 +4,7 @@ For this course, you will be using [Noteable](https://noteable.edina.ac.uk) to h
 
 ## Logging into Noteable
 
-Click on the Noteable link on the CH12004 Moodle page, or go to [https://noteable.edina.ac.uk/launch](https://noteable.edina.ac.uk/launch).
+Click on the following link to access Noteable: [https://moodle.bath.ac.uk/mod/lti/launch.php?id=1306775&triggerview=0](https://moodle.bath.ac.uk/mod/lti/launch.php?id=1306775&triggerview=0). You may also access Noteable via the link on the CH12004 Moodle page.
 
 ```{image} images/noteable_widget.png
 :width: 150px

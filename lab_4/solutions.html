@@ -366,7 +366,115 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="synoptic-exercises">
 <h1>Synoptic exercises<a class="headerlink" href="#synoptic-exercises" title="Link to this heading">#</a></h1>
 <p>Let’s see if your functions <em>function</em>.</p>
-<p><strong>1.</strong> The distance between two points <span class="math notranslate nohighlight">\(i\)</span> and <span class="math notranslate nohighlight">\(j\)</span> in two-dimensional space can be calculated with the following equation:</p>
+<p><strong>1.</strong> There are several infinite series that converge to something proportional to <span class="math notranslate nohighlight">\(\pi\)</span>. For example, the Basel series is defined as an infinite sum of reciprocal square numbers:</p>
+<div class="math notranslate nohighlight">
+\[\frac{1}{1^{2}} + \frac{1}{2^{2}} + \frac{1}{3^{2}} + \cdots = \sum_{k=1}^{\infty} \frac{1}{k^{2}} = \frac{\pi^{2}}{6}.\]</div>
+<p>a) Write a function to approximate <span class="math notranslate nohighlight">\(\pi\)</span> by evaluating the Basel series up to a given term <span class="math notranslate nohighlight">\(n\)</span>. Test your function for <span class="math notranslate nohighlight">\(n = 1000\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+
+<span class="k">def</span> <span class="nf">basel</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Evaluate the Basel series (1/1^2 + 1/2^2 + 1/3^3 + ...) up to term n.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        n (int): The term up to which the series should be evaluated.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        (float): The series evaluated up to term n.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">cumulative_sum</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="k">for</span> <span class="n">divisor</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="n">cumulative_sum</span> <span class="o">+=</span> <span class="mi">1</span> <span class="o">/</span> <span class="n">divisor</span> <span class="o">**</span> <span class="mi">2</span>
+
+    <span class="k">return</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">6</span> <span class="o">*</span> <span class="n">cumulative_sum</span><span class="p">)</span>
+
+<span class="n">pi</span> <span class="o">=</span> <span class="n">basel</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;pi is approximately </span><span class="si">{</span><span class="n">pi</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>pi is approximately 3.1406380562059946
+</pre></div>
+</div>
+</div>
+</div>
+<p>b) Another infinite series that converges to something proportional to <span class="math notranslate nohighlight">\(\pi\)</span> is the Leibniz formula:</p>
+<div class="math notranslate nohighlight">
+\[1 - \frac{1}{3} + \frac{1}{5} - \frac{1}{7} + \frac{1}{9} - \cdots = \sum_{k=0}^{\infty} \frac{(-1)^{k}}{2k + 1} = \frac{\pi}{4}.\]</div>
+<p>Write a function to approximate <span class="math notranslate nohighlight">\(\pi\)</span> by evaluating the Leibniz formula up to a given term <span class="math notranslate nohighlight">\(n\)</span>. Test your function for <span class="math notranslate nohighlight">\(n = 1000\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">leibniz</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Evaluate the Leibniz formula (1 - 1/3 + 1/5 - 1/7 + 1/9 - ...) up to term n.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        n (int): The term up to which the series should be evaluated.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        (float): The series evaluated up to term n.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">cumulative_sum</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="n">cumulative_sum</span> <span class="o">+=</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">**</span> <span class="n">k</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">k</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="mi">4</span> <span class="o">*</span> <span class="n">cumulative_sum</span>
+
+<span class="n">pi</span> <span class="o">=</span> <span class="n">leibniz</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;pi is approximately </span><span class="si">{</span><span class="n">pi</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>pi is approximately 3.1425916543395442
+</pre></div>
+</div>
+</div>
+</div>
+<p>c) The accuracy of an approximate value of <span class="math notranslate nohighlight">\(\pi\)</span> is simply measured by calculating the absolute difference from the exact value:</p>
+<div class="math notranslate nohighlight">
+\[|\pi - \pi_{\mathrm{approx}}|.\]</div>
+<p>Write a function to evaluate the above expression and use this to determine which of your previous functions is more accurate when evaluated up to the <span class="math notranslate nohighlight">\(50\)</span>th term.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">error</span><span class="p">(</span><span class="n">pi_approx</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Calculate the absolute difference between the exact value of pi and an approximation.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        pi_approx (float): The approximation for pi.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        (float): The absolute difference between the exact and approximate values of pi.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">return</span> <span class="nb">abs</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span> <span class="o">-</span> <span class="n">pi_approx</span><span class="p">)</span>
+
+<span class="n">pi_basel</span> <span class="o">=</span> <span class="n">basel</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
+<span class="n">pi_leibniz</span> <span class="o">=</span> <span class="n">leibniz</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;pi - pi_approx (basel) = </span><span class="si">{</span><span class="n">error</span><span class="p">(</span><span class="n">pi_basel</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;pi - pi_approx (leibniz) = </span><span class="si">{</span><span class="n">error</span><span class="p">(</span><span class="n">pi_leibniz</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>pi - pi_approx (basel) = 0.01896613065606667
+pi - pi_approx (leibniz) = 0.01960595939725751
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>2.</strong> The distance between two points <span class="math notranslate nohighlight">\(i\)</span> and <span class="math notranslate nohighlight">\(j\)</span> in two-dimensional space can be calculated with the following equation:</p>
 <div class="math notranslate nohighlight">
 \[d(i, j) = \sqrt{(x_{i} - x_{j})^{2} + (y_{i} - y_{j})^{2}},\]</div>
 <p>where <span class="math notranslate nohighlight">\(x_{i}\)</span> is the <span class="math notranslate nohighlight">\(x\)</span>-coordinate of point <span class="math notranslate nohighlight">\(i\)</span>, <span class="math notranslate nohighlight">\(x_{j}\)</span> is the <span class="math notranslate nohighlight">\(x\)</span>-coordinate of point <span class="math notranslate nohighlight">\(j\)</span> etc.</p>
@@ -489,220 +597,6 @@ document.write(`
 [1.3, 0.0, 2.2537524265100637, 2.2537524265100637]
 [1.3036103712382776, 2.2537524265100637, 0.0, 2.26]
 [1.3036103712382776, 2.2537524265100637, 2.26, 0.0]
-</pre></div>
-</div>
-</div>
-</div>
-<p><strong>2.</strong></p>
-<p>a) Write a function that uses a loop to calculate the <a class="reference external" href="https://en.wikipedia.org/wiki/Factorial">factorial</a> of a <strong>positive</strong> non-zero number <span class="math notranslate nohighlight">\(n\)</span>:</p>
-<div class="math notranslate nohighlight">
-\[n! = n \times n - 1 \times n - 2\cdots \times 2 \times 1.\]</div>
-<p>Use your function to calculate <span class="math notranslate nohighlight">\(5!\)</span> and <span class="math notranslate nohighlight">\(12!\)</span>.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">factorial</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Calculate n! where n is a non-zero positive number.</span>
-
-<span class="sd">    Args:</span>
-<span class="sd">        n (int): The input used to determine which factorial to calculate.</span>
-
-<span class="sd">    Returns:</span>
-<span class="sd">        (int): n!.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-
-    <span class="n">result</span> <span class="o">=</span> <span class="n">n</span>
-
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span>
-        <span class="n">result</span> <span class="o">*=</span> <span class="n">i</span>
-
-    <span class="k">return</span> <span class="n">result</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;5! = </span><span class="si">{</span><span class="n">factorial</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;22! = </span><span class="si">{</span><span class="n">factorial</span><span class="p">(</span><span class="mi">22</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5! = 120
-22! = 1124000727777607680000
-</pre></div>
-</div>
-</div>
-</div>
-<p>b) Rather than using loops, you could also write a factorial function that uses <strong>recursion</strong>:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">factorial</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Calculate n! where n is a non-zero positive number.</span>
-
-<span class="sd">    Args:</span>
-<span class="sd">        n (int): The input used to determine which factorial to calculate.</span>
-
-<span class="sd">    Returns:</span>
-<span class="sd">        (int): n!.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-
-    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="k">return</span> <span class="mi">1</span>
-
-    <span class="k">else</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">n</span> <span class="o">*</span> <span class="n">factorial</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>Recursion refers to instances in which a function <strong>calls itself</strong>.</p>
-<p>Use the <strong>recursive</strong> version of the <code class="docutils literal notranslate"><span class="pre">factorial</span></code> function to calculate <span class="math notranslate nohighlight">\(5!\)</span> and <span class="math notranslate nohighlight">\(22!\)</span> and try to reason out how it works.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">factorial</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Calculate n! where n is a non-zero positive number.</span>
-
-<span class="sd">    Args:</span>
-<span class="sd">        n (int): The input used to determine which factorial to calculate.</span>
-
-<span class="sd">    Returns:</span>
-<span class="sd">        (int): n!.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-
-    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="k">return</span> <span class="mi">1</span>
-
-    <span class="k">else</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">n</span> <span class="o">*</span> <span class="n">factorial</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;5! = </span><span class="si">{</span><span class="n">factorial</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;22! = </span><span class="si">{</span><span class="n">factorial</span><span class="p">(</span><span class="mi">22</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5! = 120
-22! = 1124000727777607680000
-</pre></div>
-</div>
-</div>
-</div>
-<p>c) One particularly infamous recursive function is <strong>Ackermann’s function</strong> <span class="math notranslate nohighlight">\(A\)</span>:</p>
-<div class="math notranslate nohighlight">
-\[A(0, n) = n + 1\]</div>
-<div class="math notranslate nohighlight">
-\[A(m + 1, 0) = A(m, 1)\]</div>
-<div class="math notranslate nohighlight">
-\[A(m + 1, n + 1) = A(m, A(m + 1, n))\]</div>
-<p>A Python implementation of this function might look like:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">Ackermann</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    A Python implementation of Ackermann&#39;s function.</span>
-
-<span class="sd">    Args:</span>
-<span class="sd">        m (int): The value of m.</span>
-<span class="sd">        n (int): The value of n.</span>
-
-<span class="sd">    Returns:</span>
-<span class="sd">        (int): The value of Ackermann&#39;s function for A(m, n).</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    
-    <span class="k">if</span> <span class="n">m</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span>
-
-    <span class="k">elif</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">Ackermann</span><span class="p">(</span><span class="n">m</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-
-    <span class="k">else</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">Ackermann</span><span class="p">(</span><span class="n">m</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">Ackermann</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span>
-</pre></div>
-</div>
-<p>Test this function for <span class="math notranslate nohighlight">\(m = 3\)</span> and <span class="math notranslate nohighlight">\(n = 3\)</span>.</p>
-<p>Now test the <code class="docutils literal notranslate"><span class="pre">Ackermann</span></code> function for <span class="math notranslate nohighlight">\(m = 3\)</span>, <span class="math notranslate nohighlight">\(n = 9\)</span> - <strong>this will give you an error</strong>. By cross-referencing the error with the relevant <a class="reference external" href="https://docs.python.org/3/library/exceptions.html">documentation</a>, try to figure out how you might fix this.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">Ackermann</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    A Python implementation of Ackermann&#39;s function.</span>
-
-<span class="sd">    Args:</span>
-<span class="sd">        m (int): The value of m.</span>
-<span class="sd">        n (int): The value of n.</span>
-
-<span class="sd">    Returns:</span>
-<span class="sd">        (int): The value of Ackermann&#39;s function for A(m, n).</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    
-    <span class="k">if</span> <span class="n">m</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span>
-
-    <span class="k">elif</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">Ackermann</span><span class="p">(</span><span class="n">m</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-
-    <span class="k">else</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">Ackermann</span><span class="p">(</span><span class="n">m</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">Ackermann</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;A(3, 3) = </span><span class="si">{</span><span class="n">Ackermann</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A(3, 3) = 61
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
-
-<span class="n">sys</span><span class="o">.</span><span class="n">setrecursionlimit</span><span class="p">(</span><span class="mi">5000</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;A(3, 9) = </span><span class="si">{</span><span class="n">Ackermann</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">9</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A(3, 9) = 4093
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">Ackermann</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    A Python implementation of Ackermann&#39;s function.</span>
-
-<span class="sd">    Args:</span>
-<span class="sd">        m (int): The value of m.</span>
-<span class="sd">        n (int): The value of n.</span>
-
-<span class="sd">    Returns:</span>
-<span class="sd">        (int): The value of Ackermann&#39;s function for A(m, n).</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-
-    <span class="c1"># Allows us to mutate number_of_calls in local scope, generally a terrible idea!</span>
-    <span class="k">global</span> <span class="n">number_of_calls</span>
-    <span class="n">number_of_calls</span> <span class="o">+=</span> <span class="mi">1</span>
-    
-    <span class="k">if</span> <span class="n">m</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span>
-
-    <span class="k">elif</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">Ackermann</span><span class="p">(</span><span class="n">m</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-
-    <span class="k">else</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">Ackermann</span><span class="p">(</span><span class="n">m</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">Ackermann</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span>
-
-<span class="n">number_of_calls</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;A(3, 3) = </span><span class="si">{</span><span class="n">Ackermann</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">)</span><span class="si">}</span><span class="s1">, with </span><span class="si">{</span><span class="n">number_of_calls</span><span class="si">}</span><span class="s1"> function calls.&#39;</span><span class="p">)</span>
-
-<span class="n">number_of_calls</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;A(3, 9) = </span><span class="si">{</span><span class="n">Ackermann</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">9</span><span class="p">)</span><span class="si">}</span><span class="s1">, with </span><span class="si">{</span><span class="n">number_of_calls</span><span class="si">}</span><span class="s1"> function calls.&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A(3, 3) = 61, with 2432 function calls.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A(3, 9) = 4093, with 11164370 function calls.
 </pre></div>
 </div>
 </div>

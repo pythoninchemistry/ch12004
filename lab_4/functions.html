@@ -367,8 +367,6 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scope">Scope</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#docstrings">Docstrings</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">Exercise</a></li>
 </ul>
             </nav>
         </div>
@@ -973,163 +971,6 @@ None
 </div>
 <p>Here we define the variable <code class="docutils literal notranslate"><span class="pre">R</span> <span class="pre">=</span> <span class="pre">8.314</span></code> in <strong>global</strong> scope. We then access <code class="docutils literal notranslate"><span class="pre">R</span></code> in the <strong>local</strong> scope of the <code class="docutils literal notranslate"><span class="pre">ideal_gas_volume</span></code> function. Objectively, this is the same situation as our previous example with <code class="docutils literal notranslate"><span class="pre">global_scope</span></code> and the <code class="docutils literal notranslate"><span class="pre">scope_example</span></code> function. The key detail is that here <code class="docutils literal notranslate"><span class="pre">R</span></code> is (roughly) the gas <strong>constant</strong>, so we <strong>do not expect its value to change</strong>. If we access global scope from within a function, but we expect that the variables we are accessing <strong>will not change</strong>, then this shouldn’t cause us any unexpected problems, as we can rely on <code class="docutils literal notranslate"><span class="pre">R</span></code> always being <code class="docutils literal notranslate"><span class="pre">8.314</span></code>.</p>
 </section>
-<section id="docstrings">
-<h2>Docstrings<a class="headerlink" href="#docstrings" title="Link to this heading">#</a></h2>
-<p>You may recall our previous discussion about <a class="reference internal" href="../lab_2/writing_readable_code.html"><span class="std std-doc">writing readable code</span></a> and the importance of <strong>documentation</strong>. Functions provide us with a new means of documenting our code via <strong>docstrings</strong>. These are essentially block comments that we add to function definitions to explain exactly what that function does, the arguments expected from the user etc. To use a concrete example, let’s say I’ve written a function to calculate the kinetic energy of a particle as:</p>
-<div class="math notranslate nohighlight">
-\[T = \frac{1}{2}mv^{2}.\]</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">kinetic_energy</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">v</span><span class="p">):</span>
-    <span class="k">return</span> <span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="n">m</span> <span class="o">*</span> <span class="n">v</span> <span class="o">**</span> <span class="mi">2</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Even though this is simple enough that a docstring may not seem strictly necessary, it is good practice to write docstrings for <strong>all functions</strong>. To add a docstring, we use <strong>triple quotes</strong> <code class="docutils literal notranslate"><span class="pre">&quot;&quot;&quot;</span></code>:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">kinetic_energy</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">v</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Calculate the kinetic energy as 1/2mv^2.</span>
-
-<span class="sd">    Args:</span>
-<span class="sd">        m (float): The mass of the particle.</span>
-<span class="sd">        v (float): The velocity of the particle.</span>
-
-<span class="sd">    Returns:</span>
-<span class="sd">        (float): The kinetic energy of the particle.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">return</span> <span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="n">m</span> <span class="o">*</span> <span class="n">v</span> <span class="o">**</span> <span class="mi">2</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Our docstring can be split into several sections. At the top we have a brief description of what the function does: a general summary.</p>
-<p>Next we have an <code class="docutils literal notranslate"><span class="pre">Args</span></code> section, which details each of the arguments we expected to be passed to the function and what <code class="docutils literal notranslate"><span class="pre">type</span></code> each one should be.</p>
-<p>Finally we have a <code class="docutils literal notranslate"><span class="pre">Returns</span></code> section, which tells us what the function should return and the type of this result.</p>
-<p>The exact format of this example docstring follows the <a class="reference external" href="https://sphinxcontrib-napoleon.readthedocs.io/en/latest/example_google.html">Google style</a>, but there are various other standards for formatting docstrings too.</p>
-<p>If you are working with a function that has been properly documented, you can access the docstring in a few different ways. Firstly, and most obviously, you can just look at the source code itself. We can do this easily here as we have literally just defined <code class="docutils literal notranslate"><span class="pre">kinetic_energy</span></code> ourselves, but if someone else had written it, this would not be as quick and easy an option.</p>
-<p>Option two is to access the <code class="docutils literal notranslate"><span class="pre">__doc__</span></code> attribute:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">kinetic_energy</span><span class="o">.</span><span class="vm">__doc__</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Calculate the kinetic energy as 1/2mv^2.
-
-    Args:
-        m (float): The mass of the particle.
-        v (float): The velocity of the particle.
-
-    Returns:
-        (float): The kinetic energy of the particle.
-    
-</pre></div>
-</div>
-</div>
-</div>
-<p>Python will define a <code class="docutils literal notranslate"><span class="pre">__doc__</span></code> attribute for every function that has been properly documented, we can <code class="docutils literal notranslate"><span class="pre">print</span></code> this to access the docstring.</p>
-<p>Option three is only available in Jupyter notebooks, but is generally the quickest and easiest if available:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>kinetic_energy<span class="o">?</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Red">Signature:</span> kinetic_energy<span class=" -Color -Color-Blue">(</span>m<span class=" -Color -Color-Blue">,</span> v<span class=" -Color -Color-Blue">)</span>
-<span class=" -Color -Color-Red">Docstring:</span>
-Calculate the kinetic energy as 1/2mv^2.
-
-Args:
-    m (float): The mass of the particle.
-    v (float): The velocity of the particle.
-
-Returns:
-    (float): The kinetic energy of the particle.
-<span class=" -Color -Color-Red">File:</span>      /var/folders/sn/3pz6tq_50xs6xv_mln0gccdc0000gq/T/ipykernel_16955/2981651585.py
-<span class=" -Color -Color-Red">Type:</span>      function
-</pre></div>
-</div>
-</div>
-</div>
-<p>We have just demonstrated how to access the docstring associated with our own <code class="docutils literal notranslate"><span class="pre">kinetic_energy</span></code> function, but the same methods work for <strong>any</strong> function, even built-in functions:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="o">.</span><span class="vm">__doc__</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Return the number of items in a container.
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>len<span class="o">?</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Red">Signature:</span> len<span class=" -Color -Color-Blue">(</span>obj<span class=" -Color -Color-Blue">,</span> <span class=" -Color -Color-Blue">/)</span>
-<span class=" -Color -Color-Red">Docstring:</span> Return the number of items in a container.
-<span class=" -Color -Color-Red">Type:</span>      builtin_function_or_method
-</pre></div>
-</div>
-</div>
-</div>
-<p>For all the same reasons as we previously discussed for comments and Markdown cells, it is good practice to make heavy use of docstrings. In fact, you should really write a docstring for <strong>every function you write</strong>, it takes <span class="math notranslate nohighlight">\(2\)</span> minutes and could save you a lot of trouble down the line.</p>
-</section>
-<section id="exercise">
-<h2>Exercise<a class="headerlink" href="#exercise" title="Link to this heading">#</a></h2>
-<p><strong>1.</strong> Define your own functions (with <strong>docstrings</strong>) to calculate the following quantities:</p>
-<p>a) The <strong>De Broglie wavelength</strong>:</p>
-<div class="math notranslate nohighlight">
-\[\lambda = \frac{h}{p},\]</div>
-<p>where <span class="math notranslate nohighlight">\(h\)</span> is Planck’s constant and <span class="math notranslate nohighlight">\(p\)</span> is the momentum. You can access <span class="math notranslate nohighlight">\(h\)</span> via <code class="docutils literal notranslate"><span class="pre">scipy.constants.h</span></code>, or alternatively you may pass it directly as an <strong>argument</strong>.</p>
-<p>Test your function for <span class="math notranslate nohighlight">\(p = 1.01 \times 10^{-31}\,\)</span>kgms<span class="math notranslate nohighlight">\(^{-1}\)</span>.</p>
-<p>b) The <strong>change in the Gibbs free energy</strong>:</p>
-<div class="math notranslate nohighlight">
-\[\Delta G = -RT\ln K,\]</div>
-<p>where <span class="math notranslate nohighlight">\(R\)</span> is the gas constant, <span class="math notranslate nohighlight">\(T\)</span> is the temperature and <span class="math notranslate nohighlight">\(K\)</span> is the equilibrium constant.</p>
-<p>Test your function for <span class="math notranslate nohighlight">\(T = 500\,\)</span>K and <span class="math notranslate nohighlight">\(K = 1.15\)</span>.</p>
-<p>c) The <strong>mean activity</strong> according to the Debye-Huckel limiting law:</p>
-<div class="math notranslate nohighlight">
-\[\gamma_{\pm} = \exp\left[-|z_{+}z_{-}|A\sqrt{I}\right],\]</div>
-<p>where <span class="math notranslate nohighlight">\(z_{+}\)</span> and <span class="math notranslate nohighlight">\(z_{-}\)</span> are the charges on the cations and anions respectively, <span class="math notranslate nohighlight">\(I\)</span> is the ionic strength and <span class="math notranslate nohighlight">\(A\)</span> is a constant that depends upon the solvent and the temperature.</p>
-<p>Test your function for <span class="math notranslate nohighlight">\(z_{+} = 1\)</span>, <span class="math notranslate nohighlight">\(z_{-} = 2\)</span>, <span class="math notranslate nohighlight">\(A = 1.179\,\)</span>M<span class="math notranslate nohighlight">\(^{\frac{1}{2}}\)</span> and <span class="math notranslate nohighlight">\(I = 0.018\,\)</span>M.</p>
-<p><strong>Answers:</strong></p>
-<div class="toggle docutils container">
-<div class="math notranslate nohighlight">
-\[\lambda = 6.56 \times 10^{-3}\,\mathrm{m}\]</div>
-<div class="math notranslate nohighlight">
-\[\Delta G = -5.81 \times 10^{-1}\,\mathrm{kJmol}^{-1}\]</div>
-<div class="math notranslate nohighlight">
-\[\gamma_{\pm} = 0.729 \]</div>
-</div>
-<p><strong>2.</strong></p>
-<p>a) The <strong>thermal De Broglie wavelength</strong> describes the average De Broglie wavelength of particles in an ideal gas at a given temperature:</p>
-<div class="math notranslate nohighlight">
-\[\Lambda = \frac{h}{\sqrt{2\pi mk_{\mathrm{B}}T}},\]</div>
-<p>where <span class="math notranslate nohighlight">\(h\)</span> is Planck’s constant, <span class="math notranslate nohighlight">\(m\)</span> is the mass of each particle, <span class="math notranslate nohighlight">\(k_{B}\)</span> is Boltzmann’s constant and <span class="math notranslate nohighlight">\(T\)</span> is the temperature.</p>
-<p>Write a function to calculate <span class="math notranslate nohighlight">\(\Lambda\)</span>. You can access <span class="math notranslate nohighlight">\(k_{B}\)</span> via <code class="docutils literal notranslate"><span class="pre">scipy.constants.k</span></code>.</p>
-<p>b) The entropy of an ideal gas can be calculated with the Sackur-Tetrode equation:</p>
-<div class="math notranslate nohighlight">
-\[\frac{S}{k_{\mathrm{B}}N} = \ln\left(\frac{V}{N\Lambda^{3}}\right) + \frac{5}{2},\]</div>
-<p>where <span class="math notranslate nohighlight">\(S\)</span> is the entropy, <span class="math notranslate nohighlight">\(N\)</span> is the number of particles, <span class="math notranslate nohighlight">\(V\)</span> is the volume, <span class="math notranslate nohighlight">\(k_{\mathrm{B}}\)</span> is Boltzmann’s constant and <span class="math notranslate nohighlight">\(\Lambda\)</span> is the thermal wavelength mentioned prior.</p>
-<p>Write a function to calculate the entropy of an ideal gas with the Sackur-Tetrode equation.</p>
-<p>c) Using your two functions, calculate the entropy of an ideal gas with <span class="math notranslate nohighlight">\(m = 6.63 \times 10^{-26}\,\)</span>kg, <span class="math notranslate nohighlight">\(T = 500\,\)</span>K, <span class="math notranslate nohighlight">\(N = 1.92 \times 10^{23}\)</span> and <span class="math notranslate nohighlight">\(V = 5.00 \times 10^{-3}\,\)</span>m<span class="math notranslate nohighlight">\(^{-3}\)</span>.</p>
-<p><strong>Answers</strong>:</p>
-<div class="toggle docutils container">
-<div class="math notranslate nohighlight">
-\[S = 50.2\,\mathrm{JK}^{-1}\]</div>
-</div>
-</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -1184,8 +1025,6 @@ Returns:
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scope">Scope</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#docstrings">Docstrings</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">Exercise</a></li>
 </ul>
   </nav></div>
 
