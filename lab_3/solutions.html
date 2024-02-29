@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Synoptic Exercises &#8212; CH12004: Skills for chemists</title>
+    <title>Solutions &#8212; CH12004: Skills for chemists</title>
   
   
   
@@ -62,6 +62,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'lab_3/solutions';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="The Jupyter Notebook interface" href="../resources/the_notebook_interface.html" />
+    <link rel="prev" title="Synoptic Exercises" href="synoptic_exercises.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -122,8 +124,6 @@
     <div class="bd-container__inner bd-page-width">
       
       
-      
-        
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -200,14 +200,16 @@
 <li class="toctree-l1"><a class="reference internal" href="../lab_2/dictionaries.html">Dictionaries</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../lab_2/writing_readable_code.html">Writing readable code</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../lab_2/synoptic_exercises.html">Synoptic exercises</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lab_2/solutions.html">Solutions</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Lab 3 - Loops and logic</span></p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="loops.html">Loops</a></li>
 <li class="toctree-l1"><a class="reference internal" href="nested_loops.html">Nested loops</a></li>
 <li class="toctree-l1"><a class="reference internal" href="logic.html">Logic</a></li>
 <li class="toctree-l1"><a class="reference internal" href="combining_loops_and_logic.html">Combining loops <strong>and</strong> logic</a></li>
 <li class="toctree-l1"><a class="reference internal" href="synoptic_exercises.html">Synoptic Exercises</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Solutions</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Resources</span></p>
 <ul class="nav bd-sidenav">
@@ -349,7 +351,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Synoptic Exercises</h1>
+    <h1>Solutions</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -363,8 +365,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="synoptic-exercises">
-<h1>Synoptic Exercises<a class="headerlink" href="#synoptic-exercises" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="solutions">
+<h1>Solutions<a class="headerlink" href="#solutions" title="Link to this heading">#</a></h1>
 <p>Okay folks, time to get <em>loopy</em>.</p>
 <p><strong>1.</strong> Write a program to play “<a class="reference external" href="https://en.wikipedia.org/wiki/Fizz_buzz">Fizz Buzz</a>”. Your code should loop over numbers between <span class="math notranslate nohighlight">\(1\)</span> and <span class="math notranslate nohighlight">\(100\)</span>, printing <code class="docutils literal notranslate"><span class="pre">'Fizz'</span></code> for those that are divisible by <span class="math notranslate nohighlight">\(3\)</span>, <code class="docutils literal notranslate"><span class="pre">'Buzz'</span></code> for those divisible by <span class="math notranslate nohighlight">\(5\)</span> and <code class="docutils literal notranslate"><span class="pre">'Fizz</span> <span class="pre">Buzz'</span></code> for those divisible by both <span class="math notranslate nohighlight">\(3\)</span> and <span class="math notranslate nohighlight">\(5\)</span>.</p>
 <div class="cell docutils container">
@@ -535,7 +537,7 @@ Pb is a solid at 500 K.
 <span class="n">n</span> <span class="o">=</span> <span class="mf">5.00e-02</span>
 <span class="n">V</span> <span class="o">=</span> <span class="mf">1.00e-03</span>
 
-<span class="k">for</span> <span class="n">temperature</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">1150</span><span class="p">,</span> <span class="mi">50</span><span class="p">):</span>
+<span class="k">for</span> <span class="n">temperature</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">1050</span><span class="p">,</span> <span class="mi">50</span><span class="p">):</span>
     <span class="n">pressure</span> <span class="o">=</span> <span class="p">(</span><span class="n">n</span> <span class="o">*</span> <span class="n">scipy</span><span class="o">.</span><span class="n">constants</span><span class="o">.</span><span class="n">R</span> <span class="o">*</span> <span class="n">temperature</span><span class="p">)</span> <span class="o">/</span> <span class="n">V</span>
 
     <span class="n">pressures</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">pressure</span><span class="p">)</span>
@@ -545,7 +547,7 @@ Pb is a solid at 500 K.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The pressure (in Pa) at each temperature: [41572.31309, 62358.469635, 83144.62618, 103930.782725, 124716.93927, 145503.09581499998, 166289.25236, 187075.40890500002, 207861.56545, 228647.721995, 249433.87854, 270220.035085, 291006.19162999996, 311792.34817500005, 332578.50472, 353364.661265, 374150.81781000004, 394936.974355, 415723.1309, 436509.287445, 457295.44399]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The pressure (in Pa) at each temperature: [41572.31309, 62358.469635, 83144.62618, 103930.782725, 124716.93927, 145503.09581499998, 166289.25236, 187075.40890500002, 207861.56545, 228647.721995, 249433.87854, 270220.035085, 291006.19162999996, 311792.34817500005, 332578.50472, 353364.661265, 374150.81781000004, 394936.974355, 415723.1309]
 </pre></div>
 </div>
 </div>
@@ -555,9 +557,6 @@ Pb is a solid at 500 K.
 \[\frac{1}{\lambda} = R_{\mathrm{H}}\left[\frac{1}{n_{1}^{2}} - \frac{1}{n_{2}^{2}}\right],\]</div>
 <p>where <span class="math notranslate nohighlight">\(\lambda\)</span> is the wavelength, <span class="math notranslate nohighlight">\(R_{\mathrm{H}}\)</span> is the Rydberg constant, <span class="math notranslate nohighlight">\(n_{1}\)</span> is the principal quantum number of the emission state and <span class="math notranslate nohighlight">\(n_{2}\)</span> is the principal quantum number of the excited state.</p>
 <p>a) Write a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop to <code class="docutils literal notranslate"><span class="pre">print</span></code> the wavelengths (<strong>in nanometres</strong>) of the first <span class="math notranslate nohighlight">\(10\)</span> lines of the Balmer series (<span class="math notranslate nohighlight">\(n_{1} = 2\)</span>).</p>
-<p>b) Add one additional loop to your code so that it can <code class="docutils literal notranslate"><span class="pre">print</span></code> the wavelengths of the first <span class="math notranslate nohighlight">\(10\)</span> lines in the Lyman, Balmer and Paschen series.</p>
-<p>c) Create three <strong>empty lists</strong> called <code class="docutils literal notranslate"><span class="pre">lyman</span></code>, <code class="docutils literal notranslate"><span class="pre">balmer</span></code> and <code class="docutils literal notranslate"><span class="pre">paschen</span></code>.</p>
-<p>Add some <a class="reference internal" href="logic.html"><span class="std std-doc">logic</span></a> to your code from b) so that, rather than printing each wavelength to the screen, each value is stored in the appropriate <code class="docutils literal notranslate"><span class="pre">list</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n_1</span> <span class="o">=</span> <span class="mi">2</span>
@@ -585,6 +584,7 @@ Pb is a solid at 500 K.
 </div>
 </div>
 </div>
+<p>b) Add one additional loop to your code so that it can <code class="docutils literal notranslate"><span class="pre">print</span></code> the wavelengths of the first <span class="math notranslate nohighlight">\(10\)</span> lines in the Lyman, Balmer and Paschen series.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">n_1</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">):</span>
@@ -635,6 +635,8 @@ n_1 = 3
 </div>
 </div>
 </div>
+<p>c) Create three <strong>empty lists</strong> called <code class="docutils literal notranslate"><span class="pre">lyman</span></code>, <code class="docutils literal notranslate"><span class="pre">balmer</span></code> and <code class="docutils literal notranslate"><span class="pre">paschen</span></code>.</p>
+<p>Add some <a class="reference internal" href="logic.html"><span class="std std-doc">logic</span></a> to your code from b) so that, rather than printing each wavelength to the screen, each value is stored in the appropriate <code class="docutils literal notranslate"><span class="pre">list</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lyman</span> <span class="o">=</span> <span class="p">[]</span>
@@ -701,6 +703,24 @@ n_1 = 3
                 <footer class="prev-next-footer">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="synoptic_exercises.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Synoptic Exercises</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../resources/the_notebook_interface.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">The Jupyter Notebook interface</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
