@@ -370,7 +370,7 @@ document.write(`
 <p>Let’s see if your functions <em>function</em>.</p>
 <p><strong>1.</strong> There are several infinite series that converge to something proportional to <span class="math notranslate nohighlight">\(\pi\)</span>. For example, the Basel series is defined as an infinite sum of reciprocal square numbers:</p>
 <div class="math notranslate nohighlight">
-\[\frac{1}{1^{2}} + \frac{1}{2^{2}} + \frac{1}{3^{2}} + \cdots = \sum_{k=1}^{\infty} \frac{1}{k^{2}} = \frac{\pi^{2}}{6}.\]</div>
+\[\frac{1}{1^{2}} + \frac{1}{2^{2}} + \frac{1}{3^{2}} + \cdots = \sum_{n=1}^{\infty} \frac{1}{n^{2}} = \frac{\pi^{2}}{6}.\]</div>
 <p>a) Write a function to approximate <span class="math notranslate nohighlight">\(\pi\)</span> by evaluating the Basel series up to a given term <span class="math notranslate nohighlight">\(n\)</span>. Test your function for <span class="math notranslate nohighlight">\(n = 1000\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -408,7 +408,7 @@ document.write(`
 </div>
 <p>b) Another infinite series that converges to something proportional to <span class="math notranslate nohighlight">\(\pi\)</span> is the Leibniz formula:</p>
 <div class="math notranslate nohighlight">
-\[1 - \frac{1}{3} + \frac{1}{5} - \frac{1}{7} + \frac{1}{9} - \cdots = \sum_{k=0}^{\infty} \frac{(-1)^{k}}{2k + 1} = \frac{\pi}{4}.\]</div>
+\[1 - \frac{1}{3} + \frac{1}{5} - \frac{1}{7} + \frac{1}{9} - \cdots = \sum_{n=0}^{\infty} \frac{(-1)^{n}}{2n + 1} = \frac{\pi}{4}.\]</div>
 <p>Write a function to approximate <span class="math notranslate nohighlight">\(\pi\)</span> by evaluating the Leibniz formula up to a given term <span class="math notranslate nohighlight">\(n\)</span>. Test your function for <span class="math notranslate nohighlight">\(n = 1000\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -599,6 +599,202 @@ pi - pi_approx (leibniz) = 0.01960595939725751
 [1.3, 0.0, 2.2537524265100637, 2.2537524265100637]
 [1.3036103712382776, 2.2537524265100637, 0.0, 2.26]
 [1.3036103712382776, 2.2537524265100637, 2.26, 0.0]
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>3.</strong> Consider the following blocks of code. Each one of them will cause an error when run. Taking each block one-by-one:</p>
+<ul class="simple">
+<li><p>Predict which line of code will cause the error and why this line is problematic.</p></li>
+<li><p>Run the block of code in a Jupyter notebook and see whether or not your were correct.</p></li>
+<li><p>Modify the code to solve the problem and thus remove the error.</p></li>
+</ul>
+<p>Block 1:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">calculate_product</span><span class="p">(</span><span class="n">sequence</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Calculate the product of a sequence of numbers (n_1 * n_2 * n_3 * ...).</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        sequence (iterable): The sequence used to calculate the product.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        (float): The product.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">product</span> <span class="o">=</span> <span class="n">sequence</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+    <span class="k">for</span> <span class="n">number</span> <span class="ow">in</span> <span class="n">sequence</span><span class="p">[</span><span class="mi">1</span><span class="p">:]:</span>
+        <span class="n">product</span> <span class="o">*=</span> <span class="n">number</span>
+
+    <span class="k">return</span> <span class="n">product</span>
+
+<span class="n">product_of_sequence</span> <span class="o">=</span> <span class="n">calculate_product</span><span class="p">(</span><span class="mf">5.12</span><span class="p">,</span> <span class="mf">6.79</span><span class="p">,</span> <span class="mf">2.22</span><span class="p">,</span> <span class="mf">0.19</span><span class="p">,</span> <span class="mf">13.6</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;The cumulative product = </span><span class="si">{</span><span class="n">product_of_sequence</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">calculate_product</span><span class="p">(</span><span class="n">sequence</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Calculate the product of a sequence of numbers (n_1 * n_2 * n_3 * ...).</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        sequence (iterable): The sequence used to calculate the product.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        (float): The product.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">product</span> <span class="o">=</span> <span class="n">sequence</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+    <span class="k">for</span> <span class="n">number</span> <span class="ow">in</span> <span class="n">sequence</span><span class="p">[</span><span class="mi">1</span><span class="p">:]:</span>
+        <span class="n">product</span> <span class="o">*=</span> <span class="n">number</span>
+
+    <span class="k">return</span> <span class="n">product</span>
+
+<span class="n">product_of_sequence</span> <span class="o">=</span> <span class="n">calculate_product</span><span class="p">([</span><span class="mf">5.12</span><span class="p">,</span> <span class="mf">6.79</span><span class="p">,</span> <span class="mf">2.22</span><span class="p">,</span> <span class="mf">0.19</span><span class="p">,</span> <span class="mf">13.6</span><span class="p">])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;The cumulative product = </span><span class="si">{</span><span class="n">product_of_sequence</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The cumulative product = 199.427579904
+</pre></div>
+</div>
+</div>
+</div>
+<p>Block 2:</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This block also contains a problem which, whilst it <strong>will not cause an error</strong>, will lead to the wrong result. See if you can spot and fix this problem in addition to removing the error.</p>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">check_palindrome</span><span class="p">(</span><span class="n">convert_to_smalls</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">word</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Check if a word is a palindrome.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        word (str): The word to be checked.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        (bool): Whether or not the word is a palindrome.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="n">convert_to_smalls</span><span class="p">:</span>
+        <span class="n">word</span> <span class="o">=</span> <span class="n">word</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="c1"># Convert to small-case.</span>
+
+    <span class="k">if</span> <span class="n">word</span> <span class="o">==</span> <span class="n">word</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]:</span>
+        <span class="n">check</span> <span class="o">=</span> <span class="kc">True</span>
+
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">check</span> <span class="o">=</span> <span class="kc">False</span>
+
+<span class="n">example_word</span> <span class="o">=</span> <span class="s1">&#39;Civic&#39;</span>
+
+<span class="k">if</span> <span class="n">check_palindrome</span><span class="p">(</span><span class="n">example_word</span><span class="p">,</span> <span class="n">convert_to_smalls</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">example_word</span><span class="si">}</span><span class="s1"> is a palindrome.&#39;</span><span class="p">)</span>
+
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">example_word</span><span class="si">}</span><span class="s1"> is not a palindrome.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">check_palindrome</span><span class="p">(</span><span class="n">word</span><span class="p">,</span> <span class="n">convert_to_smalls</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Check if a word is a palindrome.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        word (str): The word to be checked.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        (bool): Whether or not the word is a palindrome.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="n">convert_to_smalls</span><span class="p">:</span>
+        <span class="n">word</span> <span class="o">=</span> <span class="n">word</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="c1"># Convert to small-case.</span>
+
+    <span class="k">if</span> <span class="n">word</span> <span class="o">==</span> <span class="n">word</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]:</span>
+        <span class="n">check</span> <span class="o">=</span> <span class="kc">True</span>
+
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">check</span> <span class="o">=</span> <span class="kc">False</span>
+
+    <span class="k">return</span> <span class="n">check</span>
+
+<span class="n">example_word</span> <span class="o">=</span> <span class="s1">&#39;Civic&#39;</span>
+
+<span class="k">if</span> <span class="n">check_palindrome</span><span class="p">(</span><span class="n">example_word</span><span class="p">,</span> <span class="n">convert_to_smalls</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">example_word</span><span class="si">}</span><span class="s1"> is a palindrome.&#39;</span><span class="p">)</span>
+
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">example_word</span><span class="si">}</span><span class="s1"> is not a palindrome.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Civic is a palindrome.
+</pre></div>
+</div>
+</div>
+</div>
+<p>Block 3:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">scipy</span>
+
+<span class="k">def</span> <span class="nf">harmonic_energy</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">nu</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Calculate the energy of a quantum harmonic oscillator.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        v (int): Quantum number labelling each energy eigenstate.</span>
+<span class="sd">        nu (float): Vibrational frequency of the oscillator.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        (float): The energy of the oscillator.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">energy</span> <span class="o">=</span> <span class="p">(</span><span class="n">v</span> <span class="o">+</span> <span class="mf">0.5</span><span class="p">)</span> <span class="o">*</span> <span class="n">scipy</span><span class="o">.</span><span class="n">constants</span><span class="o">.</span><span class="n">hbar</span> <span class="o">*</span> <span class="n">nu</span>
+
+    <span class="k">return</span> <span class="n">energy</span>
+
+<span class="n">frequency_HCl</span> <span class="o">=</span> <span class="mf">5.40e14</span>
+
+<span class="n">harmonic_energy</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">frequency_HCl</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;The zero-point energy of HCl = </span><span class="si">{</span><span class="n">energy</span><span class="si">}</span><span class="s1"> J&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">scipy</span>
+
+<span class="k">def</span> <span class="nf">harmonic_energy</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">nu</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Calculate the energy of a quantum harmonic oscillator.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        v (int): Quantum number labelling each energy eigenstate.</span>
+<span class="sd">        nu (float): Vibrational frequency of the oscillator.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        (float): The energy of the oscillator.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">energy</span> <span class="o">=</span> <span class="p">(</span><span class="n">v</span> <span class="o">+</span> <span class="mf">0.5</span><span class="p">)</span> <span class="o">*</span> <span class="n">scipy</span><span class="o">.</span><span class="n">constants</span><span class="o">.</span><span class="n">hbar</span> <span class="o">*</span> <span class="n">nu</span>
+
+    <span class="k">return</span> <span class="n">energy</span>
+
+<span class="n">frequency_HCl</span> <span class="o">=</span> <span class="mf">5.40e14</span>
+
+<span class="n">energy_HCl</span> <span class="o">=</span> <span class="n">harmonic_energy</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">frequency_HCl</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;The zero-point energy of HCl = </span><span class="si">{</span><span class="n">energy_HCl</span><span class="si">}</span><span class="s1"> J&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The zero-point energy of HCl = 2.8473439076446224e-20 J
 </pre></div>
 </div>
 </div>
