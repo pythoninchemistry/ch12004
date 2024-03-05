@@ -422,7 +422,7 @@ Here is even more text.
 </div>
 </div>
 </div>
-<p>To try this example yourself …</p>
+<p>To try this example yourself, download <a class="reference external" href="https://raw.githubusercontent.com/pythoninchemistry/ch12004/main/CH12004/lab_5/example.txt">example.txt</a>.</p>
 <p>Let’s take this example in sections. First up, we have the <code class="docutils literal notranslate"><span class="pre">open</span></code> function:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;example.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">stream</span><span class="p">:</span>
 </pre></div>
@@ -532,29 +532,29 @@ Line 2
 <section id="reading-in-scientific-data-with-numpy">
 <h2>Reading in scientific data with <code class="docutils literal notranslate"><span class="pre">numpy</span></code><a class="headerlink" href="#reading-in-scientific-data-with-numpy" title="Link to this heading">#</a></h2>
 <p>What we have just been through is the most general case: how to read in <strong>any</strong> file, regardless of what type of data is contained within. For our purposes, we are primarily intereseted in scientific data, numbers that have been collected during some series of experiments. There are many Python packages that can be used to read such data, here we’re going to rely on one that we’ve already been introduced to: <code class="docutils literal notranslate"><span class="pre">numpy</span></code>.</p>
-<p>Time for another example file, this time some experimental kinetic data looking at the concentration dependence of the rate of a reaction:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span># Concentration / M | Rate
-0.001 0.005
-0.050 0.270
-0.100 0.530
-0.150 0.790
-0.200 1.060
-0.250 1.320
-0.300 1.580
-0.350 1.850
-0.400 2.110
-0.450 2.370
-0.500 2.630
-0.550 2.900
-0.600 3.160
-0.650 3.420
-0.700 3.690
-0.750 3.950
-0.800 4.210
-0.850 4.470
-0.900 4.740
-0.950 4.740
-1.000 5.000
+<p>Time for another example file, this time some experimental data looking at the temperature dependence of the equilibrium constant for a reaction:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span># T / K | K
+100 2.38e38
+120 2.15e30
+140 3.86e24
+160 1.89e20
+180 8.42e16
+200 1.75e14
+220 1.12e12
+240 1.67e10
+260 4.73e08
+280 2.24e07
+300 1.59e06
+320 1.57e05
+340 2.03e04
+360 3.30e03
+380 6.50e02
+400 1.51e02
+420 4.01e01
+440 1.21e01
+460 4.02e00
+480 1.47e00
+500 5.82e-01
 </pre></div>
 </div>
 <p>Follow this <a class="reference internal" href="#"><span class="xref myst">link</span></a> to download this file.</p>
@@ -563,7 +563,7 @@ Line 2
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
-<span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="s1">&#39;kinetic_data.dat&#39;</span><span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="s1">&#39;thermodynamic_data.dat&#39;</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
 <span class="nb">type</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
@@ -571,27 +571,27 @@ Line 2
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[1.00e-03 5.00e-03]
- [5.00e-02 2.70e-01]
- [1.00e-01 5.30e-01]
- [1.50e-01 7.90e-01]
- [2.00e-01 1.06e+00]
- [2.50e-01 1.32e+00]
- [3.00e-01 1.58e+00]
- [3.50e-01 1.85e+00]
- [4.00e-01 2.11e+00]
- [4.50e-01 2.37e+00]
- [5.00e-01 2.63e+00]
- [5.50e-01 2.90e+00]
- [6.00e-01 3.16e+00]
- [6.50e-01 3.42e+00]
- [7.00e-01 3.69e+00]
- [7.50e-01 3.95e+00]
- [8.00e-01 4.21e+00]
- [8.50e-01 4.47e+00]
- [9.00e-01 4.74e+00]
- [9.50e-01 4.74e+00]
- [1.00e+00 5.00e+00]]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[1.00e+02 2.38e+38]
+ [1.20e+02 2.15e+30]
+ [1.40e+02 3.86e+24]
+ [1.60e+02 1.89e+20]
+ [1.80e+02 8.42e+16]
+ [2.00e+02 1.75e+14]
+ [2.20e+02 1.12e+12]
+ [2.40e+02 1.67e+10]
+ [2.60e+02 4.73e+08]
+ [2.80e+02 2.24e+07]
+ [3.00e+02 1.59e+06]
+ [3.20e+02 1.57e+05]
+ [3.40e+02 2.03e+04]
+ [3.60e+02 3.30e+03]
+ [3.80e+02 6.50e+02]
+ [4.00e+02 1.51e+02]
+ [4.20e+02 4.01e+01]
+ [4.40e+02 1.21e+01]
+ [4.60e+02 4.02e+00]
+ [4.80e+02 1.47e+00]
+ [5.00e+02 5.82e-01]]
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>numpy.ndarray
@@ -607,12 +607,12 @@ Line 2
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.001, 0.005])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([1.00e+02, 2.38e+38])
 </pre></div>
 </div>
 </div>
 </div>
-<p>As you can see from the code above, the first row of <code class="docutils literal notranslate"><span class="pre">data</span></code> is <code class="docutils literal notranslate"><span class="pre">[0.001,</span> <span class="pre">0.005]</span></code> which is indeed the first row of data in the original file. This makes sense, but in all liklihood what we actually want is all of the concentration values in one array, and all of the rate data in another array. We can achieve this by <strong>transposing</strong> the array:</p>
+<p>As you can see from the code above, the first row of <code class="docutils literal notranslate"><span class="pre">data</span></code> is <code class="docutils literal notranslate"><span class="pre">[0.001,</span> <span class="pre">0.005]</span></code> which is indeed the first row of data in the original file. This makes sense, but in all liklihood what we actually want is all of the temperature values in one array, and all of the equilibrium constant data in another array. We can achieve this by <strong>transposing</strong> the array:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">transposed_data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">T</span>
@@ -622,31 +622,32 @@ Line 2
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[1.00e-03 5.00e-02 1.00e-01 1.50e-01 2.00e-01 2.50e-01 3.00e-01 3.50e-01
-  4.00e-01 4.50e-01 5.00e-01 5.50e-01 6.00e-01 6.50e-01 7.00e-01 7.50e-01
-  8.00e-01 8.50e-01 9.00e-01 9.50e-01 1.00e+00]
- [5.00e-03 2.70e-01 5.30e-01 7.90e-01 1.06e+00 1.32e+00 1.58e+00 1.85e+00
-  2.11e+00 2.37e+00 2.63e+00 2.90e+00 3.16e+00 3.42e+00 3.69e+00 3.95e+00
-  4.21e+00 4.47e+00 4.74e+00 4.74e+00 5.00e+00]]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[1.00e+02 1.20e+02 1.40e+02 1.60e+02 1.80e+02 2.00e+02 2.20e+02 2.40e+02
+  2.60e+02 2.80e+02 3.00e+02 3.20e+02 3.40e+02 3.60e+02 3.80e+02 4.00e+02
+  4.20e+02 4.40e+02 4.60e+02 4.80e+02 5.00e+02]
+ [2.38e+38 2.15e+30 3.86e+24 1.89e+20 8.42e+16 1.75e+14 1.12e+12 1.67e+10
+  4.73e+08 2.24e+07 1.59e+06 1.57e+05 2.03e+04 3.30e+03 6.50e+02 1.51e+02
+  4.01e+01 1.21e+01 4.02e+00 1.47e+00 5.82e-01]]
 </pre></div>
 </div>
 </div>
 </div>
-<p>Now we have an array that contains all the same data as before, but the <strong>rows</strong> are now <strong>columns</strong> and vice versa. This allows us to very easily assign the concentration and rate values to separate variables:</p>
+<p>Now we have an array that contains all the same data as before, but the <strong>rows</strong> are now <strong>columns</strong> and vice versa. This allows us to very easily assign the temperature and equilibrium constant values to separate variables:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">concentration</span><span class="p">,</span> <span class="n">rate</span> <span class="o">=</span> <span class="n">transposed_data</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">temperature</span><span class="p">,</span> <span class="n">K</span> <span class="o">=</span> <span class="n">transposed_data</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="n">concentration</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">rate</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">temperature</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">K</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.001 0.05  0.1   0.15  0.2   0.25  0.3   0.35  0.4   0.45  0.5   0.55
- 0.6   0.65  0.7   0.75  0.8   0.85  0.9   0.95  1.   ]
-[0.005 0.27  0.53  0.79  1.06  1.32  1.58  1.85  2.11  2.37  2.63  2.9
- 3.16  3.42  3.69  3.95  4.21  4.47  4.74  4.74  5.   ]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[100. 120. 140. 160. 180. 200. 220. 240. 260. 280. 300. 320. 340. 360.
+ 380. 400. 420. 440. 460. 480. 500.]
+[2.38e+38 2.15e+30 3.86e+24 1.89e+20 8.42e+16 1.75e+14 1.12e+12 1.67e+10
+ 4.73e+08 2.24e+07 1.59e+06 1.57e+05 2.03e+04 3.30e+03 6.50e+02 1.51e+02
+ 4.01e+01 1.21e+01 4.02e+00 1.47e+00 5.82e-01]
 </pre></div>
 </div>
 </div>
@@ -654,18 +655,19 @@ Line 2
 <p>We could also achieve this by changing how we originally read in the file:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">concentration</span><span class="p">,</span> <span class="n">rate</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="s1">&#39;kinetic_data.dat&#39;</span><span class="p">,</span> <span class="n">unpack</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">temperature</span><span class="p">,</span> <span class="n">K</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="s1">&#39;thermodynamic_data.dat&#39;</span><span class="p">,</span> <span class="n">unpack</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="n">concentration</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">rate</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">temperature</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">K</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.001 0.05  0.1   0.15  0.2   0.25  0.3   0.35  0.4   0.45  0.5   0.55
- 0.6   0.65  0.7   0.75  0.8   0.85  0.9   0.95  1.   ]
-[0.005 0.27  0.53  0.79  1.06  1.32  1.58  1.85  2.11  2.37  2.63  2.9
- 3.16  3.42  3.69  3.95  4.21  4.47  4.74  4.74  5.   ]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[100. 120. 140. 160. 180. 200. 220. 240. 260. 280. 300. 320. 340. 360.
+ 380. 400. 420. 440. 460. 480. 500.]
+[2.38e+38 2.15e+30 3.86e+24 1.89e+20 8.42e+16 1.75e+14 1.12e+12 1.67e+10
+ 4.73e+08 2.24e+07 1.59e+06 1.57e+05 2.03e+04 3.30e+03 6.50e+02 1.51e+02
+ 4.01e+01 1.21e+01 4.02e+00 1.47e+00 5.82e-01]
 </pre></div>
 </div>
 </div>
@@ -673,37 +675,37 @@ Line 2
 <p>Here we have added the <code class="docutils literal notranslate"><span class="pre">unpack</span></code> keyword argument, which automatically transposes the output array for us, we are then using <strong>multiple assignment</strong> to immediately split the data into separate variables.</p>
 <hr class="docutils" />
 <p>For one final example, let’s look at reading in a <code class="docutils literal notranslate"><span class="pre">csv</span></code> file:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span># Concentration / M | Rate
-0.001, 0.005
-0.050, 0.270
-0.100, 0.530
-0.150, 0.790
-0.200, 1.060
-0.250, 1.320
-0.300, 1.580
-0.350, 1.850
-0.400, 2.110
-0.450, 2.370
-0.500, 2.630
-0.550, 2.900
-0.600, 3.160
-0.650, 3.420
-0.700, 3.690
-0.750, 3.950
-0.800, 4.210
-0.850, 4.470
-0.900, 4.740
-0.950, 4.740
-1.000, 5.000
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span># T / K | K
+100, 2.38e38
+120, 2.15e30
+140, 3.86e24
+160, 1.89e20
+180, 8.42e16
+200, 1.75e14
+220, 1.12e12
+240, 1.67e10
+260, 4.73e08
+280, 2.24e07
+300, 1.59e06
+320, 1.57e05
+340, 2.03e04
+360, 3.30e03
+380, 6.50e02
+400, 1.51e02
+420, 4.01e01
+440, 1.21e01
+460, 4.02e00
+480, 1.47e00
+500, 5.82e-01
 </pre></div>
 </div>
 <p>This example is actually the same data as the previous case, but now with <strong>commas</strong> separating the values rather than solely <strong>whitespace</strong>. This seemingly minor difference is actually quite important, as we can see if we try to read in this file in the same way as the previous example:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">concentration</span><span class="p">,</span> <span class="n">rate</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="s1">&#39;kinetic_data.csv&#39;</span><span class="p">,</span> <span class="n">unpack</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">temperature</span><span class="p">,</span> <span class="n">K</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="s1">&#39;thermodynamic_data.csv&#39;</span><span class="p">,</span> <span class="n">unpack</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="n">concentration</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">rate</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">temperature</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">K</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -711,9 +713,9 @@ Line 2
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
 <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">12</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">concentration</span><span class="p">,</span> <span class="n">rate</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="s1">&#39;kinetic_data.csv&#39;</span><span class="p">,</span> <span class="n">unpack</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="nb">print</span><span class="p">(</span><span class="n">concentration</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="nb">print</span><span class="p">(</span><span class="n">rate</span><span class="p">)</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">temperature</span><span class="p">,</span> <span class="n">K</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="s1">&#39;thermodynamic_data.csv&#39;</span><span class="p">,</span> <span class="n">unpack</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="nb">print</span><span class="p">(</span><span class="n">temperature</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="nb">print</span><span class="p">(</span><span class="n">K</span><span class="p">)</span>
 
 <span class="nn">File /opt/hostedtoolcache/Python/3.12.2/x64/lib/python3.12/site-packages/numpy/lib/npyio.py:1373,</span> in <span class="ni">loadtxt</span><span class="nt">(fname, dtype, comments, delimiter, converters, skiprows, usecols, unpack, ndmin, encoding, max_rows, quotechar, like)</span>
 <span class="g g-Whitespace">   </span><span class="mi">1370</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">delimiter</span><span class="p">,</span> <span class="nb">bytes</span><span class="p">):</span>
@@ -741,7 +743,7 @@ Line 2
 <span class="g g-Whitespace">   </span><span class="mi">1028</span>     <span class="c1"># Due to chunking, certain error reports are less clear, currently.</span>
 <span class="g g-Whitespace">   </span><span class="mi">1029</span>     <span class="k">if</span> <span class="n">filelike</span><span class="p">:</span>
 
-<span class="ne">ValueError</span>: could not convert string &#39;0.001,&#39; to float64 at row 0, column 1.
+<span class="ne">ValueError</span>: could not convert string &#39;100,&#39; to float64 at row 0, column 1.
 </pre></div>
 </div>
 </div>
@@ -749,18 +751,19 @@ Line 2
 <p>The <code class="docutils literal notranslate"><span class="pre">ValueError</span></code> here gives us a good clue as to what’s going wrong: <code class="docutils literal notranslate"><span class="pre">could</span> <span class="pre">not</span> <span class="pre">convert</span> <span class="pre">string</span> <span class="pre">'0.001,'</span> <span class="pre">to</span> <span class="pre">float64</span> <span class="pre">at</span> <span class="pre">row</span> <span class="pre">0,</span> <span class="pre">column</span> <span class="pre">1.</span></code> This tells us that <code class="docutils literal notranslate"><span class="pre">numpy</span></code> is including the comma with each value, which we obviously do not want. This happens because the <code class="docutils literal notranslate"><span class="pre">loadtxt</span></code> function expects values to be separated by <strong>whitespace</strong> by default, not <strong>commas</strong>. We can change this with another <strong>keyword argument</strong>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">concentration</span><span class="p">,</span> <span class="n">rate</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="s1">&#39;kinetic_data.csv&#39;</span><span class="p">,</span> <span class="n">unpack</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">temperature</span><span class="p">,</span> <span class="n">K</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="s1">&#39;thermodynamic_data.csv&#39;</span><span class="p">,</span> <span class="n">unpack</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="n">concentration</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">rate</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">temperature</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">K</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.001 0.05  0.1   0.15  0.2   0.25  0.3   0.35  0.4   0.45  0.5   0.55
- 0.6   0.65  0.7   0.75  0.8   0.85  0.9   0.95  1.   ]
-[0.005 0.27  0.53  0.79  1.06  1.32  1.58  1.85  2.11  2.37  2.63  2.9
- 3.16  3.42  3.69  3.95  4.21  4.47  4.74  4.74  5.   ]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[100. 120. 140. 160. 180. 200. 220. 240. 260. 280. 300. 320. 340. 360.
+ 380. 400. 420. 440. 460. 480. 500.]
+[2.38e+38 2.15e+30 3.86e+24 1.89e+20 8.42e+16 1.75e+14 1.12e+12 1.67e+10
+ 4.73e+08 2.24e+07 1.59e+06 1.57e+05 2.03e+04 3.30e+03 6.50e+02 1.51e+02
+ 4.01e+01 1.21e+01 4.02e+00 1.47e+00 5.82e-01]
 </pre></div>
 </div>
 </div>

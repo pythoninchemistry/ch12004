@@ -18,19 +18,19 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-concentration, rate = np.loadtxt('kinetic_data.csv', unpack=True)
+temperature, K = np.loadtxt('thermodynamic_data.csv', unpack=True)
 
-print(concentration)
-print(rate)
+print(temperature)
+print(K)
 ------------------
 
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mValueError[0m                                Traceback (most recent call last)
 Cell [0;32mIn[12], line 1[0m
-[0;32m----> 1[0m concentration, rate [38;5;241m=[39m [43mnp[49m[38;5;241;43m.[39;49m[43mloadtxt[49m[43m([49m[38;5;124;43m'[39;49m[38;5;124;43mkinetic_data.csv[39;49m[38;5;124;43m'[39;49m[43m,[49m[43m [49m[43munpack[49m[38;5;241;43m=[39;49m[38;5;28;43;01mTrue[39;49;00m[43m)[49m
-[1;32m      3[0m [38;5;28mprint[39m(concentration)
-[1;32m      4[0m [38;5;28mprint[39m(rate)
+[0;32m----> 1[0m temperature, K [38;5;241m=[39m [43mnp[49m[38;5;241;43m.[39;49m[43mloadtxt[49m[43m([49m[38;5;124;43m'[39;49m[38;5;124;43mthermodynamic_data.csv[39;49m[38;5;124;43m'[39;49m[43m,[49m[43m [49m[43munpack[49m[38;5;241;43m=[39;49m[38;5;28;43;01mTrue[39;49;00m[43m)[49m
+[1;32m      3[0m [38;5;28mprint[39m(temperature)
+[1;32m      4[0m [38;5;28mprint[39m(K)
 
 File [0;32m/opt/hostedtoolcache/Python/3.12.2/x64/lib/python3.12/site-packages/numpy/lib/npyio.py:1373[0m, in [0;36mloadtxt[0;34m(fname, dtype, comments, delimiter, converters, skiprows, usecols, unpack, ndmin, encoding, max_rows, quotechar, like)[0m
 [1;32m   1370[0m [38;5;28;01mif[39;00m [38;5;28misinstance[39m(delimiter, [38;5;28mbytes[39m):
@@ -58,5 +58,5 @@ File [0;32m/opt/hostedtoolcache/Python/3.12.2/x64/lib/python3.12/site-packages/
 [1;32m   1028[0m     [38;5;66;03m# Due to chunking, certain error reports are less clear, currently.[39;00m
 [1;32m   1029[0m     [38;5;28;01mif[39;00m filelike:
 
-[0;31mValueError[0m: could not convert string '0.001,' to float64 at row 0, column 1.
+[0;31mValueError[0m: could not convert string '100,' to float64 at row 0, column 1.
 
