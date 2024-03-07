@@ -549,7 +549,7 @@ c = 11.204090909090908 +/- 0.5995937291506074
 </div>
 </div>
 </div>
-<p>Given that we’re trying to fit a <strong>straight line</strong>, you might be wondering why on earth we’re using a function called <strong>curve</strong>_fit. Simply put, <code class="docutils literal notranslate"><span class="pre">curve_fit</span></code> is a much more robust general-use function that <code class="docutils literal notranslate"><span class="pre">linregress</span></code> (it is not limited to <strong>linear</strong> regression) and it has a keyword argument <code class="docutils literal notranslate"><span class="pre">sigma</span></code> that can be used to explicitly account for uncertainties in the experimental <span class="math notranslate nohighlight">\(y\)</span>-data using the <a class="reference external" href="https://en.wikipedia.org/wiki/Weighted_least_squares">weighted least-squares</a> method.</p>
+<p>Given that we’re trying to fit a <strong>straight line</strong>, you might be wondering why on earth we’re using a function called <strong>curve</strong>_fit. Simply put, <code class="docutils literal notranslate"><span class="pre">curve_fit</span></code> is a much more robust general-use function than <code class="docutils literal notranslate"><span class="pre">linregress</span></code> (it is not limited to <strong>linear</strong> regression) and it has a keyword argument <code class="docutils literal notranslate"><span class="pre">sigma</span></code> that can be used to explicitly account for uncertainties in the experimental <span class="math notranslate nohighlight">\(y\)</span>-data using the <a class="reference external" href="https://en.wikipedia.org/wiki/Weighted_least_squares">weighted least-squares</a> method.</p>
 <p>As mentioned above, <code class="docutils literal notranslate"><span class="pre">curve_fit</span></code> is not limited to fitting straight lines (hence the <code class="docutils literal notranslate"><span class="pre">curve</span></code> in the name). As a result, we have to specify the <strong>model</strong> we would like to try to <strong>fit</strong> to our dataset. In this case, our data is linear, so the model we are going to try and fit is the equation of a straight line:</p>
 <div class="math notranslate nohighlight">
 \[y = mx + c,\]</div>
@@ -648,7 +648,7 @@ c = 11.137530862550816 +/- 0.734641624991989
 </div>
 </div>
 </div>
-<p>Unlike when we used the <code class="docutils literal notranslate"><span class="pre">linregress</span></code> function, these errors actually account for the uncertainties in the experimental data. We can visualise our fitted model (our line of best fit) just like we did before:</p>
+<p>Unlike when we used the <code class="docutils literal notranslate"><span class="pre">linregress</span></code> function, these errors actually account for the uncertainties in the experimental data. We take the square root here to get the <strong>standard error</strong> rather than the variance associated with each parameter. We can visualise our fitted model (our line of best fit) just like we did before:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y_model</span> <span class="o">=</span> <span class="n">straight_line</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">slope</span><span class="p">,</span> <span class="n">intercept</span><span class="p">)</span> <span class="c1"># y = mx + c</span>
@@ -667,6 +667,7 @@ c = 11.137530862550816 +/- 0.734641624991989
 <img alt="../_images/f907b2d3dd4ea1a59663445ad86ea13cf6da49d5d731a107b4f9b45bfc6ec08d.png" src="../_images/f907b2d3dd4ea1a59663445ad86ea13cf6da49d5d731a107b4f9b45bfc6ec08d.png" />
 </div>
 </div>
+<p>In this case, our final plot (and our values of <span class="math notranslate nohighlight">\(m\)</span> and <span class="math notranslate nohighlight">\(c\)</span>) are pretty similar whether we use the <strong>ordinary</strong> least-squares (<code class="docutils literal notranslate"><span class="pre">linregress</span></code>) or <strong>weighted</strong> least-squares (<code class="docutils literal notranslate"><span class="pre">curve_fit</span></code> with <code class="docutils literal notranslate"><span class="pre">sigma</span></code>) methods, but this is certainly not guaranteed to be the case.</p>
 </section>
 </section>
 
