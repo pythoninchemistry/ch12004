@@ -38,6 +38,7 @@ parts:
       - file: lab_4/docstrings.ipynb
       - file: lab_4/errors.ipynb
       - file: lab_4/synoptic_exercises.ipynb
+      - file: lab_4/solutions.ipynb
 
   - caption: Resources
     chapters:
