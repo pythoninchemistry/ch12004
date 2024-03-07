@@ -386,7 +386,7 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="linear-regression">
 <h1>Linear regression<a class="headerlink" href="#linear-regression" title="Link to this heading">#</a></h1>
 <p>We have now built up all of the knowledge necessary to do some <strong>data analysis</strong>. We’re going to start with something that you’re probably very familiar with: finding a <strong>line of best fit</strong>.</p>
-<p>In all of the following examples, we will be dealing with <strong>abstract</strong> data (i.e. <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> rather than volume and pressure or time and concentration etc), so as to focus on the methodology behind what we are doing rather than the details of the data itself.</p>
+<p>In all of the following examples, we will be dealing with <strong>abstract</strong> data (i.e. <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> rather than volume and pressure or time and concentration etc), so as to focus on the methodology behind what we are doing rather than the details of the data itself. There will be frequent references to various statistical concepts, but don’t stress too much if you are unfamiliar with any of the terminology: this is not a stats course.</p>
 <p>Let’s imagine that we’ve been given some experimental data that is evidently linear:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -400,8 +400,7 @@ document.write(`
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
-<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-<span class="n">y</span> <span class="o">=</span> <span class="p">(</span><span class="mf">3.45</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="mf">11.11</span><span class="p">)</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="s1">&#39;linear.csv&#39;</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">,</span> <span class="n">unpack</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
@@ -412,7 +411,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/e5fa9b9250f7ed596b061445bb20419547362ff161b4f5de582caceb5126f6d5.png" src="../_images/e5fa9b9250f7ed596b061445bb20419547362ff161b4f5de582caceb5126f6d5.png" />
+<img alt="../_images/7ed119e16e2b3d76e7ef1ecd5a575c5aaed1c50bb7e6e027fe10c1e8cad900d9.png" src="../_images/7ed119e16e2b3d76e7ef1ecd5a575c5aaed1c50bb7e6e027fe10c1e8cad900d9.png" />
 </div>
 </div>
 <p>In order to find a <strong>line of best fit</strong>, we would like to do <a class="reference external" href="https://en.wikipedia.org/wiki/Linear_regression">linear regression</a>. In short, we want to find the line:</p>
@@ -430,7 +429,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>LinregressResult(slope=3.6452516258586174, intercept=10.443818408600148, rvalue=0.9950796098274033, pvalue=2.389736358494161e-10, stderr=0.12098410516349169, intercept_stderr=0.7157516186341311)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>LinregressResult(slope=3.434454545454545, intercept=11.204090909090908, rvalue=0.9961041753472445, pvalue=8.369268779950266e-11, stderr=0.10134983826003473, intercept_stderr=0.5995937291506074)
 </pre></div>
 </div>
 </div>
@@ -458,7 +457,7 @@ document.write(`
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">regression_data</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>The information <strong>returned</strong> from the <code class="docutils literal notranslate"><span class="pre">linregress</span></code> function contains the slope <span class="math notranslate nohighlight">\(m\)</span> and the intercept <span class="math notranslate nohighlight">\(c\)</span> of the line of best fit, alongside other useful information such as the <a class="reference external" href="https://en.wikipedia.org/wiki/Pearson_correlation_coefficient">Pearson correlation coefficient</a> <span class="math notranslate nohighlight">\(r\)</span>:</p>
+<p>The information <strong>returned</strong> from the <code class="docutils literal notranslate"><span class="pre">linregress</span></code> function contains the slope <span class="math notranslate nohighlight">\(m\)</span> and the intercept <span class="math notranslate nohighlight">\(c\)</span> of the line of best fit, alongside other useful information which we will discuss further shortly.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">regression_data</span>
@@ -466,7 +465,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>LinregressResult(slope=3.6452516258586174, intercept=10.443818408600148, rvalue=0.9950796098274033, pvalue=2.389736358494161e-10, stderr=0.12098410516349169, intercept_stderr=0.7157516186341311)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>LinregressResult(slope=3.434454545454545, intercept=11.204090909090908, rvalue=0.9961041753472445, pvalue=8.369268779950266e-11, stderr=0.10134983826003473, intercept_stderr=0.5995937291506074)
 </pre></div>
 </div>
 </div>
@@ -480,8 +479,8 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>m = 3.6452516258586174
-c = 10.443818408600148
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>m = 3.434454545454545
+c = 11.204090909090908
 </pre></div>
 </div>
 </div>
@@ -502,11 +501,11 @@ c = 10.443818408600148
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/ce52e42087b5b5e4322aabcde63be276556399aab3175bfe551e6babee49a66a.png" src="../_images/ce52e42087b5b5e4322aabcde63be276556399aab3175bfe551e6babee49a66a.png" />
+<img alt="../_images/6870fd6c34efcb8352ed51b6fb006c2bd0bbbb4e04ddf5b956dddd557562cb27.png" src="../_images/6870fd6c34efcb8352ed51b6fb006c2bd0bbbb4e04ddf5b956dddd557562cb27.png" />
 </div>
 </div>
 <p>It’s worth emphasising at this stage that whilst the example is wholly abstract (<span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> have no physical meaning and have no units), the same procedure could easily be applied to any linear dataset you might wish to analyse.</p>
-<p>In addition to the slope and intercept of the line of best fit, the <code class="docutils literal notranslate"><span class="pre">linregress</span></code> function also gives us access to the standard <strong>error</strong> associated with both values via <code class="docutils literal notranslate"><span class="pre">regression_data.stderr</span></code> and `regression_data.st:</p>
+<p>In addition to the slope and intercept of the line of best fit, the <code class="docutils literal notranslate"><span class="pre">linregress</span></code> function also gives us access to the <a class="reference external" href="https://en.wikipedia.org/wiki/Standard_error">standard error</a> associated with both values via <code class="docutils literal notranslate"><span class="pre">regression_data.stderr</span></code> and <code class="docutils literal notranslate"><span class="pre">regression_data.intercept_stderr</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;m = </span><span class="si">{</span><span class="n">regression_data</span><span class="o">.</span><span class="n">slope</span><span class="si">}</span><span class="s1"> +/- </span><span class="si">{</span><span class="n">regression_data</span><span class="o">.</span><span class="n">stderr</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
@@ -515,22 +514,19 @@ c = 10.443818408600148
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>m = 3.6452516258586174 +/- 0.12098410516349169
-c = 10.443818408600148 +/- 0.7157516186341311
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>m = 3.434454545454545 +/- 0.10134983826003473
+c = 11.204090909090908 +/- 0.5995937291506074
 </pre></div>
 </div>
 </div>
 </div>
-<p>These errors are 95% <a class="reference external" href="https://en.wikipedia.org/wiki/Confidence_interval">confidence intervals</a> calculated without any knowledge of the uncertainties in the experimental measurements.</p>
-<p>To properly account for the uncertainties associated with measurement, and to propagate these uncertaintes through to the slope <span class="math notranslate nohighlight">\(m\)</span> and the intercept <span class="math notranslate nohighlight">\(c\)</span> of our <strong>line of best fit</strong>, we require more sophisticated methods.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">linregress</span></code> function uses the <a class="reference external" href="https://en.wikipedia.org/wiki/Ordinary_least_squares">ordinary least-squares</a> method to optimise <span class="math notranslate nohighlight">\(m\)</span> and <span class="math notranslate nohighlight">\(c\)</span>, which assumes that the uncertainty (more specifically the <a class="reference external" href="https://en.wikipedia.org/wiki/Variance">variance</a>) of all the experimental measurements are equal i.e. <strong>all the error bars are the same size</strong>. In the example we have worked through above, this assumption is valid (there are <strong>no error bars</strong> on our plot), but what if we want to account for data with uneven variance associated with each data point?</p>
 <section id="accounting-for-uncertainties">
 <h2>Accounting for uncertainties<a class="headerlink" href="#accounting-for-uncertainties" title="Link to this heading">#</a></h2>
 <p>Let’s add some uncertainty to the experimental <span class="math notranslate nohighlight">\(y\)</span>-data from our previous example:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-<span class="n">y</span> <span class="o">=</span> <span class="p">(</span><span class="mf">3.45</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="mf">11.11</span><span class="p">)</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
-<span class="n">y_err</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1.55</span><span class="p">,</span> <span class="mf">1.55</span><span class="p">,</span> <span class="mf">1.53</span><span class="p">,</span> <span class="mf">1.53</span><span class="p">,</span> <span class="mf">1.33</span><span class="p">,</span> <span class="mf">1.33</span><span class="p">,</span> <span class="mf">1.33</span><span class="p">,</span> <span class="mf">1.12</span><span class="p">,</span> <span class="mf">1.02</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y_err</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1.55</span><span class="p">,</span> <span class="mf">1.55</span><span class="p">,</span> <span class="mf">1.53</span><span class="p">,</span> <span class="mf">1.53</span><span class="p">,</span> <span class="mf">1.33</span><span class="p">,</span> <span class="mf">1.33</span><span class="p">,</span> <span class="mf">1.33</span><span class="p">,</span> <span class="mf">1.12</span><span class="p">,</span> <span class="mf">1.02</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">]</span> <span class="c1"># variance in each data point</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">errorbar</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">y_err</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
@@ -541,7 +537,7 @@ c = 10.443818408600148 +/- 0.7157516186341311
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/9d4ea3c191d90a0deaf16939a5d37d72555c1cfd484439d9d8e4a7f306ccc0ee.png" src="../_images/9d4ea3c191d90a0deaf16939a5d37d72555c1cfd484439d9d8e4a7f306ccc0ee.png" />
+<img alt="../_images/1f2a9ac60538d751863f05888b47ce9cbd133790db0cd9108fa8479ff6df7e0c.png" src="../_images/1f2a9ac60538d751863f05888b47ce9cbd133790db0cd9108fa8479ff6df7e0c.png" />
 </div>
 </div>
 <p>As you can see above, we can plot error bars using <code class="docutils literal notranslate"><span class="pre">plt.errorbar</span></code>, passing the size of each error bar as a <strong>third</strong> argument (here passed as the variable <code class="docutils literal notranslate"><span class="pre">y_err</span></code>). The <code class="docutils literal notranslate"><span class="pre">fmt</span></code> keyword argument is used to prevent <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> from joining each point with a line (this is roughly equivalent how we can pass strings such as <code class="docutils literal notranslate"><span class="pre">'o'</span></code> or <code class="docutils literal notranslate"><span class="pre">'o-'</span></code> to the <code class="docutils literal notranslate"><span class="pre">plt.plot</span></code> function to change how the data is rendered).</p>
@@ -553,8 +549,8 @@ c = 10.443818408600148 +/- 0.7157516186341311
 </div>
 </div>
 </div>
-<p>Given that we’re trying to fit a <strong>straight line</strong>, you might be wondering why on earth we’re using a function called <strong>curve</strong>_fit. Simply put, <code class="docutils literal notranslate"><span class="pre">curve_fit</span></code> is a much more robust general-use function that <code class="docutils literal notranslate"><span class="pre">linregress</span></code> (it can be used to do <strong>non-linear</strong> regression as well as <strong>linear</strong> regression) and it has a keyword argument <code class="docutils literal notranslate"><span class="pre">sigma</span></code> that can be used to explicitly account for uncertainties in the experimental <span class="math notranslate nohighlight">\(y\)</span>-data.</p>
-<p>To use the <code class="docutils literal notranslate"><span class="pre">curve_fit</span></code> function, we have to define the model that we would like to fit to our data. That might sound a little vague, so let’s be more concrete: we are trying to fit a straight line, therefore our “model” for the experimental data is:</p>
+<p>Given that we’re trying to fit a <strong>straight line</strong>, you might be wondering why on earth we’re using a function called <strong>curve</strong>_fit. Simply put, <code class="docutils literal notranslate"><span class="pre">curve_fit</span></code> is a much more robust general-use function that <code class="docutils literal notranslate"><span class="pre">linregress</span></code> (it is not limited to <strong>linear</strong> regression) and it has a keyword argument <code class="docutils literal notranslate"><span class="pre">sigma</span></code> that can be used to explicitly account for uncertainties in the experimental <span class="math notranslate nohighlight">\(y\)</span>-data using the <a class="reference external" href="https://en.wikipedia.org/wiki/Weighted_least_squares">weighted least-squares</a> method.</p>
+<p>As mentioned above, <code class="docutils literal notranslate"><span class="pre">curve_fit</span></code> is not limited to fitting straight lines (hence the <code class="docutils literal notranslate"><span class="pre">curve</span></code> in the name). As a result, we have to specify the <strong>model</strong> we would like to try to <strong>fit</strong> to our dataset. In this case, our data is linear, so the model we are going to try and fit is the equation of a straight line:</p>
 <div class="math notranslate nohighlight">
 \[y = mx + c,\]</div>
 <p>where <span class="math notranslate nohighlight">\(m\)</span> is the slope and <span class="math notranslate nohighlight">\(c\)</span> is the intercept. We can define this model in Python as a <strong>function</strong>:</p>
@@ -594,9 +590,9 @@ c = 10.443818408600148 +/- 0.7157516186341311
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(array([ 3.26566492, 12.34026952]),
- array([[ 0.00743698, -0.04667083],
-        [-0.04667083,  0.36502655]]))
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(array([ 3.45325015, 11.13753086]),
+ array([[ 0.01099572, -0.06900366],
+        [-0.06900366,  0.53969832]]))
 </pre></div>
 </div>
 </div>
@@ -613,7 +609,7 @@ c = 10.443818408600148 +/- 0.7157516186341311
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 3.26566492, 12.34026952])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 3.45325015, 11.13753086])
 </pre></div>
 </div>
 </div>
@@ -626,36 +622,36 @@ c = 10.443818408600148 +/- 0.7157516186341311
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 0.00743698, -0.04667083],
-       [-0.04667083,  0.36502655]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 0.01099572, -0.06900366],
+       [-0.06900366,  0.53969832]])
 </pre></div>
 </div>
 </div>
 </div>
-<p>Without getting into the underlying statistics, the important data here is on the <strong>diagonal</strong> of this matrix. Again in the same order as specified in the function definition, the diagonal elements of the covariance matrix are the <strong>errors</strong> associated with the slope and the intercept:</p>
+<p>Without getting into the underlying statistics, the important data here is on the <strong>diagonal</strong> of this matrix. Again in the same order as specified in the function definition, each element on the diagonal is the <strong>variance</strong> associated with that parameter.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">slope</span><span class="p">,</span> <span class="n">intercept</span> <span class="o">=</span> <span class="n">regression_data</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 <span class="n">covariance_matrix</span> <span class="o">=</span> <span class="n">regression_data</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
-<span class="n">slope_error</span> <span class="o">=</span> <span class="n">covariance_matrix</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="c1"># First element of the diagonal, row 1 column 1</span>
-<span class="n">intercept_error</span> <span class="o">=</span> <span class="n">covariance_matrix</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="c1"># Second element of the diagonal, row 2 column 2</span>
+<span class="n">slope_variance</span> <span class="o">=</span> <span class="n">covariance_matrix</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="c1"># First element of the diagonal, row 1 column 1</span>
+<span class="n">intercept_variance</span> <span class="o">=</span> <span class="n">covariance_matrix</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="c1"># Second element of the diagonal, row 2 column 2</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;m = </span><span class="si">{</span><span class="n">slope</span><span class="si">}</span><span class="s1"> +/- </span><span class="si">{</span><span class="n">slope_error</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;c = </span><span class="si">{</span><span class="n">intercept</span><span class="si">}</span><span class="s1"> +/- </span><span class="si">{</span><span class="n">intercept_error</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;m = </span><span class="si">{</span><span class="n">slope</span><span class="si">}</span><span class="s1"> +/- </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">slope_variance</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;c = </span><span class="si">{</span><span class="n">intercept</span><span class="si">}</span><span class="s1"> +/- </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">intercept_variance</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>m = 3.2656649240585924 +/- 0.007436984600217227
-c = 12.340269521602082 +/- 0.3650265523187402
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>m = 3.453250147921937 +/- 0.1048604582600492
+c = 11.137530862550816 +/- 0.734641624991989
 </pre></div>
 </div>
 </div>
 </div>
-<p>Unlike when we used the <code class="docutils literal notranslate"><span class="pre">linregress</span></code> function, these errors actually account for the uncertainties in the experimental data and <strong>propagate</strong> these through to the <strong>error</strong> in <span class="math notranslate nohighlight">\(m\)</span> and <span class="math notranslate nohighlight">\(c\)</span>. We can visualise our fitted model (our line of best fit) just like we did before:</p>
+<p>Unlike when we used the <code class="docutils literal notranslate"><span class="pre">linregress</span></code> function, these errors actually account for the uncertainties in the experimental data. We can visualise our fitted model (our line of best fit) just like we did before:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y_model</span> <span class="o">=</span> <span class="n">slope</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="n">intercept</span> <span class="c1"># y = mx + c</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y_model</span> <span class="o">=</span> <span class="n">straight_line</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">slope</span><span class="p">,</span> <span class="n">intercept</span><span class="p">)</span> <span class="c1"># y = mx + c</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">errorbar</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">y_err</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Experimental data&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y_model</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Line of best fit&#39;</span><span class="p">)</span>
@@ -668,7 +664,7 @@ c = 12.340269521602082 +/- 0.3650265523187402
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/cd48a9ea9c57bcbdb89a1f8124660680501a65a3c84a953ac8e64e4b77f0bb29.png" src="../_images/cd48a9ea9c57bcbdb89a1f8124660680501a65a3c84a953ac8e64e4b77f0bb29.png" />
+<img alt="../_images/f907b2d3dd4ea1a59663445ad86ea13cf6da49d5d731a107b4f9b45bfc6ec08d.png" src="../_images/f907b2d3dd4ea1a59663445ad86ea13cf6da49d5d731a107b4f9b45bfc6ec08d.png" />
 </div>
 </div>
 </section>

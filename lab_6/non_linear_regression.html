@@ -348,7 +348,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -364,6 +366,15 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linearising-data">Linearising data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#avoiding-linearisation">Avoiding linearisation</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -388,8 +399,7 @@ document.write(`
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
-<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">11</span><span class="p">)</span>
-<span class="n">y</span> <span class="o">=</span> <span class="mf">2.21</span> <span class="o">*</span> <span class="n">x</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span> <span class="mf">5.40</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="mf">12.1</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">scale</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="s1">&#39;non_linear.csv&#39;</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">,</span> <span class="n">unpack</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
@@ -400,7 +410,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/bd637b6af732def81a99346a82c8a52cf0af351c59475e0b8f7769ecb20ad293.png" src="../_images/bd637b6af732def81a99346a82c8a52cf0af351c59475e0b8f7769ecb20ad293.png" />
+<img alt="../_images/cd4d7a552728631cf14583ee75f4d2f88d767bcfc68f18f74b40fbfff568e7b7.png" src="../_images/cd4d7a552728631cf14583ee75f4d2f88d767bcfc68f18f74b40fbfff568e7b7.png" />
 </div>
 </div>
 <p>Here we have some data which looks to be <strong>quadratic</strong>, so let’s try to fit an quadratic <strong>model</strong> using <code class="docutils literal notranslate"><span class="pre">curve_fit</span></code>. First we need to define a <strong>function</strong> that represents the model we would like to fit. If we are trying to fit an quadratic curve, then mathematically we can define this as:</p>
@@ -442,10 +452,11 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="n">optimised_parameters</span>
-<span class="n">y_model</span> <span class="o">=</span> <span class="n">quadratic</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
+<span class="n">x_model</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="nb">max</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="mi">1000</span><span class="p">)</span>
+<span class="n">y_model</span> <span class="o">=</span> <span class="n">quadratic</span><span class="p">(</span><span class="n">x_model</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span> <span class="c1"># Using x_model rather than x to evaluate the curve at many more points (smoother curve).</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Experimental data&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y_model</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Quadratic model&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_model</span><span class="p">,</span> <span class="n">y_model</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Quadratic model&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">)</span>
 
@@ -454,30 +465,234 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/9342101cddb2af2ca3ea2207254c406b9fbc666b12a45ed68fc69640f132b4d5.png" src="../_images/9342101cddb2af2ca3ea2207254c406b9fbc666b12a45ed68fc69640f132b4d5.png" />
+<img alt="../_images/a9368d18b7e232078040a7b3e0bfb38a813a8e36939e19a3365f11f5ee28ee86.png" src="../_images/a9368d18b7e232078040a7b3e0bfb38a813a8e36939e19a3365f11f5ee28ee86.png" />
 </div>
 </div>
-<p>Again we can the uncertainties in our model parameters (this time without taking into account experimental uncertainties) by looking at the diagonal of the covariance matrix:</p>
+<p>Notice that here we have created a variable <code class="docutils literal notranslate"><span class="pre">x_model</span></code> which is a <code class="docutils literal notranslate"><span class="pre">numpy</span></code> array of evenly spaced values between the minimum experimental <span class="math notranslate nohighlight">\(x\)</span>-value and the maximum experimental <span class="math notranslate nohighlight">\(x\)</span>-value. This allows us to plot our model quadratic curve <strong>smoothly</strong>. Had we used the original <code class="docutils literal notranslate"><span class="pre">x</span></code> variable, our curve would look <strong>jagged</strong> (as <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> really just joins points in sequence to form a line, more points = smoother curve).</p>
+<p>Again we can access the errors in our model parameters (this time without taking into account experimental uncertainties) by looking at the diagonal of the covariance matrix:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a_error</span> <span class="o">=</span> <span class="n">covariance_matrix</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
-<span class="n">b_error</span> <span class="o">=</span> <span class="n">covariance_matrix</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
-<span class="n">c_error</span> <span class="o">=</span> <span class="n">covariance_matrix</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a_error</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">covariance_matrix</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">b_error</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">covariance_matrix</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">c_error</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">covariance_matrix</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">])</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;a = </span><span class="si">{</span><span class="n">a</span><span class="si">}</span><span class="s1"> +/- </span><span class="si">{</span><span class="n">a_error</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;a = </span><span class="si">{</span><span class="n">b</span><span class="si">}</span><span class="s1"> +/- </span><span class="si">{</span><span class="n">b_error</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;a = </span><span class="si">{</span><span class="n">c</span><span class="si">}</span><span class="s1"> +/- </span><span class="si">{</span><span class="n">c_error</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;b = </span><span class="si">{</span><span class="n">b</span><span class="si">}</span><span class="s1"> +/- </span><span class="si">{</span><span class="n">b_error</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;c = </span><span class="si">{</span><span class="n">c</span><span class="si">}</span><span class="s1"> +/- </span><span class="si">{</span><span class="n">c_error</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a = 2.32304667390087 +/- 0.019344207229866923
-a = 4.369447065958216 +/- 2.085305640574993
-a = 11.96549883943292 +/- 9.633415730009537
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a = 2.3654895104924902 +/- 0.14021485339715167
+b = 3.769741258747291 +/- 1.4558056370330905
+c = 15.78279720282947 +/- 3.129022442918197
 </pre></div>
 </div>
 </div>
 </div>
+<hr class="docutils" />
+<p>Just like our linear examples, if we have information about the uncertainties in our experimental measurements, we can plot these using the <code class="docutils literal notranslate"><span class="pre">errorbar</span></code> function:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y_err</span> <span class="o">=</span> <span class="p">[</span><span class="mf">4.97</span><span class="p">,</span> <span class="mf">0.785</span><span class="p">,</span> <span class="mf">7.10</span><span class="p">,</span> <span class="mf">22.1</span><span class="p">,</span> <span class="mf">11.5</span><span class="p">,</span> <span class="mf">14.6</span><span class="p">,</span> <span class="mf">3.93</span><span class="p">,</span> <span class="mf">17.8</span><span class="p">,</span> <span class="mf">26.4</span><span class="p">,</span> <span class="mf">8.79</span><span class="p">,</span> <span class="mf">2.31</span><span class="p">]</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">errorbar</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">y_err</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/a2234fc5c9d0bf730805271cf59455d3df6fe43480ceb1b7191bd97f67102706.png" src="../_images/a2234fc5c9d0bf730805271cf59455d3df6fe43480ceb1b7191bd97f67102706.png" />
+</div>
+</div>
+<p>We can then fit our quadratic model to this data and use the <code class="docutils literal notranslate"><span class="pre">sigma</span></code> keyword (the weighted least-squares method) to account for the uncertainties and propagate these through to the standard errors on <span class="math notranslate nohighlight">\(a\)</span>, <span class="math notranslate nohighlight">\(b\)</span> and <span class="math notranslate nohighlight">\(c\)</span>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">optimised_parameters</span><span class="p">,</span> <span class="n">covariance_matrix</span> <span class="o">=</span> <span class="n">curve_fit</span><span class="p">(</span><span class="n">quadratic</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">sigma</span><span class="o">=</span><span class="n">y_err</span><span class="p">)</span>
+<span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="n">optimised_parameters</span>
+<span class="n">y_model</span> <span class="o">=</span> <span class="n">quadratic</span><span class="p">(</span><span class="n">x_model</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">errorbar</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">y_err</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Experimental data&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_model</span><span class="p">,</span> <span class="n">y_model</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Quadratic model&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="n">a_error</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">covariance_matrix</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">b_error</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">covariance_matrix</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">c_error</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">covariance_matrix</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;a = </span><span class="si">{</span><span class="n">a</span><span class="si">}</span><span class="s1"> +/- </span><span class="si">{</span><span class="n">a_error</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;b = </span><span class="si">{</span><span class="n">b</span><span class="si">}</span><span class="s1"> +/- </span><span class="si">{</span><span class="n">b_error</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;c = </span><span class="si">{</span><span class="n">c</span><span class="si">}</span><span class="s1"> +/- </span><span class="si">{</span><span class="n">c_error</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/c852fd38681898466774fa3f75f81e156b15a1e45e2a764deafb889cd7fe7c27.png" src="../_images/c852fd38681898466774fa3f75f81e156b15a1e45e2a764deafb889cd7fe7c27.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a = 2.620329100824009 +/- 0.11135716669077006
+b = 1.0044274048596924 +/- 1.1823795446825307
+c = 20.739565009713626 +/- 1.2261302133957708
+</pre></div>
+</div>
+</div>
+</div>
+<section id="linearising-data">
+<h2>Linearising data<a class="headerlink" href="#linearising-data" title="Link to this heading">#</a></h2>
+<p>We’re going to take a look at a concrete example in chemistry now, so as to demonstrate the advantages of using Python to fit models to our data rather than something like Excel.</p>
+<p>Consider the following reaction:</p>
+<div class="math notranslate nohighlight">
+\[2\mathrm{NO}_{2} \rightarrow 2\mathrm{NO} + \mathrm{O}_{2}.\]</div>
+<p>If we carry out a set of experiments to measure the rate constant <span class="math notranslate nohighlight">\(k\)</span> at a range of different temperatures, then we can fit the Arrhenius equation to our data to calculate the activation energy <span class="math notranslate nohighlight">\(E_{a}\)</span> (and the prefactor <span class="math notranslate nohighlight">\(A\)</span>) for this reaction:</p>
+<div class="math notranslate nohighlight">
+\[k = A\exp\left[\frac{-E_{a}}{RT}\right],\]</div>
+<p>where <span class="math notranslate nohighlight">\(R\)</span> is the gas constant and <span class="math notranslate nohighlight">\(T\)</span> is the temperature.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">T</span><span class="p">,</span> <span class="n">k</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="s1">&#39;arrhenius.dat&#39;</span><span class="p">,</span> <span class="n">unpack</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">T</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;T / K&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;k / M-1s-1&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/8881d2a92185158f9045cdc29848fb6f04e53c5c5d8aeec13d142960ccbcb152.png" src="../_images/8881d2a92185158f9045cdc29848fb6f04e53c5c5d8aeec13d142960ccbcb152.png" />
+</div>
+</div>
+<p>Imagine for a moment that we were doing this in Excel, which cannot fit non-linear data (in any meaningful sense). We would have to <strong>linearise our data</strong>:</p>
+<div class="math notranslate nohighlight">
+\[\ln k = \ln A - \frac{E_{a}}{RT},\]</div>
+<p>so let’s simulate that process in Python:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">reciprocal_T</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="n">T</span>
+<span class="n">ln_k</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">reciprocal_T</span><span class="p">,</span> <span class="n">ln_k</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;1 / T / K-1&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;ln k / ln(M-1s-1)&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/32fb34cd2f27ebc096956c41dfd39a7684a7f7d96aa7c87c54aaefff4becdb45.png" src="../_images/32fb34cd2f27ebc096956c41dfd39a7684a7f7d96aa7c87c54aaefff4becdb45.png" />
+</div>
+</div>
+<p>Now we can use the <code class="docutils literal notranslate"><span class="pre">linregress</span></code> function to compute the value of the slope and the intercept:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">linregress</span>
+
+<span class="n">regression_data</span> <span class="o">=</span> <span class="n">linregress</span><span class="p">(</span><span class="n">reciprocal_T</span><span class="p">,</span> <span class="n">ln_k</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;m = </span><span class="si">{</span><span class="n">regression_data</span><span class="o">.</span><span class="n">slope</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;c = </span><span class="si">{</span><span class="n">regression_data</span><span class="o">.</span><span class="n">intercept</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>m = -13509.355973303444
+c = 15.161037389899018
+</pre></div>
+</div>
+</div>
+</div>
+<p>If we look at the linearised Arrhenius equation, we can determine what the slope and intercept correspond to:</p>
+<div class="math notranslate nohighlight">
+\[m = -\frac{E_{a}}{R},\]</div>
+<div class="math notranslate nohighlight">
+\[c = \ln A.\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.constants</span> <span class="kn">import</span> <span class="n">R</span>
+
+<span class="n">ln_k_model</span> <span class="o">=</span> <span class="n">regression_data</span><span class="o">.</span><span class="n">slope</span> <span class="o">*</span> <span class="n">reciprocal_T</span> <span class="o">+</span> <span class="n">regression_data</span><span class="o">.</span><span class="n">intercept</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">reciprocal_T</span><span class="p">,</span> <span class="n">ln_k</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">reciprocal_T</span><span class="p">,</span> <span class="n">ln_k_model</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;1 / T / K-1&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;ln k / ln(M-1s-1)&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="n">E_a</span> <span class="o">=</span> <span class="o">-</span><span class="n">R</span> <span class="o">*</span> <span class="n">regression_data</span><span class="o">.</span><span class="n">slope</span>
+<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">regression_data</span><span class="o">.</span><span class="n">intercept</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;E_a = </span><span class="si">{</span><span class="n">E_a</span><span class="si">}</span><span class="s1"> Jmol-1 = </span><span class="si">{</span><span class="n">E_a</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">1000</span><span class="si">}</span><span class="s1"> kJmol-1&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;A = </span><span class="si">{</span><span class="n">A</span><span class="si">}</span><span class="s1"> M-1s-1&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/db1e24d0a3a9ea4a26b6453059c9aa32326751987124f0ec11e479ce55bbc1b8.png" src="../_images/db1e24d0a3a9ea4a26b6453059c9aa32326751987124f0ec11e479ce55bbc1b8.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>E_a = 112323.03523328649 Jmol-1 = 112.32303523328649 kJmol-1
+A = 3840209.1525825486 M-1s-1
+</pre></div>
+</div>
+</div>
+</div>
+<p>Okay great, we have values for <span class="math notranslate nohighlight">\(E_{a}\)</span> and <span class="math notranslate nohighlight">\(A\)</span>. If you are new to Python, you may well be thinking at this point “Why bother doing this in Python if I can do the same thing in Excel?” Well, without being exhaustive, there is one <strong>major</strong> problem with the approach we have taken above:</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Linearising your data before performing ordinary least-squares regression actually <strong>biases</strong> your optimised parameters (here <span class="math notranslate nohighlight">\(E_{a}\)</span> and <span class="math notranslate nohighlight">\(A\)</span>). In other words, there is actually an <strong>intrinsic error</strong> in the optimised parameters introduced by linearising your data.</p>
+</div>
+<p>If you are curious about the origins of this bias, click <a class="reference external" href="https://pubs.acs.org/doi/10.1021/acs.jchemed.3c00466">here</a> for a link to a relevant publication on the subject.</p>
+</section>
+<section id="avoiding-linearisation">
+<h2>Avoiding linearisation<a class="headerlink" href="#avoiding-linearisation" title="Link to this heading">#</a></h2>
+<p>So, how can we avoid this problem? As you may already have surmised, we have already seen the solution to this problem: <strong>we do not have to linearise our data in the first place</strong>. In Python, we can use the <code class="docutils literal notranslate"><span class="pre">curve_fit</span></code> function to fit <strong>non-linear</strong> data, thus sidestepping the problems associated with linearisation. If we want to use <code class="docutils literal notranslate"><span class="pre">curve_fit</span></code>, we have to define a function to represent the model we would like to fit, here the (non-linear form of the) Arrhenius equation:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">arrhenius</span><span class="p">(</span><span class="n">T</span><span class="p">,</span> <span class="n">E_a</span><span class="p">,</span> <span class="n">A</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Calculate the rate constant at a range of temperatures using the Arrhenius equation k = A exp[-E_a/RT]</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        T (np.ndarray): A numpy array containing the temperatures at which to calculate k.</span>
+<span class="sd">        E_a (float): The activation energy for the reaction (in Jmol-1).</span>
+<span class="sd">        A (float): The prefactor in the Arrhenius equation.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        (np.ndarray): The rate constant k evaluated at a range of temperatures.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">return</span> <span class="n">A</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">E_a</span> <span class="o">/</span> <span class="p">(</span><span class="n">R</span> <span class="o">*</span> <span class="n">T</span><span class="p">))</span>
+
+<span class="n">optimised_parameters</span><span class="p">,</span> <span class="n">covariance_matrix</span> <span class="o">=</span> <span class="n">curve_fit</span><span class="p">(</span><span class="n">arrhenius</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
+<span class="n">E_a</span><span class="p">,</span> <span class="n">A</span> <span class="o">=</span> <span class="n">optimised_parameters</span>
+
+<span class="n">T_model</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">T</span><span class="p">),</span> <span class="nb">max</span><span class="p">(</span><span class="n">T</span><span class="p">),</span> <span class="mi">1000</span><span class="p">)</span>
+<span class="n">k_model</span> <span class="o">=</span> <span class="n">arrhenius</span><span class="p">(</span><span class="n">T_model</span><span class="p">,</span> <span class="n">E_a</span><span class="p">,</span> <span class="n">A</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">T</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">T_model</span><span class="p">,</span> <span class="n">k_model</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;T / K&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;k / M-1s-1&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;E_a = </span><span class="si">{</span><span class="n">E_a</span><span class="si">}</span><span class="s1"> Jmol-1 = </span><span class="si">{</span><span class="n">E_a</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">1000</span><span class="si">}</span><span class="s1"> kJmol-1&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;A = </span><span class="si">{</span><span class="n">A</span><span class="si">}</span><span class="s1"> M-1s-1&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>E_a = 116196.43245237798 Jmol-1 = 116.19643245237798 kJmol-1
+A = 7934409.52396029 M-1s-1
+</pre></div>
+</div>
+<img alt="../_images/cf1901a3f4946978b275214d2aa91b65e583a7a87b6c36c816481724a54ab8ed.png" src="../_images/cf1901a3f4946978b275214d2aa91b65e583a7a87b6c36c816481724a54ab8ed.png" />
+</div>
+</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -517,7 +732,21 @@ a = 11.96549883943292 +/- 9.633415730009537
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"></div>
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linearising-data">Linearising data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#avoiding-linearisation">Avoiding linearisation</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
