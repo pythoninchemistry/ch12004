@@ -217,6 +217,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../lab_4/docstrings.html">Docstrings</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../lab_4/errors.html">Errors</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../lab_4/synoptic_exercises.html">Synoptic exercises</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lab_4/solutions.html">Solutions</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Resources</span></p>
 <ul class="nav bd-sidenav">
@@ -411,7 +412,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/a74af4813a31b627a5518a8fb0b97ab3e318e7645a5e7652d9df4d10ddb0c2ef.png" src="../_images/a74af4813a31b627a5518a8fb0b97ab3e318e7645a5e7652d9df4d10ddb0c2ef.png" />
+<img alt="../_images/e5fa9b9250f7ed596b061445bb20419547362ff161b4f5de582caceb5126f6d5.png" src="../_images/e5fa9b9250f7ed596b061445bb20419547362ff161b4f5de582caceb5126f6d5.png" />
 </div>
 </div>
 <p>In order to find a <strong>line of best fit</strong>, we would like to do <a class="reference external" href="https://en.wikipedia.org/wiki/Linear_regression">linear regression</a>. In short, we want to find the line:</p>
@@ -429,7 +430,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>LinregressResult(slope=3.425234459511607, intercept=11.116728336874885, rvalue=0.9994162372969383, pvalue=1.6410243565841547e-14, stderr=0.03902944972937949, intercept_stderr=0.23090133848948477)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>LinregressResult(slope=3.6452516258586174, intercept=10.443818408600148, rvalue=0.9950796098274033, pvalue=2.389736358494161e-10, stderr=0.12098410516349169, intercept_stderr=0.7157516186341311)
 </pre></div>
 </div>
 </div>
@@ -465,7 +466,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>LinregressResult(slope=3.425234459511607, intercept=11.116728336874885, rvalue=0.9994162372969383, pvalue=1.6410243565841547e-14, stderr=0.03902944972937949, intercept_stderr=0.23090133848948477)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>LinregressResult(slope=3.6452516258586174, intercept=10.443818408600148, rvalue=0.9950796098274033, pvalue=2.389736358494161e-10, stderr=0.12098410516349169, intercept_stderr=0.7157516186341311)
 </pre></div>
 </div>
 </div>
@@ -479,8 +480,8 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>m = 3.425234459511607
-c = 11.116728336874885
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>m = 3.6452516258586174
+c = 10.443818408600148
 </pre></div>
 </div>
 </div>
@@ -501,7 +502,7 @@ c = 11.116728336874885
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/46df500514f3e28d59592854a27bf38fcac67199725a421b1efb85edea66512c.png" src="../_images/46df500514f3e28d59592854a27bf38fcac67199725a421b1efb85edea66512c.png" />
+<img alt="../_images/ce52e42087b5b5e4322aabcde63be276556399aab3175bfe551e6babee49a66a.png" src="../_images/ce52e42087b5b5e4322aabcde63be276556399aab3175bfe551e6babee49a66a.png" />
 </div>
 </div>
 <p>It’s worth emphasising at this stage that whilst the example is wholly abstract (<span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> have no physical meaning and have no units), the same procedure could easily be applied to any linear dataset you might wish to analyse.</p>
@@ -514,8 +515,8 @@ c = 11.116728336874885
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>m = 3.425234459511607 +/- 0.03902944972937949
-c = 11.116728336874885 +/- 0.23090133848948477
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>m = 3.6452516258586174 +/- 0.12098410516349169
+c = 10.443818408600148 +/- 0.7157516186341311
 </pre></div>
 </div>
 </div>
@@ -540,7 +541,7 @@ c = 11.116728336874885 +/- 0.23090133848948477
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/80e756c3d8016463f9ce10fe62a4d64143bb63b05de59289a89538c84bf52ae5.png" src="../_images/80e756c3d8016463f9ce10fe62a4d64143bb63b05de59289a89538c84bf52ae5.png" />
+<img alt="../_images/9d4ea3c191d90a0deaf16939a5d37d72555c1cfd484439d9d8e4a7f306ccc0ee.png" src="../_images/9d4ea3c191d90a0deaf16939a5d37d72555c1cfd484439d9d8e4a7f306ccc0ee.png" />
 </div>
 </div>
 <p>As you can see above, we can plot error bars using <code class="docutils literal notranslate"><span class="pre">plt.errorbar</span></code>, passing the size of each error bar as a <strong>third</strong> argument (here passed as the variable <code class="docutils literal notranslate"><span class="pre">y_err</span></code>). The <code class="docutils literal notranslate"><span class="pre">fmt</span></code> keyword argument is used to prevent <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> from joining each point with a line (this is roughly equivalent how we can pass strings such as <code class="docutils literal notranslate"><span class="pre">'o'</span></code> or <code class="docutils literal notranslate"><span class="pre">'o-'</span></code> to the <code class="docutils literal notranslate"><span class="pre">plt.plot</span></code> function to change how the data is rendered).</p>
@@ -593,9 +594,9 @@ c = 11.116728336874885 +/- 0.23090133848948477
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(array([ 3.59760678, 10.16419983]),
- array([[ 0.02006862, -0.1259407 ],
-        [-0.1259407 ,  0.98502001]]))
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(array([ 3.26566492, 12.34026952]),
+ array([[ 0.00743698, -0.04667083],
+        [-0.04667083,  0.36502655]]))
 </pre></div>
 </div>
 </div>
@@ -612,7 +613,7 @@ c = 11.116728336874885 +/- 0.23090133848948477
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 3.59760678, 10.16419983])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 3.26566492, 12.34026952])
 </pre></div>
 </div>
 </div>
@@ -625,8 +626,8 @@ c = 11.116728336874885 +/- 0.23090133848948477
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 0.02006862, -0.1259407 ],
-       [-0.1259407 ,  0.98502001]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 0.00743698, -0.04667083],
+       [-0.04667083,  0.36502655]])
 </pre></div>
 </div>
 </div>
@@ -645,8 +646,8 @@ c = 11.116728336874885 +/- 0.23090133848948477
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>m = 3.5976067807617764 +/- 0.020068619009779427
-c = 10.164199834908858 +/- 0.9850200148958883
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>m = 3.2656649240585924 +/- 0.007436984600217227
+c = 12.340269521602082 +/- 0.3650265523187402
 </pre></div>
 </div>
 </div>
@@ -667,7 +668,7 @@ c = 10.164199834908858 +/- 0.9850200148958883
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/c3cab0bac53aa57e478624a8ce5d4271bdf06dd86a40fdf00ac16d1c5b31a4c1.png" src="../_images/c3cab0bac53aa57e478624a8ce5d4271bdf06dd86a40fdf00ac16d1c5b31a4c1.png" />
+<img alt="../_images/cd48a9ea9c57bcbdb89a1f8124660680501a65a3c84a953ac8e64e4b77f0bb29.png" src="../_images/cd48a9ea9c57bcbdb89a1f8124660680501a65a3c84a953ac8e64e4b77f0bb29.png" />
 </div>
 </div>
 </section>
