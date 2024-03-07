@@ -46,6 +46,11 @@ parts:
       - file: lab_5/file_io.ipynb
       - file: lab_5/synoptic_exercises.ipynb
       - file: lab_5/solutions.ipynb
+  - caption: Lab 6 - Data analysis
+    chapters:
+      - file: lab_6/linear_regression.ipynb
+      - file: lab_6/non_linear_regression.ipynb
+      - file: lab_6/minimisation.ipynb
 
   - caption: Resources
     chapters:
