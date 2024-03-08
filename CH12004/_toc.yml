@@ -39,6 +39,17 @@ parts:
       - file: lab_4/errors.ipynb
       - file: lab_4/synoptic_exercises.ipynb
       - file: lab_4/solutions.ipynb
+  - caption: Lab 5 - External libraries
+    chapters:
+      - file: lab_5/numpy.ipynb
+      - file: lab_5/matplotlib.ipynb
+      - file: lab_5/file_io.ipynb
+      - file: lab_5/synoptic_exercises.ipynb
+  - caption: Lab 6 - Data analysis
+    chapters:
+      - file: lab_6/linear_regression.ipynb
+      - file: lab_6/non_linear_regression.ipynb
+      - file: lab_6/minimisation.ipynb
 
   - caption: Resources
     chapters:
