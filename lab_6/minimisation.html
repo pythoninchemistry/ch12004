@@ -405,26 +405,6 @@ document.write(`
 </div>
 </div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-
-<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
-<span class="n">f_x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">**</span> <span class="mi">2</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">f_x</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;f(x)&#39;</span><span class="p">)</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/730be0f9a658ea9c1d1d24aa5605aae714577df57b31ebe237afc0a8b0761a99.png" src="../_images/730be0f9a658ea9c1d1d24aa5605aae714577df57b31ebe237afc0a8b0761a99.png" />
-</div>
-</div>
 <p>Now obviously as human beings, we can find the minimum of this function <strong>analytically</strong> via calculus, but what if we wanted to minimise <span class="math notranslate nohighlight">\(f(x)\)</span> <strong>numerically</strong>?</p>
 <p>We can perform numerical minimisation with the <code class="docutils literal notranslate"><span class="pre">minimize</span></code> function, again from the <code class="docutils literal notranslate"><span class="pre">scipy</span></code> library:</p>
 <div class="cell docutils container">
@@ -475,7 +455,7 @@ document.write(`
 </div>
 </div>
 </div>
-<p>Notice that we supplied <code class="docutils literal notranslate"><span class="pre">minimize</span></code> with <strong>two</strong> arguments: the name of the function that we would like to minimize <code class="docutils literal notranslate"><span class="pre">x_squared</span></code> and a list <code class="docutils literal notranslate"><span class="pre">[5]</span></code>. The second argument is our <strong>initial guess</strong> for the minimum. Now again, this is a somewhat trivial example, we <strong>know</strong> that the minimum is at <span class="math notranslate nohighlight">\(0\)</span>, but here we set our initial guess to <span class="math notranslate nohighlight">\(5\)</span> to show that <code class="docutils literal notranslate"><span class="pre">minimize</span></code> can get to the correct result on its own. The reason that this argument is a <code class="docutils literal notranslate"><span class="pre">list</span></code> rather than a <code class="docutils literal notranslate"><span class="pre">float</span></code> is that the <code class="docutils literal notranslate"><span class="pre">minimize</span></code> function can minimise functions with respect to <strong>multiple variables simultaneously</strong> e.g. the set of parameters <span class="math notranslate nohighlight">\(\theta\)</span> in least-squares regression (in which case you would need an initial guess for <strong>each</strong> of those variables).</p>
+<p>Notice that we supplied <code class="docutils literal notranslate"><span class="pre">minimize</span></code> with <strong>two</strong> arguments: the name of the function that we would like to minimize <code class="docutils literal notranslate"><span class="pre">x_squared</span></code> and a list <code class="docutils literal notranslate"><span class="pre">[5]</span></code>. The second argument <code class="docutils literal notranslate"><span class="pre">x0</span></code> is our <strong>initial guess</strong> for the minimum. Now again, this is a somewhat trivial example, we <strong>know</strong> that the minimum is at <span class="math notranslate nohighlight">\(0\)</span>, but here we set our initial guess to <span class="math notranslate nohighlight">\(5\)</span> to show that <code class="docutils literal notranslate"><span class="pre">minimize</span></code> can get to the correct result on its own. The reason that this argument is a <code class="docutils literal notranslate"><span class="pre">list</span></code> rather than a <code class="docutils literal notranslate"><span class="pre">float</span></code> is that the <code class="docutils literal notranslate"><span class="pre">minimize</span></code> function can minimise functions with respect to <strong>multiple variables simultaneously</strong> e.g. the set of parameters <span class="math notranslate nohighlight">\(\theta\)</span> in least-squares regression (in which case you would need an initial guess for <strong>each</strong> of those variables).</p>
 <p>As you can see above, the <code class="docutils literal notranslate"><span class="pre">minimize</span></code> function provides us with a lot of information. For now, we only really care about the <code class="docutils literal notranslate"><span class="pre">x</span></code> row, which contains the value of <span class="math notranslate nohighlight">\(x\)</span> which minimises <span class="math notranslate nohighlight">\(f(x)\)</span>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -492,9 +472,27 @@ document.write(`
 </div>
 </div>
 </div>
+<p>We can visualise the minimum by plotting it on top of our original curve:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f_at_x_min</span> <span class="o">=</span> <span class="n">x_squared</span><span class="p">(</span><span class="n">x_min</span><span class="p">)</span> <span class="c1"># Get f(x) at x = x_min</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">f_x</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_min</span><span class="p">,</span> <span class="n">f_at_x_min</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;f(x)&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/45aea809fb4f514dd021c250ba57548de38880169571da7767944252ad327eb4.png" src="../_images/45aea809fb4f514dd021c250ba57548de38880169571da7767944252ad327eb4.png" />
+</div>
+</div>
 <section id="local-minima">
 <h2>Local minima<a class="headerlink" href="#local-minima" title="Link to this heading">#</a></h2>
-<p>Minimising <span class="math notranslate nohighlight">\(x^{2}\)</span> is not the most difficult task, both because it can be done analytically, and because it has a <strong>single global minimum</strong>. In other words, <span class="math notranslate nohighlight">\(x^{2}\)</span> is at its lowest value at <span class="math notranslate nohighlight">\(x = 0\)</span> and is larger <strong>everywhere</strong> else from <span class="math notranslate nohighlight">\(-\infty\)</span> to <span class="math notranslate nohighlight">\(\infty\)</span>. Most functions are, in this sense, not so friendly.</p>
+<p>Minimising <span class="math notranslate nohighlight">\(x^{2}\)</span> is not the most difficult task, both because it can be done analytically, and because it has a <strong>single global minimum</strong>. In other words, <span class="math notranslate nohighlight">\(x^{2}\)</span> is at its lowest value at <span class="math notranslate nohighlight">\(x = 0\)</span> and grows monotonically <strong>everywhere</strong> else from <span class="math notranslate nohighlight">\(-\infty\)</span> to <span class="math notranslate nohighlight">\(\infty\)</span>. Most functions are, in this sense, not so friendly.</p>
 <p>For example, consider the function:</p>
 <div class="math notranslate nohighlight">
 \[f(x) = x^{2} - 10\cos{2\pi x} + 10.\]</div>
@@ -518,20 +516,20 @@ document.write(`
 
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">f_x</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;f(x)&#39;</span><span class="p">)</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/aa3d42eec09f4f9239bf9a39727f6ea99334a9d80dc9ed47de39fd9d72bc9af5.png" src="../_images/aa3d42eec09f4f9239bf9a39727f6ea99334a9d80dc9ed47de39fd9d72bc9af5.png" />
+<img alt="../_images/3b16db2bd1238fdfc32ec62fa479cbd523511b2f1354bf44091da1ac4e37dd59.png" src="../_images/3b16db2bd1238fdfc32ec62fa479cbd523511b2f1354bf44091da1ac4e37dd59.png" />
 </div>
 </div>
 <p>Again it’s easy enough for us to <strong>see</strong> that the minimum is at <span class="math notranslate nohighlight">\(x = 0\)</span>, but let’s try to compute this <strong>numerically</strong>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">minimisation_data</span> <span class="o">=</span> <span class="n">minimize</span><span class="p">(</span><span class="n">oscillatory_quadratic</span><span class="p">,</span> <span class="p">[</span><span class="mi">5</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">minimisation_data</span> <span class="o">=</span> <span class="n">minimize</span><span class="p">(</span><span class="n">oscillatory_quadratic</span><span class="p">,</span> <span class="n">x0</span><span class="o">=</span><span class="p">[</span><span class="mf">5.25</span><span class="p">])</span>
 <span class="n">min_x</span> <span class="o">=</span> <span class="n">minimisation_data</span><span class="o">.</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;arg min f(x) = </span><span class="si">{</span><span class="n">min_x</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
@@ -539,7 +537,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>arg min f(x) = 3.979783862124819
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>arg min f(x) = -0.9949586450236011
 </pre></div>
 </div>
 </div>
@@ -547,21 +545,71 @@ document.write(`
 <p>Oh dear, this time we’re not getting <span class="math notranslate nohighlight">\(x = 0\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f_x_at_min</span> <span class="o">=</span> <span class="n">oscillatory_quadratic</span><span class="p">(</span><span class="n">min_x</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">initial_guess</span> <span class="o">=</span> <span class="mf">5.25</span>
+<span class="c1"># get f(x) at the initial guess and at x_min</span>
+<span class="n">init_f_x</span> <span class="o">=</span> <span class="n">oscillatory_quadratic</span><span class="p">(</span><span class="n">initial_guess</span><span class="p">)</span>
+<span class="n">f_x_at_min</span> <span class="o">=</span> <span class="n">oscillatory_quadratic</span><span class="p">(</span><span class="n">min_x</span><span class="p">)</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">f_x</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">min_x</span><span class="p">,</span> <span class="n">f_x_at_min</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">min_x</span><span class="p">,</span> <span class="n">f_x_at_min</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Local minimum&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">initial_guess</span><span class="p">,</span> <span class="n">init_f_x</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Initial guess&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;f(x)&#39;</span><span class="p">)</span>
 
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/a769b096a09861f60f68e9349830899ee1eb9cd1f6d7631c56970f64804d4a5a.png" src="../_images/a769b096a09861f60f68e9349830899ee1eb9cd1f6d7631c56970f64804d4a5a.png" />
+<img alt="../_images/d53cbc74ad78ac7c58d40cb878679c4a586096d89258f6669f4ea2ea0fb5ed4c.png" src="../_images/d53cbc74ad78ac7c58d40cb878679c4a586096d89258f6669f4ea2ea0fb5ed4c.png" />
 </div>
 </div>
+<p>As you can see, the <code class="docutils literal notranslate"><span class="pre">minimize</span></code> function has located a <strong>local</strong> minimum at <span class="math notranslate nohighlight">\(x \approx -1\)</span>, but has failed to reach the <strong>global</strong> minimum at <span class="math notranslate nohighlight">\(x = 0\)</span>.</p>
+<p>This example highlights nicely that using the <code class="docutils literal notranslate"><span class="pre">minimize</span></code> function - and more generally the process of <a class="reference external" href="https://en.wikipedia.org/wiki/Mathematical_optimization">function optimisation</a> - is not always as straightforward as our <span class="math notranslate nohighlight">\(x^{2}\)</span> example. Let’s take a second to think about <strong>why</strong> we might get stuck in a <strong>local</strong> minimum. If we were to find the minimum <strong>analytically</strong>, we would <strong>differentiate</strong> <span class="math notranslate nohighlight">\(f(x)\)</span> and set the <strong>derivative</strong> to zero:</p>
+<div class="math notranslate nohighlight">
+\[\frac{df(x)}{dx} = 2x + 20\pi\sin 2\pi x = 0.\]</div>
+<p>To us human beings, it is clear that the equation above is only true when <span class="math notranslate nohighlight">\(x = 0\)</span>, as the first term <span class="math notranslate nohighlight">\(2x\)</span> will be non-zero everywhere else. From the perspective of the <code class="docutils literal notranslate"><span class="pre">minimize</span></code> function however, the gradient gets much <strong>closer</strong> to zero for all integers <span class="math notranslate nohighlight">\(n\)</span> if <span class="math notranslate nohighlight">\(x = \pi n\)</span> (as the second term of the derivative will be <span class="math notranslate nohighlight">\(0\)</span>). This is why <strong>numerical</strong> methods for function minimisation get stuck in <strong>local</strong> minima: by definition the gradient at these points is small or even zero, hence they look (mathematically) just like the <strong>global</strong> minimum.</p>
+<p>So, how can we solve this problem? Well, for one thing, we can change our <strong>initial guess</strong>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">minimisation_data</span> <span class="o">=</span> <span class="n">minimize</span><span class="p">(</span><span class="n">oscillatory_quadratic</span><span class="p">,</span> <span class="n">x0</span><span class="o">=</span><span class="p">[</span><span class="mf">1.25</span><span class="p">])</span>
+<span class="n">min_x</span> <span class="o">=</span> <span class="n">minimisation_data</span><span class="o">.</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;arg min f(x) = </span><span class="si">{</span><span class="n">min_x</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>arg min f(x) = -6.982386725092019e-09
+</pre></div>
+</div>
+</div>
+</div>
+<p>By moving our initial guess closer to where we expect the global minimum to be, we recover the correct result:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">initial_guess</span> <span class="o">=</span> <span class="mf">1.25</span>
+<span class="n">init_f_x</span> <span class="o">=</span> <span class="n">oscillatory_quadratic</span><span class="p">(</span><span class="n">initial_guess</span><span class="p">)</span>
+<span class="n">f_x_at_min</span> <span class="o">=</span> <span class="n">oscillatory_quadratic</span><span class="p">(</span><span class="n">min_x</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">f_x</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">min_x</span><span class="p">,</span> <span class="n">f_x_at_min</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Global minimum&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">initial_guess</span><span class="p">,</span> <span class="n">init_f_x</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Initial guess&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;f(x)&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/db21fef6e4667f9f85eae4c10bc7fbc5903fcd38b06ba8ac339850b27bd911e6.png" src="../_images/db21fef6e4667f9f85eae4c10bc7fbc5903fcd38b06ba8ac339850b27bd911e6.png" />
+</div>
+</div>
+<p>In this case, we were able to improve our initial guess because we knew where we <strong>expected</strong> the global minimum to be. This was possible due to the fact that we are dealing with a relatively simple one-dimensional function, but there is <strong>no guarantee in general</strong> that this will be possible.</p>
+<p>The more general point here is that minimisation algorithms (such as those used by the <code class="docutils literal notranslate"><span class="pre">minimize</span></code> function) are not perfect and may well be <strong>sensitive to the initial guess</strong>. It is therefore prudent to think about what we know about the function that we are trying to minimise in order to select a <strong>sensible</strong> initial guess. For a trivial example, if we know that our function goes to <span class="math notranslate nohighlight">\(\infty\)</span> for all <span class="math notranslate nohighlight">\(x &gt; 5\)</span>, then we would obviously want our initial guess to be <span class="math notranslate nohighlight">\(&lt; 5\)</span>.</p>
 </section>
 </section>
 

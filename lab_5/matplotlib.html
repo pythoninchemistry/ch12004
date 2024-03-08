@@ -373,6 +373,7 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-plot-function">The <code class="docutils literal notranslate"><span class="pre">plot</span></code> function</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multiple-graphs">Multiple graphs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#latex"><span class="math notranslate nohighlight">\(\LaTeX\)</span></a></li>
 </ul>
             </nav>
         </div>
@@ -675,6 +676,80 @@ document.write(`
 </div>
 <p>Notice that we did not have to provide <code class="docutils literal notranslate"><span class="pre">legend</span></code> itself with any arguments, but we had to provide the <code class="docutils literal notranslate"><span class="pre">label</span></code> keyword argument to the original <code class="docutils literal notranslate"><span class="pre">plot</span></code> functions.</p>
 </section>
+<section id="latex">
+<h2><span class="math notranslate nohighlight">\(\LaTeX\)</span><a class="headerlink" href="#latex" title="Link to this heading">#</a></h2>
+<p>The examples above are wholly abstract, but usually our axes will have <strong>physical</strong> units such as seconds or mol<span class="math notranslate nohighlight">\(\,\)</span>dm<span class="math notranslate nohighlight">\(^{-3}\)</span>. <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> can render subscripts and superscripts using <span class="math notranslate nohighlight">\(\LaTeX\)</span>, which is effectively a programming language designed for typesetting documents.</p>
+<p>For an example, let’s generate some fictitious linear data:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">x</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/a30610ad165d5a13ffa4a2dfc549d811bb2edd66ea4f38eaa6ef74fcd2e27a6c.png" src="../_images/a30610ad165d5a13ffa4a2dfc549d811bb2edd66ea4f38eaa6ef74fcd2e27a6c.png" />
+</div>
+</div>
+<p>Rather than <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span>, let’s pretend that the axes have physical units. We’ll assign the <span class="math notranslate nohighlight">\(x\)</span>-axis units of inverse temperature <span class="math notranslate nohighlight">\(K^{-1}\)</span> and the <span class="math notranslate nohighlight">\(y\)</span>-axis units of <span class="math notranslate nohighlight">\(\ln K\)</span> (i.e. dimensionless):</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;$T^{-1}$ / $K^{-1}$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;ln $K$&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/bf53cde80d2d19fc953124e1dfaed52e43da97faf267efdfd280fd782efce1a9.png" src="../_images/bf53cde80d2d19fc953124e1dfaed52e43da97faf267efdfd280fd782efce1a9.png" />
+</div>
+</div>
+<p>To render axis labels using <span class="math notranslate nohighlight">\(\LaTeX\)</span>, we enclose the relevant expressions in dollar signs $.</p>
+<p>To superscript some text, we use the <code class="docutils literal notranslate"><span class="pre">^</span></code> symbol followed by a pair of curly brackets enclosing the superscripted text:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;$T^{-1}$&#39;</span>
+</pre></div>
+</div>
+<p>To subscript some text, we use and <strong>underscore</strong> <code class="docutils literal notranslate"><span class="pre">_</span></code> in the same manner:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Example$_</span><span class="si">{1}</span><span class="s1">$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Example$_</span><span class="si">{2}</span><span class="s1">$&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/25fada6b20bb13388d49b494327d2d0cd475aebf0ac4af388b1aa009c7349157.png" src="../_images/25fada6b20bb13388d49b494327d2d0cd475aebf0ac4af388b1aa009c7349157.png" />
+</div>
+</div>
+<p>Note that if you include text in the dollar signs, it will be automatically <strong>italicised</strong>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;$Example_</span><span class="si">{1}</span><span class="s1">$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;$Example_</span><span class="si">{2}</span><span class="s1">$&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/41a6d930f7cf8d280b14c71834e33155a6bbad00bedbaaf1028b1a83f1774278.png" src="../_images/41a6d930f7cf8d280b14c71834e33155a6bbad00bedbaaf1028b1a83f1774278.png" />
+</div>
+</div>
+<p>Sometimes this is what we want (variables are often italicised in mathematical notation), but if you want your text to remain normal, then make sure to open a pair of dollar signs <strong>after</strong> that text.</p>
+<p>The syntax for using <span class="math notranslate nohighlight">\(\LaTeX\)</span> in <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> is actually exactly the same in <strong>Markdown</strong>. In other words, you can write subscripts, superscripts and more generally mathematics in <strong>Markdown cells</strong> by using the same $ notation (this is how all of the mathematics has been typeset in this course book!)</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -725,6 +800,7 @@ document.write(`
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-plot-function">The <code class="docutils literal notranslate"><span class="pre">plot</span></code> function</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multiple-graphs">Multiple graphs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#latex"><span class="math notranslate nohighlight">\(\LaTeX\)</span></a></li>
 </ul>
   </nav></div>
 

@@ -394,25 +394,7 @@ document.write(`
 </div>
 </div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-
-<span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="s1">&#39;non_linear.csv&#39;</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">,</span> <span class="n">unpack</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">)</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/cd4d7a552728631cf14583ee75f4d2f88d767bcfc68f18f74b40fbfff568e7b7.png" src="../_images/cd4d7a552728631cf14583ee75f4d2f88d767bcfc68f18f74b40fbfff568e7b7.png" />
-</div>
-</div>
+<p>You can download non_linear.csv <a class="reference internal" href="#"><span class="xref myst">here</span></a>.</p>
 <p>Here we have some data which looks to be <strong>quadratic</strong>, so let’s try to fit an quadratic <strong>model</strong> using <code class="docutils literal notranslate"><span class="pre">curve_fit</span></code>. First we need to define a <strong>function</strong> that represents the model we would like to fit. If we are trying to fit an quadratic curve, then mathematically we can define this as:</p>
 <div class="math notranslate nohighlight">
 \[y = ax^{2} + bx + c\]</div>
@@ -468,7 +450,11 @@ document.write(`
 <img alt="../_images/a9368d18b7e232078040a7b3e0bfb38a813a8e36939e19a3365f11f5ee28ee86.png" src="../_images/a9368d18b7e232078040a7b3e0bfb38a813a8e36939e19a3365f11f5ee28ee86.png" />
 </div>
 </div>
-<p>Notice that here we have created a variable <code class="docutils literal notranslate"><span class="pre">x_model</span></code> which is a <code class="docutils literal notranslate"><span class="pre">numpy</span></code> array of evenly spaced values between the minimum experimental <span class="math notranslate nohighlight">\(x\)</span>-value and the maximum experimental <span class="math notranslate nohighlight">\(x\)</span>-value. This allows us to plot our model quadratic curve <strong>smoothly</strong>. Had we used the original <code class="docutils literal notranslate"><span class="pre">x</span></code> variable, our curve would look <strong>jagged</strong> (as <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> really just joins points in sequence to form a line, more points = smoother curve).</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You may have noticed the <code class="docutils literal notranslate"><span class="pre">min</span></code> and <code class="docutils literal notranslate"><span class="pre">max</span></code> functions in the code above. As you can probably imagine, the <code class="docutils literal notranslate"><span class="pre">min</span></code> function returns the <strong>smallest</strong> value in a sequence, whereas the <code class="docutils literal notranslate"><span class="pre">max</span></code> function returns the <strong>largest</strong> value.</p>
+</div>
+<p>Notice that here we have created a variable <code class="docutils literal notranslate"><span class="pre">x_model</span></code> which is a <code class="docutils literal notranslate"><span class="pre">numpy</span></code> array of evenly spaced values between the minimum experimental <span class="math notranslate nohighlight">\(x\)</span>-value <code class="docutils literal notranslate"><span class="pre">min(x)</span></code> and the maximum experimental <span class="math notranslate nohighlight">\(x\)</span>-value <code class="docutils literal notranslate"><span class="pre">max(x)</span></code>. This allows us to plot our model quadratic curve <strong>smoothly</strong>. Had we used the original <code class="docutils literal notranslate"><span class="pre">x</span></code> variable, our curve would look <strong>jagged</strong> (as <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> really just joins points in sequence to form a line, more points = smoother curve).</p>
 <p>Again we can access the errors in our model parameters (this time without taking into account experimental uncertainties) by looking at the diagonal of the covariance matrix:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -557,16 +543,17 @@ c = 20.739565009713626 +/- 1.2261302133957708
 
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">T</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;T / K&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;k / M-1s-1&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;k / M$^{-1}$s$^{-1}$&#39;</span><span class="p">)</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/8881d2a92185158f9045cdc29848fb6f04e53c5c5d8aeec13d142960ccbcb152.png" src="../_images/8881d2a92185158f9045cdc29848fb6f04e53c5c5d8aeec13d142960ccbcb152.png" />
+<img alt="../_images/f646045e4f71806c26be0b69fd95267ae1881c463048688ddc03b3af5c6191d2.png" src="../_images/f646045e4f71806c26be0b69fd95267ae1881c463048688ddc03b3af5c6191d2.png" />
 </div>
 </div>
+<p>You can download arrhenius.dat <a class="reference internal" href="#"><span class="xref myst">here</span></a>.</p>
 <p>Imagine for a moment that we were doing this in Excel, which cannot fit non-linear data (in any meaningful sense). We would have to <strong>linearise our data</strong> which, as we will see shortly, is in general <strong>a terrible idea</strong>:</p>
 <div class="math notranslate nohighlight">
 \[\ln k = \ln A - \frac{E_{a}}{RT},\]</div>
@@ -577,15 +564,15 @@ c = 20.739565009713626 +/- 1.2261302133957708
 <span class="n">ln_k</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">reciprocal_T</span><span class="p">,</span> <span class="n">ln_k</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;1 / T / K-1&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;ln k / ln(M-1s-1)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;T$^{-1}$ / K$^{-1}$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;ln k&#39;</span><span class="p">)</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/32fb34cd2f27ebc096956c41dfd39a7684a7f7d96aa7c87c54aaefff4becdb45.png" src="../_images/32fb34cd2f27ebc096956c41dfd39a7684a7f7d96aa7c87c54aaefff4becdb45.png" />
+<img alt="../_images/7ca2f5d1747ec5750ebb76c00fa95ab9c709f32778a64fe5a5ab8a9cbff3328c.png" src="../_images/7ca2f5d1747ec5750ebb76c00fa95ab9c709f32778a64fe5a5ab8a9cbff3328c.png" />
 </div>
 </div>
 <p>Now we can use the <code class="docutils literal notranslate"><span class="pre">linregress</span></code> function to compute the value of the slope and the intercept:</p>
@@ -607,11 +594,11 @@ c = 15.161037389899018
 </div>
 </div>
 </div>
-<p>If we look at the linearised Arrhenius equation, we can determine what the slope and intercept correspond to:</p>
+<p>If we look at the linearised first-order rate equation, we can determine what the slope and intercept correspond to:</p>
 <div class="math notranslate nohighlight">
-\[m = -\frac{E_{a}}{R},\]</div>
+\[m = -k,\]</div>
 <div class="math notranslate nohighlight">
-\[c = \ln A.\]</div>
+\[c = \ln [\mathrm{H}_{2}\mathrm{O}_{2}]_{0}.\]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.constants</span> <span class="kn">import</span> <span class="n">R</span>
@@ -620,8 +607,8 @@ c = 15.161037389899018
 
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">reciprocal_T</span><span class="p">,</span> <span class="n">ln_k</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">reciprocal_T</span><span class="p">,</span> <span class="n">ln_k_model</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;1 / T / K-1&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;ln k / ln(M-1s-1)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;T$^{-1}$ / K$^{-1}$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;ln k&#39;</span><span class="p">)</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 
@@ -634,7 +621,7 @@ c = 15.161037389899018
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/db1e24d0a3a9ea4a26b6453059c9aa32326751987124f0ec11e479ce55bbc1b8.png" src="../_images/db1e24d0a3a9ea4a26b6453059c9aa32326751987124f0ec11e479ce55bbc1b8.png" />
+<img alt="../_images/a477da1fd1ec606472734a3ce26364f535dc4a6913c63c1246090df29b2bb6a4.png" src="../_images/a477da1fd1ec606472734a3ce26364f535dc4a6913c63c1246090df29b2bb6a4.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>E_a = 112323.03523328649 Jmol-1 = 112.32303523328649 kJmol-1
 A = 3840209.1525825486 M-1s-1
 </pre></div>
@@ -644,7 +631,7 @@ A = 3840209.1525825486 M-1s-1
 <p>Okay great, we have values for <span class="math notranslate nohighlight">\(E_{a}\)</span> and <span class="math notranslate nohighlight">\(A\)</span>. If you are new to Python, you may well be thinking at this point “Why bother doing this in Python if I can do the same thing in Excel?” Well, without being exhaustive, there is one <strong>major</strong> problem with the approach we have taken above:</p>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
-<p>Linearising your data before performing ordinary least-squares regression actually <strong>biases</strong> your optimised parameters (here <span class="math notranslate nohighlight">\(E_{a}\)</span> and <span class="math notranslate nohighlight">\(A\)</span>). In other words, there is actually an <strong>intrinsic error</strong> in the optimised parameters introduced by linearising your data.</p>
+<p>Linearising your data before performing ordinary least-squares regression actually <strong>biases</strong> your optimised parameters (here <span class="math notranslate nohighlight">\(E_{a}\)</span> and <span class="math notranslate nohighlight">\(A\)</span>). In other words, there is an <strong>intrinsic error</strong> in the optimised parameters introduced by linearising your data.</p>
 </div>
 <p>If you are curious about the origins of this bias, click <a class="reference external" href="https://pubs.acs.org/doi/10.1021/acs.jchemed.3c00466">here</a> for a link to a relevant publication on the subject.</p>
 </section>
@@ -677,7 +664,7 @@ A = 3840209.1525825486 M-1s-1
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">T</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">T_model</span><span class="p">,</span> <span class="n">k_model</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;T / K&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;k / M-1s-1&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;k / M$^{-1}$s$^{-1}$&#39;</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;E_a = </span><span class="si">{</span><span class="n">E_a</span><span class="si">}</span><span class="s1"> Jmol-1 = </span><span class="si">{</span><span class="n">E_a</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">1000</span><span class="si">}</span><span class="s1"> kJmol-1&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;A = </span><span class="si">{</span><span class="n">A</span><span class="si">}</span><span class="s1"> M-1s-1&#39;</span><span class="p">)</span>
@@ -689,7 +676,7 @@ A = 3840209.1525825486 M-1s-1
 A = 7934409.52396029 M-1s-1
 </pre></div>
 </div>
-<img alt="../_images/cf1901a3f4946978b275214d2aa91b65e583a7a87b6c36c816481724a54ab8ed.png" src="../_images/cf1901a3f4946978b275214d2aa91b65e583a7a87b6c36c816481724a54ab8ed.png" />
+<img alt="../_images/2e5d16e459d13da77b3eaec1eb3e845d39f416956a47c3ff0613c3169f31730e.png" src="../_images/2e5d16e459d13da77b3eaec1eb3e845d39f416956a47c3ff0613c3169f31730e.png" />
 </div>
 </div>
 </section>
