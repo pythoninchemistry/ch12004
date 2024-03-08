@@ -62,6 +62,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'lab_6/non_linear_regression';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Minimisation" href="minimisation.html" />
+    <link rel="prev" title="Linear regression" href="linear_regression.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -122,8 +124,6 @@
     <div class="bd-container__inner bd-page-width">
       
       
-      
-        
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -218,6 +218,19 @@
 <li class="toctree-l1"><a class="reference internal" href="../lab_4/errors.html">Errors</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../lab_4/synoptic_exercises.html">Synoptic exercises</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../lab_4/solutions.html">Solutions</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Lab 5 - External libraries</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../lab_5/numpy.html">NumPy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lab_5/matplotlib.html">Matplotlib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lab_5/file_io.html">File I/O</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lab_5/synoptic_exercises.html">Synoptic exercises</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Lab 6 - Data analysis</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="linear_regression.html">Linear regression</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Non-linear regression</a></li>
+<li class="toctree-l1"><a class="reference internal" href="minimisation.html">Minimisation</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Resources</span></p>
 <ul class="nav bd-sidenav">
@@ -394,7 +407,7 @@ document.write(`
 </div>
 </div>
 </div>
-<p>You can download non_linear.csv <a class="reference internal" href="#"><span class="xref myst">here</span></a>.</p>
+<p>You can download non_linear.csv <a class="reference external" href="https://raw.githubusercontent.com/pythoninchemistry/ch12004/main/CH12004/lab_6/non_linear.csv">here</a>.</p>
 <p>Here we have some data which looks to be <strong>quadratic</strong>, so let’s try to fit an quadratic <strong>model</strong> using <code class="docutils literal notranslate"><span class="pre">curve_fit</span></code>. First we need to define a <strong>function</strong> that represents the model we would like to fit. If we are trying to fit an quadratic curve, then mathematically we can define this as:</p>
 <div class="math notranslate nohighlight">
 \[y = ax^{2} + bx + c\]</div>
@@ -553,7 +566,7 @@ c = 20.739565009713626 +/- 1.2261302133957708
 <img alt="../_images/f646045e4f71806c26be0b69fd95267ae1881c463048688ddc03b3af5c6191d2.png" src="../_images/f646045e4f71806c26be0b69fd95267ae1881c463048688ddc03b3af5c6191d2.png" />
 </div>
 </div>
-<p>You can download arrhenius.dat <a class="reference internal" href="#"><span class="xref myst">here</span></a>.</p>
+<p>You can download arrhenius.dat <a class="reference external" href="https://raw.githubusercontent.com/pythoninchemistry/ch12004/main/CH12004/lab_6/arrhenius.dat">here</a>.</p>
 <p>Imagine for a moment that we were doing this in Excel, which cannot fit non-linear data (in any meaningful sense). We would have to <strong>linearise our data</strong> which, as we will see shortly, is in general <strong>a terrible idea</strong>:</p>
 <div class="math notranslate nohighlight">
 \[\ln k = \ln A - \frac{E_{a}}{RT},\]</div>
@@ -712,6 +725,24 @@ A = 7934409.52396029 M-1s-1
                 <footer class="prev-next-footer">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="linear_regression.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Linear regression</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="minimisation.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Minimisation</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
