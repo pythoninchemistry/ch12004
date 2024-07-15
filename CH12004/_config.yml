@@ -6,7 +6,7 @@
 #######################################################################################
 # Book settings
 title                       : "CH12004: Skills for chemists"  # The title of the book. Will be placed in the left navbar.
-author                      : Patrick J. Taylor, Claire McMullin, Iva Manasi and Benjamin J. Morgan  # The author of the book
+author                      : Patrick J. Taylor, Iva Manasi, Claire McMullin and Benjamin J. Morgan  # The author of the book
 copyright                   : "2024"  # Copyright year to be placed in the footer
 logo                        : logo.png  # A path to the book logo
 
