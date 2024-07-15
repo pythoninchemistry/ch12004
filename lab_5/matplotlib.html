@@ -14,19 +14,19 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
@@ -34,15 +34,15 @@
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
-  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
     <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../_static/copybutton.js?v=f281be69"></script>
@@ -52,7 +52,7 @@
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
@@ -73,27 +73,23 @@
 
   
   
-  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
   
   <div id="pst-scroll-pixel-helper"></div>
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>
-    Back to top
-  </button>
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
   
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
@@ -115,8 +111,13 @@
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
     </header>
   
 
@@ -140,6 +141,8 @@
         <div class="sidebar-primary-item">
 
   
+    
+  
 
 <a class="navbar-brand logo" href="../introduction/welcome.html">
   
@@ -161,7 +164,7 @@
 
  <script>
  document.write(`
-   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass"></i>
     <span class="search-button__default-text">Search</span>
     <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
@@ -225,6 +228,7 @@
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Matplotlib</a></li>
 <li class="toctree-l1"><a class="reference internal" href="file_io.html">File I/O</a></li>
 <li class="toctree-l1"><a class="reference internal" href="synoptic_exercises.html">Synoptic exercises</a></li>
+<li class="toctree-l1"><a class="reference internal" href="solutions.html">Solutions</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Lab 6 - Data analysis</span></p>
 <ul class="nav bd-sidenav">
@@ -251,7 +255,7 @@
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -260,7 +264,7 @@
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
@@ -345,10 +349,10 @@
 
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
   </button>
 `);
 </script>
@@ -356,7 +360,7 @@ document.write(`
 
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
@@ -409,11 +413,6 @@ document.write(`
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Matplotlib is building the font cache; this may take a moment.
-</pre></div>
-</div>
-</div>
 </div>
 <p>Okay, let’s have a look at a simple example:</p>
 <div class="cell docutils container">
@@ -430,7 +429,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/91493fa58b4e891d164072e3be6192b9c0fc3eb519c222a979fbf5982c6ba25f.png" src="../_images/91493fa58b4e891d164072e3be6192b9c0fc3eb519c222a979fbf5982c6ba25f.png" />
+<a class="reference internal image-reference" href="../_images/c82967c3ae0020f0be70212af0f7e12c832799ac3f7ebed3fd91bfc1a6be40c6.png"><img alt="../_images/c82967c3ae0020f0be70212af0f7e12c832799ac3f7ebed3fd91bfc1a6be40c6.png" src="../_images/c82967c3ae0020f0be70212af0f7e12c832799ac3f7ebed3fd91bfc1a6be40c6.png" style="width: 571px; height: 432px;" /></a>
 </div>
 </div>
 <p>Okay, let’s start with the first two lines:</p>
@@ -544,7 +543,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/23d5fe5105c500a461df9af70aae78ef9c7ee4ff1b3cea20c8d57169cec44e38.png" src="../_images/23d5fe5105c500a461df9af70aae78ef9c7ee4ff1b3cea20c8d57169cec44e38.png" />
+<a class="reference internal image-reference" href="../_images/65745e14c243655b42dfe6ea61588216ec54f4bd3e315fae9e38694c87768ea3.png"><img alt="../_images/65745e14c243655b42dfe6ea61588216ec54f4bd3e315fae9e38694c87768ea3.png" src="../_images/65745e14c243655b42dfe6ea61588216ec54f4bd3e315fae9e38694c87768ea3.png" style="width: 571px; height: 432px;" /></a>
 </div>
 </div>
 <p>As you can see, our line is now very <strong>jagged</strong>. This is because we have only calculated <span class="math notranslate nohighlight">\(f(x)\)</span> for <span class="math notranslate nohighlight">\(5\)</span> values of <span class="math notranslate nohighlight">\(x\)</span>, which becomes much more obvious if we render out plot with points rather than lines:</p>
@@ -559,7 +558,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/31072a0c5fc5a1294d9b8dbd8d69571d7f76eb302ce5faa5cad401935bc86d51.png" src="../_images/31072a0c5fc5a1294d9b8dbd8d69571d7f76eb302ce5faa5cad401935bc86d51.png" />
+<a class="reference internal image-reference" href="../_images/317217356b168247358fd5d065f766797e0dd55de4d8bac12fc7f35a8ec9edfa.png"><img alt="../_images/317217356b168247358fd5d065f766797e0dd55de4d8bac12fc7f35a8ec9edfa.png" src="../_images/317217356b168247358fd5d065f766797e0dd55de4d8bac12fc7f35a8ec9edfa.png" style="width: 571px; height: 432px;" /></a>
 </div>
 </div>
 <p>Notice the extra argument we have provided this time to the <code class="docutils literal notranslate"><span class="pre">plot</span></code> function:</p>
@@ -579,7 +578,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/c8c550817442f403f53bdb6831404fdf37111006795da590bcc024c348c011e4.png" src="../_images/c8c550817442f403f53bdb6831404fdf37111006795da590bcc024c348c011e4.png" />
+<a class="reference internal image-reference" href="../_images/6bc239873216a91b6b6289a06254f941ba84c394b79a006cc576c757fdb23e5e.png"><img alt="../_images/6bc239873216a91b6b6289a06254f941ba84c394b79a006cc576c757fdb23e5e.png" src="../_images/6bc239873216a91b6b6289a06254f941ba84c394b79a006cc576c757fdb23e5e.png" style="width: 571px; height: 432px;" /></a>
 </div>
 </div>
 <div class="cell docutils container">
@@ -593,7 +592,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/aecd6fda0392062e34e806ade8b5e966d956938fd0b9c60e22bd7b10433ee8c1.png" src="../_images/aecd6fda0392062e34e806ade8b5e966d956938fd0b9c60e22bd7b10433ee8c1.png" />
+<a class="reference internal image-reference" href="../_images/aab4417a56c66b60827d134f31e5e9885a3cba0d7e487e37fb9f3978f782f71c.png"><img alt="../_images/aab4417a56c66b60827d134f31e5e9885a3cba0d7e487e37fb9f3978f782f71c.png" src="../_images/aab4417a56c66b60827d134f31e5e9885a3cba0d7e487e37fb9f3978f782f71c.png" style="width: 571px; height: 432px;" /></a>
 </div>
 </div>
 <div class="cell docutils container">
@@ -607,7 +606,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/d040c72f04c236817f485ff486e6f704046c0d68ef1a39ae051a974305c88df9.png" src="../_images/d040c72f04c236817f485ff486e6f704046c0d68ef1a39ae051a974305c88df9.png" />
+<a class="reference internal image-reference" href="../_images/0fafc79c0ac3d6d75ee64d6a7f2fd8564e8c8122db156eff6966d8be451692f3.png"><img alt="../_images/0fafc79c0ac3d6d75ee64d6a7f2fd8564e8c8122db156eff6966d8be451692f3.png" src="../_images/0fafc79c0ac3d6d75ee64d6a7f2fd8564e8c8122db156eff6966d8be451692f3.png" style="width: 571px; height: 432px;" /></a>
 </div>
 </div>
 <p>For further variations, as well as many optional <strong>keyword arguments</strong> that allow you to further customise your plots, see the <a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.plot.html">matplotlib documentation</a>.</p>
@@ -632,7 +631,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/1a409f1da7fe8dfc56830d5d2f86e35c3c7d25c0d8b8fcfa836f3cd3c9cc344d.png" src="../_images/1a409f1da7fe8dfc56830d5d2f86e35c3c7d25c0d8b8fcfa836f3cd3c9cc344d.png" />
+<a class="reference internal image-reference" href="../_images/4359e7b7015fff12761a0dd132abd0316614cb3bc5967b62ae6b1d75c01b352d.png"><img alt="../_images/4359e7b7015fff12761a0dd132abd0316614cb3bc5967b62ae6b1d75c01b352d.png" src="../_images/4359e7b7015fff12761a0dd132abd0316614cb3bc5967b62ae6b1d75c01b352d.png" style="width: 587px; height: 432px;" /></a>
 </div>
 </div>
 <p>What if we want to compare this to:</p>
@@ -652,7 +651,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/7997de57f30c95002c7419d9fb875314c243d87ac0c1f7d5fdfc5415c49c7efb.png" src="../_images/7997de57f30c95002c7419d9fb875314c243d87ac0c1f7d5fdfc5415c49c7efb.png" />
+<a class="reference internal image-reference" href="../_images/98a3fedbd413b5026bb6544d9caf971b8f625c225720b86c3c9a4264f06d2dd8.png"><img alt="../_images/98a3fedbd413b5026bb6544d9caf971b8f625c225720b86c3c9a4264f06d2dd8.png" src="../_images/98a3fedbd413b5026bb6544d9caf971b8f625c225720b86c3c9a4264f06d2dd8.png" style="width: 587px; height: 432px;" /></a>
 </div>
 </div>
 <p>Okay so now we have the two plots rendered separately, but wouldn’t it be easier to compare them on <strong>the same axes</strong>? We can accomplish this by making <strong>two</strong> calls to <code class="docutils literal notranslate"><span class="pre">plt.plot</span></code> in <strong>one code cell</strong>:</p>
@@ -671,7 +670,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/4829d61716d6bc5e110c052388553e6d41013b225cedbab95412539338f086a1.png" src="../_images/4829d61716d6bc5e110c052388553e6d41013b225cedbab95412539338f086a1.png" />
+<a class="reference internal image-reference" href="../_images/65ef6023ae8df840cd14fb4b36dc4f25ddb71b5431950e439bc2d2d0b698ca49.png"><img alt="../_images/65ef6023ae8df840cd14fb4b36dc4f25ddb71b5431950e439bc2d2d0b698ca49.png" src="../_images/65ef6023ae8df840cd14fb4b36dc4f25ddb71b5431950e439bc2d2d0b698ca49.png" style="width: 587px; height: 432px;" /></a>
 </div>
 </div>
 <p>Great, it’s now much easier to observe that <span class="math notranslate nohighlight">\(\cos{x}\)</span> is simply a translation of <span class="math notranslate nohighlight">\(\sin{x}\)</span> by <span class="math notranslate nohighlight">\(\pi/2\)</span>.</p>
@@ -689,7 +688,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/d76cfa102c84cb6408afeef6f11bc99993e7bc00ec9f6160296268569ff4522a.png" src="../_images/d76cfa102c84cb6408afeef6f11bc99993e7bc00ec9f6160296268569ff4522a.png" />
+<a class="reference internal image-reference" href="../_images/51852b449dbddb1a4794d0cbc9ca60501e851c3ccfb2f421a5257f7f89a7f2c5.png"><img alt="../_images/51852b449dbddb1a4794d0cbc9ca60501e851c3ccfb2f421a5257f7f89a7f2c5.png" src="../_images/51852b449dbddb1a4794d0cbc9ca60501e851c3ccfb2f421a5257f7f89a7f2c5.png" style="width: 587px; height: 432px;" /></a>
 </div>
 </div>
 <p>Notice that we did not have to provide <code class="docutils literal notranslate"><span class="pre">legend</span></code> itself with any arguments, but we had to provide the <code class="docutils literal notranslate"><span class="pre">label</span></code> keyword argument to the original <code class="docutils literal notranslate"><span class="pre">plot</span></code> functions.</p>
@@ -712,7 +711,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/a30610ad165d5a13ffa4a2dfc549d811bb2edd66ea4f38eaa6ef74fcd2e27a6c.png" src="../_images/a30610ad165d5a13ffa4a2dfc549d811bb2edd66ea4f38eaa6ef74fcd2e27a6c.png" />
+<a class="reference internal image-reference" href="../_images/a5a694ceee791a17ef98a63adae43c7227c26e693e1b167ac8e8e88fb89a9676.png"><img alt="../_images/a5a694ceee791a17ef98a63adae43c7227c26e693e1b167ac8e8e88fb89a9676.png" src="../_images/a5a694ceee791a17ef98a63adae43c7227c26e693e1b167ac8e8e88fb89a9676.png" style="width: 576px; height: 432px;" /></a>
 </div>
 </div>
 <p>Rather than <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span>, let’s pretend that the axes have physical units. We’ll assign the <span class="math notranslate nohighlight">\(x\)</span>-axis units of inverse temperature <span class="math notranslate nohighlight">\(K^{-1}\)</span> and the <span class="math notranslate nohighlight">\(y\)</span>-axis units of <span class="math notranslate nohighlight">\(\ln K\)</span> (i.e. dimensionless):</p>
@@ -727,7 +726,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/bf53cde80d2d19fc953124e1dfaed52e43da97faf267efdfd280fd782efce1a9.png" src="../_images/bf53cde80d2d19fc953124e1dfaed52e43da97faf267efdfd280fd782efce1a9.png" />
+<a class="reference internal image-reference" href="../_images/c4ea8685b7873ae06f157bb98402bcbf8ab570a0cd89af4e75850dc4e0c1d911.png"><img alt="../_images/c4ea8685b7873ae06f157bb98402bcbf8ab570a0cd89af4e75850dc4e0c1d911.png" src="../_images/c4ea8685b7873ae06f157bb98402bcbf8ab570a0cd89af4e75850dc4e0c1d911.png" style="width: 576px; height: 434px;" /></a>
 </div>
 </div>
 <p>To render axis labels using <span class="math notranslate nohighlight">\(\LaTeX\)</span>, we enclose the relevant expressions in dollar signs $.</p>
@@ -747,7 +746,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/25fada6b20bb13388d49b494327d2d0cd475aebf0ac4af388b1aa009c7349157.png" src="../_images/25fada6b20bb13388d49b494327d2d0cd475aebf0ac4af388b1aa009c7349157.png" />
+<a class="reference internal image-reference" href="../_images/8c961c80fa90156b13efade3526672ae20079799ebc7f7a6b9a3cdbc272740a4.png"><img alt="../_images/8c961c80fa90156b13efade3526672ae20079799ebc7f7a6b9a3cdbc272740a4.png" src="../_images/8c961c80fa90156b13efade3526672ae20079799ebc7f7a6b9a3cdbc272740a4.png" style="width: 578px; height: 434px;" /></a>
 </div>
 </div>
 <p>Note that if you include text in the dollar signs, it will be automatically <strong>italicised</strong>:</p>
@@ -762,7 +761,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/41a6d930f7cf8d280b14c71834e33155a6bbad00bedbaaf1028b1a83f1774278.png" src="../_images/41a6d930f7cf8d280b14c71834e33155a6bbad00bedbaaf1028b1a83f1774278.png" />
+<a class="reference internal image-reference" href="../_images/519f367c435f24cbaacebc4c31031105467aeb0197f456671e09b26c07a0cc43.png"><img alt="../_images/519f367c435f24cbaacebc4c31031105467aeb0197f456671e09b26c07a0cc43.png" src="../_images/519f367c435f24cbaacebc4c31031105467aeb0197f456671e09b26c07a0cc43.png" style="width: 578px; height: 434px;" /></a>
 </div>
 </div>
 <p>Sometimes this is what we want (variables are often italicised in mathematical notation), but if you want your text to remain normal, then make sure to open a pair of dollar signs <strong>after</strong> that text.</p>
@@ -797,7 +796,7 @@ document.write(`
               
               
               
-                <footer class="prev-next-footer">
+                <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
     <a class="left-prev"
@@ -851,7 +850,7 @@ document.write(`
   <div class="footer-item">
     
 <p class="component-author">
-By Patrick J. Taylor & Benjamin J. Morgan
+By Patrick J. Taylor, Claire McMullin, Iva Manasi and Benjamin J. Morgan
 </p>
 
   </div>
@@ -885,8 +884,8 @@ By Patrick J. Taylor & Benjamin J. Morgan
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>

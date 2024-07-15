@@ -14,19 +14,19 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
@@ -34,15 +34,15 @@
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
-  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
     <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../_static/copybutton.js?v=f281be69"></script>
@@ -52,7 +52,7 @@
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
@@ -63,7 +63,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Non-linear regression" href="non_linear_regression.html" />
-    <link rel="prev" title="Synoptic exercises" href="../lab_5/synoptic_exercises.html" />
+    <link rel="prev" title="Solutions" href="../lab_5/solutions.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -73,27 +73,23 @@
 
   
   
-  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
   
   <div id="pst-scroll-pixel-helper"></div>
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>
-    Back to top
-  </button>
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
   
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
@@ -115,8 +111,13 @@
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
     </header>
   
 
@@ -140,6 +141,8 @@
         <div class="sidebar-primary-item">
 
   
+    
+  
 
 <a class="navbar-brand logo" href="../introduction/welcome.html">
   
@@ -161,7 +164,7 @@
 
  <script>
  document.write(`
-   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass"></i>
     <span class="search-button__default-text">Search</span>
     <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
@@ -225,6 +228,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../lab_5/matplotlib.html">Matplotlib</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../lab_5/file_io.html">File I/O</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../lab_5/synoptic_exercises.html">Synoptic exercises</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lab_5/solutions.html">Solutions</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Lab 6 - Data analysis</span></p>
 <ul class="current nav bd-sidenav">
@@ -251,7 +255,7 @@
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -260,7 +264,7 @@
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
@@ -345,10 +349,10 @@
 
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
   </button>
 `);
 </script>
@@ -356,7 +360,7 @@ document.write(`
 
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
@@ -417,7 +421,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/7ed119e16e2b3d76e7ef1ecd5a575c5aaed1c50bb7e6e027fe10c1e8cad900d9.png" src="../_images/7ed119e16e2b3d76e7ef1ecd5a575c5aaed1c50bb7e6e027fe10c1e8cad900d9.png" />
+<a class="reference internal image-reference" href="../_images/523f192c2dcbd5be2d4de89e72c347aaaf13565391afd7ee759b81fe66ad09aa.png"><img alt="../_images/523f192c2dcbd5be2d4de89e72c347aaaf13565391afd7ee759b81fe66ad09aa.png" src="../_images/523f192c2dcbd5be2d4de89e72c347aaaf13565391afd7ee759b81fe66ad09aa.png" style="width: 563px; height: 432px;" /></a>
 </div>
 </div>
 <p>You can download linear.csv <a class="reference external" href="https://raw.githubusercontent.com/pythoninchemistry/ch12004/main/CH12004/lab_6/linear.csv">here</a>.</p>
@@ -436,7 +440,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>LinregressResult(slope=3.434454545454545, intercept=11.204090909090908, rvalue=0.9961041753472445, pvalue=8.369268779950266e-11, stderr=0.10134983826003473, intercept_stderr=0.5995937291506074)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>LinregressResult(slope=np.float64(3.434454545454545), intercept=np.float64(11.204090909090908), rvalue=np.float64(0.9961041753472445), pvalue=np.float64(8.369268779950266e-11), stderr=np.float64(0.10134983826003473), intercept_stderr=np.float64(0.5995937291506074))
 </pre></div>
 </div>
 </div>
@@ -472,7 +476,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>LinregressResult(slope=3.434454545454545, intercept=11.204090909090908, rvalue=0.9961041753472445, pvalue=8.369268779950266e-11, stderr=0.10134983826003473, intercept_stderr=0.5995937291506074)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>LinregressResult(slope=np.float64(3.434454545454545), intercept=np.float64(11.204090909090908), rvalue=np.float64(0.9961041753472445), pvalue=np.float64(8.369268779950266e-11), stderr=np.float64(0.10134983826003473), intercept_stderr=np.float64(0.5995937291506074))
 </pre></div>
 </div>
 </div>
@@ -508,7 +512,7 @@ c = 11.204090909090908
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/6870fd6c34efcb8352ed51b6fb006c2bd0bbbb4e04ddf5b956dddd557562cb27.png" src="../_images/6870fd6c34efcb8352ed51b6fb006c2bd0bbbb4e04ddf5b956dddd557562cb27.png" />
+<a class="reference internal image-reference" href="../_images/808ce6e3053da63ccc20c920aec3ffbea0f43a48f688fefb183362cda25c5c83.png"><img alt="../_images/808ce6e3053da63ccc20c920aec3ffbea0f43a48f688fefb183362cda25c5c83.png" src="../_images/808ce6e3053da63ccc20c920aec3ffbea0f43a48f688fefb183362cda25c5c83.png" style="width: 563px; height: 432px;" /></a>
 </div>
 </div>
 <p>It’s worth emphasising at this stage that whilst the example is wholly abstract (<span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> have no physical meaning and have no units), the same procedure could easily be applied to any linear dataset you might wish to analyse.</p>
@@ -544,7 +548,7 @@ c = 11.204090909090908 +/- 0.5995937291506074
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/1f2a9ac60538d751863f05888b47ce9cbd133790db0cd9108fa8479ff6df7e0c.png" src="../_images/1f2a9ac60538d751863f05888b47ce9cbd133790db0cd9108fa8479ff6df7e0c.png" />
+<a class="reference internal image-reference" href="../_images/776bbfb1f6fa0d41ddcac60a8dea88409333db1eaa2c42add2ade20402427e5c.png"><img alt="../_images/776bbfb1f6fa0d41ddcac60a8dea88409333db1eaa2c42add2ade20402427e5c.png" src="../_images/776bbfb1f6fa0d41ddcac60a8dea88409333db1eaa2c42add2ade20402427e5c.png" style="width: 563px; height: 432px;" /></a>
 </div>
 </div>
 <p>As you can see above, we can plot error bars using <code class="docutils literal notranslate"><span class="pre">plt.errorbar</span></code>, passing the size of each error bar as a <strong>third</strong> argument (here passed as the variable <code class="docutils literal notranslate"><span class="pre">y_err</span></code>). The <code class="docutils literal notranslate"><span class="pre">fmt</span></code> keyword argument is used to prevent <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> from joining each point with a line (this is roughly equivalent how we can pass strings such as <code class="docutils literal notranslate"><span class="pre">'o'</span></code> or <code class="docutils literal notranslate"><span class="pre">'o-'</span></code> to the <code class="docutils literal notranslate"><span class="pre">plt.plot</span></code> function to change how the data is rendered).</p>
@@ -671,7 +675,7 @@ c = 11.137530862550816 +/- 0.734641624991989
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/f907b2d3dd4ea1a59663445ad86ea13cf6da49d5d731a107b4f9b45bfc6ec08d.png" src="../_images/f907b2d3dd4ea1a59663445ad86ea13cf6da49d5d731a107b4f9b45bfc6ec08d.png" />
+<a class="reference internal image-reference" href="../_images/a7590373c56c4359a167056389c7c641f88889b34fd6ecddfa6adc7aec2579f1.png"><img alt="../_images/a7590373c56c4359a167056389c7c641f88889b34fd6ecddfa6adc7aec2579f1.png" src="../_images/a7590373c56c4359a167056389c7c641f88889b34fd6ecddfa6adc7aec2579f1.png" style="width: 563px; height: 432px;" /></a>
 </div>
 </div>
 <p>In this case, our final plot (and our values of <span class="math notranslate nohighlight">\(m\)</span> and <span class="math notranslate nohighlight">\(c\)</span>) are pretty similar whether we use the <strong>ordinary</strong> least-squares (<code class="docutils literal notranslate"><span class="pre">linregress</span></code>) or <strong>weighted</strong> least-squares (<code class="docutils literal notranslate"><span class="pre">curve_fit</span></code> with <code class="docutils literal notranslate"><span class="pre">sigma</span></code>) methods, but this is certainly not guaranteed to be the case and it is therefore <strong>very important</strong> to propagate experimental uncertanties through to our fitted model parameters when possible.</p>
@@ -705,16 +709,16 @@ c = 11.137530862550816 +/- 0.734641624991989
               
               
               
-                <footer class="prev-next-footer">
+                <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../lab_5/synoptic_exercises.html"
+       href="../lab_5/solutions.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Synoptic exercises</p>
+        <p class="prev-next-title">Solutions</p>
       </div>
     </a>
     <a class="right-next"
@@ -757,7 +761,7 @@ c = 11.137530862550816 +/- 0.734641624991989
   <div class="footer-item">
     
 <p class="component-author">
-By Patrick J. Taylor & Benjamin J. Morgan
+By Patrick J. Taylor, Claire McMullin, Iva Manasi and Benjamin J. Morgan
 </p>
 
   </div>
@@ -791,8 +795,8 @@ By Patrick J. Taylor & Benjamin J. Morgan
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>

@@ -14,19 +14,19 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
@@ -34,15 +34,15 @@
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
-  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
     <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../_static/copybutton.js?v=f281be69"></script>
@@ -52,7 +52,7 @@
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
@@ -62,6 +62,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'lab_5/solutions';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Linear regression" href="../lab_6/linear_regression.html" />
+    <link rel="prev" title="Synoptic exercises" href="synoptic_exercises.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -71,27 +73,23 @@
 
   
   
-  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
   
   <div id="pst-scroll-pixel-helper"></div>
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>
-    Back to top
-  </button>
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
   
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
@@ -113,8 +111,13 @@
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
     </header>
   
 
@@ -122,8 +125,6 @@
     <div class="bd-container__inner bd-page-width">
       
       
-      
-        
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -139,6 +140,8 @@
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
 
+  
+    
   
 
 <a class="navbar-brand logo" href="../introduction/welcome.html">
@@ -161,7 +164,7 @@
 
  <script>
  document.write(`
-   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass"></i>
     <span class="search-button__default-text">Search</span>
     <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
@@ -220,11 +223,12 @@
 <li class="toctree-l1"><a class="reference internal" href="../lab_4/solutions.html">Solutions</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Lab 5 - External libraries</span></p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="numpy.html">NumPy</a></li>
 <li class="toctree-l1"><a class="reference internal" href="matplotlib.html">Matplotlib</a></li>
 <li class="toctree-l1"><a class="reference internal" href="file_io.html">File I/O</a></li>
 <li class="toctree-l1"><a class="reference internal" href="synoptic_exercises.html">Synoptic exercises</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Solutions</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Lab 6 - Data analysis</span></p>
 <ul class="nav bd-sidenav">
@@ -251,7 +255,7 @@
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -260,7 +264,7 @@
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
@@ -345,10 +349,10 @@
 
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
   </button>
 `);
 </script>
@@ -356,7 +360,7 @@ document.write(`
 
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
@@ -410,7 +414,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/2127b7444596dfdbbfd408780284c147dbc9af3440a233c33c172da21fb79427.png" src="../_images/2127b7444596dfdbbfd408780284c147dbc9af3440a233c33c172da21fb79427.png" />
+<a class="reference internal image-reference" href="../_images/663ebe1e22452563bb25d0676a85dd2a56e9aa394aae75700f92e4e6c31da532.png"><img alt="../_images/663ebe1e22452563bb25d0676a85dd2a56e9aa394aae75700f92e4e6c31da532.png" src="../_images/663ebe1e22452563bb25d0676a85dd2a56e9aa394aae75700f92e4e6c31da532.png" style="width: 576px; height: 448px;" /></a>
 </div>
 </div>
 <p>b) Assuming ideality, the isotherm should be well modelled by the ideal gas law:</p>
@@ -452,7 +456,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/a85941dae66f16bc49ff8e530448106a1b90d31c06b8eaf19d310f4467aa4b37.png" src="../_images/a85941dae66f16bc49ff8e530448106a1b90d31c06b8eaf19d310f4467aa4b37.png" />
+<a class="reference internal image-reference" href="../_images/94e33600df1312d82881d6e01db5a6e76a665ed42f9621df53dd8edce15bf58b.png"><img alt="../_images/94e33600df1312d82881d6e01db5a6e76a665ed42f9621df53dd8edce15bf58b.png" src="../_images/94e33600df1312d82881d6e01db5a6e76a665ed42f9621df53dd8edce15bf58b.png" style="width: 567px; height: 448px;" /></a>
 </div>
 </div>
 <p>c) Non-ideality due to intermolecular interactions and other factors can be accounted for (in part) by the Van der Waals equation of state:</p>
@@ -495,7 +499,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/ff59287fb02dc4256640453f1d6ff85b71fbd115277088e0be7c5d0eea28ae48.png" src="../_images/ff59287fb02dc4256640453f1d6ff85b71fbd115277088e0be7c5d0eea28ae48.png" />
+<a class="reference internal image-reference" href="../_images/035526ed8861571284da567d95cb07e4f4f1a59c8090273a54ca17257a8d0866.png"><img alt="../_images/035526ed8861571284da567d95cb07e4f4f1a59c8090273a54ca17257a8d0866.png" src="../_images/035526ed8861571284da567d95cb07e4f4f1a59c8090273a54ca17257a8d0866.png" style="width: 567px; height: 448px;" /></a>
 </div>
 </div>
 <p><strong>2.</strong> The <strong>mean activity</strong> of ions in solution can be measured experimentally. You have been provided with the mean activity of Na<span class="math notranslate nohighlight">\(_{2}\)</span>SO<span class="math notranslate nohighlight">\(_{4}\)</span> at <span class="math notranslate nohighlight">\(298\,\)</span>K for a range of ionic strengths: <a class="reference external" href="https://raw.githubusercontent.com/pythoninchemistry/ch12004/main/CH12004/lab_5/activity.dat">activity.dat</a></p>
@@ -513,7 +517,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/3df6b0588dc337928deacf97d46020c768a5b0424cb35b0b0ea23cbe82b0a9db.png" src="../_images/3df6b0588dc337928deacf97d46020c768a5b0424cb35b0b0ea23cbe82b0a9db.png" />
+<a class="reference internal image-reference" href="../_images/2d53ce89a0fa33dc8333de5879cbfdbe37bc9e38817912b7b7b2e923eea79421.png"><img alt="../_images/2d53ce89a0fa33dc8333de5879cbfdbe37bc9e38817912b7b7b2e923eea79421.png" src="../_images/2d53ce89a0fa33dc8333de5879cbfdbe37bc9e38817912b7b7b2e923eea79421.png" style="width: 567px; height: 432px;" /></a>
 </div>
 </div>
 <p>b) The mean activity can be predicted by the Debye-Huckel limiting law:</p>
@@ -539,7 +543,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/d75ef8ea199940099877312082f6b1fa21fe5f35f475b519b58740143aa9fb77.png" src="../_images/d75ef8ea199940099877312082f6b1fa21fe5f35f475b519b58740143aa9fb77.png" />
+<a class="reference internal image-reference" href="../_images/6758036bae553c5272629bc969a480d56344ad8d825a21661c59539a2f94ec0f.png"><img alt="../_images/6758036bae553c5272629bc969a480d56344ad8d825a21661c59539a2f94ec0f.png" src="../_images/6758036bae553c5272629bc969a480d56344ad8d825a21661c59539a2f94ec0f.png" style="width: 567px; height: 432px;" /></a>
 </div>
 </div>
 <p>c) There are several extensions of the Debye-Huckel limiting law that aim to improve its description of the mean activity outside of the dilute limit. One such extension is:</p>
@@ -566,7 +570,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/775e6b74180393a93927fe9094f4cc60f92147794c192f5f0b775043bfee4191.png" src="../_images/775e6b74180393a93927fe9094f4cc60f92147794c192f5f0b775043bfee4191.png" />
+<a class="reference internal image-reference" href="../_images/ef268f2fd62f0c3c5c06153128f2fce54bbc5bb9c85f40d223640bcfb331daff.png"><img alt="../_images/ef268f2fd62f0c3c5c06153128f2fce54bbc5bb9c85f40d223640bcfb331daff.png" src="../_images/ef268f2fd62f0c3c5c06153128f2fce54bbc5bb9c85f40d223640bcfb331daff.png" style="width: 567px; height: 432px;" /></a>
 </div>
 </div>
 </section>
@@ -598,17 +602,33 @@ document.write(`
               
               
               
-                <footer class="prev-next-footer">
+                <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="synoptic_exercises.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Synoptic exercises</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../lab_6/linear_regression.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Linear regression</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
             </div>
             
             
-              
-                <div class="bd-sidebar-secondary bd-toc"></div>
               
             
           </div>
@@ -619,7 +639,7 @@ document.write(`
   <div class="footer-item">
     
 <p class="component-author">
-By Patrick J. Taylor & Benjamin J. Morgan
+By Patrick J. Taylor, Claire McMullin, Iva Manasi and Benjamin J. Morgan
 </p>
 
   </div>
@@ -653,8 +673,8 @@ By Patrick J. Taylor & Benjamin J. Morgan
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>

@@ -14,19 +14,19 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
@@ -34,15 +34,15 @@
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
-  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
     <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../_static/copybutton.js?v=f281be69"></script>
@@ -52,7 +52,7 @@
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
@@ -73,27 +73,23 @@
 
   
   
-  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
   
   <div id="pst-scroll-pixel-helper"></div>
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>
-    Back to top
-  </button>
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
   
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
@@ -115,8 +111,13 @@
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
     </header>
   
 
@@ -140,6 +141,8 @@
         <div class="sidebar-primary-item">
 
   
+    
+  
 
 <a class="navbar-brand logo" href="../introduction/welcome.html">
   
@@ -161,7 +164,7 @@
 
  <script>
  document.write(`
-   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass"></i>
     <span class="search-button__default-text">Search</span>
     <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
@@ -225,6 +228,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../lab_5/matplotlib.html">Matplotlib</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../lab_5/file_io.html">File I/O</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../lab_5/synoptic_exercises.html">Synoptic exercises</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lab_5/solutions.html">Solutions</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Lab 6 - Data analysis</span></p>
 <ul class="current nav bd-sidenav">
@@ -251,7 +255,7 @@
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -260,7 +264,7 @@
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
@@ -345,10 +349,10 @@
 
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
   </button>
 `);
 </script>
@@ -356,7 +360,7 @@ document.write(`
 
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
@@ -399,7 +403,7 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="non-linear-regression">
 <h1>Non-linear regression<a class="headerlink" href="#non-linear-regression" title="Link to this heading">#</a></h1>
-<p>Despite the fact that both of our examples so far have involved <strong>linear</strong> data, we have already made use of the <code class="docutils literal notranslate"><span class="pre">curve_fit</span></code> function, which is capable of fitting <strong>non-linear</strong> data: let’s have a look at a <strong>non-linear</strong> example:</p>
+<p>Despite the fact that both of our examples so far have involved solely <strong>linear</strong> data, we have already made use of the <code class="docutils literal notranslate"><span class="pre">curve_fit</span></code> function, which is capable of fitting <strong>non-linear</strong> data: let’s have a look at a <strong>non-linear</strong> example:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
@@ -416,7 +420,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/cd4d7a552728631cf14583ee75f4d2f88d767bcfc68f18f74b40fbfff568e7b7.png" src="../_images/cd4d7a552728631cf14583ee75f4d2f88d767bcfc68f18f74b40fbfff568e7b7.png" />
+<a class="reference internal image-reference" href="../_images/4c5617fe87050f35875c56dccce3b55edff30822c1b07919672a52e90bde840f.png"><img alt="../_images/4c5617fe87050f35875c56dccce3b55edff30822c1b07919672a52e90bde840f.png" src="../_images/4c5617fe87050f35875c56dccce3b55edff30822c1b07919672a52e90bde840f.png" style="width: 571px; height: 432px;" /></a>
 </div>
 </div>
 <p>You can download non_linear.csv <a class="reference external" href="https://raw.githubusercontent.com/pythoninchemistry/ch12004/main/CH12004/lab_6/non_linear.csv">here</a>.</p>
@@ -472,7 +476,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/a9368d18b7e232078040a7b3e0bfb38a813a8e36939e19a3365f11f5ee28ee86.png" src="../_images/a9368d18b7e232078040a7b3e0bfb38a813a8e36939e19a3365f11f5ee28ee86.png" />
+<a class="reference internal image-reference" href="../_images/9557e199b914c5c05c8a4f543e683247c3de26cf68f0f3a58b8429c534372e9d.png"><img alt="../_images/9557e199b914c5c05c8a4f543e683247c3de26cf68f0f3a58b8429c534372e9d.png" src="../_images/9557e199b914c5c05c8a4f543e683247c3de26cf68f0f3a58b8429c534372e9d.png" style="width: 571px; height: 432px;" /></a>
 </div>
 </div>
 <div class="admonition note">
@@ -516,7 +520,7 @@ c = 15.78279720282947 +/- 3.129022442918197
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/a2234fc5c9d0bf730805271cf59455d3df6fe43480ceb1b7191bd97f67102706.png" src="../_images/a2234fc5c9d0bf730805271cf59455d3df6fe43480ceb1b7191bd97f67102706.png" />
+<a class="reference internal image-reference" href="../_images/1fad4d519b6cb3f087943573b2086912ca32f997b5a75fb701dc8517060f9e83.png"><img alt="../_images/1fad4d519b6cb3f087943573b2086912ca32f997b5a75fb701dc8517060f9e83.png" src="../_images/1fad4d519b6cb3f087943573b2086912ca32f997b5a75fb701dc8517060f9e83.png" style="width: 571px; height: 432px;" /></a>
 </div>
 </div>
 <p>We can then fit our quadratic model to this data and use the <code class="docutils literal notranslate"><span class="pre">sigma</span></code> keyword (the weighted least-squares method) to account for the uncertainties and propagate these through to the standard errors on <span class="math notranslate nohighlight">\(a\)</span>, <span class="math notranslate nohighlight">\(b\)</span> and <span class="math notranslate nohighlight">\(c\)</span>:</p>
@@ -544,7 +548,7 @@ c = 15.78279720282947 +/- 3.129022442918197
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/c852fd38681898466774fa3f75f81e156b15a1e45e2a764deafb889cd7fe7c27.png" src="../_images/c852fd38681898466774fa3f75f81e156b15a1e45e2a764deafb889cd7fe7c27.png" />
+<a class="reference internal image-reference" href="../_images/1a34185a6259313021ee0f4466f1b4d7b377ff42538e49fe9c3456545cb95b26.png"><img alt="../_images/1a34185a6259313021ee0f4466f1b4d7b377ff42538e49fe9c3456545cb95b26.png" src="../_images/1a34185a6259313021ee0f4466f1b4d7b377ff42538e49fe9c3456545cb95b26.png" style="width: 571px; height: 432px;" /></a>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a = 2.620329100824009 +/- 0.11135716669077006
 b = 1.0044274048596924 +/- 1.1823795446825307
 c = 20.739565009713626 +/- 1.2261302133957708
@@ -575,7 +579,7 @@ c = 20.739565009713626 +/- 1.2261302133957708
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/f646045e4f71806c26be0b69fd95267ae1881c463048688ddc03b3af5c6191d2.png" src="../_images/f646045e4f71806c26be0b69fd95267ae1881c463048688ddc03b3af5c6191d2.png" />
+<a class="reference internal image-reference" href="../_images/fa413ec0242235f2b1419cc1dc7f1f77e27a1f16bea6488be6b495476b96d37b.png"><img alt="../_images/fa413ec0242235f2b1419cc1dc7f1f77e27a1f16bea6488be6b495476b96d37b.png" src="../_images/fa413ec0242235f2b1419cc1dc7f1f77e27a1f16bea6488be6b495476b96d37b.png" style="width: 596px; height: 432px;" /></a>
 </div>
 </div>
 <p>You can download arrhenius.dat <a class="reference external" href="https://raw.githubusercontent.com/pythoninchemistry/ch12004/main/CH12004/lab_6/arrhenius.dat">here</a>.</p>
@@ -597,7 +601,7 @@ c = 20.739565009713626 +/- 1.2261302133957708
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/7ca2f5d1747ec5750ebb76c00fa95ab9c709f32778a64fe5a5ab8a9cbff3328c.png" src="../_images/7ca2f5d1747ec5750ebb76c00fa95ab9c709f32778a64fe5a5ab8a9cbff3328c.png" />
+<a class="reference internal image-reference" href="../_images/6d7a6468a466374b7ac1987d81ad550e875903b90062e77a24afcbd60ae406ff.png"><img alt="../_images/6d7a6468a466374b7ac1987d81ad550e875903b90062e77a24afcbd60ae406ff.png" src="../_images/6d7a6468a466374b7ac1987d81ad550e875903b90062e77a24afcbd60ae406ff.png" style="width: 579px; height: 434px;" /></a>
 </div>
 </div>
 <p>Now we can use the <code class="docutils literal notranslate"><span class="pre">linregress</span></code> function to compute the value of the slope and the intercept:</p>
@@ -646,7 +650,7 @@ c = 15.161037389899018
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/a477da1fd1ec606472734a3ce26364f535dc4a6913c63c1246090df29b2bb6a4.png" src="../_images/a477da1fd1ec606472734a3ce26364f535dc4a6913c63c1246090df29b2bb6a4.png" />
+<a class="reference internal image-reference" href="../_images/3524526d6e13698dc0c20a2e195a313020c07045f11b8f3fc29bc185ef181ccf.png"><img alt="../_images/3524526d6e13698dc0c20a2e195a313020c07045f11b8f3fc29bc185ef181ccf.png" src="../_images/3524526d6e13698dc0c20a2e195a313020c07045f11b8f3fc29bc185ef181ccf.png" style="width: 579px; height: 434px;" /></a>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>E_a = 112323.03523328649 Jmol-1 = 112.32303523328649 kJmol-1
 A = 3840209.1525825486 M-1s-1
 </pre></div>
@@ -702,7 +706,7 @@ A = 3840209.1525825486 M-1s-1
 A = 7934409.52396029 M-1s-1
 </pre></div>
 </div>
-<img alt="../_images/2e5d16e459d13da77b3eaec1eb3e845d39f416956a47c3ff0613c3169f31730e.png" src="../_images/2e5d16e459d13da77b3eaec1eb3e845d39f416956a47c3ff0613c3169f31730e.png" />
+<a class="reference internal image-reference" href="../_images/8eba64364569365bc26f12c58112505038aa1f4763eec34b9176d4c65673d7a2.png"><img alt="../_images/8eba64364569365bc26f12c58112505038aa1f4763eec34b9176d4c65673d7a2.png" src="../_images/8eba64364569365bc26f12c58112505038aa1f4763eec34b9176d4c65673d7a2.png" style="width: 596px; height: 432px;" /></a>
 </div>
 </div>
 </section>
@@ -735,7 +739,7 @@ A = 7934409.52396029 M-1s-1
               
               
               
-                <footer class="prev-next-footer">
+                <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
     <a class="left-prev"
@@ -788,7 +792,7 @@ A = 7934409.52396029 M-1s-1
   <div class="footer-item">
     
 <p class="component-author">
-By Patrick J. Taylor & Benjamin J. Morgan
+By Patrick J. Taylor, Claire McMullin, Iva Manasi and Benjamin J. Morgan
 </p>
 
   </div>
@@ -822,8 +826,8 @@ By Patrick J. Taylor & Benjamin J. Morgan
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>
