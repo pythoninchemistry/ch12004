@@ -1,15 +1,12 @@
 # Getting started with Noteable
 
-For this course, you will be using Noteable to host and run your Jupyter notebooks.
+For this course, you will be using [Noteable](https://noteable.edina.ac.uk/launch) to host and run your Jupyter notebooks.
 
 ## Logging into Noteable
 
 Access Noteable via the link on the CH12004 Moodle page.
 
-```{image} images/noteable_widget.png
-:width: 150px
-:align: center
-```
+![](images/noteable_widget.png)
 
 You'll be presented with a page like this
 
@@ -19,16 +16,15 @@ Select "Standard Notebook (Python 3)" and click "Start".
 
 If this is the first time you have logged on to Noteable, you will see the following:
 
-![](images/blank_notebook.png)
+![](images/jupyter_first_time.png)
 
 On the left is the Jupyter **File Browser**, which shows all of your files and folders/directories saved in Noteable. On the right is the **Launcher**, which contains buttons for quickly creating notebooks and shells. 
 
 ## Creating a new Jupyter notebook
 
-To create a new Jupyter notebook, click on the `Python3 (ipykernel)` button in the **Notebook** section of the **Launcher**.
+To create a new Jupyter notebook, click on the `Python 3 (ipykernel)` button in the **Notebook** section of the **Launcher**.
 
 ![](images/new_notebook.png)
-
 
 This will open a new Jupyter Notebook document in a new browser window, which should look like this:
 
@@ -44,41 +40,19 @@ Rename your notebook to something more meaningful (e.g., &ldquo;Lab 0&rdquo;) by
 
 You should then see the notebook name at the top of the screen change to the new name.
 
-<!-- 
 ## Notebook management
 
-Switch back to the browser window containing the Jupyter file browser. 
-You should now see your notebook (with its new name) in the list of files:
+Your notebook is the place that you will **run** (execute) your code. Doing so uses resources (memory and CPU) on whichever computer you are running on.
+In this instance, these are servers run by Noteable. If you run something that consumes a lot of resources, it can make your calculations run slowly. Sometimes this happens because you might have written your code incorrectly or inefficiently - this is fine and is a part of learning. It is therefore useful to know how to stop (Shutdown) a Jupyter notebook which might be unresponsive or slow.
 
-![](images/browser_with_a_notebook.png)
+This can be done using the square stop button, located on the notebook toolbar.
 
-The notebook symbol to the left of the filename tells you that this file is a Notebook.
-The symbol is green because this Notebook is open (or &ldquo;running&rdquo;).
-You can also see the status of this Notebook on the righthand side as &ldquo;Running&rdquo;.
-The file browser also shows you how recently this notebook was modified and the size of the notebook on the disk.
+![](images/shutdown_menu.png)
 
-Running notebooks uses resources (memory and CPU) on whichever computer you are running on.
-In this instance, these are servers run by Noteable.
-Having a large number of notebooks Running at the same time can consume a lot of resources and make your calculations run slowly.
-It is good practice to stop (Shutdown) notebooks that you are not currently working on or using to perform calculations.
-Closing the window that a notebook is running in does not shutdown that notebook (it will still have a green icon in the file browser).
 
-You can Shutdown any running notebooks by selecting them in file browser (click the tick box to the left of the filename) and then clicking **Shutdown**:
-```{image} images/shutdown_menu.png
-:width: 250px
-:align: center
-```
+If that doesn't work, then you can restart the Kernel (think of this as a reboot of the system) by clicking the `Kernel` tab of the Notebook menu followed by the `Restart Kernel` option.
 
-Notice that the notebook icon next to the filename is now grey, indicating a notebook that is not running.
-The word &ldquo;Running&rdquo; has also gone from the righthand side of the file information row:
-
-![](images/not_running.png)
-
-You can also close and shutdown a running notebook from the notebook window itself, by clicking on the **File** menu item and selecting **Close and Halt**:
-```{image} images/close_and_halt.png
-:width: 250px
-:align: center
-``` -->
+![](images/kernel_restart.png)
 
 ## Using folders
 
@@ -96,7 +70,7 @@ To make a new notebook in this directory, simply click the blue `+` button to ma
 
 ![](images/new_launcher.png)
 
-And then click the `Python3 (ipykernel)` Button in the **Notebooks** section.
+And then click the `Python 3 (ipykernel)` Button in the **Notebooks** section.
 
 ![](images/new_notebook.png)
 ## Closing down and reconnecting
