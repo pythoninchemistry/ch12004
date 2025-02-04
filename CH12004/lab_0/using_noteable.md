@@ -99,7 +99,6 @@ To make a new notebook in this directory, simply click the blue `+` button to ma
 And then click the `Python3 (ipykernel)` Button in the **Notebooks** section.
 
 ![](images/new_notebook.png)
-
 ## Closing down and reconnecting
 Close all of your Noteable browser windows.
 Your folders and files are saved on the Noteable server.
