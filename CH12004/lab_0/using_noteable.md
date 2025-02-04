@@ -1,38 +1,34 @@
 # Getting started with Noteable
 
-For this course, you will be using [Noteable](https://noteable.edina.ac.uk) to host and run your Jupyter notebooks.
+For this course, you will be using Noteable to host and run your Jupyter notebooks.
 
 ## Logging into Noteable
 
-Click on the following link to access Noteable: [https://moodle.bath.ac.uk/mod/lti/launch.php?id=1306775&triggerview=0](https://moodle.bath.ac.uk/mod/lti/launch.php?id=1306775&triggerview=0). You may also access Noteable via the link on the CH12004 Moodle page.
+Access Noteable via the link on the CH12004 Moodle page.
 
 ```{image} images/noteable_widget.png
 :width: 150px
 :align: center
 ```
 
+You'll be presented with a page like this
+
+![The welcome screen of Noteable asking you to select a personal notebook server](images/select_server.png)
+
 Select "Standard Notebook (Python 3)" and click "Start".
-
-
-```{image} images/standard_notebook.png
-:width: 250px
-:align: center
-```
 
 If this is the first time you have logged on to Noteable, you will see the following:
 
-![](images/jupyter_first_time.png)
+![](images/blank_notebook.png)
 
-This is the Jupyter file browser. It shows you all of your files and folders saved in Noteable.
+On the left is the Jupyter **File Browser**, which shows all of your files and folders/directories saved in Noteable. On the right is the **Launcher**, which contains buttons for quickly creating notebooks and shells. 
 
 ## Creating a new Jupyter notebook
 
-To create a new Jupyter notebook, click on **New** (top right) and select **Python3 (ipykernel)**.
+To create a new Jupyter notebook, click on the `Python3 (ipykernel)` button in the **Notebook** section of the **Launcher**.
 
-```{image} images/new_notebook.png
-:width: 300px
-:align: center
-```
+![](images/new_notebook.png)
+
 
 This will open a new Jupyter Notebook document in a new browser window, which should look like this:
 
@@ -40,19 +36,15 @@ This will open a new Jupyter Notebook document in a new browser window, which sh
 
 ## Renaming notebooks
 
-We will look at using Jupyter Notebooks in more detail later. For now, notice at the top you have the text &ldquo;Untitled&rdquo;. This is a placeholder filename that has been assigned to this new Notebook you have just created. To rename your notebook, click on the title &ldquo;Untitled&rdquo; to open a **Rename Notebook** dialogue:
+We will look at using Jupyter Notebooks in more detail later. For now, notice at the top you have the text &ldquo;Untitled&rdquo;. This is a placeholder filename that has been assigned to this new Notebook you have just created. To rename your notebook, right click on `Untitled.ipynb` in the **File Browser** and click rename.
 
 ![](images/rename_notebook_dialogue.png)
 
-Rename your notebook to something more meaningful (e.g., &ldquo;demo notebook&rdquo;) by typing the new name in this dialogue box and hitting Enter or clicking **Rename**.
+Rename your notebook to something more meaningful (e.g., &ldquo;Lab 0&rdquo;) by typing the new name and hitting Enter.
+
 You should then see the notebook name at the top of the screen change to the new name.
 
-You can also rename a notebook by clicking on the "File" menu inside the Notebook interface, and selecting "Rename…":
-```{image} images/file_rename.png
-:width: 200px
-:align: center
-```
-
+<!-- 
 ## Notebook management
 
 Switch back to the browser window containing the Jupyter file browser. 
@@ -86,29 +78,27 @@ You can also close and shutdown a running notebook from the notebook window itse
 ```{image} images/close_and_halt.png
 :width: 250px
 :align: center
-```
+``` -->
 
 ## Using folders
 
 While you could keep all of your notebooks in your top-level folder (what you see when you first log in to Noteable), over time, this can make it difficult to find the specific notebook you are looking for, so it is better to organise your notebooks using folders.
 
-In the Jupyter file browser window, click **New** and then **Folder** to create a new folder.
-```{image} images/new_folder.png
-:width: 250px
-:align: center
-```
-You can rename a Folder (or a file, unless it is a currently running notebook) directly from the Jupyter file browser.
-Click the check box to the left of the file name and then click **Rename**.
-Then rename your folder to &ldquo;CH12004&rdquo;.
+In the **File Browser**, click the **New Folder** icon to create a new folder.
 
-You can now move your first notebook into this folder.
-Select the notebook and click **Move**, then type the name of the destination folder (&ldquo;CH12004&rdquo;) into the &ldquo;Move an Item&rdquo; dialogue box, and click **Move**:
-![](images/move_dialogue.png)
-You should now have a nice organised top-level directory.
-If you click into the CH12004 folder you should see your notebook file.
-You will also see an entry at the top of the file list with a folder icon and the name `..`.
-These two dots are shorthand for &ldquo;go up one level&rdquo; in the folder hierarchy.
-Clicking this folder name (the two dots) will take you back to the top-level directory.
+![](images/new_folder.png)
+
+Name this folder `CH12004`. This is where you should place all of your Jupyter Notebook files.
+
+Drag and drop your `Lab 0.ipynb` file into the `CH12004` folder. It might take a second for the file to "disappear", but if you double click on the `CH12004` folder, you'll now see your notebook.
+
+To make a new notebook in this directory, simply click the blue `+` button to make a new **Launcher**.
+
+![](images/new_launcher.png)
+
+And then click the `Python3 (ipykernel)` Button in the **Notebooks** section.
+
+![](images/new_notebook.png)
 
 ## Closing down and reconnecting
 Close all of your Noteable browser windows.
