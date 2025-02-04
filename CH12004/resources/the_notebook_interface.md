@@ -6,26 +6,19 @@ There are a few sections of the Notebook interface that will be useful to know y
 
 ![](images/notebook_interface.png)
 
-1. The jupyterhub logo. Clicking on this takes you back to your **Notebook Dashboard**.
-2. The name of your Notebook. Please do not leave this as `Untitled.ipynb`. You will thank me later.
-3. Information about when this Notebook was last saved. (or, in Jupyter parlance, when a **checkpoint** was last created.).
-    You can force your Notebook to save using:
-    - ⌘S (Mac) / alt+S (Windows)
-    - Select `File` -> `Save and Checkpoint`.
-4. The **Notebook Menubar**. This contains:
+1. The **File Browser**. From here you can access all your Jupyter notebooks. You can also see when they were last saved/modified.
+2. The name of your Notebook. Please do not leave this as `Untitled.ipynb` - You will thank me later!
+3. The **Notebook Menubar**. This contains:
     - `File`: File operations, e.g. create a new Notebook, open an existing Notebook, Copy your current Notebook, Save, etc.
     - `Edit`: Manipulating **cells**
     - `View`: Options for what appears on your screen, and for toggling various aspects on and off.
     - `Cell`: Executing one of more **cells**, and manipulating the output of **cells**.
     - `Kernel`: Stop, start, etc. the **kernel**.
-    - `Widgets`: Managing plugins and extensions that you might have installed.
     - `Help`: Access to the built-in help.
-        - Particularly useful items here are `Help` &#8594; `User Interface Tour` and `Help` &#8594; `Notebook Help`.
-5. The **Notebook Toolbar**
+4. The **Notebook Toolbar**
     This contains buttons for the most common actions for working with Notebooks. Hovering you mouse over each button will show you a popup with some information about the associated action.
-6. The currently selected cell.
-7. Indicates whether a cell has run or not, and for cells that have been run, the order they ran in.
-8. The text area for the **code cell**. This is where you can type in Pyton code to then run.
+5. The currently selected cell, here you can type code and execute it.
+
 
 ## Cells
 
@@ -47,7 +40,7 @@ This cell has then been [run](heading:running-cells), which executes (runs) the 
 
 A **markdown cell** contains text formatted using [Markdown](https://www.markdownguide.org/basic-syntax/), which is a lightweight markup language that can be used for writing formatted text. 
 When a **markdown cell** is run, the markdown is converted into HTML, with the formatted text then shown _in place_ of the cell.
-**Markdown cells** can be used to include formatted text, mathetmatical equations, images, tables, and more types of rich media.
+**Markdown cells** can be used to include formatted text, mathematical equations, images, tables, and more types of rich media.
 
 ![](images/md_cell.png)
 This figure shows a markdown cell being edited, with raw markdown entered.
@@ -59,7 +52,7 @@ This figure shows the same cell after it has been run, with the markdown convert
 Input entered into **Raw cells** is not converted when the cell is run. These cells are usually used to provide additional information for converting Jupyter Notebooks to a different format (e.g., a PDF document). You almost certainly will not need to use **Raw cells** during this course, but might be curious about this third cell type.
 
 ### Switching cell type.
-Cells can be switched between **code** and **markdown** using the **Cell** &rarr; **Cell Type**  menu options:
+Cells can be switched between **code** and **markdown** using the cell type dropdown menu.
 
 ![](images/cell_switch.png)
 
@@ -71,13 +64,13 @@ A cell is marked as **active** if it is highlighted. The colour of the highlight
 
 #### Command mode
 
-**Command mode** is indicated by a blue highlight. When you are in command mode you can use **keyboard shortcuts** to cut, paste, and move cells, etc. You can see all the **keyboard shortcuts** under `Help` &#8594; `Keyboard Shortcuts`.
+**Command mode** is indicated by a blue highlight. When you are in command mode you can use **keyboard shortcuts** to cut, paste, and move cells, etc. You can see all the **keyboard shortcuts** under `Help` &#8594; `Show Keyboard Shortcuts`.
 
 ![](images/command_mode.png)
 
 #### Edit mode
 
-If you are in **command mode** then pressing `Enter` or clicking in the input text area of a cell will switch you to **edit mode**. **Edit mode** is indicated by a green highlight, and a pencil icon in the top right of the Notebook window.
+If you are in **command mode** then pressing `Enter` or clicking in the input text area of a cell will switch you to **edit mode**. **Edit mode** is indicated by a blue outline around the grey box, and a flashing cursor.
 
 ![](images/edit_mode.png)
 
