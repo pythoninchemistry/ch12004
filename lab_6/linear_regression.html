@@ -16,30 +16,33 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-  
-  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
-
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
-  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
     <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="../_static/doctools.js?v=9a2dae69"></script>
@@ -63,9 +66,10 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Non-linear regression" href="non_linear_regression.html" />
-    <link rel="prev" title="Solutions" href="../lab_5/solutions.html" />
+    <link rel="prev" title="Synoptic exercises" href="../lab_5/synoptic_exercises.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -81,19 +85,8 @@
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-primary-sidebar-checkbox"/>
-  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-secondary-sidebar-checkbox"/>
-  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="../search.html"
       method="get">
@@ -101,7 +94,6 @@
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -109,8 +101,8 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -126,7 +118,8 @@
       
       
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -155,22 +148,18 @@
       
     
     
-    <img src="../_static/logo.png" class="logo__image only-light" alt="CH12004: Skills for chemists - Home"/>
-    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="CH12004: Skills for chemists - Home"/>`);</script>
+    <img src="../_static/logo.svg" class="logo__image only-light" alt="CH12004: Skills for chemists - Home"/>
+    <img src="../_static/logo.svg" class="logo__image only-dark pst-js-only" alt="CH12004: Skills for chemists - Home"/>
   
   
 </a></div>
         <div class="sidebar-primary-item">
 
- <script>
- document.write(`
-   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
@@ -194,7 +183,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../lab_1/strings.html">Strings</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../lab_1/types.html">Types</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../lab_1/synoptic_exercises.html">Synoptic exercises</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../lab_1/solutions.html">Solutions</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Lab 2 - Data structures</span></p>
 <ul class="nav bd-sidenav">
@@ -203,7 +191,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../lab_2/dictionaries.html">Dictionaries</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../lab_2/writing_readable_code.html">Writing readable code</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../lab_2/synoptic_exercises.html">Synoptic exercises</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../lab_2/solutions.html">Solutions</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Lab 3 - Loops and logic</span></p>
 <ul class="nav bd-sidenav">
@@ -212,7 +199,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../lab_3/logic.html">Logic</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../lab_3/combining_loops_and_logic.html">Combining loops <strong>and</strong> logic</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../lab_3/synoptic_exercises.html">Synoptic Exercises</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../lab_3/solutions.html">Solutions</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Lab 4 - Functions and errors</span></p>
 <ul class="nav bd-sidenav">
@@ -220,7 +206,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../lab_4/docstrings.html">Docstrings</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../lab_4/errors.html">Errors</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../lab_4/synoptic_exercises.html">Synoptic exercises</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../lab_4/solutions.html">Solutions</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Lab 5 - External libraries</span></p>
 <ul class="nav bd-sidenav">
@@ -228,7 +213,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../lab_5/matplotlib.html">Matplotlib</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../lab_5/file_io.html">File I/O</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../lab_5/synoptic_exercises.html">Synoptic exercises</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../lab_5/solutions.html">Solutions</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Lab 6 - Data analysis</span></p>
 <ul class="current nav bd-sidenav">
@@ -240,6 +224,7 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../resources/the_notebook_interface.html">The Jupyter Notebook interface</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../resources/glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://noteable.edina.ac.uk/launch">Noteable</a></li>
 </ul>
 
     </div>
@@ -248,9 +233,14 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
       </div>
@@ -347,24 +337,16 @@
 
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
-    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
-    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
-  </button>
-`);
-</script>
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script>
+</button>
 <label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </label>
@@ -407,8 +389,8 @@ document.write(`
 <p>Let’s imagine that we’ve been given some experimental data that is evidently linear:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 
 <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="s1">&#39;linear.csv&#39;</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">,</span> <span class="n">unpack</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
@@ -421,7 +403,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<a class="reference internal image-reference" href="../_images/523f192c2dcbd5be2d4de89e72c347aaaf13565391afd7ee759b81fe66ad09aa.png"><img alt="../_images/523f192c2dcbd5be2d4de89e72c347aaaf13565391afd7ee759b81fe66ad09aa.png" src="../_images/523f192c2dcbd5be2d4de89e72c347aaaf13565391afd7ee759b81fe66ad09aa.png" style="width: 563px; height: 432px;" /></a>
+<a class="reference internal image-reference" href="../_images/8bbbd3349ec5ad49444eb3133bd7e1883a230899bdee84a34d2c1d05cbf6401e.png"><img alt="../_images/8bbbd3349ec5ad49444eb3133bd7e1883a230899bdee84a34d2c1d05cbf6401e.png" src="../_images/8bbbd3349ec5ad49444eb3133bd7e1883a230899bdee84a34d2c1d05cbf6401e.png" style="width: 563px; height: 432px;" /></a>
 </div>
 </div>
 <p>You can download linear.csv <a class="reference external" href="https://raw.githubusercontent.com/pythoninchemistry/ch12004/main/CH12004/lab_6/linear.csv">here</a>.</p>
@@ -431,7 +413,7 @@ document.write(`
 <p>(where <span class="math notranslate nohighlight">\(m\)</span> is the slope and <span class="math notranslate nohighlight">\(c\)</span> is the intercept), that is as close as possible to all the experimental data points. There are many ways to do linear regression in Python, but perhaps the simplest is the <code class="docutils literal notranslate"><span class="pre">linregress</span></code> function from the <code class="docutils literal notranslate"><span class="pre">scipy</span></code> library:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">linregress</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">scipy.stats</span><span class="w"> </span><span class="kn">import</span> <span class="n">linregress</span>
 
 <span class="n">regression_data</span> <span class="o">=</span> <span class="n">linregress</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
 
@@ -448,7 +430,7 @@ document.write(`
 <p>The first thing you might notice about the code above is that the <code class="docutils literal notranslate"><span class="pre">import</span></code> statement looks a little different to those we have seen before. The <code class="docutils literal notranslate"><span class="pre">from</span></code> keyword allows to import individual functions or constants from a package rather than the whole thing. In this example, we have imported <strong>just the linregress function</strong>, which means we can <strong>call</strong> that function by typing <code class="docutils literal notranslate"><span class="pre">linregress(x,</span> <span class="pre">y)</span></code> rather than running <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">scipy</span></code> and then having to type out <code class="docutils literal notranslate"><span class="pre">scipy.stats.linregress(x,</span> <span class="pre">y)</span></code>. To further clarify this, you may recall that we have made frequent use of <code class="docutils literal notranslate"><span class="pre">scipy</span></code> to access important physical constants such as <span class="math notranslate nohighlight">\(h\)</span> and <span class="math notranslate nohighlight">\(k_{\mathrm{B}}\)</span> by typing <code class="docutils literal notranslate"><span class="pre">scipy.constants.h</span></code> or <code class="docutils literal notranslate"><span class="pre">scipy.constants.k</span></code>. Using the <code class="docutils literal notranslate"><span class="pre">from</span></code> keyword, we could instead type:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.constants</span> <span class="kn">import</span> <span class="n">h</span><span class="p">,</span> <span class="n">k</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">scipy.constants</span><span class="w"> </span><span class="kn">import</span> <span class="n">h</span><span class="p">,</span> <span class="n">k</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
 </pre></div>
@@ -512,7 +494,7 @@ c = 11.204090909090908
 </div>
 </div>
 <div class="cell_output docutils container">
-<a class="reference internal image-reference" href="../_images/808ce6e3053da63ccc20c920aec3ffbea0f43a48f688fefb183362cda25c5c83.png"><img alt="../_images/808ce6e3053da63ccc20c920aec3ffbea0f43a48f688fefb183362cda25c5c83.png" src="../_images/808ce6e3053da63ccc20c920aec3ffbea0f43a48f688fefb183362cda25c5c83.png" style="width: 563px; height: 432px;" /></a>
+<a class="reference internal image-reference" href="../_images/077a97572db4f95f38b8d97dfa2e2dc180794c0cd2997e3745739b11636cd5e6.png"><img alt="../_images/077a97572db4f95f38b8d97dfa2e2dc180794c0cd2997e3745739b11636cd5e6.png" src="../_images/077a97572db4f95f38b8d97dfa2e2dc180794c0cd2997e3745739b11636cd5e6.png" style="width: 563px; height: 432px;" /></a>
 </div>
 </div>
 <p>It’s worth emphasising at this stage that whilst the example is wholly abstract (<span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> have no physical meaning and have no units), the same procedure could easily be applied to any linear dataset you might wish to analyse.</p>
@@ -548,14 +530,14 @@ c = 11.204090909090908 +/- 0.5995937291506074
 </div>
 </div>
 <div class="cell_output docutils container">
-<a class="reference internal image-reference" href="../_images/776bbfb1f6fa0d41ddcac60a8dea88409333db1eaa2c42add2ade20402427e5c.png"><img alt="../_images/776bbfb1f6fa0d41ddcac60a8dea88409333db1eaa2c42add2ade20402427e5c.png" src="../_images/776bbfb1f6fa0d41ddcac60a8dea88409333db1eaa2c42add2ade20402427e5c.png" style="width: 563px; height: 432px;" /></a>
+<a class="reference internal image-reference" href="../_images/a4e4ef6e2c0b39962bb111897fceb0fb4e3ae5422b3590a4658c7fe38c16e5ba.png"><img alt="../_images/a4e4ef6e2c0b39962bb111897fceb0fb4e3ae5422b3590a4658c7fe38c16e5ba.png" src="../_images/a4e4ef6e2c0b39962bb111897fceb0fb4e3ae5422b3590a4658c7fe38c16e5ba.png" style="width: 563px; height: 432px;" /></a>
 </div>
 </div>
 <p>As you can see above, we can plot error bars using <code class="docutils literal notranslate"><span class="pre">plt.errorbar</span></code>, passing the size of each error bar as a <strong>third</strong> argument (here passed as the variable <code class="docutils literal notranslate"><span class="pre">y_err</span></code>). The <code class="docutils literal notranslate"><span class="pre">fmt</span></code> keyword argument is used to prevent <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> from joining each point with a line (this is roughly equivalent how we can pass strings such as <code class="docutils literal notranslate"><span class="pre">'o'</span></code> or <code class="docutils literal notranslate"><span class="pre">'o-'</span></code> to the <code class="docutils literal notranslate"><span class="pre">plt.plot</span></code> function to change how the data is rendered).</p>
 <p>To perform linear regression on this dataset that explicitly <strong>accounts for the error bars</strong>, we are going to use the <code class="docutils literal notranslate"><span class="pre">curve_fit</span></code> function:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.optimize</span> <span class="kn">import</span> <span class="n">curve_fit</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">scipy.optimize</span><span class="w"> </span><span class="kn">import</span> <span class="n">curve_fit</span>
 </pre></div>
 </div>
 </div>
@@ -567,7 +549,7 @@ c = 11.204090909090908 +/- 0.5995937291506074
 <p>where <span class="math notranslate nohighlight">\(m\)</span> is the slope and <span class="math notranslate nohighlight">\(c\)</span> is the intercept. We can define this model in Python as a <strong>function</strong>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">straight_line</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">c</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">straight_line</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">c</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Calculate y = mx + c (the equation of a straight line).</span>
 
 <span class="sd">    Args:</span>
@@ -601,7 +583,7 @@ c = 11.204090909090908 +/- 0.5995937291506074
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(array([ 3.45325015, 11.13753086]),
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(array([ 3.45325015, 11.13753085]),
  array([[ 0.01099572, -0.06900366],
         [-0.06900366,  0.53969832]]))
 </pre></div>
@@ -609,7 +591,7 @@ c = 11.204090909090908 +/- 0.5995937291506074
 </div>
 </div>
 <p>The first of these is a <code class="docutils literal notranslate"><span class="pre">numpy</span></code> array containing the optimised parameters for our model in the order they are specified in the function definition. In this case, our <code class="docutils literal notranslate"><span class="pre">straight_line</span></code> function takes the arguments <code class="docutils literal notranslate"><span class="pre">x</span></code>, <code class="docutils literal notranslate"><span class="pre">m</span></code> and <code class="docutils literal notranslate"><span class="pre">c</span></code>:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">straight_line</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">c</span><span class="p">):</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">straight_line</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">c</span><span class="p">):</span>
 </pre></div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">m</span></code> comes before <code class="docutils literal notranslate"><span class="pre">c</span></code>, so the same order will be reflected in the optimised parameters:</p>
@@ -620,7 +602,7 @@ c = 11.204090909090908 +/- 0.5995937291506074
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 3.45325015, 11.13753086])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 3.45325015, 11.13753085])
 </pre></div>
 </div>
 </div>
@@ -653,8 +635,8 @@ c = 11.204090909090908 +/- 0.5995937291506074
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>m = 3.453250147921937 +/- 0.1048604582600492
-c = 11.137530862550816 +/- 0.734641624991989
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>m = 3.453250150061519 +/- 0.10486045758833921
+c = 11.137530849160365 +/- 0.7346416256182807
 </pre></div>
 </div>
 </div>
@@ -675,7 +657,7 @@ c = 11.137530862550816 +/- 0.734641624991989
 </div>
 </div>
 <div class="cell_output docutils container">
-<a class="reference internal image-reference" href="../_images/a7590373c56c4359a167056389c7c641f88889b34fd6ecddfa6adc7aec2579f1.png"><img alt="../_images/a7590373c56c4359a167056389c7c641f88889b34fd6ecddfa6adc7aec2579f1.png" src="../_images/a7590373c56c4359a167056389c7c641f88889b34fd6ecddfa6adc7aec2579f1.png" style="width: 563px; height: 432px;" /></a>
+<a class="reference internal image-reference" href="../_images/2e29dc2c262e51ee5713768f6006f1021a32b35203cfc84b0903c38a2930b2f3.png"><img alt="../_images/2e29dc2c262e51ee5713768f6006f1021a32b35203cfc84b0903c38a2930b2f3.png" src="../_images/2e29dc2c262e51ee5713768f6006f1021a32b35203cfc84b0903c38a2930b2f3.png" style="width: 563px; height: 432px;" /></a>
 </div>
 </div>
 <p>In this case, our final plot (and our values of <span class="math notranslate nohighlight">\(m\)</span> and <span class="math notranslate nohighlight">\(c\)</span>) are pretty similar whether we use the <strong>ordinary</strong> least-squares (<code class="docutils literal notranslate"><span class="pre">linregress</span></code>) or <strong>weighted</strong> least-squares (<code class="docutils literal notranslate"><span class="pre">curve_fit</span></code> with <code class="docutils literal notranslate"><span class="pre">sigma</span></code>) methods, but this is certainly not guaranteed to be the case and it is therefore <strong>very important</strong> to propagate experimental uncertanties through to our fitted model parameters when possible.</p>
@@ -713,12 +695,12 @@ c = 11.137530862550816 +/- 0.734641624991989
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../lab_5/solutions.html"
+       href="../lab_5/synoptic_exercises.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Solutions</p>
+        <p class="prev-next-title">Synoptic exercises</p>
       </div>
     </a>
     <a class="right-next"
@@ -737,7 +719,8 @@ c = 11.137530862550816 +/- 0.734641624991989
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
   <div class="sidebar-secondary-item">
@@ -761,7 +744,7 @@ c = 11.137530862550816 +/- 0.734641624991989
   <div class="footer-item">
     
 <p class="component-author">
-By Patrick J. Taylor, Iva Manasi, Claire McMullin and Benjamin J. Morgan
+By Patrick J. Taylor, Jon G. C. Kragskow, Claire McMullin and Benjamin J. Morgan
 </p>
 
   </div>
@@ -771,7 +754,7 @@ By Patrick J. Taylor, Iva Manasi, Claire McMullin and Benjamin J. Morgan
 
   <p class="copyright">
     
-      © Copyright 2024.
+      © Copyright 2025.
       <br/>
     
   </p>
@@ -795,8 +778,8 @@ By Patrick J. Taylor, Iva Manasi, Claire McMullin and Benjamin J. Morgan
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
 
   <footer class="bd-footer">
   </footer>

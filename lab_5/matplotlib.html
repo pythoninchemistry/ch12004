@@ -16,30 +16,33 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-  
-  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
-
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
-  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
     <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="../_static/doctools.js?v=9a2dae69"></script>
@@ -66,6 +69,7 @@
     <link rel="prev" title="NumPy" href="numpy.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -81,19 +85,8 @@
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-primary-sidebar-checkbox"/>
-  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-secondary-sidebar-checkbox"/>
-  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="../search.html"
       method="get">
@@ -101,7 +94,6 @@
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -109,8 +101,8 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -126,7 +118,8 @@
       
       
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -155,22 +148,18 @@
       
     
     
-    <img src="../_static/logo.png" class="logo__image only-light" alt="CH12004: Skills for chemists - Home"/>
-    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="CH12004: Skills for chemists - Home"/>`);</script>
+    <img src="../_static/logo.svg" class="logo__image only-light" alt="CH12004: Skills for chemists - Home"/>
+    <img src="../_static/logo.svg" class="logo__image only-dark pst-js-only" alt="CH12004: Skills for chemists - Home"/>
   
   
 </a></div>
         <div class="sidebar-primary-item">
 
- <script>
- document.write(`
-   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
@@ -194,7 +183,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../lab_1/strings.html">Strings</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../lab_1/types.html">Types</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../lab_1/synoptic_exercises.html">Synoptic exercises</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../lab_1/solutions.html">Solutions</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Lab 2 - Data structures</span></p>
 <ul class="nav bd-sidenav">
@@ -203,7 +191,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../lab_2/dictionaries.html">Dictionaries</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../lab_2/writing_readable_code.html">Writing readable code</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../lab_2/synoptic_exercises.html">Synoptic exercises</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../lab_2/solutions.html">Solutions</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Lab 3 - Loops and logic</span></p>
 <ul class="nav bd-sidenav">
@@ -212,7 +199,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../lab_3/logic.html">Logic</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../lab_3/combining_loops_and_logic.html">Combining loops <strong>and</strong> logic</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../lab_3/synoptic_exercises.html">Synoptic Exercises</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../lab_3/solutions.html">Solutions</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Lab 4 - Functions and errors</span></p>
 <ul class="nav bd-sidenav">
@@ -220,7 +206,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../lab_4/docstrings.html">Docstrings</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../lab_4/errors.html">Errors</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../lab_4/synoptic_exercises.html">Synoptic exercises</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../lab_4/solutions.html">Solutions</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Lab 5 - External libraries</span></p>
 <ul class="current nav bd-sidenav">
@@ -228,7 +213,6 @@
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Matplotlib</a></li>
 <li class="toctree-l1"><a class="reference internal" href="file_io.html">File I/O</a></li>
 <li class="toctree-l1"><a class="reference internal" href="synoptic_exercises.html">Synoptic exercises</a></li>
-<li class="toctree-l1"><a class="reference internal" href="solutions.html">Solutions</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Lab 6 - Data analysis</span></p>
 <ul class="nav bd-sidenav">
@@ -240,6 +224,7 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../resources/the_notebook_interface.html">The Jupyter Notebook interface</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../resources/glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://noteable.edina.ac.uk/launch">Noteable</a></li>
 </ul>
 
     </div>
@@ -248,9 +233,14 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
       </div>
@@ -347,24 +337,16 @@
 
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
-    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
-    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
-  </button>
-`);
-</script>
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script>
+</button>
 <label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </label>
@@ -408,8 +390,8 @@ document.write(`
 <p>Just like we used the <code class="docutils literal notranslate"><span class="pre">as</span></code> keyword to <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">numpy</span> <span class="pre">as</span> <span class="pre">np</span></code>, it is common practice to abbreviate <code class="docutils literal notranslate"><span class="pre">matplotlib.pyplot</span></code> to <code class="docutils literal notranslate"><span class="pre">plt</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 </pre></div>
 </div>
 </div>
@@ -429,7 +411,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<a class="reference internal image-reference" href="../_images/c82967c3ae0020f0be70212af0f7e12c832799ac3f7ebed3fd91bfc1a6be40c6.png"><img alt="../_images/c82967c3ae0020f0be70212af0f7e12c832799ac3f7ebed3fd91bfc1a6be40c6.png" src="../_images/c82967c3ae0020f0be70212af0f7e12c832799ac3f7ebed3fd91bfc1a6be40c6.png" style="width: 571px; height: 432px;" /></a>
+<a class="reference internal image-reference" href="../_images/bd249f2ccaa0f7b4afda4286761f92939281b7555b3f0767f1b695642dd08b3d.png"><img alt="../_images/bd249f2ccaa0f7b4afda4286761f92939281b7555b3f0767f1b695642dd08b3d.png" src="../_images/bd249f2ccaa0f7b4afda4286761f92939281b7555b3f0767f1b695642dd08b3d.png" style="width: 571px; height: 432px;" /></a>
 </div>
 </div>
 <p>Okay, let’s start with the first two lines:</p>
@@ -543,7 +525,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<a class="reference internal image-reference" href="../_images/65745e14c243655b42dfe6ea61588216ec54f4bd3e315fae9e38694c87768ea3.png"><img alt="../_images/65745e14c243655b42dfe6ea61588216ec54f4bd3e315fae9e38694c87768ea3.png" src="../_images/65745e14c243655b42dfe6ea61588216ec54f4bd3e315fae9e38694c87768ea3.png" style="width: 571px; height: 432px;" /></a>
+<a class="reference internal image-reference" href="../_images/67c8cca2d1a159ef9f33d198c0151b03111715153fc2bb5a9998e07c838bd84b.png"><img alt="../_images/67c8cca2d1a159ef9f33d198c0151b03111715153fc2bb5a9998e07c838bd84b.png" src="../_images/67c8cca2d1a159ef9f33d198c0151b03111715153fc2bb5a9998e07c838bd84b.png" style="width: 571px; height: 432px;" /></a>
 </div>
 </div>
 <p>As you can see, our line is now very <strong>jagged</strong>. This is because we have only calculated <span class="math notranslate nohighlight">\(f(x)\)</span> for <span class="math notranslate nohighlight">\(5\)</span> values of <span class="math notranslate nohighlight">\(x\)</span>, which becomes much more obvious if we render out plot with points rather than lines:</p>
@@ -558,7 +540,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<a class="reference internal image-reference" href="../_images/317217356b168247358fd5d065f766797e0dd55de4d8bac12fc7f35a8ec9edfa.png"><img alt="../_images/317217356b168247358fd5d065f766797e0dd55de4d8bac12fc7f35a8ec9edfa.png" src="../_images/317217356b168247358fd5d065f766797e0dd55de4d8bac12fc7f35a8ec9edfa.png" style="width: 571px; height: 432px;" /></a>
+<a class="reference internal image-reference" href="../_images/e2a49307c251b52e871405a37f67b5ad6b96ed1af52439e78584af69fbb2094b.png"><img alt="../_images/e2a49307c251b52e871405a37f67b5ad6b96ed1af52439e78584af69fbb2094b.png" src="../_images/e2a49307c251b52e871405a37f67b5ad6b96ed1af52439e78584af69fbb2094b.png" style="width: 571px; height: 432px;" /></a>
 </div>
 </div>
 <p>Notice the extra argument we have provided this time to the <code class="docutils literal notranslate"><span class="pre">plot</span></code> function:</p>
@@ -578,7 +560,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<a class="reference internal image-reference" href="../_images/6bc239873216a91b6b6289a06254f941ba84c394b79a006cc576c757fdb23e5e.png"><img alt="../_images/6bc239873216a91b6b6289a06254f941ba84c394b79a006cc576c757fdb23e5e.png" src="../_images/6bc239873216a91b6b6289a06254f941ba84c394b79a006cc576c757fdb23e5e.png" style="width: 571px; height: 432px;" /></a>
+<a class="reference internal image-reference" href="../_images/8f7667440eb78e323abd4ba9d423161a258efd850eb95e990e54eceeb8d42e76.png"><img alt="../_images/8f7667440eb78e323abd4ba9d423161a258efd850eb95e990e54eceeb8d42e76.png" src="../_images/8f7667440eb78e323abd4ba9d423161a258efd850eb95e990e54eceeb8d42e76.png" style="width: 571px; height: 432px;" /></a>
 </div>
 </div>
 <div class="cell docutils container">
@@ -592,7 +574,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<a class="reference internal image-reference" href="../_images/aab4417a56c66b60827d134f31e5e9885a3cba0d7e487e37fb9f3978f782f71c.png"><img alt="../_images/aab4417a56c66b60827d134f31e5e9885a3cba0d7e487e37fb9f3978f782f71c.png" src="../_images/aab4417a56c66b60827d134f31e5e9885a3cba0d7e487e37fb9f3978f782f71c.png" style="width: 571px; height: 432px;" /></a>
+<a class="reference internal image-reference" href="../_images/3c2bc73fa5685ca923e0d265547bd11b8f7357f1a970a227bb1b552eb2035670.png"><img alt="../_images/3c2bc73fa5685ca923e0d265547bd11b8f7357f1a970a227bb1b552eb2035670.png" src="../_images/3c2bc73fa5685ca923e0d265547bd11b8f7357f1a970a227bb1b552eb2035670.png" style="width: 571px; height: 432px;" /></a>
 </div>
 </div>
 <div class="cell docutils container">
@@ -606,7 +588,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<a class="reference internal image-reference" href="../_images/0fafc79c0ac3d6d75ee64d6a7f2fd8564e8c8122db156eff6966d8be451692f3.png"><img alt="../_images/0fafc79c0ac3d6d75ee64d6a7f2fd8564e8c8122db156eff6966d8be451692f3.png" src="../_images/0fafc79c0ac3d6d75ee64d6a7f2fd8564e8c8122db156eff6966d8be451692f3.png" style="width: 571px; height: 432px;" /></a>
+<a class="reference internal image-reference" href="../_images/46ee1ddb3031fa85202a5640f680a76255557098eaf3d88b3cbbed43718cc818.png"><img alt="../_images/46ee1ddb3031fa85202a5640f680a76255557098eaf3d88b3cbbed43718cc818.png" src="../_images/46ee1ddb3031fa85202a5640f680a76255557098eaf3d88b3cbbed43718cc818.png" style="width: 571px; height: 432px;" /></a>
 </div>
 </div>
 <p>For further variations, as well as many optional <strong>keyword arguments</strong> that allow you to further customise your plots, see the <a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.plot.html">matplotlib documentation</a>.</p>
@@ -631,7 +613,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<a class="reference internal image-reference" href="../_images/4359e7b7015fff12761a0dd132abd0316614cb3bc5967b62ae6b1d75c01b352d.png"><img alt="../_images/4359e7b7015fff12761a0dd132abd0316614cb3bc5967b62ae6b1d75c01b352d.png" src="../_images/4359e7b7015fff12761a0dd132abd0316614cb3bc5967b62ae6b1d75c01b352d.png" style="width: 587px; height: 432px;" /></a>
+<a class="reference internal image-reference" href="../_images/9ea74c75de73ff46785a77f3c1618a83c0019976fa84b58b2f251dcbfb903ee0.png"><img alt="../_images/9ea74c75de73ff46785a77f3c1618a83c0019976fa84b58b2f251dcbfb903ee0.png" src="../_images/9ea74c75de73ff46785a77f3c1618a83c0019976fa84b58b2f251dcbfb903ee0.png" style="width: 587px; height: 432px;" /></a>
 </div>
 </div>
 <p>What if we want to compare this to:</p>
@@ -651,7 +633,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<a class="reference internal image-reference" href="../_images/98a3fedbd413b5026bb6544d9caf971b8f625c225720b86c3c9a4264f06d2dd8.png"><img alt="../_images/98a3fedbd413b5026bb6544d9caf971b8f625c225720b86c3c9a4264f06d2dd8.png" src="../_images/98a3fedbd413b5026bb6544d9caf971b8f625c225720b86c3c9a4264f06d2dd8.png" style="width: 587px; height: 432px;" /></a>
+<a class="reference internal image-reference" href="../_images/38583d67d5776b3e0bdda5053380ea5809aa70962977c327162577ef9d0c3a5f.png"><img alt="../_images/38583d67d5776b3e0bdda5053380ea5809aa70962977c327162577ef9d0c3a5f.png" src="../_images/38583d67d5776b3e0bdda5053380ea5809aa70962977c327162577ef9d0c3a5f.png" style="width: 587px; height: 432px;" /></a>
 </div>
 </div>
 <p>Okay so now we have the two plots rendered separately, but wouldn’t it be easier to compare them on <strong>the same axes</strong>? We can accomplish this by making <strong>two</strong> calls to <code class="docutils literal notranslate"><span class="pre">plt.plot</span></code> in <strong>one code cell</strong>:</p>
@@ -670,7 +652,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<a class="reference internal image-reference" href="../_images/65ef6023ae8df840cd14fb4b36dc4f25ddb71b5431950e439bc2d2d0b698ca49.png"><img alt="../_images/65ef6023ae8df840cd14fb4b36dc4f25ddb71b5431950e439bc2d2d0b698ca49.png" src="../_images/65ef6023ae8df840cd14fb4b36dc4f25ddb71b5431950e439bc2d2d0b698ca49.png" style="width: 587px; height: 432px;" /></a>
+<a class="reference internal image-reference" href="../_images/837bac7252497e2a50ac8770e7c230ffe5b64474a3e88b8b8de4fc7dbfca9c6f.png"><img alt="../_images/837bac7252497e2a50ac8770e7c230ffe5b64474a3e88b8b8de4fc7dbfca9c6f.png" src="../_images/837bac7252497e2a50ac8770e7c230ffe5b64474a3e88b8b8de4fc7dbfca9c6f.png" style="width: 587px; height: 432px;" /></a>
 </div>
 </div>
 <p>Great, it’s now much easier to observe that <span class="math notranslate nohighlight">\(\cos{x}\)</span> is simply a translation of <span class="math notranslate nohighlight">\(\sin{x}\)</span> by <span class="math notranslate nohighlight">\(\pi/2\)</span>.</p>
@@ -688,7 +670,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<a class="reference internal image-reference" href="../_images/51852b449dbddb1a4794d0cbc9ca60501e851c3ccfb2f421a5257f7f89a7f2c5.png"><img alt="../_images/51852b449dbddb1a4794d0cbc9ca60501e851c3ccfb2f421a5257f7f89a7f2c5.png" src="../_images/51852b449dbddb1a4794d0cbc9ca60501e851c3ccfb2f421a5257f7f89a7f2c5.png" style="width: 587px; height: 432px;" /></a>
+<a class="reference internal image-reference" href="../_images/5a4131e1256d6b4233b610e299905fcfbe786bbdc804be81aca53defceb87081.png"><img alt="../_images/5a4131e1256d6b4233b610e299905fcfbe786bbdc804be81aca53defceb87081.png" src="../_images/5a4131e1256d6b4233b610e299905fcfbe786bbdc804be81aca53defceb87081.png" style="width: 587px; height: 432px;" /></a>
 </div>
 </div>
 <p>Notice that we did not have to provide <code class="docutils literal notranslate"><span class="pre">legend</span></code> itself with any arguments, but we had to provide the <code class="docutils literal notranslate"><span class="pre">label</span></code> keyword argument to the original <code class="docutils literal notranslate"><span class="pre">plot</span></code> functions.</p>
@@ -711,7 +693,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<a class="reference internal image-reference" href="../_images/a5a694ceee791a17ef98a63adae43c7227c26e693e1b167ac8e8e88fb89a9676.png"><img alt="../_images/a5a694ceee791a17ef98a63adae43c7227c26e693e1b167ac8e8e88fb89a9676.png" src="../_images/a5a694ceee791a17ef98a63adae43c7227c26e693e1b167ac8e8e88fb89a9676.png" style="width: 576px; height: 432px;" /></a>
+<a class="reference internal image-reference" href="../_images/457274a73094a7c37705b94cb8b0efda7c5c3c54eaa6b1547f1b5b78eaf29cb5.png"><img alt="../_images/457274a73094a7c37705b94cb8b0efda7c5c3c54eaa6b1547f1b5b78eaf29cb5.png" src="../_images/457274a73094a7c37705b94cb8b0efda7c5c3c54eaa6b1547f1b5b78eaf29cb5.png" style="width: 576px; height: 432px;" /></a>
 </div>
 </div>
 <p>Rather than <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span>, let’s pretend that the axes have physical units. We’ll assign the <span class="math notranslate nohighlight">\(x\)</span>-axis units of inverse temperature <span class="math notranslate nohighlight">\(K^{-1}\)</span> and the <span class="math notranslate nohighlight">\(y\)</span>-axis units of <span class="math notranslate nohighlight">\(\ln K\)</span> (i.e. dimensionless):</p>
@@ -726,7 +708,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<a class="reference internal image-reference" href="../_images/c4ea8685b7873ae06f157bb98402bcbf8ab570a0cd89af4e75850dc4e0c1d911.png"><img alt="../_images/c4ea8685b7873ae06f157bb98402bcbf8ab570a0cd89af4e75850dc4e0c1d911.png" src="../_images/c4ea8685b7873ae06f157bb98402bcbf8ab570a0cd89af4e75850dc4e0c1d911.png" style="width: 576px; height: 434px;" /></a>
+<a class="reference internal image-reference" href="../_images/3b2a0a672d6dbca4c4b778a329c5a055dc00385c70e636e94f9d1291a2c75242.png"><img alt="../_images/3b2a0a672d6dbca4c4b778a329c5a055dc00385c70e636e94f9d1291a2c75242.png" src="../_images/3b2a0a672d6dbca4c4b778a329c5a055dc00385c70e636e94f9d1291a2c75242.png" style="width: 576px; height: 434px;" /></a>
 </div>
 </div>
 <p>To render axis labels using <span class="math notranslate nohighlight">\(\LaTeX\)</span>, we enclose the relevant expressions in dollar signs $.</p>
@@ -746,7 +728,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<a class="reference internal image-reference" href="../_images/8c961c80fa90156b13efade3526672ae20079799ebc7f7a6b9a3cdbc272740a4.png"><img alt="../_images/8c961c80fa90156b13efade3526672ae20079799ebc7f7a6b9a3cdbc272740a4.png" src="../_images/8c961c80fa90156b13efade3526672ae20079799ebc7f7a6b9a3cdbc272740a4.png" style="width: 578px; height: 434px;" /></a>
+<a class="reference internal image-reference" href="../_images/0f63452198a02890a3f57b55ce9c4f1e2982f334d08120b861df85dd9dfe55ae.png"><img alt="../_images/0f63452198a02890a3f57b55ce9c4f1e2982f334d08120b861df85dd9dfe55ae.png" src="../_images/0f63452198a02890a3f57b55ce9c4f1e2982f334d08120b861df85dd9dfe55ae.png" style="width: 578px; height: 434px;" /></a>
 </div>
 </div>
 <p>Note that if you include text in the dollar signs, it will be automatically <strong>italicised</strong>:</p>
@@ -761,7 +743,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<a class="reference internal image-reference" href="../_images/519f367c435f24cbaacebc4c31031105467aeb0197f456671e09b26c07a0cc43.png"><img alt="../_images/519f367c435f24cbaacebc4c31031105467aeb0197f456671e09b26c07a0cc43.png" src="../_images/519f367c435f24cbaacebc4c31031105467aeb0197f456671e09b26c07a0cc43.png" style="width: 578px; height: 434px;" /></a>
+<a class="reference internal image-reference" href="../_images/a1989bca0fe8adfed247e3bded816015d09a553e2fa910dda7eb0aadd6b98899.png"><img alt="../_images/a1989bca0fe8adfed247e3bded816015d09a553e2fa910dda7eb0aadd6b98899.png" src="../_images/a1989bca0fe8adfed247e3bded816015d09a553e2fa910dda7eb0aadd6b98899.png" style="width: 578px; height: 434px;" /></a>
 </div>
 </div>
 <p>Sometimes this is what we want (variables are often italicised in mathematical notation), but if you want your text to remain normal, then make sure to open a pair of dollar signs <strong>after</strong> that text.</p>
@@ -824,7 +806,8 @@ document.write(`
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
   <div class="sidebar-secondary-item">
@@ -850,7 +833,7 @@ document.write(`
   <div class="footer-item">
     
 <p class="component-author">
-By Patrick J. Taylor, Iva Manasi, Claire McMullin and Benjamin J. Morgan
+By Patrick J. Taylor, Jon G. C. Kragskow, Claire McMullin and Benjamin J. Morgan
 </p>
 
   </div>
@@ -860,7 +843,7 @@ By Patrick J. Taylor, Iva Manasi, Claire McMullin and Benjamin J. Morgan
 
   <p class="copyright">
     
-      © Copyright 2024.
+      © Copyright 2025.
       <br/>
     
   </p>
@@ -884,8 +867,8 @@ By Patrick J. Taylor, Iva Manasi, Claire McMullin and Benjamin J. Morgan
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
 
   <footer class="bd-footer">
   </footer>

@@ -16,30 +16,33 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-  
-  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
-
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
-  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
     <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="../_static/doctools.js?v=9a2dae69"></script>
@@ -62,10 +65,11 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'lab_5/synoptic_exercises';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Solutions" href="solutions.html" />
+    <link rel="next" title="Linear regression" href="../lab_6/linear_regression.html" />
     <link rel="prev" title="File I/O" href="file_io.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -81,19 +85,8 @@
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-primary-sidebar-checkbox"/>
-  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-secondary-sidebar-checkbox"/>
-  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="../search.html"
       method="get">
@@ -101,7 +94,6 @@
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -109,8 +101,8 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -126,7 +118,8 @@
       
       
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -155,22 +148,18 @@
       
     
     
-    <img src="../_static/logo.png" class="logo__image only-light" alt="CH12004: Skills for chemists - Home"/>
-    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="CH12004: Skills for chemists - Home"/>`);</script>
+    <img src="../_static/logo.svg" class="logo__image only-light" alt="CH12004: Skills for chemists - Home"/>
+    <img src="../_static/logo.svg" class="logo__image only-dark pst-js-only" alt="CH12004: Skills for chemists - Home"/>
   
   
 </a></div>
         <div class="sidebar-primary-item">
 
- <script>
- document.write(`
-   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
@@ -194,7 +183,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../lab_1/strings.html">Strings</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../lab_1/types.html">Types</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../lab_1/synoptic_exercises.html">Synoptic exercises</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../lab_1/solutions.html">Solutions</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Lab 2 - Data structures</span></p>
 <ul class="nav bd-sidenav">
@@ -203,7 +191,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../lab_2/dictionaries.html">Dictionaries</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../lab_2/writing_readable_code.html">Writing readable code</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../lab_2/synoptic_exercises.html">Synoptic exercises</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../lab_2/solutions.html">Solutions</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Lab 3 - Loops and logic</span></p>
 <ul class="nav bd-sidenav">
@@ -212,7 +199,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../lab_3/logic.html">Logic</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../lab_3/combining_loops_and_logic.html">Combining loops <strong>and</strong> logic</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../lab_3/synoptic_exercises.html">Synoptic Exercises</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../lab_3/solutions.html">Solutions</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Lab 4 - Functions and errors</span></p>
 <ul class="nav bd-sidenav">
@@ -220,7 +206,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../lab_4/docstrings.html">Docstrings</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../lab_4/errors.html">Errors</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../lab_4/synoptic_exercises.html">Synoptic exercises</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../lab_4/solutions.html">Solutions</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Lab 5 - External libraries</span></p>
 <ul class="current nav bd-sidenav">
@@ -228,7 +213,6 @@
 <li class="toctree-l1"><a class="reference internal" href="matplotlib.html">Matplotlib</a></li>
 <li class="toctree-l1"><a class="reference internal" href="file_io.html">File I/O</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Synoptic exercises</a></li>
-<li class="toctree-l1"><a class="reference internal" href="solutions.html">Solutions</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Lab 6 - Data analysis</span></p>
 <ul class="nav bd-sidenav">
@@ -240,6 +224,7 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../resources/the_notebook_interface.html">The Jupyter Notebook interface</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../resources/glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://noteable.edina.ac.uk/launch">Noteable</a></li>
 </ul>
 
     </div>
@@ -248,9 +233,14 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
       </div>
@@ -347,24 +337,16 @@
 
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
-    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
-    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
-  </button>
-`);
-</script>
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script>
+</button>
 
 </div></div>
       
@@ -392,20 +374,21 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="synoptic-exercises">
 <h1>Synoptic exercises<a class="headerlink" href="#synoptic-exercises" title="Link to this heading">#</a></h1>
+<p><span class="math notranslate nohighlight">\(\require{mhchem}\)</span></p>
 <p>It’s time to <strong>plot</strong>.</p>
-<p><strong>1.</strong> You have been provided with an experimental pressure/volume isotherm for SF<span class="math notranslate nohighlight">\(_{6}\)</span> at <span class="math notranslate nohighlight">\(298\,\)</span>K in the form of a <a class="reference external" href="https://raw.githubusercontent.com/pythoninchemistry/ch12004/main/CH12004/lab_5/isotherm.csv">csv file</a>.</p>
+<p><strong>1.</strong> You have been provided with an experimental pressure/volume isotherm for <span class="math notranslate nohighlight">\(\ce{SF6}\)</span> at <span class="math notranslate nohighlight">\(298\,\mathrm{K}\)</span> in the form of a <a class="reference external" href="https://raw.githubusercontent.com/pythoninchemistry/ch12004/main/CH12004/lab_5/isotherm.csv">csv file</a>.</p>
 <p>a) Read in the experimental data using <code class="docutils literal notranslate"><span class="pre">numpy</span></code>, convert to SI units and plot the isotherm using <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>.</p>
 <p>b) Assuming ideality, the isotherm should be well modelled by the ideal gas law:</p>
 <div class="math notranslate nohighlight">
 \[p = \frac{RT}{v},\]</div>
 <p>where <span class="math notranslate nohighlight">\(p\)</span> is the pressure, <span class="math notranslate nohighlight">\(v\)</span> is the molar volume (<span class="math notranslate nohighlight">\(V / n\)</span>), <span class="math notranslate nohighlight">\(R\)</span> is the gas constant and <span class="math notranslate nohighlight">\(T\)</span> is the temperature.</p>
-<p>Write a function to calculate the pressure with the ideal gas law and use this to model the SF<span class="math notranslate nohighlight">\(_{6}\)</span> isotherm between <span class="math notranslate nohighlight">\(v = 6.87 \times 10^{-4}\,\)</span>m<span class="math notranslate nohighlight">\(^{3}\,\)</span>mol<span class="math notranslate nohighlight">\(^{-1}\)</span> and <span class="math notranslate nohighlight">\(v = 4.47 \times 10^{-3}\,\)</span>m<span class="math notranslate nohighlight">\(^{3}\,\)</span>mol<span class="math notranslate nohighlight">\(^{-1}\)</span>. Plot your modelled isotherm against the experimental data.</p>
+<p>Write a function to calculate the pressure with the ideal gas law and use this to model the <span class="math notranslate nohighlight">\(\ce{SF6}\)</span> isotherm between <span class="math notranslate nohighlight">\(v = 6.87 \times 10^{-4}\,\mathrm{m}^{3}\,\mathrm{mol}^{-1}\)</span> and <span class="math notranslate nohighlight">\(v = 4.47 \times 10^{-3}\,\mathrm{m}^{3}\,\mathrm{mol}^{-1}\)</span>. Plot your modelled isotherm against the experimental data.</p>
 <p>c) Non-ideality due to intermolecular interactions and other factors can be accounted for (in part) by the Van der Waals equation of state:</p>
 <div class="math notranslate nohighlight">
 \[p = \frac{RT}{v - b} - \frac{a}{v^{2}},\]</div>
 <p>where <span class="math notranslate nohighlight">\(p\)</span> is the pressure, <span class="math notranslate nohighlight">\(R\)</span> is the gas constant, <span class="math notranslate nohighlight">\(v\)</span> is the molar volume and <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span> are system dependent constants that describe the strength of the interactions and excluded volume effects respectively.</p>
-<p>Write a function to calculate the pressure with the Van der Waals equation and use this to model the SF<span class="math notranslate nohighlight">\(_{6}\)</span> isotherm with <span class="math notranslate nohighlight">\(a = 7.857 \times 10^{-1}\,\)</span>m<span class="math notranslate nohighlight">\(^{6}\,\)</span>Pa<span class="math notranslate nohighlight">\(\,\)</span>mol<span class="math notranslate nohighlight">\(^{-2}\)</span> and <span class="math notranslate nohighlight">\(b = 8.79 \times 10^{-5}\,\)</span>m<span class="math notranslate nohighlight">\(^{3}\,\)</span>mol<span class="math notranslate nohighlight">\(^{-1}\)</span> between <span class="math notranslate nohighlight">\(v = 6.87 \times 10^{-4}\,\)</span>m<span class="math notranslate nohighlight">\(^{3}\,\)</span>mol<span class="math notranslate nohighlight">\(^{-1}\)</span> and <span class="math notranslate nohighlight">\(v = 4.47 \times 10^{-3}\,\)</span>m<span class="math notranslate nohighlight">\(^{3}\,\)</span>mol<span class="math notranslate nohighlight">\(^{-1}\)</span>. Plot your modelled isotherm and compare this against the idealised curve and the experimental data.</p>
-<p><strong>2.</strong> The <strong>mean activity</strong> of ions in solution can be measured experimentally. You have been provided with the mean activity of Na<span class="math notranslate nohighlight">\(_{2}\)</span>SO<span class="math notranslate nohighlight">\(_{4}\)</span> at <span class="math notranslate nohighlight">\(298\,\)</span>K for a range of ionic strengths: <a class="reference external" href="https://raw.githubusercontent.com/pythoninchemistry/ch12004/main/CH12004/lab_5/activity.dat">activity.dat</a></p>
+<p>Write a function to calculate the pressure with the Van der Waals equation and use this to model the <span class="math notranslate nohighlight">\(\ce{SF6}\)</span> isotherm with <span class="math notranslate nohighlight">\(a = 7.857 \times 10^{-1}\,\mathrm{m}^6\,\mathrm{Pa\, mol}^{-2}\)</span> and <span class="math notranslate nohighlight">\(b = 8.79 \times 10^{-5}\,\mathrm{m}^3\,\mathrm{mol}^{-1}\)</span> between <span class="math notranslate nohighlight">\(v = 6.87 \times 10^{-4}\,\mathrm{m}^3\,\mathrm{mol}^{-1}\)</span> and <span class="math notranslate nohighlight">\(v = 4.47 \times 10^{-3}\,\mathrm{m}^3\,\mathrm{mol}^{-1}\)</span>. Plot your modelled isotherm and compare this against the idealised curve and the experimental data.</p>
+<p><strong>2.</strong> The <strong>mean activity</strong> of ions in solution can be measured experimentally. You have been provided with the mean activity of <span class="math notranslate nohighlight">\(\ce{Na2SO4}\)</span> at <span class="math notranslate nohighlight">\(298\,\mathrm{K}\)</span> for a range of ionic strengths: <a class="reference external" href="https://raw.githubusercontent.com/pythoninchemistry/ch12004/main/CH12004/lab_5/activity.dat">activity.dat</a></p>
 <p>a) Use <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> to render a scatter plot of the mean activity as a function of the ionic strength <span class="math notranslate nohighlight">\(I\)</span>.</p>
 <p>b) The mean activity can be predicted by the Debye-Huckel limiting law:</p>
 <div class="math notranslate nohighlight">
@@ -459,11 +442,11 @@ document.write(`
       </div>
     </a>
     <a class="right-next"
-       href="solutions.html"
+       href="../lab_6/linear_regression.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Solutions</p>
+        <p class="prev-next-title">Linear regression</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -483,7 +466,7 @@ document.write(`
   <div class="footer-item">
     
 <p class="component-author">
-By Patrick J. Taylor, Iva Manasi, Claire McMullin and Benjamin J. Morgan
+By Patrick J. Taylor, Jon G. C. Kragskow, Claire McMullin and Benjamin J. Morgan
 </p>
 
   </div>
@@ -493,7 +476,7 @@ By Patrick J. Taylor, Iva Manasi, Claire McMullin and Benjamin J. Morgan
 
   <p class="copyright">
     
-      © Copyright 2024.
+      © Copyright 2025.
       <br/>
     
   </p>
@@ -517,8 +500,8 @@ By Patrick J. Taylor, Iva Manasi, Claire McMullin and Benjamin J. Morgan
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
 
   <footer class="bd-footer">
   </footer>

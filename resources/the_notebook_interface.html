@@ -16,30 +16,33 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-  
-  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
-
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
-  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
     <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="../_static/doctools.js?v=9a2dae69"></script>
@@ -64,6 +67,7 @@
     <link rel="prev" title="Minimisation" href="../lab_6/minimisation.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -79,19 +83,8 @@
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-primary-sidebar-checkbox"/>
-  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-secondary-sidebar-checkbox"/>
-  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="../search.html"
       method="get">
@@ -99,7 +92,6 @@
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -107,8 +99,8 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -124,7 +116,8 @@
       
       
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -153,22 +146,18 @@
       
     
     
-    <img src="../_static/logo.png" class="logo__image only-light" alt="CH12004: Skills for chemists - Home"/>
-    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="CH12004: Skills for chemists - Home"/>`);</script>
+    <img src="../_static/logo.svg" class="logo__image only-light" alt="CH12004: Skills for chemists - Home"/>
+    <img src="../_static/logo.svg" class="logo__image only-dark pst-js-only" alt="CH12004: Skills for chemists - Home"/>
   
   
 </a></div>
         <div class="sidebar-primary-item">
 
- <script>
- document.write(`
-   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
@@ -192,7 +181,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../lab_1/strings.html">Strings</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../lab_1/types.html">Types</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../lab_1/synoptic_exercises.html">Synoptic exercises</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../lab_1/solutions.html">Solutions</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Lab 2 - Data structures</span></p>
 <ul class="nav bd-sidenav">
@@ -201,7 +189,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../lab_2/dictionaries.html">Dictionaries</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../lab_2/writing_readable_code.html">Writing readable code</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../lab_2/synoptic_exercises.html">Synoptic exercises</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../lab_2/solutions.html">Solutions</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Lab 3 - Loops and logic</span></p>
 <ul class="nav bd-sidenav">
@@ -210,7 +197,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../lab_3/logic.html">Logic</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../lab_3/combining_loops_and_logic.html">Combining loops <strong>and</strong> logic</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../lab_3/synoptic_exercises.html">Synoptic Exercises</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../lab_3/solutions.html">Solutions</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Lab 4 - Functions and errors</span></p>
 <ul class="nav bd-sidenav">
@@ -218,7 +204,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../lab_4/docstrings.html">Docstrings</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../lab_4/errors.html">Errors</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../lab_4/synoptic_exercises.html">Synoptic exercises</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../lab_4/solutions.html">Solutions</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Lab 5 - External libraries</span></p>
 <ul class="nav bd-sidenav">
@@ -226,7 +211,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../lab_5/matplotlib.html">Matplotlib</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../lab_5/file_io.html">File I/O</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../lab_5/synoptic_exercises.html">Synoptic exercises</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../lab_5/solutions.html">Solutions</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Lab 6 - Data analysis</span></p>
 <ul class="nav bd-sidenav">
@@ -238,6 +222,7 @@
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">The Jupyter Notebook interface</a></li>
 <li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://noteable.edina.ac.uk/launch">Noteable</a></li>
 </ul>
 
     </div>
@@ -246,9 +231,14 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
       </div>
@@ -345,24 +335,16 @@
 
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
-    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
-    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
-  </button>
-`);
-</script>
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script>
+</button>
 <label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </label>
@@ -418,15 +400,8 @@ document.write(`
 <p>There are a few sections of the Notebook interface that will be useful to know your way around:</p>
 <p><img alt="" src="../_images/notebook_interface.png" /></p>
 <ol class="arabic simple">
-<li><p>The jupyterhub logo. Clicking on this takes you back to your <strong>Notebook Dashboard</strong>.</p></li>
-<li><p>The name of your Notebook. Please do not leave this as <code class="docutils literal notranslate"><span class="pre">Untitled.ipynb</span></code>. You will thank me later.</p></li>
-<li><p>Information about when this Notebook was last saved. (or, in Jupyter parlance, when a <strong>checkpoint</strong> was last created.).
-You can force your Notebook to save using:</p>
-<ul class="simple">
-<li><p>⌘S (Mac) / alt+S (Windows)</p></li>
-<li><p>Select <code class="docutils literal notranslate"><span class="pre">File</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">Save</span> <span class="pre">and</span> <span class="pre">Checkpoint</span></code>.</p></li>
-</ul>
-</li>
+<li><p>The <strong>File Browser</strong>. From here you can access all your Jupyter notebooks. You can also see when they were last saved/modified.</p></li>
+<li><p>The name of your Notebook. Please do not leave this as <code class="docutils literal notranslate"><span class="pre">Untitled.ipynb</span></code> - You will thank me later!</p></li>
 <li><p>The <strong>Notebook Menubar</strong>. This contains:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">File</span></code>: File operations, e.g. create a new Notebook, open an existing Notebook, Copy your current Notebook, Save, etc.</p></li>
@@ -434,19 +409,12 @@ You can force your Notebook to save using:</p>
 <li><p><code class="docutils literal notranslate"><span class="pre">View</span></code>: Options for what appears on your screen, and for toggling various aspects on and off.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">Cell</span></code>: Executing one of more <strong>cells</strong>, and manipulating the output of <strong>cells</strong>.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">Kernel</span></code>: Stop, start, etc. the <strong>kernel</strong>.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Widgets</span></code>: Managing plugins and extensions that you might have installed.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Help</span></code>: Access to the built-in help.</p>
-<ul>
-<li><p>Particularly useful items here are <code class="docutils literal notranslate"><span class="pre">Help</span></code> → <code class="docutils literal notranslate"><span class="pre">User</span> <span class="pre">Interface</span> <span class="pre">Tour</span></code> and <code class="docutils literal notranslate"><span class="pre">Help</span></code> → <code class="docutils literal notranslate"><span class="pre">Notebook</span> <span class="pre">Help</span></code>.</p></li>
-</ul>
-</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Help</span></code>: Access to the built-in help.</p></li>
 </ul>
 </li>
 <li><p>The <strong>Notebook Toolbar</strong>
 This contains buttons for the most common actions for working with Notebooks. Hovering you mouse over each button will show you a popup with some information about the associated action.</p></li>
-<li><p>The currently selected cell.</p></li>
-<li><p>Indicates whether a cell has run or not, and for cells that have been run, the order they ran in.</p></li>
-<li><p>The text area for the <strong>code cell</strong>. This is where you can type in Pyton code to then run.</p></li>
+<li><p>The currently selected cell, here you can type code and execute it.</p></li>
 </ol>
 </section>
 <section id="cells">
@@ -466,7 +434,7 @@ This cell has then been <a class="reference internal" href="#heading-running-cel
 <h3>Markdown cells<a class="headerlink" href="#markdown-cells" title="Link to this heading">#</a></h3>
 <p>A <strong>markdown cell</strong> contains text formatted using <a class="reference external" href="https://www.markdownguide.org/basic-syntax/">Markdown</a>, which is a lightweight markup language that can be used for writing formatted text.
 When a <strong>markdown cell</strong> is run, the markdown is converted into HTML, with the formatted text then shown <em>in place</em> of the cell.
-<strong>Markdown cells</strong> can be used to include formatted text, mathetmatical equations, images, tables, and more types of rich media.</p>
+<strong>Markdown cells</strong> can be used to include formatted text, mathematical equations, images, tables, and more types of rich media.</p>
 <p><img alt="" src="../_images/md_cell.png" />
 This figure shows a markdown cell being edited, with raw markdown entered.</p>
 <p><img alt="" src="../_images/formatted_md.png" />
@@ -478,7 +446,7 @@ This figure shows the same cell after it has been run, with the markdown convert
 </section>
 <section id="switching-cell-type">
 <h3>Switching cell type.<a class="headerlink" href="#switching-cell-type" title="Link to this heading">#</a></h3>
-<p>Cells can be switched between <strong>code</strong> and <strong>markdown</strong> using the <strong>Cell</strong> → <strong>Cell Type</strong>  menu options:</p>
+<p>Cells can be switched between <strong>code</strong> and <strong>markdown</strong> using the cell type dropdown menu.</p>
 <p><img alt="" src="../_images/cell_switch.png" /></p>
 <p>You can also switch between cell types in <strong>commmand mode</strong> (see below) using the keyboard shortcuts <code class="docutils literal notranslate"><span class="pre">Y</span></code> for <strong>code</strong>, <code class="docutils literal notranslate"><span class="pre">M</span></code> for <strong>markdown</strong>, and <code class="docutils literal notranslate"><span class="pre">R</span></code> for <strong>raw</strong>.</p>
 </section>
@@ -487,12 +455,12 @@ This figure shows the same cell after it has been run, with the markdown convert
 <p>A cell is marked as <strong>active</strong> if it is highlighted. The colour of the highlight depends on whether you are in <strong>command mode</strong> or <strong>edit mode</strong></p>
 <section id="command-mode">
 <h4>Command mode<a class="headerlink" href="#command-mode" title="Link to this heading">#</a></h4>
-<p><strong>Command mode</strong> is indicated by a blue highlight. When you are in command mode you can use <strong>keyboard shortcuts</strong> to cut, paste, and move cells, etc. You can see all the <strong>keyboard shortcuts</strong> under <code class="docutils literal notranslate"><span class="pre">Help</span></code> → <code class="docutils literal notranslate"><span class="pre">Keyboard</span> <span class="pre">Shortcuts</span></code>.</p>
+<p><strong>Command mode</strong> is indicated by a blue highlight. When you are in command mode you can use <strong>keyboard shortcuts</strong> to cut, paste, and move cells, etc. You can see all the <strong>keyboard shortcuts</strong> under <code class="docutils literal notranslate"><span class="pre">Help</span></code> → <code class="docutils literal notranslate"><span class="pre">Show</span> <span class="pre">Keyboard</span> <span class="pre">Shortcuts</span></code>.</p>
 <p><img alt="" src="../_images/command_mode.png" /></p>
 </section>
 <section id="edit-mode">
 <h4>Edit mode<a class="headerlink" href="#edit-mode" title="Link to this heading">#</a></h4>
-<p>If you are in <strong>command mode</strong> then pressing <code class="docutils literal notranslate"><span class="pre">Enter</span></code> or clicking in the input text area of a cell will switch you to <strong>edit mode</strong>. <strong>Edit mode</strong> is indicated by a green highlight, and a pencil icon in the top right of the Notebook window.</p>
+<p>If you are in <strong>command mode</strong> then pressing <code class="docutils literal notranslate"><span class="pre">Enter</span></code> or clicking in the input text area of a cell will switch you to <strong>edit mode</strong>. <strong>Edit mode</strong> is indicated by a blue outline around the grey box, and a flashing cursor.</p>
 <p><img alt="" src="../_images/edit_mode.png" /></p>
 <p>Typing now inserts text into the currently active cell:</p>
 <p><img alt="" src="../_images/edit_mode_filled.png" /></p>
@@ -569,7 +537,8 @@ You can also run the currently selected cell using keyboard shortcuts:</p>
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
   <div class="sidebar-secondary-item">
@@ -606,7 +575,7 @@ You can also run the currently selected cell using keyboard shortcuts:</p>
   <div class="footer-item">
     
 <p class="component-author">
-By Patrick J. Taylor, Iva Manasi, Claire McMullin and Benjamin J. Morgan
+By Patrick J. Taylor, Jon G. C. Kragskow, Claire McMullin and Benjamin J. Morgan
 </p>
 
   </div>
@@ -616,7 +585,7 @@ By Patrick J. Taylor, Iva Manasi, Claire McMullin and Benjamin J. Morgan
 
   <p class="copyright">
     
-      © Copyright 2024.
+      © Copyright 2025.
       <br/>
     
   </p>
@@ -640,8 +609,8 @@ By Patrick J. Taylor, Iva Manasi, Claire McMullin and Benjamin J. Morgan
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
 
   <footer class="bd-footer">
   </footer>
