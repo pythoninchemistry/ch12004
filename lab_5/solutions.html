@@ -30,7 +30,7 @@
   <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 <link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
@@ -379,8 +379,8 @@
 <p>a) Read in the experimental data using <code class="docutils literal notranslate"><span class="pre">numpy</span></code>, convert to SI units and plot the isotherm using <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="n">p</span><span class="p">,</span> <span class="n">v</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="s1">&#39;isotherm.csv&#39;</span><span class="p">,</span> <span class="n">unpack</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>
 
@@ -406,9 +406,9 @@
 <p>Write a function to calculate the pressure with the ideal gas law and use this to model the SF<span class="math notranslate nohighlight">\(_{6}\)</span> isotherm between <span class="math notranslate nohighlight">\(v = 6.87 \times 10^{-4}\,\)</span>m<span class="math notranslate nohighlight">\(^{3}\,\)</span>mol<span class="math notranslate nohighlight">\(^{-1}\)</span> and <span class="math notranslate nohighlight">\(v = 4.47 \times 10^{-3}\,\)</span>m<span class="math notranslate nohighlight">\(^{3}\,\)</span>mol<span class="math notranslate nohighlight">\(^{-1}\)</span>. Plot your modelled isotherm against the experimental data.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">scipy</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">scipy</span>
 
-<span class="k">def</span><span class="w"> </span><span class="nf">ideal_pressure</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">T</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">ideal_pressure</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">T</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Calculate the pressure of an ideal gas for a range of molar volumes.</span>
 
@@ -448,7 +448,7 @@
 <p>Write a function to calculate the pressure with the Van der Waals equation and use this to model the SF<span class="math notranslate nohighlight">\(_{6}\)</span> isotherm with <span class="math notranslate nohighlight">\(a = 7.857 \times 10^{-1}\,\)</span>m<span class="math notranslate nohighlight">\(^{6}\,\)</span>Pa<span class="math notranslate nohighlight">\(\,\)</span>mol<span class="math notranslate nohighlight">\(^{-2}\)</span> and <span class="math notranslate nohighlight">\(b = 8.79 \times 10^{-5}\,\)</span>m<span class="math notranslate nohighlight">\(^{3}\,\)</span>mol<span class="math notranslate nohighlight">\(^{-1}\)</span> between <span class="math notranslate nohighlight">\(v = 6.87 \times 10^{-4}\,\)</span>m<span class="math notranslate nohighlight">\(^{3}\,\)</span>mol<span class="math notranslate nohighlight">\(^{-1}\)</span> and <span class="math notranslate nohighlight">\(v = 4.47 \times 10^{-3}\,\)</span>m<span class="math notranslate nohighlight">\(^{3}\,\)</span>mol<span class="math notranslate nohighlight">\(^{-1}\)</span>. Plot your modelled isotherm and compare this against the idealised curve and the experimental data.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">vdw_pressure</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">vdw_pressure</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Calculate the pressure according to the Van der Waals equation for a range of molar volumes.</span>
 
@@ -509,7 +509,7 @@
 <p>Write a function to calculate the mean activity according to the Debye-Huckel limiting law (feel free to reuse your code from <a class="reference internal" href="../lab_4/functions.html"><span class="std std-doc">previous exercises</span></a>). Using <span class="math notranslate nohighlight">\(A = 1.179\,\)</span>M<span class="math notranslate nohighlight">\(^{\frac{1}{2}}\)</span>, plot the Debye-Huckel mean activity from <span class="math notranslate nohighlight">\(I = 0\,\)</span>M to <span class="math notranslate nohighlight">\(I = 6\,\)</span>M and compare this with the experimental values.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">debye_huckel</span><span class="p">(</span><span class="n">I</span><span class="p">,</span> <span class="n">z_plus</span><span class="p">,</span> <span class="n">z_minus</span><span class="p">,</span> <span class="n">A</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">debye_huckel</span><span class="p">(</span><span class="n">I</span><span class="p">,</span> <span class="n">z_plus</span><span class="p">,</span> <span class="n">z_minus</span><span class="p">,</span> <span class="n">A</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="nb">abs</span><span class="p">(</span><span class="n">z_plus</span> <span class="o">*</span> <span class="n">z_minus</span><span class="p">)</span> <span class="o">*</span> <span class="n">A</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">I</span><span class="p">))</span>
 
 <span class="n">I_dh</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
@@ -535,7 +535,7 @@
 <p>Write a function to calculate the mean activity according to the extended Debye-Huckel limiting law. Using <span class="math notranslate nohighlight">\(B = 18.3\)</span> and <span class="math notranslate nohighlight">\(a_{0} = 0.071\)</span>, plot the extended Debye-Huckel mean activity from <span class="math notranslate nohighlight">\(I = 0\,\)</span>M to <span class="math notranslate nohighlight">\(I = 6\,\)</span>M and compare this with the experimental values and the original Debye-Huckel limiting law.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">debye_huckel_extended</span><span class="p">(</span><span class="n">I</span><span class="p">,</span> <span class="n">z_plus</span><span class="p">,</span> <span class="n">z_minus</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">a_0</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">debye_huckel_extended</span><span class="p">(</span><span class="n">I</span><span class="p">,</span> <span class="n">z_plus</span><span class="p">,</span> <span class="n">z_minus</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">a_0</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="nb">abs</span><span class="p">(</span><span class="n">z_plus</span> <span class="o">*</span> <span class="n">z_minus</span><span class="p">)</span> <span class="o">*</span> <span class="p">((</span><span class="n">A</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">I</span><span class="p">))</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">B</span> <span class="o">*</span> <span class="n">a_0</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">I</span><span class="p">))))</span>
 
 <span class="n">gamma_dhe</span> <span class="o">=</span> <span class="n">debye_huckel_extended</span><span class="p">(</span><span class="n">I_dh</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mf">1.179</span><span class="p">,</span> <span class="mf">18.3</span><span class="p">,</span> <span class="mf">0.071</span><span class="p">)</span>

@@ -30,7 +30,7 @@
   <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 <link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
@@ -408,7 +408,7 @@
 <p>The inputs to a function placed in the brackets are usually referred to as <strong>arguments</strong>. We could describe the line of code above as “<strong>calling</strong> the print function with <code class="docutils literal notranslate"><span class="pre">message</span></code> <strong>passed</strong> as the only <strong>argument</strong>”. In this case, we are <strong>calling</strong> a <strong>built-in</strong> function: the <code class="docutils literal notranslate"><span class="pre">print</span></code> function is made available to us in Python <strong>by default</strong>. We have also seen examples where we have to <code class="docutils literal notranslate"><span class="pre">import</span></code> the function we want to use (i.e. it is <strong>not</strong> built-in):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
 
 <span class="n">math</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
 </pre></div>
@@ -426,7 +426,7 @@
 <p>Now we’ve reminded ourselves of what functions are and what they do, let’s get on with writing some of our own!</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
     <span class="n">result</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
     
     <span class="k">return</span> <span class="n">result</span>
@@ -435,7 +435,7 @@
 </div>
 </div>
 <p>In this simple example, we have defined an <code class="docutils literal notranslate"><span class="pre">add</span></code> function which outputs the sum of two numbers. Let’s go line-by-line:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
 </pre></div>
 </div>
 <p>This first line starts with the <code class="docutils literal notranslate"><span class="pre">def</span></code> (short for <strong>define</strong>) keyword: this is how we tell Python that we want to <strong>define</strong> a new function.</p>
@@ -468,7 +468,7 @@
 </div>
 </div>
 <p>When we call our <code class="docutils literal notranslate"><span class="pre">add</span></code> function, Python goes and looks at its <strong>definition</strong>:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
     <span class="n">result</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
 
     <span class="k">return</span> <span class="n">result</span>
@@ -485,7 +485,7 @@
 </div>
 <p>And then <code class="docutils literal notranslate"><span class="pre">result</span></code> is <strong>returned</strong> as the output of the <strong>function call</strong>.</p>
 <p>It is worth emphasising at this point that we only <strong>run the function definition once</strong>. In other words we <strong>do not</strong> need to run:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
     <span class="n">result</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
 
     <span class="k">return</span> <span class="n">result</span>
@@ -523,7 +523,7 @@
 <p>This is simply a reflection of the fact that addition is <strong>symmetric</strong>, <span class="math notranslate nohighlight">\(a + b = b + a\)</span>. The vast majority of functions do not have this symmetry, for example <span class="math notranslate nohighlight">\(a \div b \neq b \div a\)</span>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">divide</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">divide</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
     <span class="n">result</span> <span class="o">=</span> <span class="n">a</span> <span class="o">/</span> <span class="n">b</span>
 
     <span class="k">return</span> <span class="n">result</span>
@@ -559,7 +559,7 @@
 <p>As opposed to <strong>positional</strong> arguments, we can also make use of <strong>keyword</strong> arguments:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">divide</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">round_to_int</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">divide</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">round_to_int</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
     <span class="n">result</span> <span class="o">=</span> <span class="n">a</span> <span class="o">/</span> <span class="n">b</span>
 
     <span class="k">if</span> <span class="n">round_to_int</span><span class="p">:</span>
@@ -602,7 +602,7 @@
 <p>Note that <strong>keyword</strong> arguments <strong>cannot</strong> come <strong>before positional</strong> arguments in the function definition:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">divide</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">round_to_int</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">divide</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">round_to_int</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
     <span class="n">result</span> <span class="o">=</span> <span class="n">a</span> <span class="o">/</span> <span class="n">b</span>
 
     <span class="k">if</span> <span class="n">round_to_int</span><span class="p">:</span>
@@ -615,7 +615,7 @@
 </div>
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">13</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-    <span class="k">def</span><span class="w"> </span><span class="nf">divide</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">round_to_int</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">divide</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">round_to_int</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
                                       <span class="o">^</span>
 <span class="ne">SyntaxError</span>: parameter without a default follows parameter with a default
 </pre></div>
@@ -636,7 +636,7 @@
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">divide</span><span class="p">(</span><span class="s1">&#39;10&#39;</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
 
 <span class="nn">Cell In[13], line 2,</span> in <span class="ni">divide</span><span class="nt">(a, b, round_to_int)</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="k">def</span><span class="w"> </span><span class="nf">divide</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">round_to_int</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="k">def</span> <span class="nf">divide</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">round_to_int</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 <span class="ne">----&gt; </span><span class="mi">2</span>     <span class="n">result</span> <span class="o">=</span> <span class="n">a</span> <span class="o">/</span> <span class="n">b</span>
 <span class="g g-Whitespace">      </span><span class="mi">4</span>     <span class="k">if</span> <span class="n">round_to_int</span><span class="p">:</span>
 <span class="g g-Whitespace">      </span><span class="mi">5</span>         <span class="k">return</span> <span class="nb">round</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
@@ -650,7 +650,7 @@
 <p>Both the <code class="docutils literal notranslate"><span class="pre">add</span></code> and <code class="docutils literal notranslate"><span class="pre">divide</span></code> functions that we have written require <strong>two</strong> arguments, but there is nothing stopping us from writing functions that take more or less arguments. In fact, you can write functions that take <strong>zero</strong> arguments:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">zero_arguments</span><span class="p">():</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">zero_arguments</span><span class="p">():</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;This function takes zero arguments!&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -708,7 +708,7 @@
 <section id="what-to-return">
 <h3>What to <code class="docutils literal notranslate"><span class="pre">return</span></code>?<a class="headerlink" href="#what-to-return" title="Link to this heading">#</a></h3>
 <p>Functions use the <code class="docutils literal notranslate"><span class="pre">return</span></code> keyword to specify what the <strong>output</strong> should be. For example, our <code class="docutils literal notranslate"><span class="pre">add</span></code> function <strong>returns</strong> the <code class="docutils literal notranslate"><span class="pre">result</span></code> of adding <code class="docutils literal notranslate"><span class="pre">a</span></code> and <code class="docutils literal notranslate"><span class="pre">b</span></code>:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
     <span class="n">result</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
 
     <span class="k">return</span> <span class="n">result</span>
@@ -717,7 +717,7 @@
 <p>What happens if we don’t <code class="docutils literal notranslate"><span class="pre">return</span></code> anything?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
     <span class="n">result</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
 
 <span class="n">add</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
@@ -788,7 +788,7 @@ None
 <p>Our examples have always returned <strong>one</strong> output, but Python allows us to return as many outputs as we would like! Let’s say I want to write a function that calculates the sum of two numbers <strong>and</strong> the difference between them:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">add_and_subtract</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">add_and_subtract</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
     <span class="n">addition</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
     <span class="n">subtraction</span> <span class="o">=</span> <span class="n">a</span> <span class="o">-</span> <span class="n">b</span>
 
@@ -844,7 +844,7 @@ None
 <section id="scope">
 <h2>Scope<a class="headerlink" href="#scope" title="Link to this heading">#</a></h2>
 <p>Returning again to our <code class="docutils literal notranslate"><span class="pre">divide</span></code> function, this time without the keyword argument:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">divide</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">divide</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
     <span class="n">result</span> <span class="o">=</span> <span class="n">a</span> <span class="o">/</span> <span class="n">b</span>
 
     <span class="k">return</span> <span class="n">result</span>
@@ -918,7 +918,7 @@ None
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">global_scope</span> <span class="o">=</span> <span class="mi">10</span>
 
-<span class="k">def</span><span class="w"> </span><span class="nf">scope_example</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">scope_example</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
     <span class="n">result</span> <span class="o">=</span> <span class="p">(</span><span class="n">a</span> <span class="o">-</span> <span class="n">b</span><span class="p">)</span> <span class="o">/</span> <span class="n">global_scope</span>
 
     <span class="k">return</span> <span class="n">result</span>
@@ -957,7 +957,7 @@ None
 <span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">scope_example</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
 
 <span class="nn">Cell In[24], line 4,</span> in <span class="ni">scope_example</span><span class="nt">(a, b)</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="k">def</span><span class="w"> </span><span class="nf">scope_example</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="k">def</span> <span class="nf">scope_example</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
 <span class="ne">----&gt; </span><span class="mi">4</span>     <span class="n">result</span> <span class="o">=</span> <span class="p">(</span><span class="n">a</span> <span class="o">-</span> <span class="n">b</span><span class="p">)</span> <span class="o">/</span> <span class="n">global_scope</span>
 <span class="g g-Whitespace">      </span><span class="mi">6</span>     <span class="k">return</span> <span class="n">result</span>
 
@@ -972,7 +972,7 @@ None
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">R</span> <span class="o">=</span> <span class="mf">8.314</span>
 
-<span class="k">def</span><span class="w"> </span><span class="nf">ideal_gas_volume</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">T</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">ideal_gas_volume</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">T</span><span class="p">):</span>
     <span class="k">return</span> <span class="p">(</span><span class="n">n</span> <span class="o">*</span> <span class="n">R</span> <span class="o">*</span> <span class="n">T</span><span class="p">)</span> <span class="o">/</span> <span class="n">p</span>
 </pre></div>
 </div>

@@ -30,7 +30,7 @@
   <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 <link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
@@ -374,16 +374,16 @@
                   
   <section class="tex2jax_ignore mathjax_ignore" id="solutions">
 <h1>Solutions<a class="headerlink" href="#solutions" title="Link to this heading">#</a></h1>
-<p><strong>1.</strong> Calculate the energy of a photon (in <strong>Joules</strong>) with frequency <span class="math notranslate nohighlight">\(2.18 \times 10^{10}\,\)</span>GHz according to:</p>
+<p><strong>1.</strong> Calculate the energy of a photon (in <strong>Joules</strong>) with frequency <span class="math notranslate nohighlight">\(2.18 \times 10^{10}\,\mathrm{GHz}\)</span> according to:</p>
 <div class="math notranslate nohighlight">
 \[E = h\nu,\]</div>
 <p>where <span class="math notranslate nohighlight">\(\nu\)</span> is the frequency and <span class="math notranslate nohighlight">\(h\)</span> is Planck’s constant.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">scipy</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">scipy</span>
 
-<span class="n">v</span> <span class="o">=</span> <span class="mf">2.18e10</span>
-<span class="n">v</span> <span class="o">*=</span> <span class="mi">1000</span> <span class="c1"># Convert to Hz</span>
+<span class="n">v</span> <span class="o">=</span> <span class="mf">2.18e10</span> <span class="c1"># GHz</span>
+<span class="n">v</span> <span class="o">*=</span> <span class="mf">1e6</span> <span class="c1"># Convert to Hz</span>
 
 <span class="n">E</span> <span class="o">=</span> <span class="n">scipy</span><span class="o">.</span><span class="n">constants</span><span class="o">.</span><span class="n">h</span> <span class="o">*</span> <span class="n">v</span>
 
@@ -392,7 +392,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The energy of the photon is 1.4444832926999998e-20 J.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The energy of the photon is 1.4444832927e-17 J.
 </pre></div>
 </div>
 </div>
@@ -496,8 +496,8 @@ This code uses the following expression for the root mean square speed of a mole
 <p class="admonition-title">Note</p>
 <p>This block also contains a problem which, whilst it <strong>will not cause an error</strong>, will lead to the wrong result being calculated. See if you can spot and fix this problem in addition to removing the error.</p>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">scipy</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+<span class="kn">import</span> <span class="nn">scipy</span>
 
 <span class="c1"># You do not have to include the imports above if you have already imported math and scipy in your notebook.</span>
 
@@ -512,8 +512,8 @@ This code uses the following expression for the root mean square speed of a mole
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">scipy</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+<span class="kn">import</span> <span class="nn">scipy</span>
 
 <span class="c1"># You do not have to include the imports above if you have already imported math and scipy in your notebook.</span>
 
