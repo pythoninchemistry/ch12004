@@ -30,7 +30,7 @@
   <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 <link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
@@ -388,8 +388,8 @@
 <p>Despite the fact that both of our examples so far have involved <strong>linear</strong> data, we have already made use of the <code class="docutils literal notranslate"><span class="pre">curve_fit</span></code> function, which is capable of fitting <strong>non-linear</strong> data: let’s have a look at a <strong>non-linear</strong> example:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 
 <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="s1">&#39;non_linear.csv&#39;</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">,</span> <span class="n">unpack</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
@@ -412,7 +412,7 @@
 <p>Let’s write a function to Python-ise this:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">quadratic</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">quadratic</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Calculate y = ax^2 + bx + c (a quadratic equation).</span>
 
 <span class="sd">    Args:</span>
@@ -434,7 +434,7 @@
 <p>Now we can use <code class="docutils literal notranslate"><span class="pre">curve_fit</span></code> just like we did for the linear examples:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.optimize</span> <span class="kn">import</span> <span class="n">curve_fit</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">scipy.optimize</span><span class="w"> </span><span class="kn">import</span> <span class="n">curve_fit</span>
 
 <span class="n">optimised_parameters</span><span class="p">,</span> <span class="n">covariance_matrix</span> <span class="o">=</span> <span class="n">curve_fit</span><span class="p">(</span><span class="n">quadratic</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
 </pre></div>
@@ -531,7 +531,7 @@ c = 15.782796972007484 +/- 3.129022469848281
 </div>
 <div class="cell_output docutils container">
 <a class="reference internal image-reference" href="../_images/7eda5ff4011acc5bc6b39234997b75f33604c1c938c435f6d0980f585f6e487e.png"><img alt="../_images/7eda5ff4011acc5bc6b39234997b75f33604c1c938c435f6d0980f585f6e487e.png" src="../_images/7eda5ff4011acc5bc6b39234997b75f33604c1c938c435f6d0980f585f6e487e.png" style="width: 571px; height: 432px;" /></a>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a = 2.6203290107853174 +/- 0.11135729047401369
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a = 2.6203290107853174 +/- 0.11135729047401367
 b = 1.0044283720094316 +/- 1.1823803875838697
 c = 20.73956407719379 +/- 1.2261306235370446
 </pre></div>
@@ -589,7 +589,7 @@ c = 20.73956407719379 +/- 1.2261306235370446
 <p>Now we can use the <code class="docutils literal notranslate"><span class="pre">linregress</span></code> function to compute the value of the slope and the intercept:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">linregress</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">scipy.stats</span><span class="w"> </span><span class="kn">import</span> <span class="n">linregress</span>
 
 <span class="n">regression_data</span> <span class="o">=</span> <span class="n">linregress</span><span class="p">(</span><span class="n">reciprocal_T</span><span class="p">,</span> <span class="n">ln_k</span><span class="p">)</span>
 
@@ -612,7 +612,7 @@ c = 15.161037389899018
 \[c = \ln [\mathrm{H}_{2}\mathrm{O}_{2}]_{0}.\]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.constants</span> <span class="kn">import</span> <span class="n">R</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">scipy.constants</span><span class="w"> </span><span class="kn">import</span> <span class="n">R</span>
 
 <span class="n">ln_k_model</span> <span class="o">=</span> <span class="n">regression_data</span><span class="o">.</span><span class="n">slope</span> <span class="o">*</span> <span class="n">reciprocal_T</span> <span class="o">+</span> <span class="n">regression_data</span><span class="o">.</span><span class="n">intercept</span>
 
@@ -651,7 +651,7 @@ A = 3840209.1525825486 M-1s-1
 <p>So, how can we avoid this problem? As you may already have surmised, we have already seen the solution to this problem: <strong>we do not have to linearise our data in the first place</strong>. In Python, we can use the <code class="docutils literal notranslate"><span class="pre">curve_fit</span></code> function to fit <strong>non-linear</strong> data, thus sidestepping the problems associated with linearisation. If we want to use <code class="docutils literal notranslate"><span class="pre">curve_fit</span></code>, we have to define a function to represent the model we would like to fit, here the (non-linear form of the) Arrhenius equation:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">arrhenius</span><span class="p">(</span><span class="n">T</span><span class="p">,</span> <span class="n">E_a</span><span class="p">,</span> <span class="n">A</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">arrhenius</span><span class="p">(</span><span class="n">T</span><span class="p">,</span> <span class="n">E_a</span><span class="p">,</span> <span class="n">A</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;&quot;Calculate the rate constant at a range of temperatures</span>
 <span class="sd">    using the Arrhenius equation k = A exp[-E_a/RT]</span>
 
@@ -684,8 +684,8 @@ A = 3840209.1525825486 M-1s-1
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>E_a = 116196.43235167305 J mol-1 = 116.19643235167305 kJ mol-1
-A = 7934409.3734384375 M-1s-1
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>E_a = 116196.43408708881 J mol-1 = 116.19643408708882 kJ mol-1
+A = 7934411.913435642 M-1s-1
 </pre></div>
 </div>
 <a class="reference internal image-reference" href="../_images/2af15c4e191c965baae66b3412a513b21a3d35b4275855d924cf4061a9467037.png"><img alt="../_images/2af15c4e191c965baae66b3412a513b21a3d35b4275855d924cf4061a9467037.png" src="../_images/2af15c4e191c965baae66b3412a513b21a3d35b4275855d924cf4061a9467037.png" style="width: 596px; height: 432px;" /></a>
