@@ -34,6 +34,8 @@ This will open a new Jupyter Notebook document in a new browser window, which sh
 
 We will look at using Jupyter Notebooks in more detail later. For now, notice at the top you have the text &ldquo;Untitled&rdquo;. This is a placeholder filename that has been assigned to this new Notebook you have just created. To rename your notebook, right click on `Untitled.ipynb` in the **File Browser** and click rename.
 
+**Do not delete the `.ipynb` extension when renaming your notebook - Noteable will break if you do!**
+
 ![](images/rename_notebook_dialogue.png)
 
 Rename your notebook to something more meaningful (e.g., &ldquo;Lab 0&rdquo;) by typing the new name and hitting Enter.
