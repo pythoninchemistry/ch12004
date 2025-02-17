@@ -15,7 +15,7 @@ parts:
       - file: lab_1/strings.ipynb
       - file: lab_1/types.ipynb
       - file: lab_1/synoptic_exercises.ipynb
-      # - file: lab_1/solutions.ipynb
+      - file: lab_1/solutions.ipynb
   - caption: Lab 2 - Data structures
     chapters:
       - file: lab_2/lists.ipynb
