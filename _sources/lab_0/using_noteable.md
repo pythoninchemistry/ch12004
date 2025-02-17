@@ -38,7 +38,7 @@ We will look at using Jupyter Notebooks in more detail later. For now, notice at
 
 ![](images/rename_notebook_dialogue.png)
 
-Rename your notebook to something more meaningful (e.g., &ldquo;Lab 0&rdquo;) by typing the new name and hitting Enter.
+Rename your notebook to something more meaningful (e.g., &ldquo;Lab 0.ipynb&rdquo;) by typing the new name and hitting Enter.
 
 You should then see the notebook name at the top of the screen change to the new name.
 
