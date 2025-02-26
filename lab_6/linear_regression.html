@@ -201,6 +201,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../lab_3/logic.html">Logic</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../lab_3/combining_loops_and_logic.html">Combining loops <strong>and</strong> logic</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../lab_3/synoptic_exercises.html">Synoptic Exercises</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lab_3/solutions.html">Solutions</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Lab 4 - Functions and errors</span></p>
 <ul class="nav bd-sidenav">
@@ -405,7 +406,8 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<a class="reference internal image-reference" href="../_images/8bbbd3349ec5ad49444eb3133bd7e1883a230899bdee84a34d2c1d05cbf6401e.png"><img alt="../_images/8bbbd3349ec5ad49444eb3133bd7e1883a230899bdee84a34d2c1d05cbf6401e.png" src="../_images/8bbbd3349ec5ad49444eb3133bd7e1883a230899bdee84a34d2c1d05cbf6401e.png" style="width: 563px; height: 432px;" /></a>
+<a class="reference internal image-reference" href="../_images/8bbbd3349ec5ad49444eb3133bd7e1883a230899bdee84a34d2c1d05cbf6401e.png"><img alt="../_images/8bbbd3349ec5ad49444eb3133bd7e1883a230899bdee84a34d2c1d05cbf6401e.png" src="../_images/8bbbd3349ec5ad49444eb3133bd7e1883a230899bdee84a34d2c1d05cbf6401e.png" style="width: 563px; height: 432px;" />
+</a>
 </div>
 </div>
 <p>You can download linear.csv <a class="reference external" href="https://raw.githubusercontent.com/pythoninchemistry/ch12004/main/CH12004/lab_6/linear.csv">here</a>.</p>
@@ -496,7 +498,8 @@ c = 11.204090909090908
 </div>
 </div>
 <div class="cell_output docutils container">
-<a class="reference internal image-reference" href="../_images/077a97572db4f95f38b8d97dfa2e2dc180794c0cd2997e3745739b11636cd5e6.png"><img alt="../_images/077a97572db4f95f38b8d97dfa2e2dc180794c0cd2997e3745739b11636cd5e6.png" src="../_images/077a97572db4f95f38b8d97dfa2e2dc180794c0cd2997e3745739b11636cd5e6.png" style="width: 563px; height: 432px;" /></a>
+<a class="reference internal image-reference" href="../_images/077a97572db4f95f38b8d97dfa2e2dc180794c0cd2997e3745739b11636cd5e6.png"><img alt="../_images/077a97572db4f95f38b8d97dfa2e2dc180794c0cd2997e3745739b11636cd5e6.png" src="../_images/077a97572db4f95f38b8d97dfa2e2dc180794c0cd2997e3745739b11636cd5e6.png" style="width: 563px; height: 432px;" />
+</a>
 </div>
 </div>
 <p>It’s worth emphasising at this stage that whilst the example is wholly abstract (<span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> have no physical meaning and have no units), the same procedure could easily be applied to any linear dataset you might wish to analyse.</p>
@@ -532,7 +535,8 @@ c = 11.204090909090908 +/- 0.5995937291506074
 </div>
 </div>
 <div class="cell_output docutils container">
-<a class="reference internal image-reference" href="../_images/a4e4ef6e2c0b39962bb111897fceb0fb4e3ae5422b3590a4658c7fe38c16e5ba.png"><img alt="../_images/a4e4ef6e2c0b39962bb111897fceb0fb4e3ae5422b3590a4658c7fe38c16e5ba.png" src="../_images/a4e4ef6e2c0b39962bb111897fceb0fb4e3ae5422b3590a4658c7fe38c16e5ba.png" style="width: 563px; height: 432px;" /></a>
+<a class="reference internal image-reference" href="../_images/a4e4ef6e2c0b39962bb111897fceb0fb4e3ae5422b3590a4658c7fe38c16e5ba.png"><img alt="../_images/a4e4ef6e2c0b39962bb111897fceb0fb4e3ae5422b3590a4658c7fe38c16e5ba.png" src="../_images/a4e4ef6e2c0b39962bb111897fceb0fb4e3ae5422b3590a4658c7fe38c16e5ba.png" style="width: 563px; height: 432px;" />
+</a>
 </div>
 </div>
 <p>As you can see above, we can plot error bars using <code class="docutils literal notranslate"><span class="pre">plt.errorbar</span></code>, passing the size of each error bar as a <strong>third</strong> argument (here passed as the variable <code class="docutils literal notranslate"><span class="pre">y_err</span></code>). The <code class="docutils literal notranslate"><span class="pre">fmt</span></code> keyword argument is used to prevent <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> from joining each point with a line (this is roughly equivalent how we can pass strings such as <code class="docutils literal notranslate"><span class="pre">'o'</span></code> or <code class="docutils literal notranslate"><span class="pre">'o-'</span></code> to the <code class="docutils literal notranslate"><span class="pre">plt.plot</span></code> function to change how the data is rendered).</p>
@@ -659,7 +663,8 @@ c = 11.137530849160365 +/- 0.7346416256182807
 </div>
 </div>
 <div class="cell_output docutils container">
-<a class="reference internal image-reference" href="../_images/2e29dc2c262e51ee5713768f6006f1021a32b35203cfc84b0903c38a2930b2f3.png"><img alt="../_images/2e29dc2c262e51ee5713768f6006f1021a32b35203cfc84b0903c38a2930b2f3.png" src="../_images/2e29dc2c262e51ee5713768f6006f1021a32b35203cfc84b0903c38a2930b2f3.png" style="width: 563px; height: 432px;" /></a>
+<a class="reference internal image-reference" href="../_images/2e29dc2c262e51ee5713768f6006f1021a32b35203cfc84b0903c38a2930b2f3.png"><img alt="../_images/2e29dc2c262e51ee5713768f6006f1021a32b35203cfc84b0903c38a2930b2f3.png" src="../_images/2e29dc2c262e51ee5713768f6006f1021a32b35203cfc84b0903c38a2930b2f3.png" style="width: 563px; height: 432px;" />
+</a>
 </div>
 </div>
 <p>In this case, our final plot (and our values of <span class="math notranslate nohighlight">\(m\)</span> and <span class="math notranslate nohighlight">\(c\)</span>) are pretty similar whether we use the <strong>ordinary</strong> least-squares (<code class="docutils literal notranslate"><span class="pre">linregress</span></code>) or <strong>weighted</strong> least-squares (<code class="docutils literal notranslate"><span class="pre">curve_fit</span></code> with <code class="docutils literal notranslate"><span class="pre">sigma</span></code>) methods, but this is certainly not guaranteed to be the case and it is therefore <strong>very important</strong> to propagate experimental uncertanties through to our fitted model parameters when possible.</p>
