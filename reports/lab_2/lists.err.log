@@ -22,10 +22,10 @@ transition_metals[3]
 ------------------
 
 
-[0;31m---------------------------------------------------------------------------[0m
-[0;31mIndexError[0m                                Traceback (most recent call last)
-Cell [0;32mIn[11], line 1[0m
-[0;32m----> 1[0m [43mtransition_metals[49m[43m[[49m[38;5;241;43m3[39;49m[43m][49m
+[31m---------------------------------------------------------------------------[39m
+[31mIndexError[39m                                Traceback (most recent call last)
+[36mCell[39m[36m [39m[32mIn[11][39m[32m, line 1[39m
+[32m----> [39m[32m1[39m [43mtransition_metals[49m[43m[[49m[32;43m3[39;49m[43m][49m
 
-[0;31mIndexError[0m: list index out of range
+[31mIndexError[39m: list index out of range
 

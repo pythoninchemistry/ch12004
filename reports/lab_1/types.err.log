@@ -25,12 +25,12 @@ an_integer + a_string
 ------------------
 
 
-[0;31m---------------------------------------------------------------------------[0m
-[0;31mTypeError[0m                                 Traceback (most recent call last)
-Cell [0;32mIn[6], line 4[0m
-[1;32m      1[0m an_integer [38;5;241m=[39m [38;5;241m7[39m
-[1;32m      2[0m a_string [38;5;241m=[39m [38;5;124m'[39m[38;5;124mStrings are not numbers![39m[38;5;124m'[39m
-[0;32m----> 4[0m [43man_integer[49m[43m [49m[38;5;241;43m+[39;49m[43m [49m[43ma_string[49m
+[31m---------------------------------------------------------------------------[39m
+[31mTypeError[39m                                 Traceback (most recent call last)
+[36mCell[39m[36m [39m[32mIn[6][39m[32m, line 4[39m
+[32m      1[39m an_integer = [32m7[39m
+[32m      2[39m a_string = [33m'[39m[33mStrings are not numbers![39m[33m'[39m
+[32m----> [39m[32m4[39m [43man_integer[49m[43m [49m[43m+[49m[43m [49m[43ma_string[49m
 
-[0;31mTypeError[0m: unsupported operand type(s) for +: 'int' and 'str'
+[31mTypeError[39m: unsupported operand type(s) for +: 'int' and 'str'
 
