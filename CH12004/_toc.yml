@@ -38,7 +38,7 @@ parts:
       - file: lab_4/docstrings.ipynb
       - file: lab_4/errors.ipynb
       - file: lab_4/synoptic_exercises.ipynb
-      # - file: lab_4/solutions.ipynb
+      - file: lab_4/solutions.ipynb
   - caption: Lab 5 - External libraries
     chapters:
       - file: lab_5/numpy.ipynb
