@@ -54,7 +54,7 @@ parts:
 
   - caption: Resources
     chapters:
-      - file: resources/the_notebook_interface.md
+      - file: resources/noteable_interface.md
       - file: resources/glossary.ipynb
       - url: https://noteable.edina.ac.uk/launch
         title: Noteable
