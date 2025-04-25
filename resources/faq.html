@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Tuples &#8212; CH12004: Skills for chemists</title>
+    <title>Frequently Asked Questions &#8212; CH12004: Skills for chemists</title>
   
   
   
@@ -60,11 +60,9 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'lab_2/tuples';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'resources/faq';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Dictionaries" href="dictionaries.html" />
-    <link rel="prev" title="Lists" href="lists.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -115,6 +113,8 @@
     <div class="bd-container__inner bd-page-width">
       
       
+      
+        
       
       <dialog id="pst-primary-sidebar-modal"></dialog>
       <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
@@ -184,13 +184,13 @@
 <li class="toctree-l1"><a class="reference internal" href="../lab_1/solutions.html">Solutions</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Lab 2 - Data structures</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="lists.html">Lists</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Tuples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="dictionaries.html">Dictionaries</a></li>
-<li class="toctree-l1"><a class="reference internal" href="writing_readable_code.html">Writing readable code</a></li>
-<li class="toctree-l1"><a class="reference internal" href="synoptic_exercises.html">Synoptic exercises</a></li>
-<li class="toctree-l1"><a class="reference internal" href="solutions.html">Solutions</a></li>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../lab_2/lists.html">Lists</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lab_2/tuples.html">Tuples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lab_2/dictionaries.html">Dictionaries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lab_2/writing_readable_code.html">Writing readable code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lab_2/synoptic_exercises.html">Synoptic exercises</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lab_2/solutions.html">Solutions</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Lab 3 - Loops and logic</span></p>
 <ul class="nav bd-sidenav">
@@ -225,8 +225,8 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Resources</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../resources/noteable_interface.html">The Jupyter Notebook interface</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../resources/glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="noteable_interface.html">The Jupyter Notebook interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://noteable.edina.ac.uk/launch">Noteable</a></li>
 </ul>
 
@@ -287,7 +287,7 @@
       
       
       
-      <li><a href="../_sources/lab_2/tuples.ipynb" target="_blank"
+      <li><a href="../_sources/resources/faq.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -297,7 +297,7 @@
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.ipynb</span>
+<span class="btn__text-container">.md</span>
 </a>
 </li>
       
@@ -350,7 +350,9 @@
 <button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
 </button>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -361,11 +363,21 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Tuples</h1>
+    <h1>Frequently Asked Questions</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#can-i-download-my-code">Can I download my code?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#can-more-than-one-person-work-on-a-notebook-at-once">Can more than one person work on a notebook at once?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-can-i-add-equations-to-my-notebook">How can I add equations to my notebook?</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -375,91 +387,20 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="tuples">
-<h1>Tuples<a class="headerlink" href="#tuples" title="Link to this heading">#</a></h1>
-<p>The second <strong>data structure</strong> that we will discuss is the <code class="docutils literal notranslate"><span class="pre">tuple</span></code>. A <code class="docutils literal notranslate"><span class="pre">tuple</span></code> is very similar to a <code class="docutils literal notranslate"><span class="pre">list</span></code>:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a_tuple</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">a_tuple</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1, 2, 3, 4, 5)
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">a_tuple</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tuple
-</pre></div>
-</div>
-</div>
-</div>
-<p>As you can see above, the only difference in syntax is the type of brackets, we use <strong>square</strong> brackets to create a <code class="docutils literal notranslate"><span class="pre">list</span></code>, whereas we use <strong>round</strong> brackets to create a <code class="docutils literal notranslate"><span class="pre">tuple</span></code>. We can index and slice tuples just like lists:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">colours</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;Duck Egg Blue&#39;</span><span class="p">,</span> <span class="s1">&#39;Oxblood Red&#39;</span><span class="p">,</span> <span class="s1">&#39;Forest Green&#39;</span><span class="p">,</span> <span class="s1">&#39;Royal Purple&#39;</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;The third element of the colours tuple is: </span><span class="si">{</span><span class="n">colours</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;The middle two elements of the colours tuple are: </span><span class="si">{</span><span class="n">colours</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The third element of the colours tuple is: Forest Green
-The middle two elements of the colours tuple are: (&#39;Oxblood Red&#39;, &#39;Forest Green&#39;)
-</pre></div>
-</div>
-</div>
-</div>
-<p>At this point you might well be thinking, “Well what’s the point of a tuple if it’s just like a list?” The key difference is that tuples are <strong>immutable</strong>: once they have been created, they cannot be changed:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">colours</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Lime Green&#39;</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">colours</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Lime Green&#39;</span>
-
-<span class="ne">TypeError</span>: &#39;tuple&#39; object does not support item assignment
-</pre></div>
-</div>
-</div>
-</div>
-<p>This does not mean that we cannot do anything with tuples at all, for example we can still concatenate two of them together just like lists:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tuple_1</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;Physical&#39;</span><span class="p">,</span> <span class="s1">&#39;Computational&#39;</span><span class="p">)</span>
-<span class="n">tuple_2</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;Organic&#39;</span><span class="p">,</span> <span class="s1">&#39;Inorganic&#39;</span><span class="p">)</span>
-
-<span class="n">tuple_1</span> <span class="o">+</span> <span class="n">tuple_2</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;Physical&#39;, &#39;Computational&#39;, &#39;Organic&#39;, &#39;Inorganic&#39;)
-</pre></div>
-</div>
-</div>
-</div>
-<p>The main message is that we cannot modify the tuple itself. We can add two of them together, but we cannot change what is actually <strong>in</strong> a given tuple once it has been created.</p>
-<p>Of course, this all begs the question: “Why would I ever use a tuple rather than a list?” There are several reasons, but perhaps the most important one is that tuples are much less <strong>error-prone</strong>. Precisely because tuples are <strong>immutable</strong>, it is literally impossible for your code to accidentally modify them in an undesirable way. Using lists, it is possible (and indeed it happens quite often) that you can unintentionally mutate the contents of the list in such a way as to end up with the wrong result. The advantage of tuples is therefore that, so long as you do not <strong>need</strong> to change its contents, it guarantees that no matter what the rest of your code does, it will not accidentally mutate a tuple. That being said, a lot of the time we do <strong>need</strong> to change the contents of our data structures, so then we use lists.</p>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>A good rule of thumb is the following: if you <strong>need</strong> to use a list, because you need it to be <strong>mutable</strong>, then go ahead. But if you do <strong>not</strong> need to change the contents, then always use a tuple instead.</p>
-</div>
+  <section class="tex2jax_ignore mathjax_ignore" id="frequently-asked-questions">
+<h1>Frequently Asked Questions<a class="headerlink" href="#frequently-asked-questions" title="Link to this heading">#</a></h1>
+<section id="can-i-download-my-code">
+<h2>Can I download my code?<a class="headerlink" href="#can-i-download-my-code" title="Link to this heading">#</a></h2>
+<p>Yes, look <a class="reference internal" href="noteable_interface.html#Downloading-notebooks"><span class="std std-ref">here</span></a> for instructions.</p>
+</section>
+<section id="can-more-than-one-person-work-on-a-notebook-at-once">
+<h2>Can more than one person work on a notebook at once?<a class="headerlink" href="#can-more-than-one-person-work-on-a-notebook-at-once" title="Link to this heading">#</a></h2>
+<p>Unfortunately, Noteable does not support this. Instead, collaborative work must be done in separate notebooks and combined manually.</p>
+</section>
+<section id="how-can-i-add-equations-to-my-notebook">
+<h2>How can I add equations to my notebook?<a class="headerlink" href="#how-can-i-add-equations-to-my-notebook" title="Link to this heading">#</a></h2>
+<p>Use a markdown cell with LaTeX formatting - see <a class="reference internal" href="noteable_interface.html#Markdown-cells"><span class="std std-ref">here</span></a> for how to use markdown cells, and <a class="reference external" href="https://www.upyesp.org/posts/makrdown-vscode-math-notation/">here</a> for how to write equations with LaTeX formatting.</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -475,7 +416,7 @@ The middle two elements of the colours tuple are: (&#39;Oxblood Red&#39;, &#39;F
         },
         kernelOptions: {
             name: "python3",
-            path: "./lab_2"
+            path: "./resources"
         },
         predefinedOutput: true
     }
@@ -492,30 +433,30 @@ The middle two elements of the colours tuple are: (&#39;Oxblood Red&#39;, &#39;F
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="lists.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Lists</p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="dictionaries.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Dictionaries</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
 </div>
                 </footer>
               
             </div>
             
             
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#can-i-download-my-code">Can I download my code?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#can-more-than-one-person-work-on-a-notebook-at-once">Can more than one person work on a notebook at once?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-can-i-add-equations-to-my-notebook">How can I add equations to my notebook?</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

@@ -20,6 +20,15 @@ There are a few sections of the Notebook interface that will be useful to know y
 5. The currently selected cell, here you can type code and execute it.
 
 
+## Downloading notebooks
+
+You can download your python notebook as a `.ipynb` file. This can be re-uploaded to, and used on, any python notebook server.
+
+To download your notebook, right click the notebook name in the file browser and click *Download*.
+![](images/download_notebook.png)
+
+Your notebook will then be downloaded to your computer.
+
 ## Cells
 
 The body of the notebook is made up of **input cells**. When you open a new notebook it will contain only one empty cell; this is the grey box with `In [  ]:` to the left. 
@@ -51,7 +60,7 @@ This figure shows the same cell after it has been run, with the markdown convert
 ### Raw cells
 Input entered into **Raw cells** is not converted when the cell is run. These cells are usually used to provide additional information for converting Jupyter Notebooks to a different format (e.g., a PDF document). You almost certainly will not need to use **Raw cells** during this course, but might be curious about this third cell type.
 
-### Switching cell type.
+### Switching cell type
 Cells can be switched between **code** and **markdown** using the cell type dropdown menu.
 
 ![](images/cell_switch.png)
